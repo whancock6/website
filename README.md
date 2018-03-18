@@ -6,6 +6,7 @@ Building a new online presence and experience for the Ramblin' Reck Club at Geor
 ## Installation
 * Clone this repo.
 * `cd` into this repo's root directory.
+* Run `npm install`.
 * Run `bin/www` to start the server. 
 * Navigate to `localhost:3000` to see the site.
 

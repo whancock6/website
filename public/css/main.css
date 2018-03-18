@@ -10,8 +10,17 @@ h1,h2,h3,h4 {
     color: #B3A369 !important;
 }
 
+.jumbotron, .jumbotron-fluid {
+    color: white;
+    background: #B3A369;
+}
+
 .btn-primary:hover {
     background: #335170;
+}
+
+.badge-primary {
+    background-color: #B3A369;
 }
 
 a {
@@ -28,9 +37,31 @@ a:hover {
     border-color: #B3A369;
 }
 
-.btn-outline-primary:hover {
+.btn.btn-outline-primary.active.focus,
+.btn.btn-outline-primary.active:focus,
+.btn.btn-outline-primary.active:hover,
+.btn.btn-outline-primary:active.focus,
+.btn.btn-outline-primary:active:focus,
+.btn.btn-outline-primary:active:hover,
+.btn.btn-outline-primary:hover {
     background-color: #B3A369;
     border-color: #B3A369;
+}
+
+.btn-outline-secondary {
+    color: #00263A;
+    border-color: #00263A;
+}
+
+.btn.btn-outline-secondary.active.focus,
+.btn.btn-outline-secondary.active:focus,
+.btn.btn-outline-secondary.active:hover,
+.btn.btn-outline-secondary:active.focus,
+.btn.btn-outline-secondary:active:focus,
+.btn.btn-outline-secondary:active:hover,
+.btn.btn-outline-secondary:hover{
+    background-color: #00263A;
+    border-color: #00263A;
 }
 
 .text-primary {
