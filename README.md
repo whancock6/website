@@ -10,10 +10,10 @@ Building a new online presence and experience for the Ramblin' Reck Club at Geor
 * Navigate to `localhost:3000` to see the site.
 
 ## Roadmap
-- [] Finish the public frontend.
-- [] Integrate user authenication with Firebase.
-- [] Create an events/points management system/API.
-- [] Import existing web data into Firebase.
+- [ ] Finish the public frontend.
+- [ ] Integrate user authenication with Firebase.
+- [ ] Create an events/points management system/API.
+- [ ] Import existing web data into Firebase.
 
 # License
 Navigate to [LICENSE.md](https://github.com/RamblinReckClub/website/blob/master/LICENSE.md) to learn more. 
