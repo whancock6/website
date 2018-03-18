@@ -137,20 +137,27 @@
     </div>
 </div>
 
-<div class="container">
+<div class="container-fluid">
     <footer class="footer text-center text-muted mb-3">
         <p>© 2018 Ramblin' Reck Club. All Rights Reserved.</p>
-        <div class="d-flex justify-content-center align-items-center align-self-center">
-            <a class="col-1" href="https://facebook.com/RamblinReckClub"><i class="fab fa-facebook fa-2x"></i></a>
-            <a class="col-1" href="https://twitter.com/RamblinReckClub"><i class="fab fa-twitter fa-2x"></i></a>
-            <a class="col-1" href="https://instagram.com/RamblinReckClub"><i class="fab fa-instagram fa-2x"></i></a>
-            <a class="col-1" href="https://github.com/RamblinReckClub"><i class="fab fa-github fa-2x"></i></a>
+        <div class="d-flex justify-content-center align-items-center align-self-center" id="social-icon-holder">
+            <a class="col-1 rrc-social-icon" href="https://facebook.com/RamblinReckClub"><i class="fab fa-facebook fa-2x"></i></a>
+            <a class="col-1 rrc-social-icon" href="https://twitter.com/RamblinReckClub"><i class="fab fa-twitter fa-2x"></i></a>
+            <a class="col-1 rrc-social-icon" href="https://instagram.com/RamblinReckClub"><i class="fab fa-instagram fa-2x"></i></a>
+            <a class="col-1 rrc-social-icon" href="https://github.com/RamblinReckClub"><i class="fab fa-github fa-2x"></i></a>
         </div>
     </footer>
 </div>
 
 <script src="/js/jquery-3.2.1.min.js"></script>
 <script src="/js/bootstrap.min.js"></script>
+<script>
+    if ($(window).width() < 700) {
+        $(".rrc-social-icon").addClass("col-3 mr-0");
+        $(".rrc-social-icon").removeClass("col-1 mr-0");
+        $("#social-icon-holder").addClass("row");
+    }
+</script>
 </body>
 
 </html>
