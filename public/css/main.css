@@ -44,8 +44,8 @@ a:hover {
 .btn.btn-outline-primary:active:focus,
 .btn.btn-outline-primary:active:hover,
 .btn.btn-outline-primary:hover {
-    background-color: #B3A369;
-    border-color: #B3A369;
+    background-color: #B3A369 !important;
+    border-color: #B3A369 !important;
 }
 
 .btn-outline-secondary {
@@ -59,7 +59,7 @@ a:hover {
 .btn.btn-outline-secondary:active.focus,
 .btn.btn-outline-secondary:active:focus,
 .btn.btn-outline-secondary:active:hover,
-.btn.btn-outline-secondary:hover{
+.btn.btn-outline-secondary:hover {
     background-color: #00263A;
     border-color: #00263A;
 }

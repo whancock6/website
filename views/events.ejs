@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<%- include partials/head.ejs %>
+<body>
+<%- include partials/header.ejs %>
+<div class="container mb-3">
+    <div class="row justify-content-between">
+        <h2 class="col-auto">Events</h2>
+        <div class="col-auto">
+            <div class="dropdown">
+                <button class="btn btn-outline-primary dropdown-toggle" type="button" id="monthDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <%= moment(Date.now()).format("MMMM YYYY"); %>
+                </button>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="monthDropdownButton">
+                    <% var months = ['January', 'Feburary', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']; %>
+                    <% months.forEach(function(month) { %>
+                        <a class="dropdown-item" href="#"><%= month %> <%= moment(Date.now()).format("YYYY"); %></a>
+                    <%});%>
+                </div>
+            </div>
+        </div>
+    </div>
+    <table class="table table-responsive-lg mb-3">
+        <thead>
+        <tr>
+            <th scope="col"></th>
+            <th scope="col">Date</th>
+            <th scope="col">Name</th>
+            <th scope="col">Points</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% events.sort(function(a, b) {
+            a = new Date(a.date);
+            b = new Date(b.date);
+            return a > b ? -1 : a < b ? 1 : 0;
+        });%>
+        <% if (events.length > 0) { %>
+        <% events.forEach(function(item) { %>
+        <tr>
+            <%
+                var checked = false;
+                if (user.events.indexOf(item.id) != -1) {
+                    checked = true;
+                }
+            %>
+            <th>
+                <% if (checked) { %>
+                <input type="checkbox" aria-label="Checkbox for event <%=item.id%>" checked="true">
+                <% } else { %>
+                <input type="checkbox" aria-label="Checkbox for event <%=item.id%>">
+                <% } %>
+            </th>
+            <td><%= moment(item.date).format("M/D") %></td>
+            <td><%= item.name %> <% if (item.bonus) { %> <span class="text-muted">(BONUS)</span> <% } %> <% if (item.family) { %> <span class="text-muted">(FAMILY)</span> <% } %> <span class="badge badge-primary"><%= item.type %></span></td>
+            <td><%= item.points %></td>
+        </tr>
+        <%});%>
+        <% } %>
+        </tbody>
+    </table>
+    <div class="row">
+        <div class="col-lg">
+        </div>
+        <div class="col-lg-auto">
+        </div>
+        <div class="col-lg-auto justify-content-end">
+            <button type="button" class="btn btn-outline-secondary mr-2">View All Events</button>
+            <button type="button" class="btn btn-outline-primary float-right">Submit</button>
+        </div>
+    </div>
+</div>
+<%- include partials/footer.ejs %>
+<%- include partials/scripts.ejs %>
+</body>
+
+</html>

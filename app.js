@@ -5,7 +5,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var index = require('./routes/index');
+require('dotenv').config();
+
 var firebase = require('firebase');
 var config = {
     apiKey: process.env.FIREBASE_API_KEY,
@@ -15,14 +16,15 @@ var config = {
     storageBucket: process.env.FIREBASE_STORAGE_BUCKET + ".appspot.com",
     messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID
 };
+
 firebase.initializeApp(config);
 
 var app = express();
 var database = firebase.database();
 
+var index = require('./routes/index')(database);
 var users = require('./routes/users')(database);
 var events = require('./routes/events')(database);
-
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

@@ -1,16 +1,15 @@
 var express = require('express');
 var router = express.Router();
-var moment = require('moment');
+var mmt = require('moment');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
     res.render('index');
 });
 
-router.get('/points', function(req, res, next) {
-    res.render('points', {
-        token: "valid",
-        user: {
+module.exports = function(database) {
+    router.get('/points', function(req, res, next) {
+        var userDict = {
             isAdmin: true,
             username: "akeaswaran",
             password: "test",
@@ -23,56 +22,32 @@ router.get('/points', function(req, res, next) {
             gradYear: "2019",
             gradMonth: "May",
             status: "member",
-            events: [1, 5]
-        },
-        events: [
-            {
-                id: 1,
-                name: "test sporting event",
-                date: moment("2018-03-18").format("M/D"),
-                points: 10,
-                bonus: false,
-                family: false,
-                type: "sports"
-            },
-            {
-                id: 2,
-                name: "test bonus event 2",
-                date: moment("2018-03-17").format("M/D"),
-                points: 20,
-                bonus: true,
-                family: false,
-                type: "social"
-            },
-            {
-                id: 3,
-                name: "test social event 3",
-                date: moment("2018-03-16").format("M/D"),
-                points: 10,
-                bonus: false,
-                family: false,
-                type: "social"
-            },
-            {
-                id: 4,
-                name: "test family event 4",
-                date: moment("2018-03-15").format("M/D"),
-                points: 10,
-                bonus: false,
-                family: true,
-                type: "social"
-            },
-            {
-                id: 5,
-                name: "test mandatory event 5",
-                date: moment("2018-03-14").format("M/D"),
-                points: 5,
-                bonus: false,
-                family: false,
-                type: "mandatory"
-            }
-        ]
-    });
-});
+            events: []
+        };
 
-module.exports = router;
+        database.ref('event').orderByChild('date').endAt(Date.now()).once('value').then(function (snapshot) {
+            var dataArr = [];
+            snapshot.forEach(function(item) {
+                var itemDict = item.val();
+                itemDict.id = item.key;
+                dataArr.push(itemDict);
+            });
+            res.render('points', {
+                title: "Points | Ramblin' Reck Club",
+                token: "valid",
+                user: userDict,
+                events: dataArr,
+                moment: mmt
+            });
+        }).catch(function (error) {
+            res.render('points', {
+                title: "Points | Ramblin' Reck Club",
+                token: "valid",
+                user: userDict,
+                events: [],
+                moment: mmt
+            });
+        });
+    });
+    return router;
+};

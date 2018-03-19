@@ -1,0 +1,27 @@
+<div class="container">
+    <header class="blog-header py-3">
+        <div class="row flex-nowrap justify-content-between align-items-center">
+            <div class="col-3 pt-3" id="loggedInName">
+                <p class="text-muted">Logged in as <%= user.username %></p>
+            </div>
+            <div class="col-6 text-center" id="logo-container">
+                <a class="blog-header-logo text-dark" href="/points">Ramblin' Reck Club</a>
+                <!--<p class="text-muted" style="margin-top: 5px;">Spreading Joy since 1930</p>-->
+            </div>
+            <div class="col-3 d-flex justify-content-end align-items-center" id="userOptions">
+                <a class="btn btn-sm btn-outline-primary" href="/">Sign Out</a>
+            </div>
+        </div>
+    </header>
+    <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-between">
+            <a class="p-2" href="/events">Events</a>
+            <a class="p-2" href="#">Rankings</a>
+            <a class="p-2" href="#">Families</a>
+            <a class="p-2" href="http://reckclub.org/mediastorage">Media</a>
+            <% if (user.isAdmin) { %>
+            <a class="p-2" href="#" id="adminButton">Admin</a>
+            <% } %>
+        </nav>
+    </div>
+</div>
