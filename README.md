@@ -7,6 +7,8 @@ Building a new online presence and experience for the Ramblin' Reck Club at Geor
 * Clone this repo.
 * `cd` into this repo's root directory.
 * Run `npm install`.
+* Create a [Firebase](https://firebase.google.com) account and app. 
+* Create a `.env` file using `.env.example` and the information it requires from Firebase.
 * Run `bin/www` to start the server. 
 * Navigate to `localhost:3000` to see the site.
 
