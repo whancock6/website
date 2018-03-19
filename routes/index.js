@@ -5,7 +5,9 @@ var Event = require('events');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('index');
+    res.render('index', {
+        title: "Ramblin' Reck Club | Spreading Joy since 1930"
+    });
 });
 
 module.exports = function(database) {

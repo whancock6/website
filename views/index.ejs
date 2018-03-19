@@ -1,19 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <meta name="description" content="The online home of the Ramblin' Reck Club, a campus organization at the Georgia Institute of Technology dedicated to the promotion of Georgia Tech traditions and spirit and responsible for the Institute's mascot car - the Ramblin' Reck.">
-    <meta name="author" content="Ramblin' Reck Club">
-    <title>Ramblin' Reck Club | Spreading Joy since 1930</title>
-
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/fontawesome-all.min.css">
-</head>
+<%- include partials/head.ejs %>
 
 
 <body>
@@ -23,7 +11,6 @@
         <div class="row flex-nowrap justify-content-between align-items-center">
             <div class="offset-3 col-6 text-center">
                 <a class="blog-header-logo text-dark" href="#">Ramblin' Reck Club</a>
-                <!--<p class="text-muted" style="margin-top: 5px;">Spreading Joy since 1930</p>-->
             </div>
             <div class="col-3 d-flex justify-content-end align-items-center">
                 <a class="btn btn-sm btn-outline-primary" href="/points">Log In</a>
@@ -32,11 +19,34 @@
     </header>
     <div class="nav-scroller py-1 mb-2">
         <nav class="nav d-flex justify-content-between">
-            <a class="p-2" href="#">About Us</a>
-            <a class="p-2" href="#">The Reck</a>
-            <a class="p-2" href="#">Join</a>
+            <div class="btn-group">
+                <a class="p-2 dropdown-toggle" data-toggle="dropdown" id="aboutDropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">About Us</a>
+                <div class="dropdown-menu dropdown-menu-left" aria-labelledby="#aboutDropdown">
+                    <a class="dropdown-item" href="#">T-Book</a>
+                    <a class="dropdown-item" href="#">Members</a>
+                    <a class="dropdown-item" href="#">Committees</a>
+                    <a class="dropdown-item" href="#">Big Buzz Appearance Request</a>
+                </div>
+            </div>
+
+            <div class="btn-group">
+                <a class="p-2 dropdown-toggle" data-toggle="dropdown" id="reckDropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">The Reck</a>
+                <div class="dropdown-menu" aria-labelledby="#reckDropdown">
+                    <a class="dropdown-item" href="#">Drivers</a>
+                    <a class="dropdown-item" href="#">Reck Appearance Request</a>
+                </div>
+            </div>
+            <div class="btn-group">
+                <a class="p-2 dropdown-toggle" data-toggle="dropdown" id="joinDropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Join</a>
+                <div class="dropdown-menu" aria-labelledby="#joinDropdown">
+                    <a class="dropdown-item" href="#">Why You Should Join</a>
+                    <a class="dropdown-item" href="#">Club Information</a>
+                    <a class="dropdown-item" href="#">RECKruitment</a>
+                    <a class="dropdown-item" href="#">Probateship</a>
+                </div>
+            </div>
             <a class="p-2" href="#">Endowments</a>
-            <a class="p-2" href="#">History</a>
+            <a class="p-2" href="/reckhistory">History</a>
         </nav>
     </div>
 </div>
@@ -137,27 +147,9 @@
     </div>
 </div>
 
-<div class="container-fluid">
-    <footer class="footer text-center text-muted mb-3">
-        <p>© 2018 Ramblin' Reck Club. All Rights Reserved.</p>
-        <div class="d-flex justify-content-center align-items-center align-self-center" id="social-icon-holder">
-            <a class="col-1 rrc-social-icon" href="https://facebook.com/RamblinReckClub"><i class="fab fa-facebook fa-2x"></i></a>
-            <a class="col-1 rrc-social-icon" href="https://twitter.com/RamblinReckClub"><i class="fab fa-twitter fa-2x"></i></a>
-            <a class="col-1 rrc-social-icon" href="https://instagram.com/RamblinReckClub"><i class="fab fa-instagram fa-2x"></i></a>
-            <a class="col-1 rrc-social-icon" href="https://github.com/RamblinReckClub"><i class="fab fa-github fa-2x"></i></a>
-        </div>
-    </footer>
-</div>
+<%- include partials/footer.ejs %>
 
-<script src="/js/jquery-3.2.1.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-<script>
-    if ($(window).width() < 700) {
-        $(".rrc-social-icon").addClass("col-3 mr-0");
-        $(".rrc-social-icon").removeClass("col-1 mr-0");
-        $("#social-icon-holder").addClass("row");
-    }
-</script>
+<%- include partials/scripts.ejs %>
 </body>
 
 </html>

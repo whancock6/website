@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "update-history" : "mkdir -p public/reckhistory && cp -a ~/Documents/Websites/reck/_site/. public/reckhistory"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
