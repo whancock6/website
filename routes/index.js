@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var mmt = require('moment');
+var Event = require('events');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -25,21 +26,32 @@ module.exports = function(database) {
             events: []
         };
 
-        database.ref('event').orderByChild('date').endAt(Date.now()).once('value').then(function (snapshot) {
-            var dataArr = [];
-            snapshot.forEach(function(item) {
-                var itemDict = item.val();
-                itemDict.id = item.key;
-                dataArr.push(itemDict);
-            });
-            res.render('points', {
-                title: "Points | Ramblin' Reck Club",
-                token: "valid",
-                user: userDict,
-                events: dataArr,
-                moment: mmt
-            });
-        }).catch(function (error) {
+        var year = mmt(Date.now()).year();
+        var month = mmt(Date.now()).format('MM');
+        var count = 5;
+        var firstOfMonth = year + '-' + month + '-01';
+        database.ref('event')
+            .orderByChild('date')
+            .startAt(Date.parse(firstOfMonth))
+            .endAt(mmt(Date.now()).hour(12).minute(0).second(1).valueOf())
+            .limitToLast(Math.min(parseInt(count), 100))
+            .once('value')
+            .then(function (snapshot) {
+                var dataArr = [];
+                snapshot.forEach(function (item) {
+                    var itemDict = item.val();
+                    itemDict.id = item.key;
+                    dataArr.push(itemDict);
+                });
+                res.render('points', {
+                    title: "Points | Ramblin' Reck Club",
+                    token: "valid",
+                    user: userDict,
+                    events: dataArr,
+                    moment: mmt
+                });
+            }).catch(function (err) {
+            console.log('ERROR loading /points: ' + err);
             res.render('points', {
                 title: "Points | Ramblin' Reck Club",
                 token: "valid",

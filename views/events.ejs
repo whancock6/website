@@ -6,19 +6,28 @@
 <div class="container mb-3">
     <div class="row justify-content-between">
         <h2 class="col-auto">Events</h2>
-        <div class="col-auto">
-            <div class="dropdown">
-                <button class="btn btn-outline-primary dropdown-toggle" type="button" id="monthDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <%= moment(Date.now()).format("MMMM YYYY"); %>
-                </button>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="monthDropdownButton">
-                    <% var months = ['January', 'Feburary', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']; %>
-                    <% months.forEach(function(month) { %>
+        <ul class="col-auto nav">
+            <li class="nav-item">
+                <div class="dropdown">
+                    <button class="btn btn-outline-primary dropdown-toggle" type="button" id="monthDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <%= moment(Date.now()).format("MMMM YYYY"); %>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="monthDropdownButton">
+                        <% var months = ['January', 'Feburary', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']; %>
+                        <% months.forEach(function(month) { %>
                         <a class="dropdown-item" href="#"><%= month %> <%= moment(Date.now()).format("YYYY"); %></a>
-                    <%});%>
+                        <%});%>
+                    </div>
                 </div>
-            </div>
-        </div>
+            </li>
+            <% if (user.isAdmin) { %>
+            <li class="nav-item ml-1">
+                <button class="btn btn-primary" type="button">
+                    <i class="fas fa-plus"> </i> Add Event
+                </button>
+            </li>
+            <% } %>
+        </ul>
     </div>
     <table class="table table-responsive-lg mb-3">
         <thead>
@@ -26,7 +35,7 @@
             <th scope="col"></th>
             <th scope="col">Date</th>
             <th scope="col">Name</th>
-            <th scope="col">Points</th>
+            <th scope="col" class="align-content-end" style="text-align:right;">Points</th>
         </tr>
         </thead>
         <tbody>
@@ -52,8 +61,15 @@
                 <% } %>
             </th>
             <td><%= moment(item.date).format("M/D") %></td>
-            <td><%= item.name %> <% if (item.bonus) { %> <span class="text-muted">(BONUS)</span> <% } %> <% if (item.family) { %> <span class="text-muted">(FAMILY)</span> <% } %> <span class="badge badge-primary"><%= item.type %></span></td>
-            <td><%= item.points %></td>
+            <td>
+                <% if (user.isAdmin) { %>
+                <a class="btn-link" href="/event/<%= item.id %>"><%= item.name %></a>
+                <% } else { %>
+                <%= item.name %>
+                <% } %>
+                <% if (item.bonus) { %> <span class="text-muted">(BONUS)</span> <% } %> <% if (item.family) { %> <span class="text-muted">(FAMILY)</span> <% } %> <span class="badge badge-primary"><%= item.type %></span>
+            </td>
+            <td align="right"><%= item.points %></td>
         </tr>
         <%});%>
         <% } %>
@@ -65,8 +81,7 @@
         <div class="col-lg-auto">
         </div>
         <div class="col-lg-auto justify-content-end">
-            <button type="button" class="btn btn-outline-secondary mr-2">View All Events</button>
-            <button type="button" class="btn btn-outline-primary float-right">Submit</button>
+            <button type="button" class="btn btn-primary float-right">Submit</button>
         </div>
     </div>
 </div>

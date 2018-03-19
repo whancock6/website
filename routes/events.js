@@ -1,31 +1,6 @@
 var express = require('express');
-var router = express.Router();
+var rtr = express.Router();
 var mmt = require('moment');
-
-/* GET events listing. */
-router.get('/', function(req, res, next) {
-    var userDict = {
-        isAdmin: true,
-        username: "akeaswaran",
-        password: "test",
-        fullName: "Akshay Easwaran",
-        email: "akeaswaran@me.com",
-        streetAddress: "1990 Willshire Glen",
-        city: "Alpharetta",
-        state: "GA",
-        //bigReckerPair: "",
-        gradYear: "2019",
-        gradMonth: "May",
-        status: "member",
-        events: []
-    };
-    res.render('events', {
-        title: "Events | Ramblin' Reck Club",
-        user: userDict,
-        moment: mmt,
-        events: []
-    });
-});
 
 function onComplete(error, res, successMessage) {
     if (error) {
@@ -41,45 +16,193 @@ function onComplete(error, res, successMessage) {
     }
 }
 
-module.exports = function(database) {
-    router.get('/list', function(req, res, next) {
-        database.ref('event').orderByChild('date').endAt(Date.now()).once('value').then(function (snapshot) {
+function getEventList(database, success, error) {
+    database.ref('event')
+        .orderByChild('date')
+        .endAt(Date.now())
+        .once('value')
+        .then(function (snapshot) {
             var dataArr = [];
             snapshot.forEach(function(item) {
                 var itemDict = item.val();
                 itemDict.id = item.key;
                 dataArr.push(itemDict);
             });
+            success(dataArr);
+
+        }).catch(function (err) {
+        error(err);
+    });
+}
+
+function getEventListCount(database, count, success, error) {
+    database.ref('event')
+        .limitToLast(Math.min(parseInt(count), 100))
+        .once('value')
+        .then(function (snapshot) {
+            var dataArr = [];
+            snapshot.forEach(function(item) {
+                var itemDict = item.val();
+                itemDict.id = item.key;
+                dataArr.push(itemDict);
+            });
+            success(dataArr);
+        }).catch(function (err) {
+            error(err);
+        });
+}
+
+function getEventListDate(database, year, month, success, error) {
+    var firstOfMonth = year + '-' + month + '-01';
+    database.ref('event')
+        .orderByChild('date')
+        .startAt(Date.parse(firstOfMonth))
+        .endAt(Date.parse(mmt(firstOfMonth).endOf('month').format('YYYY-MM-DD')))
+        .once('value')
+        .then(function (snapshot) {
+            var dataArr = [];
+            snapshot.forEach(function(item) {
+                var itemDict = item.val();
+                itemDict.id = item.key;
+                dataArr.push(itemDict);
+            });
+            success(dataArr);
+        }).catch(function (err) {
+            error(err);
+    });
+}
+
+function getEventListRecent(database, year, month, count, success, error) {
+    var firstOfMonth = year + '-' + month + '-01';
+    var cnt = (count != null) ? parseInt(count) : 10;
+    database.ref('event')
+        .orderByChild('date')
+        .startAt(Date.parse(firstOfMonth))
+        .endAt(mmt(Date.now()).hour(12).minute(0).second(1).valueOf())
+        .limitToLast(Math.min(parseInt(cnt), 100))
+        .once('value')
+        .then(function (snapshot) {
+            var dataArr = [];
+            snapshot.forEach(function(item) {
+                var itemDict = item.val();
+                itemDict.id = item.key;
+                dataArr.push(itemDict);
+            });
+            success(dataArr);
+        }).catch(function (err) {
+        error(err);
+    });
+}
+
+module.exports = function(database) {
+    /* GET events listing. */
+    rtr.get('/', function(req, res, next) {
+        var userDict = {
+            isAdmin: true,
+            username: "akeaswaran",
+            password: "test",
+            fullName: "Akshay Easwaran",
+            email: "akeaswaran@me.com",
+            streetAddress: "1990 Willshire Glen",
+            city: "Alpharetta",
+            state: "GA",
+            //bigReckerPair: "",
+            gradYear: "2019",
+            gradMonth: "May",
+            status: "member",
+            events: []
+        };
+        var todayMonth = mmt().format('M');
+        var todayYear = mmt().format('YYYY');
+        getEventListDate(database, todayYear, todayMonth, function (results) {
+            res.render('events', {
+                title: "Events | Ramblin' Reck Club",
+                token: "valid",
+                user: userDict,
+                moment: mmt,
+                events: results
+            });
+        }, function(err) {
+            console.log('ERROR loading /events: ' + err);
+            res.render('events', {
+                title: "Events | Ramblin' Reck Club",
+                token: "valid",
+                user: userDict,
+                moment: mmt,
+                events: []
+            });
+        })
+    });
+
+    rtr.get('/list', function(req, res, next) {
+        getEventList(database, function(results) {
             res.status(200).send({
                 "status" : "ok",
-                "events" : dataArr
+                "events" : results
             });
-        }).catch(function (error) {
+        }, function (err) {
             res.status(500).send({
                 "status" : "bad",
-                "message": error,
+                "message": err,
                 "events" : []
             });
         });
     });
 
-    router.get('/list/:count', function(req, res, next) {
-        database.ref('event').limitToFirst(parseInt(req.params.count)).orderByChild('date').startAt(Date.parse('2018-01-01')).endAt(Date.now()).once('value', function(snapshot) {
-            res.status(200).send(snapshot);
+    rtr.get('/list/:count', function(req, res, next) {
+        getEventListCount(database, req.params.count, function (results) {
+            res.status(200).send({
+                "status" : "ok",
+                "events" : results
+            });
+        }, function (err) {
+            res.status(500).send({
+                "status" : "bad",
+                "message": err,
+                "events" : []
+            });
         });
     });
 
-    // router.get('/list/:year/:month', function(req, res, next) {
-    //     database.ref('event').limitToFirst(parseInt(req.params.count)).orderByChild('date').startAt(Date.parse('2018-01-01')).endAt(Date.now()).once('value', function(snapshot) {
-    //         res.status(200).send(snapshot);
-    //     });
-    // });
+    rtr.get('/list/year/:year/month/:month', function(req, res, next) {
+        var year = req.params.year;
+        var month = req.params.month;
+        getEventListDate(database, year, month, function (results) {
+            res.status(200).send({
+                "status" : "ok",
+                "events" : results
+            });
+        }, function (err) {
+            res.status(500).send({
+                "status" : "bad",
+                "message": err,
+                "events" : []
+            });
+        })
+    });
 
-    router.put('/create', function(req, res, next) {
+    rtr.get('/list/recent/:count', function(req, res, next) {
+        var year = mmt(Date.now()).year();
+        var month = mmt(Date.now()).month();
+        getEventListRecent(database, year, month, req.params.count, function (results) {
+            res.status(200).send({
+                "status" : "ok",
+                "events" : results
+            });
+        }, function(err) {
+            res.status(500).send({
+                "status" : "bad",
+                "message": err,
+                "events" : []
+            });
+        })
+    });
+
+    rtr.put('/create', function(req, res, next) {
         var requestData = req.body;
         database.ref('event').push({
             name: requestData.name,
-            date: Date.parse(requestData.date),
+            date: mmt(requestData.date).hour(12).minute(0).second(0).valueOf(),
             points: requestData.points,
             bonus: (requestData.bonus === "true"),
             family: (requestData.family === "true"),
@@ -91,7 +214,7 @@ module.exports = function(database) {
         });
     });
 
-    router.put('/update/:id', function(req, res, next) {
+    rtr.put('/update/:id', function(req, res, next) {
         var requestData = req.body;
         database.ref('event/' + req.params.id).set({
             name: requestData.name,
@@ -106,7 +229,7 @@ module.exports = function(database) {
         });
     });
 
-    router.delete('/delete/:id', function(req, res, next) {
+    rtr.delete('/delete/:id', function(req, res, next) {
         database.ref('event/' + req.params.id).remove()
             .then(function () {
                 onComplete(null, res, "Event removed successfully!")
@@ -115,5 +238,12 @@ module.exports = function(database) {
                 onComplete(error, res, "Remove failed: " + error.message);
             });
     });
-    return router;
+
+    return {
+        router: rtr,
+        getEventList: getEventList,
+        getEventListRecent: getEventListRecent,
+        getEventListCount: getEventListCount,
+        getEventListData: getEventListDate
+    }
 };
