@@ -6,7 +6,16 @@ var Event = require('events');
 /* GET home page. */
 router.get('/', function(req, res, next) {
     res.render('index', {
-        title: "Ramblin' Reck Club | Spreading Joy since 1930"
+        title: "Ramblin' Reck Club | Spreading Joy since 1930",
+        moment: mmt
+    });
+});
+
+/* GET home page. */
+router.get('/login', function(req, res, next) {
+    res.render('login', {
+        title: "Member Login | Ramblin' Reck Club",
+        moment: mmt
     });
 });
 
