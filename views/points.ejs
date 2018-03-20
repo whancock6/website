@@ -9,13 +9,16 @@
             <div class="col-4">
                 <h3 class="text-center jumbotron-third-title">Points</h3>
                 <h1 class="text-center jumbotron-third-detail">
-                    <% if (user.events.length > 0) {
+                    <% if (user.events) {
                         var total = 0;
-                        user.events.forEach(function(index) {
+                        console.log(events[0]);
+                        user.events.forEach(function(id) {
                             var event = events.find(function(item) {
-                                return item.id == index;
+                                return item.id == id;
                             });
-                            total += event.points;
+                            if (event) {
+                                total += parseInt(event.points);
+                            }
                         });
                     %>
                         <%= total %>
@@ -30,7 +33,7 @@
             </div>
             <div class="col-4">
                 <h3 class="text-center jumbotron-third-title">Events</h3>
-                <h1 class="text-center jumbotron-third-detail"><%= user.events.length %></h1>
+                <h1 class="text-center jumbotron-third-detail"><%= (user.hasOwnProperty('events') ? user.events.length : 0) %></h1>
             </div>
         </div>
     </div>
@@ -53,11 +56,11 @@
             return a > b ? -1 : a < b ? 1 : 0;
         });%>
         <% if (events.length > 0) { %>
+            <% events = events.slice(0, 5) %>
             <% events.forEach(function(item) { %>
                 <tr>
-                    <%
-                        var checked = false;
-                        if (user.events.indexOf(item.id) != -1) {
+                    <% var checked = false;
+                        if (user.hasOwnProperty('events') && user.events.indexOf(item.id) != -1) {
                             checked = true;
                         }
                     %>

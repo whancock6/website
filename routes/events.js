@@ -78,7 +78,7 @@ function getEventListRecent(database, year, month, count, success, error) {
     database.ref('event')
         .orderByChild('date')
         .startAt(Date.parse(firstOfMonth))
-        .endAt(mmt(Date.now()).hour(12).minute(0).second(1).valueOf())
+        .endAt(mmt(Date.now()).hour(23).minute(59).second(59).valueOf())
         .limitToLast(Math.min(parseInt(cnt), 100))
         .once('value')
         .then(function (snapshot) {
@@ -94,44 +94,65 @@ function getEventListRecent(database, year, month, count, success, error) {
     });
 }
 
-module.exports = function(database) {
+module.exports = function(firebase, database) {
     /* GET events listing. */
     rtr.get('/', function(req, res, next) {
-        var userDict = {
-            isAdmin: true,
-            username: "akeaswaran",
-            password: "test",
-            fullName: "Akshay Easwaran",
-            email: "akeaswaran@me.com",
-            streetAddress: "1990 Willshire Glen",
-            city: "Alpharetta",
-            state: "GA",
-            //bigReckerPair: "",
-            gradYear: "2019",
-            gradMonth: "May",
-            status: "member",
-            events: []
-        };
-        var todayMonth = mmt().format('M');
-        var todayYear = mmt().format('YYYY');
-        getEventListDate(database, todayYear, todayMonth, function (results) {
-            res.render('events', {
-                title: "Events | Ramblin' Reck Club",
-                token: "valid",
-                user: userDict,
-                moment: mmt,
-                events: results
+        if (firebase.auth().currentUser) {
+            getEventList(database, function (results) {
+                firebase
+                    .database()
+                    .ref('user/' + firebase.auth().currentUser.uid)
+                    .once('value')
+                    .then(function(snapshot) {
+                        var user = snapshot.val();
+                        user.events = user.events.filter(function(item) {
+                            return (item != null && item.length !== 0);
+                        });
+                        res.render('events', {
+                            title: "Events | Ramblin' Reck Club",
+                            user: user,
+                            moment: mmt,
+                            events: results
+                        });
+                    }).catch(function(err) {
+                        console.log('ERROR: ' + err);
+                        res.render('events', {
+                            title: "Events | Ramblin' Reck Club",
+                            user: firebase.auth().currentUser,
+                            moment: mmt,
+                            events: results
+                        });
+                    });
+            }, function(err) {
+                console.log('ERROR loading /events: ' + err);
+                firebase
+                    .database()
+                    .ref('user/' + firebase.auth().currentUser.uid)
+                    .once('value')
+                    .then(function(snapshot) {
+                        var user = snapshot.val();
+                        user.events = user.events.filter(function(item) {
+                            return (item != null && item.length !== 0);
+                        });
+                        res.render('events', {
+                            title: "Events | Ramblin' Reck Club",
+                            user: user,
+                            moment: mmt,
+                            events: []
+                        });
+                    }).catch(function(err) {
+                    console.log('ERROR: ' + err);
+                    res.render('events', {
+                        title: "Events | Ramblin' Reck Club",
+                        user: firebase.auth().currentUser,
+                        moment: mmt,
+                        events: []
+                    });
+                });
             });
-        }, function(err) {
-            console.log('ERROR loading /events: ' + err);
-            res.render('events', {
-                title: "Events | Ramblin' Reck Club",
-                token: "valid",
-                user: userDict,
-                moment: mmt,
-                events: []
-            });
-        })
+        } else {
+            res.redirect('/login');
+        }
     });
 
     rtr.get('/list', function(req, res, next) {
