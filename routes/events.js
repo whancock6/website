@@ -125,15 +125,13 @@ module.exports = function(firebase) {
                             title: "Events | Ramblin' Reck Club",
                             user: user,
                             moment: mmt,
+                            month: month,
                             events: results
                         });
                     }).catch(function(err) {
                         console.log('ERROR: ' + err);
-                        res.render('events', {
-                            title: "Events | Ramblin' Reck Club",
-                            user: firebase.auth().currentUser,
-                            moment: mmt,
-                            events: results
+                        res.render('error', {
+                            error: err
                         });
                     });
             }, function(err) {
@@ -151,15 +149,13 @@ module.exports = function(firebase) {
                             title: "Events | Ramblin' Reck Club",
                             user: user,
                             moment: mmt,
-                            events: []
+                            events: [],
+                            month: month
                         });
                     }).catch(function(err) {
                         console.log('ERROR: ' + err);
-                        res.render('events', {
-                            title: "Events | Ramblin' Reck Club",
-                            user: firebase.auth().currentUser,
-                            moment: mmt,
-                            events: []
+                        res.render('error', {
+                            error: err
                         });
                     });
             });
@@ -219,15 +215,51 @@ module.exports = function(firebase) {
             var year = req.params.year;
             var month = req.params.month;
             getEventListDate(firebase, year, month, function (results) {
-                res.status(200).send({
-                    "status" : "ok",
-                    "events" : results
+                firebase
+                    .database()
+                    .ref('user/' + firebase.auth().currentUser.uid)
+                    .once('value')
+                    .then(function(snapshot) {
+                        var user = snapshot.val();
+                        user.events = user.events.filter(function(item) {
+                            return (item != null && item.length !== 0);
+                        });
+                        res.render('events', {
+                            title: "Events | Ramblin' Reck Club",
+                            user: user,
+                            moment: mmt,
+                            events: results,
+                            month: month
+                        });
+                    }).catch(function(err) {
+                        console.log('ERROR: ' + err);
+                        res.render('error', {
+                            error: err
+                        });
                 });
-            }, function (err) {
-                res.status(400).send({
-                    "status" : "bad",
-                    "message": err,
-                    "events" : []
+            }, function (evErr) {
+                console.log('ERROR: ' + evErr);
+                firebase
+                    .database()
+                    .ref('user/' + firebase.auth().currentUser.uid)
+                    .once('value')
+                    .then(function(snapshot) {
+                        var user = snapshot.val();
+                        user.events = user.events.filter(function(item) {
+                            return (item != null && item.length !== 0);
+                        });
+                        res.render('events', {
+                            title: "Events | Ramblin' Reck Club",
+                            user: user,
+                            moment: mmt,
+                            events: [],
+                            month: month
+                        });
+                    }).catch(function(err) {
+                        console.log('ERROR: ' + err);
+                        res.render('error', {
+                            error: err
+                        });
                 });
             });
         } else {
@@ -266,7 +298,7 @@ module.exports = function(firebase) {
 
     rtr.get('/create', function(req, res) {
         if (firebase.auth().currentUser) {
-            res.render('add-event', {
+            res.render('create-event', {
                 title: "Create Event | Ramblin' Reck Club",
                 user: firebase.auth().currentUser,
                 moment: mmt
@@ -312,51 +344,11 @@ module.exports = function(firebase) {
                     var event = snapshot.val();
                     event.id = snapshot.key;
                     res.render('update-event', {
-                        title: "Create Event | Ramblin' Reck Club",
+                        title: "Update Event | Ramblin' Reck Club",
                         user: firebase.auth().currentUser,
                         event: event,
                         moment: mmt
                     });
-                })
-                .catch(function(err) {
-                    res.render('error', {
-                        message: "Event " + req.params.id + " not found",
-                        error: err
-                    });
-                });
-        } else {
-            res.redirect('/login');
-        }
-    });
-
-    rtr.get('/:id', function(req, res) {
-        if (firebase.auth().currentUser) {
-            firebase
-                .database()
-                .ref('event/' + req.params.id)
-                .once('value')
-                .then(function(snapshot) {
-                    var event = snapshot.val();
-                    event.id = snapshot.key;
-                    firebase
-                        .database()
-                        .ref('user/' + firebase.auth().currentUser.uid)
-                        .once('value')
-                        .then(function(snap) {
-                            var curUser = snap.val();
-                            curUser.uid = snap.key;
-                            res.render('view-event', {
-                                title: "Event | Ramblin' Reck Club",
-                                user: curUser,
-                                event: event
-                            });
-                        })
-                        .catch(function (usrErr) {
-                            res.render('error', {
-                                message: "User " + firebase.auth().currentUser.uid + " not found",
-                                error: usrErr
-                            });
-                        });
                 })
                 .catch(function(err) {
                     res.render('error', {
@@ -374,12 +366,12 @@ module.exports = function(firebase) {
             var requestData = req.body;
             firebase.database().ref('event/' + req.params.id).set({
                 name: requestData.name,
-                date: requestData.date,
+                date: mmt(requestData.date).hour(12).minute(0).second(0).valueOf(),
                 points: requestData.points,
                 bonus: requestData.bonus,
                 family: requestData.family,
                 type: requestData.type,
-                updatedAt: new Date()
+                updatedAt: Date.now()
             }, function(error) {
                 onComplete(error, res, "Event updated successfully!")
             });

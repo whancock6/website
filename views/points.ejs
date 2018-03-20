@@ -72,12 +72,12 @@
                     </th>
                     <td><%= moment(item.date).format("M/D") %></td>
                     <td>
-                        <% if (user.isAdmin) { %>
-                        <a class="btn-link" href="/event/<%= item.id %>"><%= item.name %></a> 
+                        <% if (user.isAdmin || user.isEventAdmin) { %>
+                        <a class="btn-link" href="/events/update/<%= item.id %>"><%= item.name %></a>
                         <% } else { %>
                         <%= item.name %>
                         <% } %>
-                        <% if (item.bonus) { %> <span class="text-muted">(BONUS)</span> <% } %> <% if (item.family) { %> <span class="text-muted">(FAMILY)</span> <% } %> <span class="badge badge-primary"><%= item.type %></span>
+                        <% if (item.bonus == true || item.bonus === 'true') { %> <span class="text-muted">(BONUS)</span> <% } %> <% if (item.family == true || item.family === 'true') { %> <span class="text-muted">(FAMILY)</span> <% } %> <span class="badge badge-primary"><%= item.type %></span>
                     </td>
                     <td><%= item.points %></td>
                 </tr>

@@ -1,12 +1,11 @@
 <html lang="en"><head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="The online home of the Ramblin' Reck Club, a campus organization at the Georgia Institute of Technology dedicated to the promotion of Georgia Tech traditions and spirit and responsible for the Institute's mascot car - the Ramblin' Reck.">
+    <meta name="author" content="Ramblin' Reck Club">
 
     <title><%= title %></title>
 
-    <!-- Bootstrap core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/main.css" rel="stylesheet">
     <link href="/css/form-validation.css" rel="stylesheet">
@@ -28,7 +27,7 @@
                 <div class="row">
                     <div class="col-12 mb-3">
                         <label for="event-name">Event name</label>
-                        <input type="text" class="form-control" id="event-name" placeholder="" value="" required="" size="32" maxlength="32">
+                        <input type="text" class="form-control" id="event-name" placeholder="" value="<%= event.name %>" required="" size="32" maxlength="32">
                         <div class="invalid-feedback">
                             Valid event name is required.
                         </div>
@@ -39,10 +38,30 @@
                     <div class="col-md-6 mb-3">
                         <label for="event-type">Type</label>
                         <select class="custom-select d-block w-100" id="event-type" required="">
-                            <option value="social">Social</option>
-                            <option value="work">Work</option>
-                            <option value="sports">Sports</option>
-                            <option value="mandatory">Mandatory</option>
+                            <option value="social"
+                            <% if ("social" == event.type) { %>
+                            <% %>
+                            selected="selected"
+                            <% } %>
+                            >Social</option>
+                            <option value="work"
+                                    <% if ("work" == event.type) { %>
+                                    <% %>
+                                    selected="selected"
+                                    <% } %>
+                            >Work</option>
+                            <option value="sports"
+                                    <% if ("sports" == event.type) { %>
+                                    <% %>
+                                    selected="selected"
+                                    <% } %>
+                            >Sports</option>
+                            <option value="mandatory"
+                                    <% if ("mandatory" == event.type) { %>
+                                    <% %>
+                                    selected="selected"
+                                    <% } %>
+                            >Mandatory</option>
                         </select>
                         <div class="invalid-feedback">
                             Please select a valid type.
@@ -50,7 +69,7 @@
                     </div>
                     <div class="col-md-3 mb-3">
                         <label for="event-points">Points</label>
-                        <input type="text" class="form-control" id="event-points" name="event-points" size="3" maxlength="3" readonly="readonly">
+                        <input type="text" class="form-control" id="event-points" value="<%= event.points %>" name="event-points" size="3" maxlength="3" readonly="readonly">
                     </div>
                 </div>
 
@@ -60,12 +79,12 @@
                         <select class="custom-select d-block w-100" id="event-month" required="">
                             <% var months = ['January', 'Feburary', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']; %>
                             <% months.forEach(function(month) { %>
-                                <option value="<%= month %>"
-                                <% if (month == moment().format('MMMM')) { %>
+                            <option value="<%= month %>"
+                                    <% if (month == moment(event.date).format('MMMM')) { %>
                                     <% %>
                                     selected="selected"
-                                <% } %>
-                                 ><%= month %></option>
+                                    <% } %>
+                            ><%= month %></option>
                             <%});%>
                         </select>
                         <div class="invalid-feedback">
@@ -76,15 +95,14 @@
                         <label for="event-day">Day</label>
                         <select class="custom-select d-block w-100" id="event-day" required="">
                             <% for (var i = 1; i < 32; i++) { %>
-                                <option value="<%= i %>"
-                                        <% if (i == moment().format('D')) { %>
-                                        <% %>
-                                        selected="selected"
-                                        <% } %>
-                                ><%= i %></option>
+                            <option value="<%= i %>"
+                                    <% if (i == moment(event.date).format('D')) { %>
+                                    <% %>
+                                    selected="selected"
+                                    <% } %>
+                            ><%= i %></option>
                             <%}%>
                         </select>
-                        <!--<input type="text" class="form-control" id="event-day" placeholder="" required="">-->
                         <div class="invalid-feedback">
                             Event day required.
                         </div>
@@ -92,7 +110,7 @@
                     <div class="col-md-3 mb-3">
                         <label for="event-year">Year</label>
                         <select class="custom-select d-block w-100" id="event-year" required="">
-                            <% var year = moment().format('YYYY'); %>
+                            <% var year = moment(event.date).format('YYYY'); %>
                             <option selected="selected" value="<%= year %>"><%=year %></option>
                         </select>
                         <div class="invalid-feedback">
@@ -102,15 +120,20 @@
                 </div>
                 <hr class="mb-4">
                 <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="family-event">
+                    <input type="checkbox" class="custom-control-input" id="family-event" <% if (event.family == true || event.family === 'true') {%>
+                           checked="checked"
+                            <% } %>
+                    >
                     <label class="custom-control-label" for="family-event">Family event?</label>
                 </div>
                 <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="bonus-event">
+                    <input type="checkbox" class="custom-control-input" id="bonus-event" <% if (event.bonus == true || event.bonus === 'true') {%>
+                           checked="checked"
+                            <% } %>>
                     <label class="custom-control-label" for="bonus-event">Bonus event?</label>
                 </div>
                 <hr class="mb-4">
-                <button class="btn btn-primary btn-lg btn-block" type="submit">Create event</button>
+                <button class="btn btn-primary btn-lg btn-block" type="submit">Update event</button>
             </form>
         </div>
     </div>
@@ -121,17 +144,17 @@
 <!-- Placed at the end of the document so the pages load faster -->
 <%- include partials/scripts.ejs %>
 <script>
-    function createEvent() {
+    function updateEvent() {
         $.ajax({
-            url: '/events/create',
+            url: '/events/update/<%= event.id %>',
             type: 'PUT',
             data: {
                 name: $('#event-name').val().substring(0,32),
                 type: $('#event-type').val(),
                 points: $('#event-points').val(),
-                date: $('#event-month').val() + ' ' + $('#event-day').val() + ', ' + $('#event-year').val(),
-                family: $('#family-event').is(':checked'),
-                bonus: $('#bonus-event').is(':checked')
+                date: moment($('#event-month').val() + ' ' + $('#event-day').val() + ', ' + $('#event-year').val()).format(),
+                family: ($('#family-event').is(':checked') == true) ? true : false,
+                bonus: ($('#bonus-event').is(':checked') == true) ? true : false
             },
             contentType: 'application/x-www-form-urlencoded',
             dataType: 'json',
@@ -195,7 +218,7 @@
                     if (form.checkValidity() === false) {
                         event.stopPropagation();
                     } else {
-                        createEvent();
+                        updateEvent();
                     }
                     form.classList.add('was-validated');
                 }, false);
