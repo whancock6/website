@@ -23,8 +23,8 @@ var app = express();
 var database = firebase.database();
 
 var index = require('./routes/index');
-var users = require('./routes/users')(database);
-var events = require('./routes/events')(firebase, database);
+var users = require('./routes/users')(firebase);
+var events = require('./routes/events')(firebase);
 var points = require('./routes/points')(firebase);
 var login = require('./routes/login')(firebase);
 

@@ -11,7 +11,6 @@
                 <h1 class="text-center jumbotron-third-detail">
                     <% if (user.events) {
                         var total = 0;
-                        console.log(events[0]);
                         user.events.forEach(function(id) {
                             var event = events.find(function(item) {
                                 return item.id == id;
@@ -72,7 +71,14 @@
                         <% } %>
                     </th>
                     <td><%= moment(item.date).format("M/D") %></td>
-                    <td><%= item.name %> <% if (item.bonus) { %> <span class="text-muted">(BONUS)</span> <% } %> <% if (item.family) { %> <span class="text-muted">(FAMILY)</span> <% } %> <span class="badge badge-primary"><%= item.type %></span></td>
+                    <td>
+                        <% if (user.isAdmin) { %>
+                        <a class="btn-link" href="/event/<%= item.id %>"><%= item.name %></a> 
+                        <% } else { %>
+                        <%= item.name %>
+                        <% } %>
+                        <% if (item.bonus) { %> <span class="text-muted">(BONUS)</span> <% } %> <% if (item.family) { %> <span class="text-muted">(FAMILY)</span> <% } %> <span class="badge badge-primary"><%= item.type %></span>
+                    </td>
                     <td><%= item.points %></td>
                 </tr>
             <%});%>

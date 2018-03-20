@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<%- include partials/head.ejs %>
+<body>
+<%- include partials/header.ejs %>
+<div class="container mb-3">
+    <div class="row justify-content-between">
+        <h2 class="col-auto">
+            <% if (selectedUser.fullName.length > 0) { %>
+                <%= selectedUser.fullName %> <span class="small text-muted">(<%= selectedUser.username %>)</span>
+            <% } else if (selectedUser.username.length > 0) { %>
+                <%= selectedUser.username %>
+            <% } else if (selectedUser.email.length > 0) { %>
+                <%= selectedUser.email %>
+            <% } else { %>
+                Unknown
+            <% } %>
+            <% if (selectedUser.uid === user.uid) {%>
+            <div class="nav-item">
+                <button class="btn btn-outline-primary btn-sm" type="button">Edit</button>
+            </div>
+            <% } %>
+        </h2>
+    </div>
+</div>
+<div class="container mb-3">
+<p class="small text-muted text-center">More information coming soon...</p>
+</div>
+<%- include partials/footer.ejs %>
+<%- include partials/scripts.ejs %>
+</body>

@@ -34,7 +34,8 @@ module.exports = function(firebase) {
                             user.events = user.events.filter(function(item) {
                                 return (item != null && item.length !== 0);
                             });
-                            //console.log(user.events);
+                            user.uid = snapshot.key;
+
                             res.render('points', {
                                 title: "Points | Ramblin' Reck Club",
                                 token: "valid",
@@ -63,6 +64,7 @@ module.exports = function(firebase) {
                             user.events = user.events.filter(function(item) {
                                 return (item != null && item.length !== 0);
                             });
+                            user.uid = snapshot.key;
                             res.render('points', {
                                 title: "Points | Ramblin' Reck Club",
                                 token: "valid",
