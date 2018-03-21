@@ -36,7 +36,7 @@
                 <a class="btn-link" href="/members/view/<%= item.uid %>"><%= item.fullName %></a>
                 <span class="badge badge-primary"><%= item.status %></span>
             </td>
-            <td>0</td>
+            <td><%= (item.hasOwnProperty('points') ? item.points : 0)%></td>
         </tr>
         <%});%>
         <% } %>

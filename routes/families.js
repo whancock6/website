@@ -35,7 +35,7 @@ module.exports = function(firebase) {
     });
     // router.get('/edit', function(req, res, next) {
     //     if (firebase.auth().currentUser) {
-    //         
+    //
     //     } else {
     //         return res.redirect('/login');
     //     }
