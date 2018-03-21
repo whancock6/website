@@ -25,8 +25,13 @@
         </tr>
         </thead>
         <tbody>
+        <!-- we should show multiple sorts here... (name, points, etc); default should be points -->
         <% users.sort(function(a, b) {
-            return a.firstName > b.firstName ? -1 : a.firstName < b.firstName ? 1 : (a.lastName > b.lastName) ? -1 : (a.lastName < b.lastName) ? 1 : 0;
+            if (a.hasOwnProperty('points')) {
+                return (a.points > b.points) ? -1 : (a.points < b.points ? 1 : (a.firstName > b.firstName) ? -1 : (a.firstName < b.firstName) ? 1 : (a.lastName > b.lastName) ? -1 : (a.lastName < b.lastName) ? 1 : 0);
+            } else {
+                return (a.firstName > b.firstName) ? -1 : (a.firstName < b.firstName) ? 1 : (a.lastName > b.lastName) ? -1 : (a.lastName < b.lastName) ? 1 : 0;
+            }
         });%>
         <% if (users.length > 0) { %>
         <% users.forEach(function(item, idx) { %>
