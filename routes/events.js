@@ -439,7 +439,8 @@ module.exports = function(firebase) {
             })
         } else {
             var userId = firebase.auth().currentUser.uid;
-
+            // REMINDER: change user.events retrieval to get keys!!!
+            // REMINDER: change events.attendees retrieval to get user keys if value is true!!!
             var removedEvents = req.body.removedEvents;
             var newEvents = diffArrays(removedEvents, req.body.newEvents);
 
