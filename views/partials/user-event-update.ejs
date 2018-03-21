@@ -1,0 +1,98 @@
+<script>
+    var events = <%- JSON.stringify(events) %>;
+    var userEvents = <%- user.hasOwnProperty('events') ? JSON.stringify(user.events) : JSON.stringify([]) %>;
+    var eventIds = events.map(function(item) {
+        return item.id;
+    });
+    console.log(events);
+    console.log(eventIds);
+    console.log(userEvents)
+    // ENABLE ONCE YOU FIGURE OUT HOW TO DO ADD/SUBTRACT WITH EVENT IDS IN FIREBASE
+    $('#submit-points-button').on('click', function(event) {
+        event.preventDefault();
+        var newEvents = [];
+        $('.newly-selected').each(function(idx) {
+            var eventId = $(this).attr('aria-label');
+            if (eventIds.indexOf(eventId) !== -1) {
+                var event = events[eventIds.indexOf(eventId)];
+                newEvents.push({
+                    id: event.id,
+                    points: event.points
+                });
+            } else {
+                console.log(eventId + " not found for add");
+            }
+        });
+        console.log("New: " + JSON.stringify(newEvents));
+
+        var removedEvents = [];
+        $('.newly-removed').each(function(idx) {
+            var eventId = $(this).attr('aria-label');
+            if (eventIds.indexOf(eventId) !== -1) {
+                var event = events[eventIds.indexOf(eventId)];
+                removedEvents.push({
+                    id: event.id,
+                    points: event.points
+                });
+            } else {
+                console.log(eventId + " not found for remove");
+            }
+        });
+        console.log("Removed: " + JSON.stringify(removedEvents));
+
+        $.ajax({
+            url: '/events/add-event',
+            type: 'PUT',
+            data: {
+                newEvents: JSON.stringify(newEvents),
+                removedEvents: JSON.stringify(removedEvents),
+                points: <%= (user.hasOwnProperty('points') ? user.points : 0) %>
+            },
+            success: function(result) {
+                console.log(result);
+                window.location.reload(true);
+            },
+            failure: function(err) {
+                console.log(err);
+                alert(err);
+            }
+        });
+    });
+
+    $(document).ready(function() {
+        console.log('jquery loaded');
+        $('.event-checkbox').on('change', function(event) {
+            // if not originally selected (verify with id existence in user.events) and now selected:
+            // add newly-selected
+            // else if originally selected (verify with id existence in user.events) and now deselected:
+            // add newly-removed
+            // else if not originally selected and current status is deselected:
+            // do not add a class
+            // else if originally selected and current status is selected:
+            // do not add a class
+            // else
+            // do not add a class
+            console.log('checking .event-checkbox status');
+            var eventId = $(this).attr('aria-label');
+            console.log(eventId + " changed checked status");
+
+            var originallySelected = false;
+            if (userEvents.indexOf(eventId) !== -1) {
+                originallySelected = true;
+            }
+
+            var currentlySelected = ($(this).is(':checked') === true);
+
+            if (!originallySelected && currentlySelected) {
+                $(this).addClass('newly-selected');
+            } else if (originallySelected && !currentlySelected) {
+                $(this).addClass('newly-removed');
+            } else if (!originallySelected && !currentlySelected) {
+                $(this).removeClass('newly-selected');
+                $(this).removeClass('newly-removed');
+            } else {
+                console.log('NON-handled condition - curSelected: ' + currentlySelected + ' orgSelected: ' + originallySelected);
+            }
+        });
+    });
+</script>

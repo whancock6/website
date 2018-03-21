@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var mmt = require('moment');
+var Utils = require('./utils');
 
 module.exports = function(firebase) {
     router.get('/', function(req, res, next) {
@@ -13,32 +14,17 @@ module.exports = function(firebase) {
                 .orderByChild('date')
                 .startAt(Date.parse(firstOfMonth))
                 .endAt(mmt(Date.now()).hour(23).minute(59).second(59).valueOf())
-                //.limitToLast(Math.min(parseInt(count), 100))
                 .once('value')
                 .then(function (snapshot) {
-                    var dataArr = [];
-                    snapshot.forEach(function (item) {
-                        var itemDict = item.val();
-                        itemDict.id = item.key;
-                        dataArr.push(itemDict);
-                    });
-
+                    var dataArr = Utils.cleanEvents(snapshot);
                     firebase
                         .database()
                         .ref('user/' + firebase.auth().currentUser.uid)
                         .once('value')
-                        .then(function(snapshot) {
-                            var user = snapshot.val();
-                            if (user.events != null) {
-                                user.events = user.events.filter(function(item) {
-                                    return (item != null && item.length !== 0);
-                                });
-                            }
-                            user.uid = snapshot.key;
-
+                        .then(function(snap) {
                             return res.render('points', {
                                 title: "Points | Ramblin' Reck Club",
-                                user: user,
+                                user: Utils.cleanUser(snap),
                                 events: dataArr,
                                 moment: mmt
                             });
@@ -54,15 +40,10 @@ module.exports = function(firebase) {
                         .database()
                         .ref('user/' + firebase.auth().currentUser.uid)
                         .once('value')
-                        .then(function(snapshot) {
-                            var user = snapshot.val();
-                            user.events = user.events.filter(function(item) {
-                                return (item != null && item.length !== 0);
-                            });
-                            user.uid = snapshot.key;
+                        .then(function(snap) {
                             return res.render('points', {
                                 title: "Points | Ramblin' Reck Club",
-                                user: user,
+                                user: Utils.cleanUser(snap),
                                 events: [],
                                 moment: mmt
                             });

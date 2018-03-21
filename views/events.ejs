@@ -52,7 +52,7 @@
         <tr>
             <%
                 var checked = false;
-                if (user.hasOwnProperty('events') && user.events.indexOf(item.id) != -1) {
+                if (item.hasOwnProperty('attendees') && item.attendees[user.uid] == true) {
                     checked = true;
                 }
             %>
@@ -84,12 +84,13 @@
         <div class="col-lg-auto">
         </div>
         <div class="col-lg-auto justify-content-end">
-            <button type="button" class="btn btn-primary float-right">Submit</button>
+            <button type="button" class="btn btn-primary float-right" id="submit-points-button">Submit</button>
         </div>
     </div>
 </div>
 <%- include partials/footer.ejs %>
 <%- include partials/scripts.ejs %>
+<%- include partials/user-event-update.ejs %>
 <script>
     $('#select-event-month').on('change', function(event) {
         event.preventDefault();

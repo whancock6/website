@@ -9,7 +9,7 @@
             <div class="col-4">
                 <h3 class="text-center jumbotron-third-title">Points</h3>
                 <h1 class="text-center jumbotron-third-detail">
-                    <%= (user.hasOwnProperty('points') ? user.points : 0) %>
+                    <%= (user.hasOwnProperty('points') ? parseInt(user.points) : 0) %>
                 </h1>
             </div>
             <div class="col-4">
@@ -45,7 +45,7 @@
         <% events.forEach(function(item) { %>
         <tr id="event-<%= item.id %>">
             <% var checked = false;
-                if (user.hasOwnProperty('events') && user.events.keys().indexOf(item.id) != -1) {
+                if (item.hasOwnProperty('attendees') && item.attendees[user.uid] == true) {
                     checked = true;
                 }
             %>
@@ -84,75 +84,7 @@
 </div>
 <%- include partials/footer.ejs %>
 <%- include partials/scripts.ejs %>
-<script>
-    // ENABLE ONCE YOU FIGURE OUT HOW TO DO ADD/SUBTRACT WITH EVENT IDS IN FIREBASE
-    $('#submit-points-button').on('click', function(event) {
-        event.preventDefault();
-        var events = <%= events %>;
-        console.log(events);
-        var newEvents = [];
-        $('.newly-selected').each(function(idx) {
-            var eventId = $(this).prop('aria-label');
-            if (events.indexOf(eventId) !== -1) {
-                var event = events[events.indexOf(eventId)];
-                newEvents.push({
-                    id: event.id,
-                    points: event.points
-                });
-            }
-        });
-        console.log(newEvents);
-
-        var removedEvents = [];
-        $('.newly-removed').each(function(idx) {
-            var eventId = $(this).prop('aria-label');
-            if (events.indexOf(eventId) !== -1) {
-                var event = events[events.indexOf(eventId)];
-                removedEvents.push({
-                    id: event.id,
-                    points: event.points
-                });
-            }
-        });
-        console.log(removedEvents);
-
-        $.ajax({
-            url: '/events/add-event',
-            type: 'PUT',
-            data: {
-                newEvents: newEvents,
-                removedEvents: removedEvents,
-                points: <%= user.points %>
-            },
-            success: function(result) {
-                console.log(result);
-                window.reload();
-            },
-            failure: function(err) {
-                console.log(err);
-                alert(err);
-            }
-        });
-    });
-
-    $('.event-checkbox').on('change', function(event) {
-        if ($(this).hasClass('newly-selected')) {
-            $(this).removeClass('newly-selected');
-        } else {
-            $(this).addClass('newly-selected');
-        }
-    });
-
-    $('.event-checkbox').on('change', function(event) {
-        if ($(this).is(':checked') === true) {
-            if ($(this).hasClass('newly-removed')) {
-                $(this).removeClass('newly-removed');
-            } else {
-                $(this).addClass('newly-removed');
-            }
-        }
-    });
-</script>
+<%- include partials/user-event-update.ejs %>
 </body>
 
 </html>

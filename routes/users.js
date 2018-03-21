@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var mmt = require('moment');
+var Utils = require('./utils');
 
 module.exports = function(firebase) {
 
@@ -13,19 +14,11 @@ module.exports = function(firebase) {
             Promise.all(records).then(function(snapshots) {
                if (snapshots.length === 2) {
                    var userRecords = snapshots[0];
-                   var dataArr = [];
-                   userRecords.forEach(function(item) {
-                       var itemDict = item.val();
-                       itemDict.uid = item.key;
-                       dataArr.push(itemDict);
-                   });
-
-                   var currentUser = snapshots[1].val();
-                   currentUser.uid = snapshots[1].key;
+                   var currentUser = snapshots[1];
                    res.render('view-members', {
                        title: "Members | Ramblin' Reck Club",
-                       user: currentUser,
-                       users: dataArr,
+                       user: Utils.cleanUser(currentUser),
+                       users: Utils.cleanUserList(userRecords),
                        moment: mmt
                    });
                } else {
@@ -35,7 +28,7 @@ module.exports = function(firebase) {
                            stack: "check /members route",
                            status: "400 - bad request"
                        }
-                   })
+                   });
                }
             }).catch(function(err) {
                 res.render('error', {
@@ -56,31 +49,29 @@ module.exports = function(firebase) {
 
             Promise.all(records).then(function(snapshots) {
                 if (snapshots.length == 2) {
-                    var selectedUser = snapshots[0].val();
-                    selectedUser.uid = snapshots[0].key;
-                    var currentUser = snapshots[1].val();
-                    currentUser.uid = snapshots[1].key;
+                    var selectedUser = Utils.cleanUser(snapshots[0]);
+                    var currentUser = Utils.cleanUser(snapshots[1]);
                     res.render('user', {
                         title: "User | Ramblin' Reck Club",
                         user: currentUser,
-                        "selectedUser": selectedUser,
+                        selectedUser: selectedUser,
                         moment: mmt
                     });
                 } else if (snapshots.length == 1) {
-                    var currentUser = snapshots[0].val();
-                    currentUser.uid = snapshots[0].key;
+                    var currentUser = Utils.cleanUser(snapshots[0]);
                     res.render('user', {
                         title: "User | Ramblin' Reck Club",
                         user: currentUser,
-                        "selectedUser": {},
+                        selectedUser: {},
                         moment: mmt
                     });
                 } else {
-                    res.render('user', {
-                        title: "Points | Ramblin' Reck Club",
-                        user: {},
-                        "selectedUser": {},
-                        moment: mmt
+                    res.render('error', {
+                        message: "Malformed internal request. Please report to <a ref=\"mailto:technology@reckclub.org\">RRC Technology Chair</a>.",
+                        error: {
+                            stack: "check /members route",
+                            status: "400 - bad request"
+                        }
                     });
                 }
             });
@@ -181,14 +172,12 @@ module.exports = function(firebase) {
             ];
             Promise.all(records).then(function(snapshots) {
                 if (snapshots.length === 2) {
-                    var selectedUser = snapshots[0].val();
-                    selectedUser.uid = snapshots[0].key;
-                    var currentUser = snapshots[1].val();
-                    currentUser.uid = snapshots[1].key;
+                    var selectedUser = snapshots[0];
+                    var currentUser = snapshots[1];
                     res.render('update-member', {
                         title: "Update Member | Ramblin' Reck Club",
-                        user: currentUser,
-                        selectedUser: selectedUser,
+                        user: Utils.cleanUser(currentUser),
+                        selectedUser: Utils.cleanUser(selectedUser),
                         moment: mmt
                     });
                 } else {

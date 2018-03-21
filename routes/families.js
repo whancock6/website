@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var mmt = require('moment');
+var Utils = require('./utils');
 
 module.exports = function(firebase) {
     router.get('/', function(req, res, next) {
@@ -10,16 +11,9 @@ module.exports = function(firebase) {
                 .ref('user/' + firebase.auth().currentUser.uid)
                 .once('value')
                 .then(function(snapshot) {
-                    var user = snapshot.val();
-                    if (user.events != null) {
-                        user.events = user.events.filter(function(item) {
-                            return (item != null && item.length !== 0);
-                        });
-                    }
-                    user.uid = snapshot.key;
                     return res.render('families', {
                         title: "Families | Ramblin' Reck Club",
-                        user: user,
+                        user: Utils.cleanUser(snapshot),
                         families: [],
                         moment: mmt
                     });
@@ -33,6 +27,7 @@ module.exports = function(firebase) {
             return res.redirect('/login');
         }
     });
+
     // router.get('/edit', function(req, res, next) {
     //     if (firebase.auth().currentUser) {
     //
