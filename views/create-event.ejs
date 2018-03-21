@@ -20,7 +20,7 @@
         <h2>Create new event</h2>
         <p class="lead">Make sure your new event meets the requirements laided out in the <a href="/">points rules</a>.</p>
     </div>
-    <div id="message-space" class="row"></div>
+    <div class="message-space row"></div>
     <div class="row">
         <div class="offset-xl-1 col-xl-10 offset-lg-2 col-lg-8 offset-md-3 col-md-6">
             <h4 class="mb-3">Event Details</h4>
@@ -116,9 +116,6 @@
     </div>
 </div>
 <%- include partials/footer.ejs %>
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
 <%- include partials/scripts.ejs %>
 <script>
     function createEvent() {
@@ -141,8 +138,8 @@
             },
             error: function(error) {
                 console.log(error);
-                $('#message-space').html("    <div class=\"alert alert-danger alert-dismissible show fade\" role=\"alert\">\n" +
-                    "        <strong>Error!</strong> <span id=\"error-message\">" + error.responseJSON.message + "</span>\n" +
+                $('.message-space').html("    <div class=\"alert alert-danger alert-dismissible show fade\" role=\"alert\">\n" +
+                    "        <strong>Error!</strong> <span id=\"error-message\">" + error.responseJSON.detailedMessage.message + "</span>\n" +
                     "        <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n" +
                     "            <span aria-hidden=\"true\">&times;</span>\n" +
                     "        </button>\n" +

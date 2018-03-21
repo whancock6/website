@@ -23,6 +23,7 @@ var app = express();
 var database = firebase.database();
 
 var index = require('./routes/index');
+var families = require('./routes/families')(firebase);
 var users = require('./routes/users')(firebase);
 var events = require('./routes/events')(firebase);
 var points = require('./routes/points')(firebase);
@@ -48,9 +49,10 @@ app.use(session({
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/users', users);
+app.use('/members', users);
 app.use('/events', events.router);
 app.use('/points', points);
+app.use('/families', families);
 app.use('/login', login);
 
 // catch 404 and forward to error handler

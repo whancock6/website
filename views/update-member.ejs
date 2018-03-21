@@ -1,0 +1,555 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="The online home of the Ramblin' Reck Club, a campus organization at the Georgia Institute of Technology dedicated to the promotion of Georgia Tech traditions and spirit and responsible for the Institute's mascot car - the Ramblin' Reck.">
+    <meta name="author" content="Ramblin' Reck Club">
+
+    <title><%= title %></title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/form-validation.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container">
+    <div class="py-3 text-center">
+        <img class="d-block mx-auto mb-4" src="/img/brand/official-logo.png" alt="" width="100" height="100">
+        <h2>Update member</h2>
+        <p class="lead">Make sure your information is also up-to-date with the <a href="mailto:secretary@reckclub.org">secretary</a>.</p>
+    </div>
+    <div class="message-space row"></div>
+    <div class="row">
+        <div class="offset-xl-1 col-xl-10 offset-lg-2 col-lg-8 offset-md-3 col-md-6">
+            <form class="needs-validation" novalidate="">
+                <h4 class="mb-3">Personal Information</h4>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="member-first-name">First name</label>
+                        <input type="text" class="form-control" id="member-first-name" placeholder="" value="<%= selectedUser.firstName %>" required="">
+                        <div class="invalid-feedback">
+                            Valid first name is required.
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="member-last-name">Last name</label>
+                        <input type="text" class="form-control" id="member-last-name" placeholder="" value="<%= selectedUser.lastName %>" required="">
+                        <div class="invalid-feedback">
+                            Valid last name is required.
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="member-username">Username</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">@</span>
+                        </div>
+                        <input type="text" class="form-control" id="member-username" placeholder="Username" value="<%= selectedUser.username %>" required="">
+                        <div class="invalid-feedback" style="width: 100%;">
+                            Your username is required.
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="member-email">Email Address</label>
+                    <input type="email" class="form-control" id="member-email" placeholder="you@example.com" value="<%= selectedUser.email %>" required readonly>
+                    <div class="invalid-feedback">
+                        Please enter a valid email address.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="email">Password</label>
+                    <input type="password" class="form-control" id="member-password" placeholder="password" required readonly>
+                    <% if (selectedUser.uid == user.uid) { %>
+                    <div class="form-text text-muted small">
+                        Need to change your password? Go <a href="/resetPassword/<%= selectedUser.uid %>">here</a>.
+                    </div>
+                    <% } %>
+                </div>
+                <h5 class="mb-3">Birthday</h5>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="event-month">Month</label>
+                        <select class="custom-select d-block w-100" id="member-birth-month" required="">
+                            <% var months = ['January', 'Feburary', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']; %>
+                            <% months.forEach(function(month) { %>
+                            <option value="<%= month %>"
+                                    <% if (month == moment(selectedUser.birthDate).format('MMMM')) { %>
+                                    <% %>
+                                    selected="selected"
+                                    <% } %>
+                            ><%= month %></option>
+                            <%});%>
+                        </select>
+                        <div class="invalid-feedback">
+                            Please provide a valid month.
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="event-day">Day</label>
+                        <select class="custom-select d-block w-100" id="member-birth-day" required="">
+                            <% for (var i = 1; i <= moment().daysInMonth(); i++) { %>
+                            <option value="<%= i %>"
+                                    <% if (i == moment(selectedUser.birthDate).format('D')) { %>
+                                    <% %>
+                                    selected="selected"
+                                    <% } %>
+                            ><%= i %></option>
+                            <%}%>
+                        </select>
+                        <!--<input type="text" class="form-control" id="event-day" placeholder="" required="">-->
+                        <div class="invalid-feedback">
+                            Event day required.
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="event-year">Year</label>
+                        <select class="custom-select d-block w-100" id="member-birth-year" required="">
+                            <% var year = moment(selectedUser.birthDate).format('YYYY'); %>
+                            <% for (var i = 1990; i < 2026; i++) { %>
+                            <option value="<%= i %>"
+                                    <% if (i == year) { %>
+                                    <% %>
+                                    selected="selected"
+                                    <% } %>
+                            ><%= i %></option>
+                            <%}%>
+                        </select>
+                        <div class="invalid-feedback">
+                            Event year required.
+                        </div>
+                    </div>
+                </div>
+                <h5 class="mb-3">Address</h5>
+                <div class="mb-3">
+                    <label for="address">Street Address</label>
+                    <input type="text" class="form-control" id="member-street-address" placeholder="1234 Main St" value="<%= selectedUser.streetAddress %>" required="">
+                    <div class="invalid-feedback">
+                        Please enter your home street address.
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="member-city">City</label>
+                        <input type="text" class="form-control" id="member-city" placeholder="Atlanta" value="<%= selectedUser.city %>" required="">
+                        <div class="invalid-feedback">
+                            Please enter your home city.
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="member-state">State</label>
+                        <!--state array from https://gist.githubusercontent.com/mshafrir/2646763/raw/8b0dbb93521f5d6889502305335104218454c2bf/states_titlecase.json-->
+                        <% var states = [
+                            {
+                                "name": "Alabama",
+                                "abbreviation": "AL"
+                            },
+                            {
+                                "name": "Alaska",
+                                "abbreviation": "AK"
+                            },
+                            {
+                                "name": "American Samoa",
+                                "abbreviation": "AS"
+                            },
+                            {
+                                "name": "Arizona",
+                                "abbreviation": "AZ"
+                            },
+                            {
+                                "name": "Arkansas",
+                                "abbreviation": "AR"
+                            },
+                            {
+                                "name": "California",
+                                "abbreviation": "CA"
+                            },
+                            {
+                                "name": "Colorado",
+                                "abbreviation": "CO"
+                            },
+                            {
+                                "name": "Connecticut",
+                                "abbreviation": "CT"
+                            },
+                            {
+                                "name": "Delaware",
+                                "abbreviation": "DE"
+                            },
+                            {
+                                "name": "District Of Columbia",
+                                "abbreviation": "DC"
+                            },
+                            {
+                                "name": "Federated States Of Micronesia",
+                                "abbreviation": "FM"
+                            },
+                            {
+                                "name": "Florida",
+                                "abbreviation": "FL"
+                            },
+                            {
+                                "name": "Georgia",
+                                "abbreviation": "GA"
+                            },
+                            {
+                                "name": "Guam",
+                                "abbreviation": "GU"
+                            },
+                            {
+                                "name": "Hawaii",
+                                "abbreviation": "HI"
+                            },
+                            {
+                                "name": "Idaho",
+                                "abbreviation": "ID"
+                            },
+                            {
+                                "name": "Illinois",
+                                "abbreviation": "IL"
+                            },
+                            {
+                                "name": "Indiana",
+                                "abbreviation": "IN"
+                            },
+                            {
+                                "name": "Iowa",
+                                "abbreviation": "IA"
+                            },
+                            {
+                                "name": "Kansas",
+                                "abbreviation": "KS"
+                            },
+                            {
+                                "name": "Kentucky",
+                                "abbreviation": "KY"
+                            },
+                            {
+                                "name": "Louisiana",
+                                "abbreviation": "LA"
+                            },
+                            {
+                                "name": "Maine",
+                                "abbreviation": "ME"
+                            },
+                            {
+                                "name": "Marshall Islands",
+                                "abbreviation": "MH"
+                            },
+                            {
+                                "name": "Maryland",
+                                "abbreviation": "MD"
+                            },
+                            {
+                                "name": "Massachusetts",
+                                "abbreviation": "MA"
+                            },
+                            {
+                                "name": "Michigan",
+                                "abbreviation": "MI"
+                            },
+                            {
+                                "name": "Minnesota",
+                                "abbreviation": "MN"
+                            },
+                            {
+                                "name": "Mississippi",
+                                "abbreviation": "MS"
+                            },
+                            {
+                                "name": "Missouri",
+                                "abbreviation": "MO"
+                            },
+                            {
+                                "name": "Montana",
+                                "abbreviation": "MT"
+                            },
+                            {
+                                "name": "Nebraska",
+                                "abbreviation": "NE"
+                            },
+                            {
+                                "name": "Nevada",
+                                "abbreviation": "NV"
+                            },
+                            {
+                                "name": "New Hampshire",
+                                "abbreviation": "NH"
+                            },
+                            {
+                                "name": "New Jersey",
+                                "abbreviation": "NJ"
+                            },
+                            {
+                                "name": "New Mexico",
+                                "abbreviation": "NM"
+                            },
+                            {
+                                "name": "New York",
+                                "abbreviation": "NY"
+                            },
+                            {
+                                "name": "North Carolina",
+                                "abbreviation": "NC"
+                            },
+                            {
+                                "name": "North Dakota",
+                                "abbreviation": "ND"
+                            },
+                            {
+                                "name": "Northern Mariana Islands",
+                                "abbreviation": "MP"
+                            },
+                            {
+                                "name": "Ohio",
+                                "abbreviation": "OH"
+                            },
+                            {
+                                "name": "Oklahoma",
+                                "abbreviation": "OK"
+                            },
+                            {
+                                "name": "Oregon",
+                                "abbreviation": "OR"
+                            },
+                            {
+                                "name": "Palau",
+                                "abbreviation": "PW"
+                            },
+                            {
+                                "name": "Pennsylvania",
+                                "abbreviation": "PA"
+                            },
+                            {
+                                "name": "Puerto Rico",
+                                "abbreviation": "PR"
+                            },
+                            {
+                                "name": "Rhode Island",
+                                "abbreviation": "RI"
+                            },
+                            {
+                                "name": "South Carolina",
+                                "abbreviation": "SC"
+                            },
+                            {
+                                "name": "South Dakota",
+                                "abbreviation": "SD"
+                            },
+                            {
+                                "name": "Tennessee",
+                                "abbreviation": "TN"
+                            },
+                            {
+                                "name": "Texas",
+                                "abbreviation": "TX"
+                            },
+                            {
+                                "name": "Utah",
+                                "abbreviation": "UT"
+                            },
+                            {
+                                "name": "Vermont",
+                                "abbreviation": "VT"
+                            },
+                            {
+                                "name": "Virgin Islands",
+                                "abbreviation": "VI"
+                            },
+                            {
+                                "name": "Virginia",
+                                "abbreviation": "VA"
+                            },
+                            {
+                                "name": "Washington",
+                                "abbreviation": "WA"
+                            },
+                            {
+                                "name": "West Virginia",
+                                "abbreviation": "WV"
+                            },
+                            {
+                                "name": "Wisconsin",
+                                "abbreviation": "WI"
+                            },
+                            {
+                                "name": "Wyoming",
+                                "abbreviation": "WY"
+                            }
+                        ];%>
+                        <select class="custom-select d-block w-100" id="member-state" required="">
+                            <% states.forEach(function(state) { %>
+                            <option value="<%= state.abbreviation %>"
+                                    <% if (state.abbreviation == selectedUser.state) { %>
+                                    selected="selected"
+                                    <% } %>><%= state.name %></option>
+                            <% }); %>
+                        </select>
+                        <div class="invalid-feedback">
+                            Please provide a valid state.
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="member-zip-code">Zip Code</label>
+                        <input type="text" class="form-control" id="member-zip-code" placeholder="" value="<%= selectedUser.zipCode %>" required="">
+                        <div class="invalid-feedback">
+                            Zip code required.
+                        </div>
+                    </div>
+                </div>
+                <hr class="mb-4">
+                <h4 class="mb-3">Member Information</h4>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="member-phone-number">Phone Number</label>
+                        <input type="tel" class="form-control" id="member-phone-number" placeholder="+1 (404) 555-5555" value="<%= selectedUser.phoneNumber %>" required>
+                        <div class="invalid-feedback">
+                            Please enter a valid phone number.
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 mb-3">
+                        <label for="event-year">Current status</label>
+                        <select class="custom-select d-block w-100" id="member-status" required="">
+                            <option value="probate" <% if (selectedUser.status == 'probate') { %> selected="selected" <% } %>>Probate</option>
+                            <option value="member" <% if (selectedUser.status == 'member') { %> selected="selected" <% } %>>Member</option>
+                            <option value="alumni" <% if (selectedUser.status == 'alumni') { %> selected="selected" <% } %>>Alumni</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Member status required.
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="event-month">Grad Month</label>
+                        <select class="custom-select d-block w-100" id="member-grad-month" required="">
+                            <% var months = ['January', 'Feburary', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']; %>
+                            <% months.forEach(function(month) { %>
+                            <option value="<%= month %>"
+                                    <% if (month == selectedUser.gradMonth) { %>
+                                    <% %>
+                                    selected="selected"
+                                    <% } %>
+                            ><%= month %></option>
+                            <%});%>
+                        </select>
+                        <div class="invalid-feedback">
+                            Please provide a valid grad month.
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="event-year">Grad Year</label>
+                        <select class="custom-select d-block w-100" id="member-grad-year" required="">
+                            <% var year = moment().format('YYYY'); %>
+                            <% for (var i = parseInt(year) - 5; i < parseInt(year) + 6; i++) { %>
+                            <option value="<%= i %>"
+                                    <% if (i == selectedUser.gradYear) { %>
+                                    <% %>
+                                    selected="selected"
+                                    <% } %>
+                            ><%= i %></option>
+                            <%}%>
+                        </select>
+                        <div class="invalid-feedback">
+                            Grad year required.
+                        </div>
+                    </div>
+                </div>
+                <% if (user.isAdmin == true) { %>
+                <hr class="mb-4">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="member-is-event-admin" <% if (selectedUser.isAdmin == true || selectedUser.isEventAdmin == true) { %> checked="checked" <% } %>>
+                    <label class="custom-control-label" for="member-is-event-admin">Set as Event Admin</label>
+                    <p class="needs-help small text-muted">
+                        Includes event creation, update, and deletion privileges.
+                    </p>
+                </div>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="member-is-admin" <% if (selectedUser.isAdmin == true) { %> checked="checked" <% } %>>
+                    <label class="custom-control-label" for="member-is-admin">Set as Site Admin</label>
+                    <p class="needs-help small text-muted">
+                        Includes event admin privileges and site administration access.
+                    </p>
+                </div>
+                <hr class="mb-4">
+                <% } %>
+                <button class="btn btn-primary btn-lg btn-block" type="submit">Update member</button>
+            </form>
+        </div>
+    </div>
+</div>
+<%- include partials/footer.ejs %>
+<%- include partials/scripts.ejs %>
+<script>
+    function updateMember() {
+        $.ajax({
+            url: '/members/update/<%= selectedUser.uid %>',
+            type: 'PUT',
+            data: {
+                username: $('#member-username').val(),
+                email: $('#member-email').val(),
+                firstName: $('#member-first-name').val(),
+                lastName: $('#member-last-name').val(),
+                birthDate: moment($('#member-birth-month').val() + ' ' + $('#member-birth-day').val() + ', ' + $('#member-birth-year').val()).format(),
+                streetAddress: $('#member-street-address').val(),
+                city: $('#member-city').val(),
+                state: $('#member-state').val(),
+                zipCode: $('#member-zip-code').val(),
+                phoneNumber: $('#member-phone-number').val(),
+                status: $('#member-status').val(),
+                gradMonth: $('#member-grad-month').val(),
+                gradYear: $('#member-grad-year').val(),
+                isAdmin: ($('#member-is-admin').is(':checked') == true)  ? true : false,
+                isEventAdmin: ($('#member-is-event-admin').is(':checked') == true || $('#member-is-admin').is(':checked') == true)  ? true : false,
+                points: <%= selectedUser.points %>,
+                events: <%= selectedUser.events %>
+            },
+            headers: {
+                "user-email":  $('#member-email').val(),
+                "user-password" :  $('#member-password').val()
+            },
+            contentType: 'application/x-www-form-urlencoded',
+            dataType: 'json',
+            success: function(result) {
+                console.log(result);
+                window.location.replace('/members');
+            },
+            error: function(error) {
+                console.log(error);
+                $('.message-space').html("    <div class=\"alert alert-danger alert-dismissible show fade\" role=\"alert\">\n" +
+                    "        <strong>Error!</strong> <span id=\"error-message\">" + error.responseJSON.detailedMessage.message + "</span>\n" +
+                    "        <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n" +
+                    "            <span aria-hidden=\"true\">&times;</span>\n" +
+                    "        </button>\n" +
+                    "    </div>");
+            }
+        })
+    }
+
+    (function() {
+        'use strict';
+
+        window.addEventListener('load', function() {
+            var forms = document.getElementsByClassName('needs-validation');
+            var validation = Array.prototype.filter.call(forms, function(form) {
+                form.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    if (form.checkValidity() === false) {
+                        event.stopPropagation();
+                    } else {
+                        updateMember();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
+</script>
+
+
+</body></html>

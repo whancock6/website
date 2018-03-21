@@ -5,8 +5,6 @@ var mmt = require('moment');
 module.exports = function(firebase) {
     router.get('/', function(req, res, next) {
         if (firebase.auth().currentUser) {
-            console.log('AUTHDATA: ' + JSON.stringify(req.session));
-
             var year = mmt(Date.now()).year();
             var month = mmt(Date.now()).format('MM');
 
@@ -31,26 +29,23 @@ module.exports = function(firebase) {
                         .once('value')
                         .then(function(snapshot) {
                             var user = snapshot.val();
-                            user.events = user.events.filter(function(item) {
-                                return (item != null && item.length !== 0);
-                            });
+                            if (user.events != null) {
+                                user.events = user.events.filter(function(item) {
+                                    return (item != null && item.length !== 0);
+                                });
+                            }
                             user.uid = snapshot.key;
 
-                            res.render('points', {
+                            return res.render('points', {
                                 title: "Points | Ramblin' Reck Club",
-                                token: "valid",
                                 user: user,
                                 events: dataArr,
                                 moment: mmt
                             });
                         }).catch(function(err) {
                             console.log('ERROR: ' + err);
-                            res.render('points', {
-                                title: "Points | Ramblin' Reck Club",
-                                token: "valid",
-                                user: firebase.auth().currentUser,
-                                events: dataArr,
-                                moment: mmt
+                            return res.render('error', {
+                                message: err
                             });
                         });
                 }).catch(function (err) {
@@ -65,26 +60,21 @@ module.exports = function(firebase) {
                                 return (item != null && item.length !== 0);
                             });
                             user.uid = snapshot.key;
-                            res.render('points', {
+                            return res.render('points', {
                                 title: "Points | Ramblin' Reck Club",
-                                token: "valid",
                                 user: user,
                                 events: [],
                                 moment: mmt
                             });
                         }).catch(function(err) {
                         console.log('ERROR: ' + err);
-                        res.render('points', {
-                            title: "Points | Ramblin' Reck Club",
-                            token: "valid",
-                            user: firebase.auth().currentUser,
-                            events: [],
-                            moment: mmt
+                        return res.render('error', {
+                            message: err
                         });
                     });
                 });
         } else {
-            res.redirect('/login');
+            return res.redirect('/login');
         }
     });
 

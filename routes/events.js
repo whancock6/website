@@ -118,9 +118,12 @@ module.exports = function(firebase) {
                     .once('value')
                     .then(function(snapshot) {
                         var user = snapshot.val();
-                        user.events = user.events.filter(function(item) {
-                            return (item != null && item.length !== 0);
-                        });
+                        if (user.events != null) {
+                            user.events = user.events.filter(function(item) {
+                                return (item != null && item.length !== 0);
+                            });
+                        }
+                        user.uid = snapshot.key;
                         res.render('events', {
                             title: "Events | Ramblin' Reck Club",
                             user: user,
@@ -221,9 +224,12 @@ module.exports = function(firebase) {
                     .once('value')
                     .then(function(snapshot) {
                         var user = snapshot.val();
-                        user.events = user.events.filter(function(item) {
-                            return (item != null && item.length !== 0);
-                        });
+                        if (user.events != null) {
+                            user.events = user.events.filter(function(item) {
+                                return (item != null && item.length !== 0);
+                            });
+                        }
+                        user.uid = snapshot.key;
                         res.render('events', {
                             title: "Events | Ramblin' Reck Club",
                             user: user,
@@ -399,6 +405,18 @@ module.exports = function(firebase) {
             });
         }
     });
+
+    // rtr.put('/add-event', function(req, res) {
+    //     var userId = firebase.auth().currentUser.uid;
+    //     var eventIds = req.body.eventIds;
+    //     firebase
+    //         .database()
+    //         .ref('user/' + userId)
+    //         .child('events')
+    //         .push(eventIds, function(error) {
+    //             onComplete(error, res, "Events added to " + userId + " successfully!")
+    //         });
+    // });
 
     return {
         router: rtr,

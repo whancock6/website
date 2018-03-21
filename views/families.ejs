@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<%- include partials/head.ejs %>
+<body>
+<%- include partials/header.ejs %>
+<div class="container mb-3">
+    <div class="row justify-content-between">
+        <h2 class="col-auto">Families</h2>
+        <ul class="col-auto nav">
+            <% if (user.isAdmin) { %>
+            <li class="nav-item ml-1">
+                <a class="btn btn-primary btn-md" href="/families/edit">
+                    Edit Families
+                </a>
+            </li>
+            <% } %>
+        </ul>
+    </div>
+</div>
+<%- include partials/footer.ejs %>
+<%- include partials/scripts.ejs %>
+
+</body>
+
+</html>

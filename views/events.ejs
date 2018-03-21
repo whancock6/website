@@ -52,15 +52,15 @@
         <tr>
             <%
                 var checked = false;
-                if (user.events.indexOf(item.id) != -1) {
+                if (user.hasOwnProperty('events') && user.events.indexOf(item.id) != -1) {
                     checked = true;
                 }
             %>
             <th>
                 <% if (checked) { %>
-                <input type="checkbox" aria-label="Checkbox for event <%=item.id%>" checked="true">
+                <input class="custom-control custom-checkbox" type="checkbox" aria-label="Checkbox for event <%=item.id%>" checked="true">
                 <% } else { %>
-                <input type="checkbox" aria-label="Checkbox for event <%=item.id%>">
+                <input class="custom-control custom-checkbox" type="checkbox" aria-label="Checkbox for event <%=item.id%>">
                 <% } %>
             </th>
             <td><%= moment(item.date).format("M/D") %></td>

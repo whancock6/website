@@ -26,7 +26,6 @@ module.exports = function(firebase) {
     router.put('/', function (req, res, next) {
         var userEmail = req.headers['user-email'];
         var userPassword = req.headers['user-password'];
-        console.log("Email: " + userEmail + ", pass: " + userPassword);
         authUser(firebase, userEmail, userPassword, function(err) {
             res.status(401).send({
                 status: "bad",

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<%- include partials/head.ejs %>
+<body>
+<%- include partials/header.ejs %>
+<div class="container mb-3">
+    <div class="row justify-content-between">
+        <h2 class="col-auto">Members</h2>
+        <ul class="col-auto nav">
+            <% if (user.isAdmin) { %>
+            <li class="nav-item ml-1">
+                <a class="btn btn-primary btn-md" href="/members/create">
+                    <i class="fas fa-plus"> </i> Add Member
+                </a>
+            </li>
+            <% } %>
+        </ul>
+    </div>
+    <table class="table table-responsive-lg mb-3">
+        <thead>
+        <tr>
+            <th scope="col">Rank</th>
+            <th scope="col">Name</th>
+            <th scope="col">Points</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% users.sort(function(a, b) {
+            return a.firstName > b.firstName ? -1 : a.firstName < b.firstName ? 1 : (a.lastName > b.lastName) ? -1 : (a.lastName < b.lastName) ? 1 : 0;
+        });%>
+        <% if (users.length > 0) { %>
+        <% users.forEach(function(item, idx) { %>
+        <tr>
+            <td><%= (idx + 1) %></td>
+            <td>
+                <a class="btn-link" href="/members/view/<%= item.uid %>"><%= item.fullName %></a>
+                <span class="badge badge-primary"><%= item.status %></span>
+            </td>
+            <td>0</td>
+        </tr>
+        <%});%>
+        <% } %>
+        </tbody>
+    </table>
+</div>
+<%- include partials/footer.ejs %>
+<%- include partials/scripts.ejs %>
+</body>
+
+</html>

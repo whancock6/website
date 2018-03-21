@@ -9,21 +9,7 @@
             <div class="col-4">
                 <h3 class="text-center jumbotron-third-title">Points</h3>
                 <h1 class="text-center jumbotron-third-detail">
-                    <% if (user.events) {
-                        var total = 0;
-                        user.events.forEach(function(id) {
-                            var event = events.find(function(item) {
-                                return item.id == id;
-                            });
-                            if (event) {
-                                total += parseInt(event.points);
-                            }
-                        });
-                    %>
-                        <%= total %>
-                    <% } else { %>
-                        0
-                    <%} %>
+                    <%= (user.hasOwnProperty('points') ? user.points : 0) %>
                 </h1>
             </div>
             <div class="col-4">
@@ -57,7 +43,7 @@
         <% if (events.length > 0) { %>
             <% events = events.slice(0, 5) %>
             <% events.forEach(function(item) { %>
-                <tr>
+                <tr id="event-<%= item.id %>">
                     <% var checked = false;
                         if (user.hasOwnProperty('events') && user.events.indexOf(item.id) != -1) {
                             checked = true;
@@ -65,9 +51,9 @@
                     %>
                     <th>
                         <% if (checked) { %>
-                        <input type="checkbox" aria-label="Checkbox for event <%=item.id%>" checked="true">
+                            <input id="event-<%= item.id %>-box" class="event-checkbox" type="checkbox" aria-label="<%=item.id%>" checked="true">
                         <% } else { %>
-                        <input type="checkbox" aria-label="Checkbox for event <%=item.id%>">
+                            <input id="event-<%= item.id %>-box" class="event-checkbox" type="checkbox" aria-label="<%=item.id%>">
                         <% } %>
                     </th>
                     <td><%= moment(item.date).format("M/D") %></td>
@@ -92,12 +78,46 @@
         </div>
         <div class="col-lg-auto justify-content-end">
             <a href="/events" class="btn btn-outline-secondary mr-2">View All Events</a>
-            <button type="button" class="btn btn-primary float-right">Submit</button>
+            <button type="button" class="btn btn-primary float-right" id="submit-points-button">Submit</button>
         </div>
     </div>
 </div>
 <%- include partials/footer.ejs %>
 <%- include partials/scripts.ejs %>
+<script>
+    // ENABLE ONCE YOU FIGURE OUT HOW TO DO ADD?SUBTRACT WITH EVENT IDS IN FIREBASE
+// $('#submit-points-button').on('click', function(event) {
+//    event.preventDefault();
+//    var eventIds = [];
+//     $('.newly-selected').each(function(idx) {
+//         eventIds.push(this.prop('aria-label'));
+//     });
+//     console.log(eventIds);
+//     $.ajax({
+//         url: '/events/add-event',
+//         type: 'PUT',
+//         data: {
+//             eventIds: eventIds
+//         },
+//         success: function(result) {
+//             console.log(result);
+//             window.reload();
+//         },
+//         failure: function(err) {
+//             console.log(err);
+//             alert(err);
+//         }
+//     });
+// });
+
+$('.event-checkbox').on('change', function(event) {
+    if ($(this).hasClass('newly-selected')) {
+        $(this).removeClass('newly-selected');
+    } else {
+        $(this).addClass('newly-selected');
+    }
+});
+</script>
 </body>
 
 </html>

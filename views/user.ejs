@@ -7,7 +7,7 @@
     <div class="row justify-content-between">
         <h2 class="col-auto">
             <% if (selectedUser.fullName.length > 0) { %>
-                <%= selectedUser.fullName %> <span class="small text-muted">(<%= selectedUser.username %>)</span>
+                <%= selectedUser.fullName %> <span class="small text-muted">(@<%= selectedUser.username %>)</span>
             <% } else if (selectedUser.username.length > 0) { %>
                 <%= selectedUser.username %>
             <% } else if (selectedUser.email.length > 0) { %>
@@ -16,9 +16,7 @@
                 Unknown
             <% } %>
             <% if (selectedUser.uid === user.uid) {%>
-            <div class="nav-item">
-                <button class="btn btn-outline-primary btn-sm" type="button">Edit</button>
-            </div>
+            <span><a class="btn btn-outline-primary btn-sm" href="/members/update/<%= selectedUser.uid %>">Edit</a></span>
             <% } %>
         </h2>
     </div>
