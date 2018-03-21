@@ -51,6 +51,9 @@ function getEventListCount(firebase, count, success, error) {
 }
 
 function getEventListDate(firebase, year, month, success, error) {
+    if (parseInt(month) < 10 && !month.includes('0')) {
+        month = '0' + month;
+    }
     var firstOfMonth = year + '-' + month + '-01';
     firebase
         .database()
@@ -64,10 +67,13 @@ function getEventListDate(firebase, year, month, success, error) {
             success(dataArr);
         }).catch(function (err) {
             error(err);
-    });
+        });
 }
 
 function getEventListRecent(firebase, year, month, count, success, error) {
+    if (parseInt(month) < 10 && !month.includes('0')) {
+        month = '0' + month;
+    }
     var firstOfMonth = year + '-' + month + '-01';
     var cnt = (count != null) ? parseInt(count) : 10;
     firebase
@@ -82,8 +88,8 @@ function getEventListRecent(firebase, year, month, count, success, error) {
             var dataArr = Utils.cleanEvents(snapshot);
             success(dataArr);
         }).catch(function (err) {
-        error(err);
-    });
+            error(err);
+        });
 }
 
 module.exports = function(firebase) {
@@ -192,10 +198,10 @@ module.exports = function(firebase) {
                     .database()
                     .ref('user/' + firebase.auth().currentUser.uid)
                     .once('value')
-                    .then(function(snapshot) {
+                    .then(function(snap) {
                         res.render('events', {
                             title: "Events | Ramblin' Reck Club",
-                            user: cleanUser(snapshot),
+                            user: Utils.cleanUser(snap),
                             moment: mmt,
                             events: results,
                             month: month
@@ -212,14 +218,10 @@ module.exports = function(firebase) {
                     .database()
                     .ref('user/' + firebase.auth().currentUser.uid)
                     .once('value')
-                    .then(function(snapshot) {
-                        var user = snapshot.val();
-                        user.events = user.events.filter(function(item) {
-                            return (item != null && item.length !== 0);
-                        });
+                    .then(function(snap) {
                         res.render('events', {
                             title: "Events | Ramblin' Reck Club",
-                            user: user,
+                            user: Utils.cleanUser(snap),
                             moment: mmt,
                             events: [],
                             month: month
@@ -409,7 +411,8 @@ module.exports = function(firebase) {
                             .child(item.id)
                             .set({
                                 attended: true,
-                                points: item.points
+                                points: item.points,
+                                type: item.type
                             })
                     );
                     pointsDelta += parseInt(item.points);

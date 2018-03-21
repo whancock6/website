@@ -58,9 +58,9 @@
             %>
             <th>
                 <% if (checked) { %>
-                <input class="custom-control custom-checkbox" type="checkbox" aria-label="Checkbox for event <%=item.id%>" checked="true">
+                <input class="event-checkbox" type="checkbox" aria-label="<%=item.id%>" checked="true">
                 <% } else { %>
-                <input class="custom-control custom-checkbox" type="checkbox" aria-label="Checkbox for event <%=item.id%>">
+                <input class="event-checkbox" type="checkbox" aria-label="<%=item.id%>">
                 <% } %>
             </th>
             <td><%= moment(item.date).format("M/D") %></td>
