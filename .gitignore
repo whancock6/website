@@ -140,3 +140,5 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+# Firebase Service Account credentials
+service-account-key.json

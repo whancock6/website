@@ -213,5 +213,83 @@ module.exports = function(firebase) {
         }
     });
 
+    // router.get('/create', function(req, res, next) {
+    //     if (firebase.auth().currentUser) {
+    //         res.render('create-member', {
+    //             title: "Create Member | Ramblin' Reck Club",
+    //             user: firebase.auth().currentUser,
+    //             moment: mmt
+    //         });
+    //     } else {
+    //         res.redirect('/login');
+    //     }
+    // });
+    //
+    // router.put('/create', function(req, res, next) {
+    //     if (firebase.auth().currentUser) {
+    //         var requestData = req.body;
+    //         var authData = req.headers;
+    //         var email = authData['user-email'];
+    //         var password = authData['user-password'];
+    //         firebase
+    //             .auth()
+    //             .createUserWithEmailAndPassword(email, password)
+    //             .catch(function(error) {
+    //                 if (error) {
+    //                     res.status(400).send({
+    //                         "status" : "bad",
+    //                         "message": "bad request",
+    //                         "detailedMessage" : error
+    //                     });
+    //                 } else {
+    //                     req.session.cookie.authdata = authData;
+    //                     firebase
+    //                         .database()
+    //                         .ref('user/' + authData.uid)
+    //                         .push({
+    //                             username: requestData.username,
+    //                             email: requestData.email,
+    //                             firstName: requestData.firstName,
+    //                             lastName: requestData.lastName,
+    //                             fullName: requestData.firstName + ' ' + requestData.lastName,
+    //                             birthDate: mmt(requestData.birthDate).hour(12).minute(0).second(0).valueOf(),
+    //                             streetAddress: requestData.streetAddress,
+    //                             city: requestData.city,
+    //                             state: requestData.state,
+    //                             zipCode: requestData.zipCode,
+    //                             phoneNumber: requestData.phoneNumber,
+    //                             status: requestData.status,
+    //                             events: {},
+    //                             gradMonth: requestData.gradMonth,
+    //                             gradYear: requestData.gradYear,
+    //                             isAdmin: requestData.isAdmin,
+    //                             isEventAdmin: requestData.isEventAdmin,
+    //                             createdAt: Date.now(),
+    //                             updatedAt: Date.now(),
+    //                             points: 0
+    //                         }, function(err) {
+    //                             if (err) {
+    //                                 res.status(400).send({
+    //                                     "status" : "bad",
+    //                                     "message": "error creating user record",
+    //                                     "detailedMessage" : err
+    //                                 });
+    //                             } else {
+    //                                 res.status(200).send({
+    //                                     status: "ok",
+    //                                     message: "User created successfully!"
+    //                                 });
+    //                             }
+    //                         });
+    //                 }
+    //             });
+    //     } else {
+    //         res.status(401).send({
+    //             "status" : "bad",
+    //             "message": "login required"
+    //         });
+    //     }
+    // });
+
     return router;
 };

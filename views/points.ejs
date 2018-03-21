@@ -41,33 +41,33 @@
             return a > b ? -1 : a < b ? 1 : 0;
         });%>
         <% if (events.length > 0) { %>
-            <% events = events.slice(0, 5) %>
-            <% events.forEach(function(item) { %>
-                <tr id="event-<%= item.id %>">
-                    <% var checked = false;
-                        if (user.hasOwnProperty('events') && user.events.indexOf(item.id) != -1) {
-                            checked = true;
-                        }
-                    %>
-                    <th>
-                        <% if (checked) { %>
-                            <input id="event-<%= item.id %>-box" class="event-checkbox" type="checkbox" aria-label="<%=item.id%>" checked="true">
-                        <% } else { %>
-                            <input id="event-<%= item.id %>-box" class="event-checkbox" type="checkbox" aria-label="<%=item.id%>">
-                        <% } %>
-                    </th>
-                    <td><%= moment(item.date).format("M/D") %></td>
-                    <td>
-                        <% if (user.isAdmin || user.isEventAdmin) { %>
-                        <a class="btn-link" href="/events/update/<%= item.id %>"><%= item.name %></a>
-                        <% } else { %>
-                        <%= item.name %>
-                        <% } %>
-                        <% if (item.bonus == true || item.bonus === 'true') { %> <span class="text-muted">(BONUS)</span> <% } %> <% if (item.family == true || item.family === 'true') { %> <span class="text-muted">(FAMILY)</span> <% } %> <span class="badge badge-primary"><%= item.type %></span>
-                    </td>
-                    <td><%= item.points %></td>
-                </tr>
-            <%});%>
+        <% events = events.slice(0, 5) %>
+        <% events.forEach(function(item) { %>
+        <tr id="event-<%= item.id %>">
+            <% var checked = false;
+                if (user.hasOwnProperty('events') && user.events.keys().indexOf(item.id) != -1) {
+                    checked = true;
+                }
+            %>
+            <th>
+                <% if (checked) { %>
+                <input id="event-<%= item.id %>-box" class="event-checkbox" type="checkbox" aria-label="<%=item.id%>" checked="true">
+                <% } else { %>
+                <input id="event-<%= item.id %>-box" class="event-checkbox" type="checkbox" aria-label="<%=item.id%>">
+                <% } %>
+            </th>
+            <td><%= moment(item.date).format("M/D") %></td>
+            <td>
+                <% if (user.isAdmin || user.isEventAdmin) { %>
+                <a class="btn-link" href="/events/update/<%= item.id %>"><%= item.name %></a>
+                <% } else { %>
+                <%= item.name %>
+                <% } %>
+                <% if (item.bonus == true || item.bonus === 'true') { %> <span class="text-muted">(BONUS)</span> <% } %> <% if (item.family == true || item.family === 'true') { %> <span class="text-muted">(FAMILY)</span> <% } %> <span class="badge badge-primary"><%= item.type %></span>
+            </td>
+            <td><%= item.points %></td>
+        </tr>
+        <%});%>
         <% } %>
         </tbody>
     </table>
@@ -85,38 +85,73 @@
 <%- include partials/footer.ejs %>
 <%- include partials/scripts.ejs %>
 <script>
-    // ENABLE ONCE YOU FIGURE OUT HOW TO DO ADD?SUBTRACT WITH EVENT IDS IN FIREBASE
-// $('#submit-points-button').on('click', function(event) {
-//    event.preventDefault();
-//    var eventIds = [];
-//     $('.newly-selected').each(function(idx) {
-//         eventIds.push(this.prop('aria-label'));
-//     });
-//     console.log(eventIds);
-//     $.ajax({
-//         url: '/events/add-event',
-//         type: 'PUT',
-//         data: {
-//             eventIds: eventIds
-//         },
-//         success: function(result) {
-//             console.log(result);
-//             window.reload();
-//         },
-//         failure: function(err) {
-//             console.log(err);
-//             alert(err);
-//         }
-//     });
-// });
+    // ENABLE ONCE YOU FIGURE OUT HOW TO DO ADD/SUBTRACT WITH EVENT IDS IN FIREBASE
+    $('#submit-points-button').on('click', function(event) {
+        event.preventDefault();
+        var events = <%= events %>;
+        console.log(events);
+        var newEvents = [];
+        $('.newly-selected').each(function(idx) {
+            var eventId = $(this).prop('aria-label');
+            if (events.indexOf(eventId) !== -1) {
+                var event = events[events.indexOf(eventId)];
+                newEvents.push({
+                    id: event.id,
+                    points: event.points
+                });
+            }
+        });
+        console.log(newEvents);
 
-$('.event-checkbox').on('change', function(event) {
-    if ($(this).hasClass('newly-selected')) {
-        $(this).removeClass('newly-selected');
-    } else {
-        $(this).addClass('newly-selected');
-    }
-});
+        var removedEvents = [];
+        $('.newly-removed').each(function(idx) {
+            var eventId = $(this).prop('aria-label');
+            if (events.indexOf(eventId) !== -1) {
+                var event = events[events.indexOf(eventId)];
+                removedEvents.push({
+                    id: event.id,
+                    points: event.points
+                });
+            }
+        });
+        console.log(removedEvents);
+
+        $.ajax({
+            url: '/events/add-event',
+            type: 'PUT',
+            data: {
+                newEvents: newEvents,
+                removedEvents: removedEvents,
+                points: <%= user.points %>
+            },
+            success: function(result) {
+                console.log(result);
+                window.reload();
+            },
+            failure: function(err) {
+                console.log(err);
+                alert(err);
+            }
+        });
+    });
+
+    $('.event-checkbox').on('change', function(event) {
+        if ($(this).hasClass('newly-selected')) {
+            $(this).removeClass('newly-selected');
+        } else {
+            $(this).addClass('newly-selected');
+        }
+    });
+
+    $('.event-checkbox').on('change', function(event) {
+        if ($(this).is(':checked') === true) {
+            if ($(this).hasClass('newly-removed')) {
+                $(this).removeClass('newly-removed');
+            } else {
+                $(this).addClass('newly-removed');
+            }
+        }
+    });
 </script>
 </body>
 

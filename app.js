@@ -16,11 +16,9 @@ var config = {
     storageBucket: process.env.FIREBASE_STORAGE_BUCKET + ".appspot.com",
     messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID
 };
-
 firebase.initializeApp(config);
 
 var app = express();
-var database = firebase.database();
 
 var index = require('./routes/index');
 var families = require('./routes/families')(firebase);

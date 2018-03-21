@@ -105,6 +105,28 @@ function getEventListRecent(firebase, year, month, count, success, error) {
     });
 }
 
+function diffArrays (a1, a2) {
+    var a = [], diff = [];
+
+    for (var i = 0; i < a1.length; i++) {
+        a[a1[i]] = true;
+    }
+
+    for (var i = 0; i < a2.length; i++) {
+        if (a[a2[i]]) {
+            delete a[a2[i]];
+        } else {
+            a[a2[i]] = true;
+        }
+    }
+
+    for (var k in a) {
+        diff.push(k);
+    }
+
+    return diff;
+}
+
 module.exports = function(firebase) {
     /* GET events listing. */
     rtr.get('/', function(req, res, next) {
@@ -120,7 +142,7 @@ module.exports = function(firebase) {
                         var user = snapshot.val();
                         if (user.events != null) {
                             user.events = user.events.filter(function(item) {
-                                return (item != null && item.length !== 0);
+                                return (item != null);
                             });
                         }
                         user.uid = snapshot.key;
@@ -406,17 +428,93 @@ module.exports = function(firebase) {
         }
     });
 
-    // rtr.put('/add-event', function(req, res) {
-    //     var userId = firebase.auth().currentUser.uid;
-    //     var eventIds = req.body.eventIds;
-    //     firebase
-    //         .database()
-    //         .ref('user/' + userId)
-    //         .child('events')
-    //         .push(eventIds, function(error) {
-    //             onComplete(error, res, "Events added to " + userId + " successfully!")
-    //         });
-    // });
+    rtr.put('/add-event', function(req, res) {
+        if (!firebase.auth().currentUser) {
+            res.status(401).send({
+                status:"bad",
+                message: "login required",
+                detailedMessage: {
+                    message: "Access unauthorized. login required."
+                }
+            })
+        } else {
+            var userId = firebase.auth().currentUser.uid;
+
+            var removedEvents = req.body.removedEvents;
+            var newEvents = diffArrays(removedEvents, req.body.newEvents);
+
+            var coreRef = firebase.database().ref();
+            var userRef = coreRef.child('user/' + userId);
+            var pointsDelta = 0;
+            var promises = [];
+            newEvents.forEach(function(item) {
+                var eventsRef = coreRef.child('event/' + item.id);
+                promises.push(
+                    eventsRef
+                        .child("attendees")
+                        .child(userId)
+                        .set(true)
+                );
+
+                promises.push(
+                    userRef
+                        .child('events')
+                        .child(item.id)
+                        .set({
+                            attended: true,
+                            points: item.points
+                        })
+                );
+                pointsDelta += item.points;
+            });
+
+            removedEvents.forEach(function(item) {
+                var eventsRef = coreRef.child('event/' + item.id);
+                promises.push(
+                    eventsRef
+                        .child("attendees")
+                        .child(userId)
+                        .set(false)
+                );
+
+                promises.push(
+                    userRef
+                        .child('events')
+                        .child(item.id)
+                        .set({
+                            attended: false,
+                            points: 0
+                        })
+                );
+                pointsDelta -= item.points;
+            });
+
+            promises.push(
+                userRef
+                    .child('points')
+                    .set(req.body.points + pointsDelta)
+            );
+
+            Promise
+                .all(promises)
+                .then(function(snaps) {
+                    console.log(snaps);
+                    res.send(200).send({
+                        status: "ok",
+                        message: "Events added successfully",
+                        detailedMessage: {
+                            message: "Events added successfully"
+                        }
+                    });
+                }).catch(function(err) {
+                    res.send(400).send({
+                        status: "ok",
+                        message: "Error adding events to user " + userId ,
+                        detailedMessage: err
+                    });
+                });
+        }
+    });
 
     return {
         router: rtr,
