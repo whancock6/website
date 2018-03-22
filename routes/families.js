@@ -111,10 +111,14 @@ module.exports = function(firebase) {
 
     router.get('/create', function(req, res, next) {
         if (firebase.auth().currentUser) {
+            // REMINDER: fix this db call to make things async
+            // needed to make things work
+            // var availableMembers = firebase.database().ref('user').once('value');
             res.render('create-family', {
                 title: "Create Family | Ramblin' Reck Club",
                 user: firebase.auth().currentUser,
-                moment: mmt
+                moment: mmt,
+                // availableMembers: availableMembers
             });
         } else {
             return res.redirect('/login');
