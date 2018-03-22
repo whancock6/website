@@ -19,7 +19,8 @@ module.exports = function(firebase) {
                        title: "Members | Ramblin' Reck Club",
                        user: Utils.cleanUser(currentUser),
                        users: Utils.cleanUserList(userRecords),
-                       moment: mmt
+                       moment: mmt,
+                       FIREBASE_PROJECT_ID: process.env.FIREBASE_PROJECT_ID
                    });
                } else {
                    res.render('error', {
@@ -55,15 +56,16 @@ module.exports = function(firebase) {
                         title: "User | Ramblin' Reck Club",
                         user: currentUser,
                         selectedUser: selectedUser,
-                        moment: mmt
+                        moment: mmt,
+                        FIREBASE_PROJECT_ID: process.env.FIREBASE_PROJECT_ID
                     });
                 } else if (snapshots.length == 1) {
-                    var currentUser = Utils.cleanUser(snapshots[0]);
-                    res.render('user', {
-                        title: "User | Ramblin' Reck Club",
-                        user: currentUser,
-                        selectedUser: {},
-                        moment: mmt
+                    res.render('error', {
+                        message: "Malformed internal request. Please report to <a ref=\"mailto:technology@reckclub.org\">RRC Technology Chair</a>.",
+                        error: {
+                            stack: "check /members route",
+                            status: "400 - bad request"
+                        }
                     });
                 } else {
                     res.render('error', {

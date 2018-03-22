@@ -60,40 +60,38 @@
     </div>
     <hr class="mb-3">
     <h4 class="mb-3">Attended Events</h4>
-    <div class="row">
-        <table class="table table-responsive-md mb-3">
-            <thead>
-            <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Date</th>
-                <th scope="col">Points</th>
-            </tr>
-            </thead>
-            <tbody>
-            <% user.events.sort(function(a, b) {
-                a = new Date(a.date);
-                b = new Date(b.date);
-                return a > b ? -1 : a < b ? 1 : 0;
-            });%>
-            <% if (user.events.length > 0) { %>
-            <% user.events.forEach(function(item) { %>
-            <tr id="event-<%= item.id %>">
-                <td>
-                    <% if (selectedUser.isAdmin || selectedUser.isEventAdmin) { %>
-                    <a class="btn-link" href="/events/update/<%= item.id %>"><%= item.name %></a>
-                    <% } else { %>
-                    <%= item.name %>
-                    <% } %>
-                    <% if (item.bonus == true || item.bonus === 'true') { %> <span class="text-muted">(BONUS)</span> <% } %> <% if (item.family == true || item.family === 'true') { %> <span class="text-muted">(FAMILY)</span> <% } %> <span class="badge badge-primary"><%= item.type %></span>
-                </td>
-                <td><%= moment(item.date).format("M/D") %></td>
-                <td><%= item.points %></td>
-            </tr>
-            <%});%>
-            <% } %>
-            </tbody>
-        </table>
-    </div>
+    <table class="table table-responsive-xs mb-3">
+        <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Date</th>
+            <th scope="col" style="text-align: right;">Points</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% user.events.sort(function(a, b) {
+            a = new Date(a.date);
+            b = new Date(b.date);
+            return a > b ? -1 : a < b ? 1 : 0;
+        });%>
+        <% if (user.events.length > 0) { %>
+        <% user.events.forEach(function(item) { %>
+        <tr id="event-<%= item.id %>">
+            <td>
+                <% if (selectedUser.isAdmin || selectedUser.isEventAdmin) { %>
+                <a class="btn-link" href="/events/update/<%= item.id %>"><%= item.name %></a>
+                <% } else { %>
+                <%= item.name %>
+                <% } %>
+                <% if (item.bonus == true || item.bonus === 'true') { %> <span class="text-muted">(BONUS)</span> <% } %> <% if (item.family == true || item.family === 'true') { %> <span class="text-muted">(FAMILY)</span> <% } %> <span class="badge badge-primary"><%= item.type %></span>
+            </td>
+            <td><%= moment(item.date).format("M-D-YYYY") %></td>
+            <td align="right"><%= item.points %></td>
+        </tr>
+        <%});%>
+        <% } %>
+        </tbody>
+    </table>
 </div>
 <%- include partials/footer.ejs %>
 <%- include partials/scripts.ejs %>

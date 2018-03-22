@@ -26,7 +26,8 @@ module.exports = function(firebase) {
                                 title: "Points | Ramblin' Reck Club",
                                 user: Utils.cleanUser(snap),
                                 events: dataArr,
-                                moment: mmt
+                                moment: mmt,
+                                FIREBASE_PROJECT_ID: process.env.FIREBASE_PROJECT_ID
                             });
                         }).catch(function(err) {
                             console.log('ERROR: ' + err);
@@ -45,7 +46,8 @@ module.exports = function(firebase) {
                                 title: "Points | Ramblin' Reck Club",
                                 user: Utils.cleanUser(snap),
                                 events: [],
-                                moment: mmt
+                                moment: mmt,
+                                FIREBASE_PROJECT_ID: process.env.FIREBASE_PROJECT_ID
                             });
                         }).catch(function(err) {
                         console.log('ERROR: ' + err);

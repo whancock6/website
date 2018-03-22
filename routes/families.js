@@ -15,7 +15,8 @@ module.exports = function(firebase) {
                         title: "Families | Ramblin' Reck Club",
                         user: Utils.cleanUser(snapshot),
                         families: [],
-                        moment: mmt
+                        moment: mmt,
+                        FIREBASE_PROJECT_ID: process.env.FIREBASE_PROJECT_ID
                     });
                 }).catch(function(err) {
                     console.log('ERROR: ' + err);

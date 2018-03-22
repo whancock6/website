@@ -44,9 +44,7 @@ module.exports = function(firebase) {
     });
     router.get('/signOut', function(req, res, next) {
         if (firebase.auth().currentUser) {
-            // [START signout]
             firebase.auth().signOut();
-            // [END signout]
             res.status(200).send({
                 status: "ok",
                 message: "Signed out successfully"

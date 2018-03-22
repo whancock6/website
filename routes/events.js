@@ -109,7 +109,8 @@ module.exports = function(firebase) {
                             user: Utils.cleanUser(snapshot),
                             moment: mmt,
                             month: month,
-                            events: results
+                            events: results,
+                            FIREBASE_PROJECT_ID: process.env.FIREBASE_PROJECT_ID
                         });
                     }).catch(function(err) {
                         console.log('ERROR: ' + err);
@@ -129,7 +130,8 @@ module.exports = function(firebase) {
                             user: Utils.cleanUser(snapshot),
                             moment: mmt,
                             events: [],
-                            month: month
+                            month: month,
+                            FIREBASE_PROJECT_ID: process.env.FIREBASE_PROJECT_ID
                         });
                     }).catch(function(err) {
                         console.log('ERROR: ' + err);
@@ -204,7 +206,8 @@ module.exports = function(firebase) {
                             user: Utils.cleanUser(snap),
                             moment: mmt,
                             events: results,
-                            month: month
+                            month: month,
+                            FIREBASE_PROJECT_ID: process.env.FIREBASE_PROJECT_ID
                         });
                     }).catch(function(err) {
                         console.log('ERROR: ' + err);
