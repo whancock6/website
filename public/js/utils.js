@@ -11,3 +11,7 @@ if ($(window).width() >= 768) {
         $(".jumbotron-third-detail").addClass('');
     }
 }
+
+if ($(window).width() < 992) {
+    $('div.gradient').remove();
+}

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<%- include partials/head.ejs %>
+<link rel="stylesheet" href="/css/nav-scroller.css">
+<body>
+<%- include partials/public-header.ejs %>
+<div class="container">
+    <h2 class="mb-3">2017-2018 Roster</h2>
+    <h4 class="mb-4">Executive Board</h4>
+    <div class="row">
+        <div class="col-md-6">
+            <p><strong>Faculty Advisor:</strong> <a href="mailto:estephens34@gatech.edu">Gerome Stephens</a></p>
+            <p><strong>Reck Driver:</strong> <a href="mailto:driver@reckclub.org">Hannah Todd</a></p>
+            <p><strong>President:</strong> <a href="mailto:president@reckclub.org">Matt DeJonge</a></p>
+            <p><strong>Vice President:</strong> <a href="mailto:cassdaley@gmail.com">Daley Cass</a></p>
+        </div>
+        <div class="col-md-6">
+            <p><strong>Treasurer:</strong> <a href="mailto:treasurer@reckclub.org">Jill Riley</a></p>
+            <p><strong>Secretary:</strong> <a href="mailto:secretary@reckclub.org">Sunny Thomson</a></p>
+            <p><strong>Member-at-Large:</strong> <a href="mailto:powellbrittanyj@gmail.com">Brittany Powell</a></p>
+            <p><strong>Member-at-Large:</strong> <a href="mailto:akeaswaran@me.com">Akshay Easwaran</a></p>
+        </div>
+    </div>
+    <hr class="mb-3">
+    <h4 class="mb-3">Chairs</h4>
+
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <% var chairs = [{
+                chair: 'Alumni Relations',
+                name: 'Robert Cottingham'
+            },
+                {
+                    chair: 'Baseball',
+                    name: 'Emily Davis'
+                },
+                {
+                    chair: 'Basketball',
+                    name: 'Jake Grant'
+                },
+                {
+                    chair: 'Big Buzz',
+                    name: 'Cole Lewis'
+                },
+                {
+                    chair: 'Campus Outreach',
+                    name: 'Kayleigh Nortje'
+                },
+                {
+                    chair: 'Football',
+                    name: 'Jake Grant'
+                },
+                {
+                    chair: 'Fundraising',
+                    name: 'Maddie Dickerson'
+                }]; %>
+
+            <% chairs.forEach(function(item) { %>
+            <p><strong><%= item.chair %>:</strong> <%= item.name %></p>
+            <% }); %>
+        </div>
+        <div class="col-md-6">
+            <% var chairs = [
+                {
+                    chair: 'Homecoming',
+                    name: 'Brayton Miles'
+                },
+                {
+                    chair: 'Non-Revenue Sports',
+                    name: 'Aaron Young'
+                },
+                {
+                    chair: 'Public Relations',
+                    name: 'Davis Burson'
+                },
+                {
+                    chair: 'T-Book',
+                    name: 'Jo\'De Cummings'
+                },
+                {
+                    chair: 'T-Night',
+                    name: 'Isabel Wickliffe'
+                },
+                {
+                    chair: 'Technology',
+                    name: 'Josh Philliber'
+                }, {
+                    chair: 'Traditions',
+                    name: 'Elisabeth McDonnell'
+                }];%>
+            <% chairs.forEach(function(item) { %>
+            <p><strong><%= item.chair %>:</strong> <%= item.name %></p>
+            <% }); %>
+        </div>
+    </div>
+    <hr class="mb-3">
+    <h4 class="mb-3">Members</h4>
+    <div class="row">
+        <div class="col-md-3">
+            <% var members = ['Aaron Young','Akshay Easwaran','Alec Hendrix','Benjamin Damus','Beth Stayduhar','Brayton Miles','Brittany Powell','Brooke Brennan','Caitlin Hirschler','Chris Healy',]; %>
+            <% members.forEach(function(item) { %>
+            <p><%= item %></p>
+            <% }); %>
+        </div>
+        <div class="col-md-3">
+            <% var members = ['Cole Lewis','Daley Cass','Davis Burson','Ebie McDonnell','Emily Davis','Halle Bryan','Hannah Todd','Houtan Satarian','Isabel Wickliffe','Jake Grant']; %>
+            <% members.forEach(function(item) { %>
+            <p><%= item %></p>
+            <% }); %>
+        </div>
+        <div class="col-md-3">
+            <% var members = ['Jill Riley','Jo\'De Cummings','Josh Philliber','Kayleigh Nortje','Macey Parrott','Maddie Dickerson','Margaret Dickey','Matt DeJonge','Morgan Stephens','Noah Bryant']; %>
+            <% members.forEach(function(item) { %>
+            <p><%= item %></p>
+            <% }); %>
+        </div>
+        <div class="col-md-3">
+            <% var members = ['Noah Schaich','Robert Cottingham','Sara Beagle','Savannah Harris','Scott Pergament','Sunny Thomson','Yash Punjabi','Ziad Ammar','Zoe Sieling']; %>
+            <% members.forEach(function(item) { %>
+            <p><%= item %></p>
+            <% }); %>
+        </div>
+    </div>
+    <hr class="mb-3">
+    <h4 class="mb-4">Probates</h4>
+    <div class="row mb-3">
+        <div class="col-md-3">
+            <% var probates = ['Abi Ivemeyer','Aman Aggarwal','Amanda Healy','Brandon Dobson','Cade Lawson','Caroline Means','Corbett Kaniff']; %>
+            <% probates.forEach(function(item) { %>
+            <p><%= item %></p>
+            <% }); %>
+        </div>
+        <div class="col-md-3">
+            <% var probates = ['Ethan Kreager','Ethan Rosman','Gracie Curran','Inika Jain','Isaac Ilivicky','Isabelle Liffiton','Jonas Braun']; %>
+            <% probates.forEach(function(item) { %>
+            <p><%= item %></p>
+            <% }); %>
+        </div>
+        <div class="col-md-3">
+            <% var probates = ['Joseph Macmillan','Kassie Lee','Katie Coveny','Laura Hancher','Marissa Klee','Matt O\'Brien','McKade Stewart']; %>
+            <% probates.forEach(function(item) { %>
+            <p><%= item %></p>
+            <% }); %>
+        </div>
+        <div class="col-md-3">
+            <% var probates = ['Neel Naik','Ronnie Ludwin','Samantha White','Samuel Stewart','Sydney Weisenburger']; %>
+            <% probates.forEach(function(item) { %>
+            <p><%= item %></p>
+            <% }); %>
+        </div>
+    </div>
+    <hr class="mb-3">
+</div>
+
+<%- include partials/footer.ejs %>
+<%- include partials/scripts.ejs %>
+</body>
+
+</html>
