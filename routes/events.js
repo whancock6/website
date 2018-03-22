@@ -412,7 +412,9 @@ module.exports = function(firebase) {
                             .set({
                                 attended: true,
                                 points: item.points,
-                                type: item.type
+                                name: item.name,
+                                type: item.type,
+                                date: item.date
                             })
                     );
                     pointsDelta += parseInt(item.points);

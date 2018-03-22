@@ -81,7 +81,9 @@
                     newEvents.push({
                         id: ev.id,
                         points: ev.points,
-                        type: ev.type
+                        name: ev.name,
+                        type: ev.type,
+                        date: ev.date
                     });
                 }
             } else if (originallySelected && !currentlySelected) {
@@ -92,7 +94,9 @@
                     removedEvents.push({
                         id: ev.id,
                         points: ev.points,
-                        type: ev.type
+                        name: ev.name,
+                        type: ev.type,
+                        date: ev.date
                     });
                 }
             } else if (!originallySelected && !currentlySelected) {
