@@ -12,18 +12,8 @@ var serviceAccount = require("service-account-key.json");
 
 firebase.initializeApp({
     credential: firebase.credential.cert(serviceAccount),
-    databaseURL: "https://rrc-test-4a1b5.firebaseio.com"
+    databaseURL: "https://" + process.env.FIREBASE_DATABASE_URL +".firebaseio.com",
 });
-// App consumer
-// var config = {
-//     apiKey: process.env.FIREBASE_API_KEY,
-//     authDomain: process.env.FIREBASE_AUTH_DOMAIN + ".firebaseapp.com",
-//     databaseURL: "https://" + process.env.FIREBASE_DATABASE_URL +".firebaseio.com",
-//     projectId: process.env.FIREBASE_PROJECT_ID,
-//     storageBucket: process.env.FIREBASE_STORAGE_BUCKET + ".appspot.com",
-//     messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID
-// };
-// firebase.initializeApp(config);
 
 var app = express();
 
@@ -53,12 +43,7 @@ app.use(session({
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/admin', index);
-app.use('/admin/members', users);
-app.use('/admin/events', events.router);
-app.use('/admin/points', points);
-app.use('/admin/families', families);
-app.use('/admin/login', login);
+app.use('/members', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

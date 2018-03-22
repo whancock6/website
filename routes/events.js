@@ -25,7 +25,7 @@ function getEventList(firebase, success, error) {
         .endAt(mmt(Date.now()).hour(23).minute(59).second(59).valueOf())
         .once('value')
         .then(function (snapshot) {
-            var dataArr = Utils.cleanEvents(snapshot);
+            var dataArr = Utils.cleanSnapshotArray(snapshot);
             dataArr.sort(function(a, b) {
                return a.date < b.date;
             });
@@ -43,7 +43,7 @@ function getEventListCount(firebase, count, success, error) {
         .limitToLast(Math.min(parseInt(count), 100))
         .once('value')
         .then(function (snapshot) {
-            var dataArr = Utils.cleanEvents(snapshot);
+            var dataArr = Utils.cleanSnapshotArray(snapshot);
             success(dataArr);
         }).catch(function (err) {
             error(err);
@@ -63,7 +63,7 @@ function getEventListDate(firebase, year, month, success, error) {
         .endAt(Date.parse(mmt(firstOfMonth).endOf('month').hour(23).minute(59).second(59).format('YYYY-MM-DD')))
         .once('value')
         .then(function (snapshot) {
-            var dataArr = Utils.cleanEvents(snapshot);
+            var dataArr = Utils.cleanSnapshotArray(snapshot);
             success(dataArr);
         }).catch(function (err) {
             error(err);
@@ -85,7 +85,7 @@ function getEventListRecent(firebase, year, month, count, success, error) {
         .limitToLast(Math.min(parseInt(cnt), 100))
         .once('value')
         .then(function (snapshot) {
-            var dataArr = Utils.cleanEvents(snapshot);
+            var dataArr = Utils.cleanSnapshotArray(snapshot);
             success(dataArr);
         }).catch(function (err) {
             error(err);
@@ -357,6 +357,7 @@ module.exports = function(firebase) {
         }
     });
 
+    // REMINDER: WRITE CLOUD FUNCTION TO UPDATE USERS TO DROP THIS EVENT FROM USERS.EVENTS
     rtr.delete('/delete/:id', function(req, res, next) {
         if (firebase.auth().currentUser) {
             firebase.database().ref('event/' + req.params.id).remove()

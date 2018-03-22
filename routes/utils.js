@@ -20,8 +20,8 @@ function cleanUser(snapshot) {
     return user;
 }
 
-function cleanEvents(snapshot) {
-    console.log('cleaning set of events');
+function cleanSnapshotArray(snapshot) {
+    console.log('cleaning snapshot array');
     var dataArr = [];
     snapshot.forEach(function(item) {
         var itemDict = item.val();
@@ -30,7 +30,6 @@ function cleanEvents(snapshot) {
     });
     return dataArr;
 }
-
 
 function cleanUserList(snapshot) {
     console.log('cleaning set of users');
@@ -43,6 +42,6 @@ function cleanUserList(snapshot) {
 
 module.exports = {
     cleanUser: cleanUser,
-    cleanEvents: cleanEvents,
+    cleanSnapshotArray: cleanSnapshotArray,
     cleanUserList: cleanUserList
 };

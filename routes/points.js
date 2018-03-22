@@ -16,7 +16,7 @@ module.exports = function(firebase) {
                 .endAt(mmt(Date.now()).hour(23).minute(59).second(59).valueOf())
                 .once('value')
                 .then(function (snapshot) {
-                    var dataArr = Utils.cleanEvents(snapshot);
+                    var dataArr = Utils.cleanSnapshotArray(snapshot);
                     firebase
                         .database()
                         .ref('user/' + firebase.auth().currentUser.uid)
