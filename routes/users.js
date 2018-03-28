@@ -45,27 +45,55 @@ module.exports = function(firebase) {
         if (firebase.auth().currentUser) {
             var records = [
                 firebase.database().ref('user/' + req.params.id).once('value'),
-                firebase.database().ref('user/' + firebase.auth().currentUser.uid).once('value')
+                firebase.database().ref('user/' + firebase.auth().currentUser.uid).once('value'),
+                firebase.database().ref('event').once('value'),
+                firebase.database().ref('user').orderByChild('status').once('value')
             ];
 
             Promise.all(records).then(function(snapshots) {
-                if (snapshots.length == 2) {
+                if (snapshots.length == 4) {
                     var selectedUser = Utils.cleanUser(snapshots[0]);
                     var currentUser = Utils.cleanUser(snapshots[1]);
+                    var eventsList = snapshots[2];
+                    var eventCount = 0;
+                    eventsList.forEach(function(item) {
+                        eventCount++;
+                    });
+
+                    var probateTotal = 0.0;
+                    var probateCount = 0.0;
+                    var memberTotal = 0.0;
+                    var memberCount = 0.0;
+
+                    var userList = snapshots[3];
+                    userList.forEach(function(item) {
+                        var userDict = item.val();
+                        if (userDict.status == 'member') {
+                            memberTotal += parseFloat(userDict.points);
+                            memberCount++;
+                        } else if (userDict.status == 'probate') {
+                            probateTotal += parseFloat(userDict.points);
+                            probateCount++;
+                        }
+                    });
+
+                    var clubTotal = memberTotal + probateTotal;
+                    var clubCount = memberCount + probateCount;
+                    var clubAvg = (clubCount > 0) ? (clubTotal / clubCount) : 0;
+
+                    var probateAvg = (probateCount > 0) ? (probateTotal / probateCount) : 0;
+                    var memberAvg = (memberCount > 0) ? (memberTotal / memberCount) : 0;
+
                     res.render('user', {
                         title: "User | Ramblin' Reck Club",
                         user: currentUser,
                         selectedUser: selectedUser,
                         moment: mmt,
+                        totalEvents: eventCount,
+                        probateAvg: probateAvg,
+                        memberAvg: memberAvg,
+                        clubAvg: clubAvg,
                         FIREBASE_PROJECT_ID: process.env.FIREBASE_PROJECT_ID
-                    });
-                } else if (snapshots.length == 1) {
-                    res.render('error', {
-                        message: "Malformed internal request. Please report to <a ref=\"mailto:technology@reckclub.org\">RRC Technology Chair</a>.",
-                        error: {
-                            stack: "check /members route",
-                            status: "400 - bad request"
-                        }
                     });
                 } else {
                     res.render('error', {

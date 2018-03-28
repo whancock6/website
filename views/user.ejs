@@ -46,9 +46,9 @@
         <div class="col-md-4 mb-3">
             <h5 class="mb-3">Overview</h5>
             <h6 class="mb-2"><strong>Total Points:</strong> <%= selectedUser.points %></h6>
-            <h6 class="mb-2"><strong>Probate Points Average:</strong> 0</h6>
-            <h6 class="mb-2"><strong>Member Points Average:</strong> 0</h6>
-            <h6 class="mb-2"><strong>RRC Points Average:</strong> 0</h6>
+            <h6 class="mb-2"><strong>Probate Points Average:</strong> <%= probateAvg %></h6>
+            <h6 class="mb-2"><strong>Member Points Average:</strong> <%= memberAvg %></h6>
+            <h6 class="mb-2"><strong>RRC Points Average:</strong> <%= clubAvg %></h6>
             <hr class="mb-4">
             <h5 class="mb-3">Breakdown</h5>
             <h6 class="mb-2"><strong style="color: rgba(32, 158, 66, 1);">Work:</strong> <span id="work-count"></span></h6>
@@ -99,8 +99,8 @@
 <script>
     var userEvents = <%- selectedUser.hasOwnProperty('events') ? JSON.stringify(selectedUser.events) : JSON.stringify([]) %>;
     var sum = userEvents.length;
-    var total = 2; // REMINDER: REPLACE WITH ACTUAL VALUE; IMPORT EVENTS LIST OR AT LEAST TOTAL
-    // REMINDER: NEED TO RETRIEVE POINT AVGS FOR MEMBERS, PROBATES, AND RRC
+    var total = <%- totalEvents %>;
+
     var socialCount = userEvents.filter(function(item) {
         return item.type == 'social';
     }).length;

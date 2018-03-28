@@ -338,16 +338,39 @@ module.exports = function(firebase) {
     rtr.put('/update/:id', function(req, res, next) {
         if (firebase.auth().currentUser) {
             var requestData = req.body;
-            firebase.database().ref('event/' + req.params.id).set({
+            var cleanedRequestData = {
                 name: requestData.name,
                 date: mmt(requestData.date).hour(12).minute(0).second(0).valueOf(),
-                points: requestData.points,
+                points: parseInt(requestData.points),
                 bonus: requestData.bonus,
                 family: requestData.family,
                 type: requestData.type,
                 updatedAt: Date.now()
-            }, function(error) {
-                onComplete(error, res, "Event updated successfully!")
+            };
+            firebase.database().ref('event/' + req.params.id).set(cleanedRequestData, function(error) {
+                if (error != null) {
+                    var updates = {};
+                    firebase.database().ref('user').on('value', function(snapshot) {
+                        if (snapshot != null) {
+                            snapshot.forEach(function(item) {
+                                if (item.val().events.keys().includes(req.params.id)) {
+                                    var userEvent = item.val().events[req.params.id];
+                                    updates['user/' + item.key + '/events/' + req.params.id + '/name'] = cleanedRequestData.name;
+                                    updates['user/' + item.key + '/events/' + req.params.id + '/date'] = cleanedRequestData.date;
+                                    updates['user/' + item.key + '/events/' + req.params.id + '/points'] = parseInt(cleanedRequestData.points);
+                                    updates['user/' + item.key + '/events/' + req.params.id + '/type'] = cleanedRequestData.type;
+                                    updates['user/' + item.key + '/points'] = parseInt(item.points) - parseInt(userEvent.points) + parseInt(cleanedRequestData.points);
+                                }
+                            });
+                            snapshot.ref.update(update, function(err) {
+                                onComplete(err, res, "Update event successful: Updates applied to user.events applied and update of event metadata completed");
+                            });
+                        }
+
+                    });
+                } else {
+                    onComplete(error, res, "Event updated successfully!")
+                }
             });
         } else {
             res.status(401).send({
@@ -362,7 +385,21 @@ module.exports = function(firebase) {
         if (firebase.auth().currentUser) {
             firebase.database().ref('event/' + req.params.id).remove()
                 .then(function () {
-                    onComplete(null, res, "Event removed successfully!")
+                    var updates = {};
+                    firebase.database().ref('user').on('value', function(snapshot) {
+                        if (snapshot != null) {
+                            snapshot.forEach(function(item) {
+                                if (item.val().events.keys().includes(req.params.id)) {
+                                    var userEvent = item.val().events[req.params.id];
+                                    updates['user/' + item.key + '/events/' + req.params.id] = false;
+                                    updates['user/' + item.key + '/points'] = parseInt(item.points) - parseInt(userEvent.points);
+                                }
+                            });
+                            snapshot.ref.update(update, function(err) {
+                                onComplete(err, res, "Remove successful: Updates applied to user.events applied and deletion of event completed");
+                            });
+                        }
+                    });
                 })
                 .catch(function (error) {
                     onComplete(error, res, "Remove failed: " + error.message);
