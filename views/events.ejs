@@ -84,7 +84,11 @@
         <div class="col-lg-auto">
         </div>
         <div class="col-lg-auto justify-content-end">
+            <% if (events.length > 0) { %>
+            <button type="button" class="btn btn-primary float-right" id="submit-points-button" disabled>Submit</button>
+            <% } else { %>
             <button type="button" class="btn btn-primary float-right" id="submit-points-button">Submit</button>
+            <% } %>
         </div>
     </div>
 </div>

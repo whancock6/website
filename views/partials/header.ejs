@@ -19,14 +19,15 @@
             <a class="p-2" href="/members">Members</a>
             <a class="p-2" href="/families">Families</a>
             <a class="p-2" href="http://reckclub.org/mediastorage">Media</a>
-            <% if (user.isAdmin) { %>
+            <% if (user.isAdmin != null && user.isAdmin == true) { %>
                 <a class="p-2 dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Admin</a>
                 <div class="dropdown-menu dropdown-menu-right">
-                    <% if (user.isAdmin || user.isEventAdmin) { %>
+                    <% if (user.isAdmin == true || user.isEventAdmin == true) { %>
                     <a class="dropdown-item" href="/events/create">Add Event</a>
                     <% } %>
-                    <% if (user.isAdmin) { %>
-                    <a class="dropdown-item" href="https://console.firebase.google.com/u/0/project/<%= FIREBASE_PROJECT_ID %>/overview">Manage Website</a>
+                    <% if (user.isAdmin == true) { %>
+                    <a class="dropdown-item" href="https://console.firebase.google.com/u/0/project/<%= FIREBASE_PROJECT_ID %>/overview">Firebase Console</a>
+                    <a class="dropdown-item" href="/admin/site/manage">Manage Site</a>
                     <% } %>
                 </div>
             <% } %>

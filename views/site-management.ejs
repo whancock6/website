@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<%- include partials/head.ejs %>
+<body>
+<%- include partials/header.ejs %>
+<div class="container mb-3">
+    <div class="row justify-content-between">
+        <h2 class="col-auto">Manage Site</h2>
+    </div>
+    <hr class="mb-4">
+    <% var options = [
+        {
+            name: 'Create new site user',
+            description: 'Create a new Ramblin\' Reck Club probate or member.',
+            link: '/admin/user/create'
+        },
+        {
+            name: 'Backup Points and Events',
+            description: 'Retrieve a JSON file containing all events and current points rankings.',
+            link: '/admin/points/backup/create'
+        },
+        {
+            name: 'View Firebase Console',
+            description: 'Modify database and backend options in Firebase.',
+            link: 'https://console.firebase.google.com/u/0/project/' + FIREBASE_PROJECT_ID + '/overview'
+        },
+        {
+            name: 'Back up website data',
+            description: 'Retrieve a JSON file containing all current website data (will not include user passwords).',
+            link: '/admin/site/backup/create'
+        }
+    ];%>
+
+    <% options.forEach(function(item) { %>
+        <div class="row mb-3 align-content-between">
+            <div class="col-lg-3">
+                <a class="btn btn-block bnt-md btn-primary" href="<%= item.link %>"><%= item.name %></a>
+            </div>
+            <div class="col-lg-9">
+                <p class="text-muted align-content-center align-content-end" style="vertical-align: middle;"><%= item.description %></p>
+            </div>
+        </div>
+    <% }); %>
+
+    <div class="row mb-3">
+        <div class="col-lg-3">
+            <button id="reset-button" class="btn btn-block bnt-md btn-danger">Reset Points and Events</button>
+        </div>
+        <div class="col-lg-9">
+            <p class="text-muted" style="vertical-align: middle;">WARNING: This will delete all events in the database. Use only to reset points for a new semester.</p>
+        </div>
+    </div>
+</div>
+<%- include partials/footer.ejs %>
+<%- include partials/scripts.ejs %>
+</body>
+
+</html>

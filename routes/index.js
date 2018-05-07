@@ -38,7 +38,6 @@ router.get('/about/roster', function(req, res, next) {
     });
 });
 
-
 router.get('/reckruitment', function(req, res, next) {
     res.render('recruitment-process', {
         title: "RECKruitment | Ramblin' Reck Club",

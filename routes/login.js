@@ -42,6 +42,7 @@ module.exports = function(firebase) {
             return res.end();
         });
     });
+
     router.get('/signOut', function(req, res, next) {
         if (firebase.auth().currentUser) {
             firebase.auth().signOut();

@@ -18,6 +18,15 @@ var config = {
 };
 firebase.initializeApp(config);
 
+var firebaseAdmin = require('firebase-admin');
+var serviceAccount = require("./service-account-key.json");
+
+firebaseAdmin.initializeApp({
+    credential: firebaseAdmin.credential.cert(serviceAccount),
+    databaseURL: "https://" + process.env.FIREBASE_DATABASE_URL +".firebaseio.com",
+});
+
+
 var app = express();
 
 var index = require('./routes/index');
@@ -26,6 +35,8 @@ var users = require('./routes/users')(firebase);
 var events = require('./routes/events')(firebase);
 var points = require('./routes/points')(firebase);
 var login = require('./routes/login')(firebase);
+
+var admin = require('./routes/admin')(firebaseAdmin, firebase);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -52,6 +63,7 @@ app.use('/events', events.router);
 app.use('/points', points);
 app.use('/families', families);
 app.use('/login', login);
+app.use('/admin', admin);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
