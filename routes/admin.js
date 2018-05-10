@@ -5,23 +5,25 @@ var Utils = require('./utils');
 
 module.exports = function(admin, firebase) { // firebase-admin instance + firebase instance
     router.get('/site/manage', function(req, res, next) {
-        firebase
-            .database()
-            .ref('user/' + firebase.auth().currentUser.uid)
-            .once('value')
-            .then(function(snapshot) {
-                res.render('site-management', {
-                    moment: mmt,
-                    title: 'Manage Site | Ramblin\' Reck Club',
-                    user: Utils.cleanUser(snapshot),
-                    FIREBASE_PROJECT_ID: process.env.FIREBASE_PROJECT_ID
-                });
-            }).catch(function(err) {
+        if (firebase.auth().currentUser) {
+            firebase
+                .database()
+                .ref('user/' + firebase.auth().currentUser.uid)
+                .once('value')
+                .then(function(snapshot) {
+                    res.render('site-management', {
+                        moment: mmt,
+                        title: 'Manage Site | Ramblin\' Reck Club',
+                        user: Utils.cleanUser(snapshot),
+                        FIREBASE_PROJECT_ID: process.env.FIREBASE_PROJECT_ID
+                    });
+                }).catch(function(err) {
                 console.log('ERROR: ' + err);
                 res.render('error', {
                     error: err
                 });
-        });
+            });
+        }
     });
 
     router.get('/user/create', function(req, res, next) {
@@ -51,11 +53,13 @@ module.exports = function(admin, firebase) { // firebase-admin instance + fireba
             var authData = req.headers;
             var email = authData['user-email'];
             var password = authData['user-password'];
-            admin.auth().createUser({
-                email: email,
-                password: password,
-                disabled: false
-            })
+            admin
+                .auth()
+                .createUser({
+                    email: email,
+                    password: password,
+                    disabled: false
+                })
                 .then(function(userRecord) {
                     // See the UserRecord reference doc for the contents of userRecord.
                     console.log("Successfully created new user:", userRecord.uid);
@@ -104,6 +108,91 @@ module.exports = function(admin, firebase) { // firebase-admin instance + fireba
                         status: "bad",
                         "message": "error creating user record",
                         "detailedMessage" : error
+                    });
+                });
+        } else {
+            res.status(401).send({
+                "status" : "bad",
+                "message": "login required"
+            });
+        }
+    });
+
+    router.get('/points/backup/create', function(req, res, next) {
+        if (firebase.auth().currentUser) {
+            firebase
+                .database()
+                .ref('event')
+                .once('value')
+                .then(function(snapshot) {
+                    res.json(snapshot.val());
+                })
+                .catch(function(err) {
+                    console.log('ERROR: ' + err);
+                    res.render('error', {
+                        error: err
+                    });
+                })
+        } else {
+            res.redirect('/login');
+        }
+    });
+
+    router.get('/site/backup/create', function(req, res, next) {
+        if (firebase.auth().currentUser) {
+            firebase
+                .database()
+                .ref()
+                .once('value')
+                .then(function(snapshot) {
+                    res.json(snapshot.val());
+                })
+                .catch(function(err) {
+                    console.log('ERROR: ' + err);
+                    res.render('error', {
+                        error: err
+                    });
+                });
+        } else {
+            res.redirect('/login');
+        }
+    });
+
+    router.delete('/site/delete', function(req, res, next) {
+        if (firebase.auth().currentUser) {
+            firebase
+                .database()
+                .ref('events')
+                .remove()
+                .then(function(snapshot) {
+                    var userRef = firebase.database().ref('user');
+                    userRef
+                        .once('value')
+                        .then(function(snap) {
+                            var userList = snap.val();
+                            var updatedPoints = {};
+                            userList.forEach(function(usr) {
+                                updatedPoints["user/" + usr.key + "/points"] = 0;
+                                updatedPoints["user/" + usr.key + "/events"] = null;
+                            });
+                            userRef.update(updatedPoints,function(pointErr) {
+                                console.log('ERROR: ' + pointErr);
+                                res.render('error', {
+                                    error: pointErr
+                                });
+                            });
+                        })
+                        .catch(function(usrErr) {
+                            console.log('ERROR: ' + usrErr);
+                            res.render('error', {
+                                error: usrErr
+                            });
+                        });
+                })
+                .catch(function(err) {
+                    console.log('ERROR: ' + err);
+                    res.render('error', {
+                        error: err
                     });
                 });
         } else {
