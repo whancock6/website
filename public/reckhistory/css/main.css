@@ -1022,7 +1022,7 @@ td, th {
 
 html {
   font-size: 10px;
-  -webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
 
 body {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -5321,7 +5321,7 @@ button.close {
   color: #fff;
   text-align: center;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0);
   filter: alpha(opacity=50);
   opacity: .5; }
 
@@ -5396,7 +5396,7 @@ button.close {
   text-indent: -999px;
   cursor: pointer;
   background-color: #000 \9;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0);
   border: 1px solid #fff;
   border-radius: 10px; }
 
@@ -5652,15 +5652,15 @@ h1, h2, h3, h4 {
     margin-bottom: 50px; } }
 .active a, .nav li a:hover {
   color: white !important;
-  background-color: #C4AC71 !important; }
+  background-color: #B3A369 !important; }
 
 .nav li a {
-  color: #C4AC71;
+  color: #B3A369;
   background-color: white; }
 
 .jumbotron {
   color: white;
-  background: #C4AC71; }
+  background: #B3A369; }
 
 .btn-primary {
   background: #00254c;
@@ -5670,10 +5670,10 @@ h1, h2, h3, h4 {
   background: #335170; }
 
 a {
-  color: #C4AC71; }
+  color: #B3A369; }
 
 a:hover {
-  color: #FFDA8A; }
+  color: #C4AC71; }
 
 .text-muted {
   color: #808080; }
@@ -5682,7 +5682,7 @@ a:hover {
   color: #808080; }
 
 .icon-bar {
-  background: #C4AC71; }
+  background: #B3A369; }
 
 #navbar {
   margin: 0 auto !important; }
