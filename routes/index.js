@@ -2,14 +2,22 @@ var express = require('express');
 var router = express.Router();
 var mmt = require('moment');
 var nodemailer = require('nodemailer');
-var transporter = nodemailer.createTransport({
+var sgTransport = require('nodemailer-sendgrid-transport');
+// debug environment will not actually send emails (redirected to ethereal.email and you can check the content in the URL from the console), but a prod environment will send via SendGrid. Make sure the ENVIRONMENT flag is set in .env properly...
+console.log((process.env.ENVIRONMENT === 'debug') ? "Debug environment engaged - emails will NOT be _actually_ sent." : "Production environment engaged - emails WILL ACTUALLY be sent.");
+var transporter = (process.env.ENVIRONMENT === 'debug') ? nodemailer.createTransport({
     host: 'smtp.ethereal.email',
     port: 587,
     auth: {
         user: process.env.MAILER_USERNAME,
         pass: process.env.MAILER_PASSWORD
     }
-});
+}) : nodemailer.createTransport(sgTransport({
+    auth: {
+        api_user: process.env.SENDGRID_USERNAME,
+        api_key: process.env.SENDGRID_PASSWORD
+    }
+}));
 
 /* GET home page. */
 router.get('/', function(req, res, next) {

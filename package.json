@@ -20,6 +20,7 @@
     "morgan": "~1.9.0",
     "node-sass-middleware": "0.9.8",
     "nodemailer": "^4.6.7",
+    "nodemailer-sendgrid-transport": "^0.2.0",
     "serve-favicon": "~2.4.5"
   }
 }
