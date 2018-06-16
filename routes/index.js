@@ -100,7 +100,7 @@ router.put('/big-buzz/request', function(req, res, next) {
     var requestData = req.body;
     // setup email data with unicode symbols
     var mailOptions = {
-        from: '"Ramblin \' Reck Club 👻" <no-reply@reckclub.org>', // sender address
+        from: '"Ramblin \' Reck Club" <no-reply@reckclub.org>', // sender address
         to: 'Big Buzz Chair <' + process.env.BIG_BUZZ_REQUEST_RECIPIENT + '>', // list of receivers
         subject: '[Big Buzz] New Appearance Request from ' + requestData.renterName, // Subject line
         text: 'A new Big Buzz request has been submitted via https://reckclub.org/big-buzz.\n' +
@@ -126,6 +126,57 @@ router.put('/big-buzz/request', function(req, res, next) {
             res.status(200).send({
                 'status' : 'ok',
                 'message' : 'Big Buzz email sent successfully!'
+            });
+        }
+        // Preview only available when sending through an Ethereal account
+
+        console.log('Message sent: %s', info.messageId);
+        console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+        // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
+        // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
+    });
+});
+
+router.get('/reck/request', function(req, res, next) {
+    res.render('reck-request', {
+        title: "Ramblin' Reck Appearance Request | Ramblin' Reck Club",
+        moment: mmt
+    });
+});
+
+router.put('/reck/request', function(req, res, next) {
+    var requestData = req.body;
+    // setup email data with unicode symbols
+    var mailOptions = {
+        from: '"Ramblin \' Reck Club" <no-reply@reckclub.org>', // sender address
+        to: 'Ramblin\' Reck Driver <' + process.env.RECK_REQUEST_RECIPIENT + '>', // list of receivers
+        subject: '[Ramblin\' Reck] New Appearance Request from ' + requestData.renterName, // Subject line
+        text: 'A new Ramblin\' Reck appearance request has been submitted via https://reckclub.org/reck/request.\n' +
+        '\n' +
+        'Requestor: ' + requestData.renterName + ' \<' + requestData.renterEmail + '\>\n' +
+        'Event Name: ' + requestData.eventName + '\n' +
+        'Event Location: ' + requestData.eventLocation + '\n' +
+        'Event Date: ' + mmt(requestData.eventDate).format('dddd, MMMM D, YYYY') + '\n' +
+        'Event Start Time: ' + requestData.eventStartTime + '\n' +
+        'Event End Time: ' + requestData.eventEndTime + '\n' +
+        'Distance from GT: ' + requestData.eventDistanceAway + ' miles\n' +
+        'Event Details: ' + ((requestData.eventDetails.length > 0) ? requestData.eventDetails : 'No additional information provided.') + '\n' +
+        '\n' +
+        'Please email ' + requestData.renterName + ' \<' + requestData.renterEmail + '\> at your earliest convenience to confirm or reject this request.\n\n--\nThis email was sent automatically from reckclub.org. Please do not reply to this email -- the sender is a not real inbox. If you received this email in error, please contact technology@reckclub.org.'
+    };
+
+    // send mail with defined transport object
+    transporter.sendMail(mailOptions, function (error, info) {
+        if (error) {
+            console.log(error);
+            res.status(400).send({
+                "status" : "bad",
+                "message": error
+            });
+        } else {
+            res.status(200).send({
+                'status' : 'ok',
+                'message' : 'Reck request email sent successfully!'
             });
         }
         // Preview only available when sending through an Ethereal account
