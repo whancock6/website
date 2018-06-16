@@ -75,7 +75,11 @@ router.get('/reck/drivers', function(req, res, next) {
 
 router.get('/t-night', function(req, res, next) {
     res.render('t-night', {
-        title: "T-Night | Ramblin' Reck Club | Spreading Joy since 1930",
+        title: "T-Night " + mmt().format('YYYY') + " | Ramblin' Reck Club",
+        moment: mmt
+    });
+});
+
         moment: mmt
     });
 });
