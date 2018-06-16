@@ -26,7 +26,6 @@ firebaseAdmin.initializeApp({
     databaseURL: "https://" + process.env.FIREBASE_DATABASE_URL +".firebaseio.com",
 });
 
-
 var app = express();
 
 var index = require('./routes/index');

@@ -23,7 +23,7 @@ a, .btn-link {
     color: #B3A369;
 }
 
-a:hover, .btn-link:hover {
+a:hover, .btn-link:hover, #submit-request-button:disabled {
     color: #decc80;
     text-decoration: none;
 }
