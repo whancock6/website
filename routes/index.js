@@ -188,4 +188,11 @@ router.put('/reck/request', function(req, res, next) {
     });
 });
 
+router.get('/requests', function(req, res, next) {
+    res.render('requests-main', {
+        title: "Appearance Requests | Ramblin' Reck Club",
+        moment: mmt
+    });
+});
+
 module.exports = router;
