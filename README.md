@@ -19,7 +19,7 @@ Building a new online presence and experience for the Ramblin' Reck Club at Geor
 
 ## Roadmap
 - [X] Finish the public frontend.
-- [ ] Integrate user authenication with Firebase.
+- [ ] Integrate user authentication with Firebase.
 - [ ] Create an events/points management system/API.
 - [ ] Import existing web data into Firebase.
 
