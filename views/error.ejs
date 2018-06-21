@@ -1,3 +1,25 @@
-<h1><%= message %></h1>
-<h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
+<!DOCTYPE html>
+<html>
+<%- include partials/head.ejs %>
+<link rel="stylesheet" href="/css/nav-scroller.css">
+<body>
+<%- include partials/public-header.ejs %>
+<% if (error.status == '404') { %>
+    <div class="container text-center mb-4">
+        <h2>404: Page not found</h2>
+        <h6>Right area code, wrong address. Try again later, or return to the <a href="/">home page</a>.</h6>
+    </div>
+<% } else { %>
+    <div class="container mb-4">
+        <h2><%= message %></h2>
+        <p><%= error.status %></p>
+        <pre><%= error.stack %></pre>
+        <p>If you're seeing this page, please email a screenshot to <a href="mailto:technology@reckclub.org">technology@reckclub.org</a>. We'll get right on fixing it.</p>
+    </div>
+<% } %>
+
+<%- include partials/footer.ejs %>
+<%- include partials/scripts.ejs %>
+</body>
+
+</html>
