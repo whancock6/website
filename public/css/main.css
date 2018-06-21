@@ -15,19 +15,15 @@ h1,h2,h3,h4 {
     background: #B3A369;
 }
 
-.btn-primary:hover {
-    background: #335170;
-}
-
 .badge-primary {
     background-color: #B3A369;
 }
 
-a {
+a, .btn-link {
     color: #B3A369;
 }
 
-a:hover {
+a:hover, .btn-link:hover, #submit-request-button:disabled {
     color: #decc80;
     text-decoration: none;
 }
@@ -43,9 +39,34 @@ a:hover {
 .btn.btn-outline-primary:active.focus,
 .btn.btn-outline-primary:active:focus,
 .btn.btn-outline-primary:active:hover,
-.btn.btn-outline-primary:hover {
+.btn.btn-outline-primary:hover{
+    background-color: #B3A369 !important;
+    border-color: #B3A369 !important;
+}
+
+.btn-secondary {
+    background-color: #00263A;
+    color: white;
+    border-color: #00263A;
+}
+
+.btn-primary {
     background-color: #B3A369;
+    color: white;
     border-color: #B3A369;
+}
+
+
+.btn.btn-primary.active.focus,
+.btn.btn-primary.active:focus,
+.btn.btn-primary.active:hover,
+.btn.btn-primary:active.focus,
+.btn.btn-primary:active:focus,
+.btn.btn-primary:active:hover,
+.btn.btn-primary:hover {
+    background-color: #decc80;
+    color: white;
+    border-color: #decc80;
 }
 
 .btn-outline-secondary {
@@ -59,9 +80,21 @@ a:hover {
 .btn.btn-outline-secondary:active.focus,
 .btn.btn-outline-secondary:active:focus,
 .btn.btn-outline-secondary:active:hover,
-.btn.btn-outline-secondary:hover{
+.btn.btn-outline-secondary:hover {
     background-color: #00263A;
     border-color: #00263A;
+}
+
+.btn.btn-secondary.active.focus,
+.btn.btn-secondary.active:focus,
+.btn.btn-secondary.active:hover,
+.btn.btn-secondary:active.focus,
+.btn.btn-secondary:active:focus,
+.btn.btn-secondary:active:hover,
+.btn.btn-secondary:hover {
+    background-color: #004e7a;
+    color: white;
+    border-color: #004E7A;
 }
 
 .text-primary {

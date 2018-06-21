@@ -1,46 +1,9 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <meta name="description" content="The online home of the Ramblin' Reck Club, a campus organization at the Georgia Institute of Technology dedicated to the promotion of Georgia Tech traditions and spirit and responsible for the Institute's mascot car - the Ramblin' Reck.">
-    <meta name="author" content="Ramblin' Reck Club">
-    <title>Ramblin' Reck Club | Spreading Joy since 1930</title>
-
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/fontawesome-all.min.css">
-</head>
-
-
+<%- include partials/head.ejs %>
+<link rel="stylesheet" href="/css/nav-scroller.css">
 <body>
-
-<div class="container">
-    <header class="blog-header py-3">
-        <div class="row flex-nowrap justify-content-between align-items-center">
-            <div class="offset-3 col-6 text-center">
-                <a class="blog-header-logo text-dark" href="#">Ramblin' Reck Club</a>
-                <!--<p class="text-muted" style="margin-top: 5px;">Spreading Joy since 1930</p>-->
-            </div>
-            <div class="col-3 d-flex justify-content-end align-items-center">
-                <a class="btn btn-sm btn-outline-primary" href="/points">Log In</a>
-            </div>
-        </div>
-    </header>
-    <div class="nav-scroller py-1 mb-2">
-        <nav class="nav d-flex justify-content-between">
-            <a class="p-2" href="#">About Us</a>
-            <a class="p-2" href="#">The Reck</a>
-            <a class="p-2" href="#">Join</a>
-            <a class="p-2" href="#">Endowments</a>
-            <a class="p-2" href="#">History</a>
-        </nav>
-    </div>
-</div>
-
+<%- include partials/public-header.ejs %>
 <div class="mb-3">
     <div id="img-carousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -50,24 +13,30 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="d-block w-100" src="/img/slide1.svg" alt="First slide">
+                <img class="img-responsive d-block w-100" src="/img/promo/2017-mini-500-club.jpg" alt="2017 Mini 500 RRC Picture">
+                <div class="gradient">
+                </div>
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>First Slide</h5>
-                    <p>Test</p>
+                    <h5>Welcome to the online home of the Ramblin' Reck Club!</h5>
+                    <p>Since its founding in 1930, the Ramblin’ Reck Club has been an organization of students, committed to the education and promotion of Tech spirit, history and tradition. Learn more about us <a href="/about">here</a>!</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="/img/slide1.svg" alt="Second slide">
+                <img class="img-responsive d-block w-100" src="/img/promo/2013-wreck-parade.jpg" alt="2013 Wreck Parade">
+                <div class="gradient">
+                </div>
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>Second Slide</h5>
-                    <p>Test</p>
+                    <h5>Interested in the Reck?</h5>
+                    <p>While many people believe that there are multiple Recks serving as Georgia Tech’s mascot, in actuality there is only one official Ramblin’ Reck which has lead the football team and served as a symbol of the institute since 1961. Learn more about the car <a href="/reckhistory">here</a>!</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="/img/slide1.svg" alt="Third slide">
+                <img class="img-responsive d-block w-100" src="/img/promo/2017-ROIS-turnaround.jpg" alt="2017 Reck at Clough turnaround for Ride Out in Style">
+                <div class="gradient">
+                </div>
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>Third Slide</h5>
-                    <p>Test</p>
+                    <h5>Want the Reck at your event?</h5>
+                    <p>When not on official duty, the Ramblin’ Reck may appear at various alumni functions. Proceeds are used to support the maintenance and upkeep of the car. Click <a href="http://www.reckclub.org/event">here</a> to make your request!</p>
                 </div>
             </div>
         </div>
@@ -81,13 +50,12 @@
                 <div class="card-body d-flex flex-column align-items-start">
                     <strong class="d-inline-block mb-2 text-primary">The Reck</strong>
                     <h3 class="mb-0">
-                        <a class="text-dark" href="#">Featured post</a>
+                        <a class="text-dark" href="#">Drivers</a>
                     </h3>
-                    <div class="mb-1 text-muted">Nov 12</div>
-                    <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#">Continue reading</a>
+                    <p class="card-text mb-auto">Each year, one student is chosen from the ranks of the club to be the sole driver and primary caretaker of the Ramblin’ Reck.  </p>
+                    <a href="/reck/drivers">Read more</a>
                 </div>
-                <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Thumbnail [200x250]" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22200%22%20height%3D%22250%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20200%20250%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_16237c6961c%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A13pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_16237c6961c%22%3E%3Crect%20width%3D%22200%22%20height%3D%22250%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2255.765625%22%20y%3D%22130.86875%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true" style="width: 200px; height: 250px;">
+                <img class="card-img-right flex-auto d-none d-md-block" src="/img/promo/2014-raj.jpg" style="width: 200px; height: 250px;">
             </div>
         </div>
         <div class="col-md-6">
@@ -95,69 +63,47 @@
                 <div class="card-body d-flex flex-column align-items-start">
                     <strong class="d-inline-block mb-2 text-secondary">Traditions</strong>
                     <h3 class="mb-0">
-                        <a class="text-dark" href="#">Post title</a>
+                        <a class="text-dark" href="#">The T-Book</a>
                     </h3>
-                    <div class="mb-1 text-muted">Nov 11</div>
-                    <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#">Continue reading</a>
+                    <p class="card-text mb-auto">The Georgia Tech T-book was originally published by the Georgia Tech YMCA with the intention of providing a guide to the new Tech students abo...</p>
+                    <a href="/about/tbook">Continue reading</a>
                 </div>
-                <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Thumbnail [200x250]" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22200%22%20height%3D%22250%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20200%20250%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_16237c6961e%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A13pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_16237c6961e%22%3E%3Crect%20width%3D%22200%22%20height%3D%22250%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2255.765625%22%20y%3D%22130.86875%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true" style="width: 200px; height: 250px;">
+                <img class="card-img-right flex-auto d-none d-md-block" src="/img/promo/mantle-tbook.jpg" style="width: 200px; height: 250px;">
             </div>
         </div>
     </div>
     <div class="row mb-2">
         <div class="col-md-6">
             <div class="card flex-md-row mb-4 box-shadow h-md-250">
-                <img class="card-img-left flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Thumbnail [200x250]" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22200%22%20height%3D%22250%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20200%20250%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_16237c6961c%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A13pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_16237c6961c%22%3E%3Crect%20width%3D%22200%22%20height%3D%22250%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2255.765625%22%20y%3D%22130.86875%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true" style="width: 200px; height: 250px;">
+                <img class="card-img-left flex-auto d-none d-md-block" src="/img/promo/1961-reck-debut.jpg" style="width: 200px; height: 250px;">
                 <div class="card-body d-flex flex-column align-items-start">
                     <strong class="d-inline-block mb-2 text-secondary">History</strong>
                     <h3 class="mb-0">
-                        <a class="text-dark" href="#">Featured post</a>
+                        <a class="text-dark" href="#">The Reck</a>
                     </h3>
-                    <div class="mb-1 text-muted">Nov 12</div>
-                    <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#">Continue reading</a>
+                    <p class="card-text mb-auto">The Reck was formally introduced as Georgia Tech's mascot when it led the football team out on to Grant Field for the 1961 homecoming game...</p>
+                    <a href="/reckhistory">Continue reading</a>
                 </div>
             </div>
         </div>
         <div class="col-md-6">
             <div class="card flex-md-row mb-4 box-shadow h-md-250">
-                <img class="card-img-left flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Thumbnail [200x250]" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22200%22%20height%3D%22250%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20200%20250%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_16237c6961e%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A13pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_16237c6961e%22%3E%3Crect%20width%3D%22200%22%20height%3D%22250%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2255.765625%22%20y%3D%22130.86875%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true" style="width: 200px; height: 250px;">
+                <img class="card-img-left flex-auto d-none d-md-block" src="/img/promo/2017-gameday-rideout.jpg" style="width: 200px; height: 250px;">
                 <div class="card-body d-flex flex-column align-items-start">
                     <strong class="d-inline-block mb-2 text-primary">RECKruitment</strong>
                     <h3 class="mb-0">
-                        <a class="text-dark" href="#">Post title</a>
+                        <a class="text-dark" href="#">Want to join the tradition?</a>
                     </h3>
-                    <div class="mb-1 text-muted">Nov 11</div>
-                    <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#">Continue reading</a>
+                    <p class="card-text mb-auto">Learn more about what it is to be a part of Reck Club and kickstart your recruitment process!</p>
+                    <a href="/reckruitment">Read more</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<div class="container-fluid">
-    <footer class="footer text-center text-muted mb-3">
-        <p>© 2018 Ramblin' Reck Club. All Rights Reserved.</p>
-        <div class="d-flex justify-content-center align-items-center align-self-center" id="social-icon-holder">
-            <a class="col-1 rrc-social-icon" href="https://facebook.com/RamblinReckClub"><i class="fab fa-facebook fa-2x"></i></a>
-            <a class="col-1 rrc-social-icon" href="https://twitter.com/RamblinReckClub"><i class="fab fa-twitter fa-2x"></i></a>
-            <a class="col-1 rrc-social-icon" href="https://instagram.com/RamblinReckClub"><i class="fab fa-instagram fa-2x"></i></a>
-            <a class="col-1 rrc-social-icon" href="https://github.com/RamblinReckClub"><i class="fab fa-github fa-2x"></i></a>
-        </div>
-    </footer>
-</div>
-
-<script src="/js/jquery-3.2.1.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-<script>
-    if ($(window).width() < 700) {
-        $(".rrc-social-icon").addClass("col-3 mr-0");
-        $(".rrc-social-icon").removeClass("col-1 mr-0");
-        $("#social-icon-holder").addClass("row");
-    }
-</script>
+<%- include partials/footer.ejs %>
+<%- include partials/scripts.ejs %>
 </body>
 
 </html>
