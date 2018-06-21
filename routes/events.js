@@ -92,6 +92,185 @@ function getEventListRecent(firebase, year, month, count, success, error) {
         });
 }
 
+function createEvent(firebase, req, res) {
+    firebase
+        .database()
+        .ref('event')
+        .push({
+            name: req.body.name,
+            date: mmt(req.body.date).hour(12).minute(0).second(0).valueOf(),
+            points: req.body.points,
+            bonus: (req.body.bonus === "true"),
+            family: (req.body.family === "true"),
+            type: req.body.type,
+            createdAt: Date.now(),
+            updatedAt: Date.now()
+        }, function(error) {
+            onComplete(error, res, "Event created successfully!")
+        });
+}
+
+function updateEvent(firebase, req, res) {
+    var cleanedRequestData = {
+        name: req.body.name,
+        date: mmt(req.body.date).hour(12).minute(0).second(0).valueOf(),
+        points: parseInt(req.body.points),
+        bonus: req.body.bonus,
+        family: req.body.family,
+        type: req.body.type,
+        updatedAt: Date.now()
+    };
+    firebase
+        .database()
+        .ref('event/' + req.params.id)
+        .set(cleanedRequestData, function(error) {
+            if (error != null) {
+                var updates = {};
+                firebase.database().ref('user').on('value', function(snapshot) {
+                    if (snapshot != null) {
+                        snapshot.forEach(function(item) {
+                            if (item.val().events.keys().includes(req.params.id)) {
+                                var userEvent = item.val().events[req.params.id];
+                                updates['user/' + item.key + '/events/' + req.params.id + '/name'] = cleanedRequestData.name;
+                                updates['user/' + item.key + '/events/' + req.params.id + '/date'] = cleanedRequestData.date;
+                                updates['user/' + item.key + '/events/' + req.params.id + '/points'] = parseInt(cleanedRequestData.points);
+                                updates['user/' + item.key + '/events/' + req.params.id + '/type'] = cleanedRequestData.type;
+                                updates['user/' + item.key + '/points'] = parseInt(item.points) - parseInt(userEvent.points) + parseInt(cleanedRequestData.points);
+                            }
+                        });
+                        snapshot.ref.update(update, function(err) {
+                            onComplete(err, res, "Update event successful: Updates applied to user.events applied and update of event metadata completed");
+                        });
+                    }
+
+                });
+            } else {
+                onComplete(error, res, "Event updated successfully!")
+            }
+        });
+}
+
+// REMINDER: WRITE CLOUD FUNCTION TO UPDATE USERS TO DROP THIS EVENT FROM USERS.EVENTS
+function deleteEvent(firebase, req, res) {
+    firebase
+        .database()
+        .ref('event/' + req.params.id)
+        .remove()
+        .then(function () {
+            var updates = {};
+            firebase
+                .database()
+                .ref('user')
+                .on('value', function(snapshot) {
+                    if (snapshot != null) {
+                        snapshot.forEach(function(item) {
+                            if (item.val().events.keys().includes(req.params.id)) {
+                                var userEvent = item.val().events[req.params.id];
+                                updates['user/' + item.key + '/events/' + req.params.id] = false;
+                                updates['user/' + item.key + '/points'] = parseInt(item.points) - parseInt(userEvent.points);
+                            }
+                        });
+                        snapshot.ref.update(update, function(err) {
+                            onComplete(err, res, "Remove successful: Updates applied to user.events applied and deletion of event completed");
+                        });
+                    }
+                });
+        })
+        .catch(function (error) {
+            onComplete(error, res, "Remove failed: " + error.message);
+        });
+}
+
+function addEventToUser(firebase, req, res) {
+    var userId = firebase.auth().currentUser.uid;
+    // REMINDER: change user.events retrieval to get keys!!!
+    // REMINDER: change events.attendees retrieval to get user keys if value is true!!!
+    var removedEvents = JSON.parse(req.body.removedEvents);
+    console.log("Recieved removed: " + JSON.stringify(removedEvents));
+    var newEvents = JSON.parse(req.body.newEvents);
+    console.log("Cleaned new: " + newEvents);
+    var coreRef = firebase.database().ref();
+    var userRef = coreRef.child('user/' + userId);
+    var pointsDelta = 0;
+    var promises = [];
+    if (newEvents.length > 0) {
+        newEvents.forEach(function(item) {
+            console.log('New item');
+            console.log('id: ' + item.id);
+            console.log('points: ' + item.points);
+            var eventsRef = coreRef.child('event/' + item.id);
+            promises.push(
+                eventsRef
+                    .child("attendees")
+                    .child(userId)
+                    .set(true)
+            );
+
+            promises.push(
+                userRef
+                    .child('events')
+                    .child(item.id)
+                    .set({
+                        attended: true,
+                        points: item.points,
+                        name: item.name,
+                        type: item.type,
+                        date: item.date
+                    })
+            );
+            pointsDelta += parseInt(item.points);
+        });
+    }
+
+    if (removedEvents.length > 0) {
+        removedEvents.forEach(function(item) {
+            var eventsRef = coreRef.child('event/' + item.id);
+            promises.push(
+                eventsRef
+                    .child("attendees")
+                    .child(userId)
+                    .remove()
+            );
+
+            promises.push(
+                userRef
+                    .child('events')
+                    .child(item.id)
+                    .remove()
+            );
+            pointsDelta -= parseInt(item.points);
+        });
+    }
+
+    if (promises.length > 0) {
+        promises.push(
+            userRef
+                .child('points')
+                .set(parseInt(req.body.points) + pointsDelta)
+        );
+        console.log(promises);
+
+        Promise
+            .all(promises)
+            .then(function(snaps) {
+                console.log(snaps);
+                res.status(200).send({
+                    status: "ok",
+                    message: "Events added successfully",
+                    detailedMessage: {
+                        message: "Events added successfully"
+                    }
+                });
+            }).catch(function(err) {
+                res.status(400).send({
+                    status: "ok",
+                    message: "Error adding events to user " + userId ,
+                    detailedMessage: err
+                });
+        });
+    }
+}
+
 module.exports = function(firebase) {
     /* GET events listing. */
     rtr.get('/', function(req, res, next) {
@@ -284,22 +463,7 @@ module.exports = function(firebase) {
 
     rtr.put('/create', function(req, res, next) {
         if (firebase.auth().currentUser) {
-            var requestData = req.body;
-            firebase
-                .database()
-                .ref('event')
-                .push({
-                    name: requestData.name,
-                    date: mmt(requestData.date).hour(12).minute(0).second(0).valueOf(),
-                    points: requestData.points,
-                    bonus: (requestData.bonus === "true"),
-                    family: (requestData.family === "true"),
-                    type: requestData.type,
-                    createdAt: Date.now(),
-                    updatedAt: Date.now()
-                }, function(error) {
-                    onComplete(error, res, "Event created successfully!")
-                });
+            createEvent(firebase, req, res);
         } else {
             res.status(401).send({
                 "status" : "bad",
@@ -337,41 +501,7 @@ module.exports = function(firebase) {
 
     rtr.put('/update/:id', function(req, res, next) {
         if (firebase.auth().currentUser) {
-            var requestData = req.body;
-            var cleanedRequestData = {
-                name: requestData.name,
-                date: mmt(requestData.date).hour(12).minute(0).second(0).valueOf(),
-                points: parseInt(requestData.points),
-                bonus: requestData.bonus,
-                family: requestData.family,
-                type: requestData.type,
-                updatedAt: Date.now()
-            };
-            firebase.database().ref('event/' + req.params.id).set(cleanedRequestData, function(error) {
-                if (error != null) {
-                    var updates = {};
-                    firebase.database().ref('user').on('value', function(snapshot) {
-                        if (snapshot != null) {
-                            snapshot.forEach(function(item) {
-                                if (item.val().events.keys().includes(req.params.id)) {
-                                    var userEvent = item.val().events[req.params.id];
-                                    updates['user/' + item.key + '/events/' + req.params.id + '/name'] = cleanedRequestData.name;
-                                    updates['user/' + item.key + '/events/' + req.params.id + '/date'] = cleanedRequestData.date;
-                                    updates['user/' + item.key + '/events/' + req.params.id + '/points'] = parseInt(cleanedRequestData.points);
-                                    updates['user/' + item.key + '/events/' + req.params.id + '/type'] = cleanedRequestData.type;
-                                    updates['user/' + item.key + '/points'] = parseInt(item.points) - parseInt(userEvent.points) + parseInt(cleanedRequestData.points);
-                                }
-                            });
-                            snapshot.ref.update(update, function(err) {
-                                onComplete(err, res, "Update event successful: Updates applied to user.events applied and update of event metadata completed");
-                            });
-                        }
-
-                    });
-                } else {
-                    onComplete(error, res, "Event updated successfully!")
-                }
-            });
+            updateEvent(firebase, req, res);
         } else {
             res.status(401).send({
                 "status" : "bad",
@@ -380,30 +510,9 @@ module.exports = function(firebase) {
         }
     });
 
-    // REMINDER: WRITE CLOUD FUNCTION TO UPDATE USERS TO DROP THIS EVENT FROM USERS.EVENTS
     rtr.delete('/delete/:id', function(req, res, next) {
         if (firebase.auth().currentUser) {
-            firebase.database().ref('event/' + req.params.id).remove()
-                .then(function () {
-                    var updates = {};
-                    firebase.database().ref('user').on('value', function(snapshot) {
-                        if (snapshot != null) {
-                            snapshot.forEach(function(item) {
-                                if (item.val().events.keys().includes(req.params.id)) {
-                                    var userEvent = item.val().events[req.params.id];
-                                    updates['user/' + item.key + '/events/' + req.params.id] = false;
-                                    updates['user/' + item.key + '/points'] = parseInt(item.points) - parseInt(userEvent.points);
-                                }
-                            });
-                            snapshot.ref.update(update, function(err) {
-                                onComplete(err, res, "Remove successful: Updates applied to user.events applied and deletion of event completed");
-                            });
-                        }
-                    });
-                })
-                .catch(function (error) {
-                    onComplete(error, res, "Remove failed: " + error.message);
-                });
+            deleteEvent(firebase, req, res);
         } else {
             res.status(401).send({
                 "status" : "bad",
@@ -413,7 +522,9 @@ module.exports = function(firebase) {
     });
 
     rtr.put('/add-event', function(req, res) {
-        if (!firebase.auth().currentUser) {
+        if (firebase.auth().currentUser) {
+            addEventToUser(firebase, req, res);
+        } else {
             res.status(401).send({
                 status:"bad",
                 message: "login required",
@@ -421,95 +532,6 @@ module.exports = function(firebase) {
                     message: "Access unauthorized. login required."
                 }
             })
-        } else {
-            var userId = firebase.auth().currentUser.uid;
-            // REMINDER: change user.events retrieval to get keys!!!
-            // REMINDER: change events.attendees retrieval to get user keys if value is true!!!
-            var removedEvents = JSON.parse(req.body.removedEvents);
-            console.log("Recieved removed: " + JSON.stringify(removedEvents));
-            var newEvents = JSON.parse(req.body.newEvents);
-            console.log("Cleaned new: " + newEvents);
-            var coreRef = firebase.database().ref();
-            var userRef = coreRef.child('user/' + userId);
-            var pointsDelta = 0;
-            var promises = [];
-            if (newEvents.length > 0) {
-                newEvents.forEach(function(item) {
-                    console.log('New item');
-                    console.log('id: ' + item.id);
-                    console.log('points: ' + item.points);
-                    var eventsRef = coreRef.child('event/' + item.id);
-                    promises.push(
-                        eventsRef
-                            .child("attendees")
-                            .child(userId)
-                            .set(true)
-                    );
-
-                    promises.push(
-                        userRef
-                            .child('events')
-                            .child(item.id)
-                            .set({
-                                attended: true,
-                                points: item.points,
-                                name: item.name,
-                                type: item.type,
-                                date: item.date
-                            })
-                    );
-                    pointsDelta += parseInt(item.points);
-                });
-            }
-
-            if (removedEvents.length > 0) {
-                removedEvents.forEach(function(item) {
-                    var eventsRef = coreRef.child('event/' + item.id);
-                    promises.push(
-                        eventsRef
-                            .child("attendees")
-                            .child(userId)
-                            .remove()
-                    );
-
-                    promises.push(
-                        userRef
-                            .child('events')
-                            .child(item.id)
-                            .remove()
-                    );
-                    pointsDelta -= parseInt(item.points);
-                });
-            }
-
-            if (promises.length > 0) {
-                promises.push(
-                    userRef
-                        .child('points')
-                        .set(parseInt(req.body.points) + pointsDelta)
-                );
-
-                console.log(promises);
-
-                Promise
-                    .all(promises)
-                    .then(function(snaps) {
-                        console.log(snaps);
-                        res.status(200).send({
-                            status: "ok",
-                            message: "Events added successfully",
-                            detailedMessage: {
-                                message: "Events added successfully"
-                            }
-                        });
-                    }).catch(function(err) {
-                    res.status(400).send({
-                        status: "ok",
-                        message: "Error adding events to user " + userId ,
-                        detailedMessage: err
-                    });
-                });
-            }
         }
     });
 
