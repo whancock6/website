@@ -4,7 +4,6 @@ var mmt = require('moment');
 var Utils = require('./utils');
 
 module.exports = function(firebase) {
-
     router.get('/', function(req, res, next) {
         if (firebase.auth().currentUser) {
             var records = [
