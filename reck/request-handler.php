@@ -18,7 +18,7 @@ $mailOptions = [
             "to" => [
                 [
                     "name" => "Ramblin\' Reck Driver",
-                    "email" => getenv("RECK_REQUEST_RECIPIENT")
+                    "email" => getenv("RECK_REQUEST_RECIPIENT") // add the actual email here from the .env IN PLESK. DO NOT ADD IT IN THE SOURCE CODE.
                 ]
             ]
         ]
@@ -38,7 +38,7 @@ $mailOptions = [
                 "<b>Event Date:</b> " . $eventDate . "\n" .
                 "<b>Event Start Time:</b> " . $eventStartTime . "\n" .
                 "<b>Event End Time:</b> " . $eventEndTime . "\n" .
-                "<b>Distance from GT:</b> " . $eventDistanceAway . (strpos($eventDistanceAway, 'miles') ? '' : ' miles') .
+                "<b>Distance from GT:</b> " . $eventDistanceAway . (strpos($eventDistanceAway, 'miles') ? '' : ' miles') . "\n" .
                 "<b>Event Details:</b> " . ((strlen($eventDetails) > 0) ? $eventDetails : "No additional information provided.") . "\n" .
                 "\n" .
                 "Please email <a href='mailto:" . $renterEmail . "'>" . $renterName . "</a> at your earliest convenience to confirm or reject this request.\n\n--\nThis email was sent automatically from reckclub.org. Please do not reply to this email -- the sender is a not real inbox. If you received this email in error, please contact technology@reckclub.org.")
@@ -48,7 +48,7 @@ $mailOptions = [
 
 $ch = curl_init();
 curl_setopt($ch,CURLOPT_URL, $url);
-$authorization = "Authorization: Bearer " . getenv("SENDGRID_API_KEY");
+$authorization = "Authorization: Bearer " . getenv("SENDGRID_API_KEY"); // add the actual API key here from the .env IN PLESK. DO NOT ADD IT IN THE SOURCE CODE.
 curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type: application/json", $authorization));
 curl_setopt($ch,CURLOPT_POST, count($mailOptions));
 curl_setopt($ch,CURLOPT_POSTFIELDS, json_encode($mailOptions));

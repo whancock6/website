@@ -15,7 +15,7 @@ $mailOptions = [
             "to" => [
                 [
                     "name" => "RRC Big Buzz Chair",
-                    "email" => getenv("BIG_BUZZ_REQUEST_RECIPIENT")
+                    "email" => getenv("BIG_BUZZ_REQUEST_RECIPIENT") // add the actual email here from the .env IN PLESK. DO NOT ADD IT IN THE SOURCE CODE.
                 ]
             ]
         ]
@@ -42,7 +42,7 @@ $mailOptions = [
 
 $ch = curl_init();
 curl_setopt($ch,CURLOPT_URL, $url);
-$authorization = "Authorization: Bearer " . getenv("SENDGRID_API_KEY");
+$authorization = "Authorization: Bearer " . getenv("SENDGRID_API_KEY"); // add the actual API key here from the .env IN PLESK. DO NOT ADD IT IN THE SOURCE CODE.
 curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type: application/json", $authorization));
 curl_setopt($ch,CURLOPT_POST, count($mailOptions));
 curl_setopt($ch,CURLOPT_POSTFIELDS, json_encode($mailOptions));
