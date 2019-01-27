@@ -5,7 +5,7 @@
                 <a class="blog-header-logo text-dark" href="/">Ramblin' Reck Club</a>
             </div>
             <div class="col-3 d-flex justify-content-end align-items-center">
-                <a class="btn btn-sm btn-outline-primary" href="http://reckclub.org/points.php">Log In</a>
+                <a class="btn btn-sm btn-outline-primary" href="/points.php">Log In</a>
             </div>
         </div>
     </header>
