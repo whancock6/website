@@ -1,0 +1,189 @@
+
+body, ul, li{
+	margin:0;
+	padding:0;	
+	font-family: helvetica, "helvetica neue", arail, sans-serif;
+	list-style-type:none;
+}
+table, tr, td {
+	border-collapse: collapse;
+	border-spacing: 0;
+	border:none;
+}
+#wrapper{
+	width:600px;
+	margin:0 auto;	
+	padding:0px;
+}
+#container{
+	width:100%;
+	margin:0px;
+	padding:0px 10px;	
+}
+#headerIMG{
+	background: url('../images/docsHeader.jpg') #000;
+	width:600px;
+	height:200px;
+}
+label{
+display:block;
+font-weight:bold;
+text-align:right;
+width:140px;
+float:left;
+}
+.small{
+color:#666666;
+display:block;
+font-size:11px;
+font-weight:normal;
+text-align:right;
+width:140px;
+}
+input, textarea{
+float:left;
+font-size:12px;
+padding:5px;
+border:solid 1px #aacfe4;
+width:430px;
+height: 20px;
+margin:2px 0 20px 10px;
+}
+select{
+	width:100px;
+	margin:2px 0 20px 10px;
+}
+textarea{
+	height:60px;
+	max-width:430px;
+}
+button{
+clear:both;
+margin-left:150px;
+width:125px;
+height:31px;
+text-align:center;
+line-height:31px;
+font-size:11px;
+font-weight:bold;
+}
+h1{
+	margin: 10px 0 5px 0;
+}
+p{
+	margin: 0 0 10px 0;
+}
+
+#featuredWrapper{
+	width:880px;
+	padding:20px;
+}
+#featuredContainer{
+	width:780px;	
+	background:#fff;
+	border: 20px #E0E0E0 solid;
+	padding:20px;
+}
+.featuredIcon{
+	width:108px;
+	height:128px;
+	display:block;
+	background: url("../images/docs_Forms.png");
+	float:left;
+	margin-right: 20px;
+}
+.featuredText{
+	float:left;
+	width:650px;	
+}
+
+#featuredContainer:before,
+#featuredContainer:after {
+    content:"";
+    display:table;
+}
+#featuredContainer:after {
+    clear:both;
+}
+
+#featuredContainer h1{
+	padding:0px;
+	margin:3px 0px 5px 0px;
+	font-size:40px;	
+}
+#featuredContainer h3{
+	padding:0px;
+	margin:0px 0px 5px 0px;
+	color:#DBCFBA;	
+	letter-spacing:1px;
+}
+#featuredContainer a{
+	color:#09F;
+}	
+#docsList{
+	width:600px;
+	float:left;
+}
+#docsImportant{
+	background:#E0E0E0;
+	float:left;	
+	width:250px;
+}
+#docsImportant li{
+	background:#FFF;
+	width:210px;
+	margin:10px 10px;	
+	padding:5px 10px;
+	
+}
+.importantDocsHdr{
+	background:#000;
+	color:#fff;
+	width:100%;
+	font-size:19px;
+	width:350px;
+	padding:5px;
+}	
+.recentDocsHdr{
+	background:#000;
+	color:#fff;
+	width:100%;
+	font-size:19px;
+	width:650px;
+	padding:5px;
+}
+#docsList a{
+	color:#000;	
+}
+#docsList a:hover{
+	color:#09F;
+}
+.docsIcon{
+	width:15px;
+}
+.importantDocsIcon{
+	width:20px;
+	height:20px;
+	display:block;	
+	float:left;
+}
+.docsName{
+	padding:10px;		
+}
+.docsListRows{
+	padding:5px;
+	border-bottom:1px #E0E0E0 solid;	
+}
+.gForm{
+	background:transparent url('../images/gFormIcon.png') no-repeat;	
+}
+.gDoc{
+	background:transparent url('../images/gDocIcon.png') no-repeat;	
+}
+.gSpread{
+	background:transparent url('../images/gSpreadIcon.png') no-repeat;	
+}
+.importantDocsRows{
+	padding:5px 0px;	
+	float:left;
+}

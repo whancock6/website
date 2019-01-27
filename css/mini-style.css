@@ -82,14 +82,14 @@ h2{
 }
 
 #intro{
-	background:url(/img/why/rrc1.jpg) 50% 0 no-repeat fixed;
+	background:url(../images/rrc1.jpg) 50% 0 no-repeat fixed;
 	color: white;
 	height: 911px;
 	margin: 0 auto;
 	padding: 0;
 }
 #intro .bg{
-	background: url(/img/why/rrc1title.png) 50% 0 no-repeat fixed;
+	background: url(../images/rrc1title.png) 50% 0 no-repeat fixed;
 	height: 911px;
 	margin: 0 auto;
 	padding: 0;
@@ -98,7 +98,7 @@ h2{
 	z-index: 200;
 }
 #filler{
-	background:url(/img/why/filler_bg.png) 50% 0 no-repeat fixed;
+	background:url(../images/filler_bg.png) 50% 0 no-repeat fixed;
 	color: white;
 	height: 500px;
 	margin: 0 auto;
@@ -107,7 +107,7 @@ h2{
 
 #second{
 	font-weight:bold;
-	background: url(/img/why/family_bg.jpg) 50% 0 no-repeat fixed;
+	background: url(../images/family_bg.jpg) 50% 0 no-repeat fixed;
 	color: #000;
 	height: 900px;
 	margin: 0 auto;
@@ -118,7 +118,7 @@ h2{
 }
 
 #second .bg{
-	background: url(/img/why/family_top.png) 50% 0 no-repeat fixed;
+	background: url(../images/family_top.png) 50% 0 no-repeat fixed;
 	height: 900px;
 	margin: 0 auto;
 	padding: 0;
@@ -128,7 +128,7 @@ h2{
 }
 
 #third{
-	background: url(/img/why/rrcbanner2.jpg) 50% 0 no-repeat fixed;
+	background: url(../images/rrcbanner2.jpg) 50% 0 no-repeat fixed;
 	color: white;
 	height: 900px;
 	padding: 0 0 0;	
@@ -146,7 +146,7 @@ h2{
 	margin-top:10px;
 }
 #fourth{
-	background: url(/img/why/rrcgarage.jpg) 50% 0 no-repeat fixed;
+	background: url(../images/rrcgarage.jpg) 50% 0 no-repeat fixed;
 	color: white;
 	height: 900px;
 	padding: 100px 0 0 0;	
@@ -158,7 +158,7 @@ h2{
 }
 #fifth{
 	font-weight:bold;
-	background: url(/img/why/history.jpg) 50% 0 no-repeat fixed;
+	background: url(../images/history.jpg) 50% 0 no-repeat fixed;
 	color: #000;
 	height: 900px;
 	margin: 0 auto;
@@ -168,7 +168,7 @@ h2{
 	font-size:20px;
 }
 #fifth .hist_top1{
-	background: url(/img/why/history_top1.png) 50% 0 no-repeat fixed;
+	background: url(../images/history_top1.png) 50% 0 no-repeat fixed;
 	height: 900px;
 	margin: 0 auto;
 	padding: 0;
@@ -177,7 +177,7 @@ h2{
 	z-index: 200;
 }
 #fifth .hist_top2{
-	background: url(/img/why/history_top2.png) 50% 0 no-repeat fixed;
+	background: url(../images/history_top2.png) 50% 0 no-repeat fixed;
 	height: 900px;
 	margin: 0 auto;
 	padding: 0;
@@ -186,7 +186,7 @@ h2{
 	z-index: 200;
 }
 #fifth .hist_top3{
-	background: url(/img/why/history_top3.png) 50% 0 no-repeat fixed;
+	background: url(../images/history_top3.png) 50% 0 no-repeat fixed;
 	height: 900px;
 	padding: 0;
 	position: absolute;
@@ -195,7 +195,7 @@ h2{
 	
 }
 #sixth{
-	background: url(/img/why/rrcpolo.jpg) 50% 0 no-repeat fixed;
+	background: url(../images/rrcpolo.jpg) 50% 0 no-repeat fixed;
 	color: white;
 	height: 900px;
 	padding: 100px 0 0 0;	

@@ -1,50 +1,64 @@
+#login{
+	width:390px;
+	text-align: center;
+	margin:160px auto;
+}
+.line1{
+	font-family: 'Roboto Slab', serif;
+	font-size:72px;
+	font-weight:700;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+}
+.line2{
+	font-family: 'Roboto Slab', serif;
+	font-size:64px;
+	font-weight:700;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+}
+.line3{
+	font-family: 'Open Sans', sans-serif;
+	text-transform: uppercase;
+	font-size: 27px;
+	font-weight: 600;
+	margin: 11px 0 22px 0;
+	letter-spacing: 3px;
 
-html,
-body {
-    height: 100%;
 }
-
-body {
-    display: -ms-flexbox;
-    display: -webkit-box;
-    display: flex;
-    -ms-flex-align: center;
-    -ms-flex-pack: center;
-    -webkit-box-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    justify-content: center;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    background-color: #ffffff;
+input[type="text"],input[type="password"]{
+	border: none;
+	background: #E6E7E8;
+	color: #808184;
+	padding: 5px 13px;
+	width: 274px;
+	margin: 0 auto 25px 0;
+	height: 35px;
+	font-size: 15px;
 }
-
-.form-signin {
-    width: 100%;
-    max-width: 330px;
-    padding: 15px;
-    margin: 0 auto;
+.register{
+	display: block;
+	padding: 15px;
+	width: 100px;
+	font-family: 'Open Sans', sans-serif;
+	border: none;
+	background: #D17821;
+	font-size: 14px;
+	float: left;
+	margin: 0 15px 0 57px;
+	height: 16px;
+	color: #fff;
 }
-.form-signin .checkbox {
-    font-weight: 400;
-}
-.form-signin .form-control {
-    position: relative;
-    box-sizing: border-box;
-    height: auto;
-    padding: 10px;
-    font-size: 16px;
-}
-.form-signin .form-control:focus {
-    z-index: 2;
-}
-.form-signin input[type="email"] {
-    margin-bottom: -1px;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-}
-.form-signin input[type="password"] {
-    margin-bottom: 10px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
+input[type="submit"]{
+	display: block;
+	padding: 13px;
+	width: 130px;
+	font-family: 'Open Sans', sans-serif;
+	border: none;
+	background: #CBB57C;
+	font-size: 14px;
+	float: left;
+	margin: 0;
+	color: #fff;
+	height: 46px;
 }
