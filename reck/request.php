@@ -255,8 +255,17 @@ $dt = new DateTime("now", new DateTimeZone($tz));
             dataType: 'json',
             success: function(result) {
                 console.log(result);
-                // window.location.replace('/points');
-                $('#request-form').html("<div class=\"alert alert-success\" role=\"alert\">Your request has been successfully submitted! Return to <a href=\"/\">the home page</a>.</div>");
+                if (result.status == 'ok') {
+                    $('#request-form').html("<div class=\"alert alert-success\" role=\"alert\">Your request has been successfully submitted! Return to <a href=\"/\">the home page</a>.</div>");
+                } else {
+                    $('#request-form').remove();
+                    $('.message-space').html("    <div class=\"alert alert-danger alert-dismissible show fade\" role=\"alert\">\n" +
+                        "        <strong>Error!</strong> <span id=\"error-message\">" + result.message + "</span>\n" +
+                        "        <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n" +
+                        "            <span aria-hidden=\"true\">&times;</span>\n" +
+                        "        </button>\n" +
+                        "    </div>");
+                }
             },
             error: function(error) {
                 console.log(error);
