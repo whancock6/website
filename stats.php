@@ -40,8 +40,8 @@
 
 	while($row = $query->fetch())
 		{
-		echo "['".$row[firstName]."', ".$row[memberPoints].",".$pointAVG."],";
-		$count++;
+		    echo "['".addslashes($row[firstName])."', ".$row[memberPoints].",".$pointAVG."],";
+		    $count++;
 		}
 ?>
 			
@@ -79,7 +79,7 @@
 
 	while($row = $query->fetch())
 		{
-		echo "['".$row[firstName],"',";
+		echo "['".addslashes($row[firstName]),"',";
 		echo "".$row[mandatoryEventCount].", ".$row[socialEventCount].", ".$row[sportsEventCount].", ".$row[workEventCount]."],";
 		$count++;
 		}
