@@ -157,31 +157,38 @@
     <hr class="mb-3">
     <h4 class="mb-4">Probates</h4>
     <div class="row mb-3">
-        <p class="ml-3">None yet!</p>
-        <!--<div class="col-md-3">-->
-            <!--<% var probates = [,,,,,,]; %>-->
-            <!--<% probates.forEach(function(item) ( %>-->
-            <!--<p><%= item %></p>-->
-            <!--<% )); %>-->
-        <!--</div>-->
-        <!--<div class="col-md-3">-->
-            <!--<% var probates = []; %>-->
-            <!--<% probates.forEach(function(item) ( %>-->
-            <!--<p><%= item %></p>-->
-            <!--<% )); %>-->
-        <!--</div>-->
-        <!--<div class="col-md-3">-->
-            <!--<% var probates = []; %>-->
-            <!--<% probates.forEach(function(item) ( %>-->
-            <!--<p><%= item %></p>-->
-            <!--<% )); %>-->
-        <!--</div>-->
-        <!--<div class="col-md-3">-->
-            <!--<% var probates = []; %>-->
-            <!--<% probates.forEach(function(item) ( %>-->
-            <!--<p><%= item %></p>-->
-            <!--<% )); %>-->
-        <!--</div>-->
+        <div class="col-md-3">
+            <?php $members = ['Aaron Burtz','Adam Lederer','Ally Rosenthal','Annie Robinson','Brendan Mindiak']; ?>
+            <?php
+            foreach ($members as $item) {
+                echo "<p>" . $item . "</p>";
+            }
+            ?>
+        </div>
+        <div class="col-md-3">
+            <?php $members = ['Brittany Ritter','Camille Miles','Dean Plaskon','Derek Prusener','Diana Michael']; ?>
+            <?php
+            foreach ($members as $item) {
+                echo "<p>" . $item . "</p>";
+            }
+            ?>
+        </div>
+        <div class="col-md-3">
+            <?php $members = ['Haley McElroy','Jack Crawford',"Jen O'Brien",'Katie Earles','Kirby Crisswell']; ?>
+            <?php
+            foreach ($members as $item) {
+                echo "<p>" . $item . "</p>";
+            }
+            ?>
+        </div>
+        <div class="col-md-3">
+            <?php $members = ['Michael Xiao','Rachel Hurst','Whitney Miller', 'William Platt']; ?>
+            <?php
+            foreach ($members as $item) {
+                echo "<p>" . $item . "</p>";
+            }
+            ?>
+        </div>
     </div>
     <hr class="mb-3">
 </div>
