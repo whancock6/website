@@ -27,7 +27,11 @@ $mailOptions = [
         "name" => "Ramblin' Reck Club",
         "email" => "no-reply@reckclub.org"
     ],
-    "subject" => "[Ramblin' Reck] New Appearance Request from " . $renterName,
+    "reply_to" => [
+        "name" => $renterName,
+        "email" => $renterEmail
+    ],
+    "subject" => "[Ramblin' Reck] Appearance Request from " . $renterName,
     "content" => [
         [
             "type" => "text/html",

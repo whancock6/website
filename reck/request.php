@@ -25,7 +25,11 @@ $dt = new DateTime("now", new DateTimeZone($tz));
         <h2>Request the Ramblin' Reck</h2>
         <p class="lead">When it is not being used for official Georgia Tech business and events, the Ramblin’ Reck is able to appear at events for Georgia Tech alumni and fans.  While many people believe that there are multiple Recks serving as Georgia Tech’s mascot, in actuality there is only one official Ramblin’ Reck which has led the football team and served as a symbol of the institute since 1961. Please make your request below; you will be contacted by the current Ramblin’ Reck driver shortly after.</p>
     </div>
-    <div class="message-space row"></div>
+    <div class="row">
+        <div class="message-space col-6 offset-3">
+
+        </div>
+    </div>
     <div class="row">
         <div id="request-form" class="offset-xl-1 col-xl-10 offset-lg-2 col-lg-8 offset-md-3 col-md-6">
             <h4 class="mb-3">Request Details</h4>
@@ -84,9 +88,9 @@ $dt = new DateTime("now", new DateTimeZone($tz));
                     <div class="col-md-6 mb-3">
                         <label for="event-month">Event Month</label>
                         <select class="custom-select d-block w-100" id="event-month" required="">
-                            <?php $months = ['January', 'Feburary', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+                            <?php $months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
                             foreach ($months as $month) {
-                                if ($month == $dt->format('M')) {
+                                if ($month == $dt->format('F')) {
                                     echo "<option value=\"" . $month . "\" selected=\"selected\">" . $month . "</option>";
                                 } else {
                                     echo "<option value=\"" . $month . "\">" . $month . "</option>";
@@ -152,7 +156,7 @@ $dt = new DateTime("now", new DateTimeZone($tz));
                         <select class="custom-select d-block w-100" id="event-start-minute" required="">
                             <?php
                             for ($minute = 0; $minute <= 60; $minute++) {
-                                if ($minute == $dt->format('m')) {
+                                if ($minute == 0) {
                                     if ($minute < 10) {
                                         echo "<option value=\"" . $minute . "\" selected=\"selected\">0" . $minute . "</option>";
                                     } else {
@@ -198,7 +202,7 @@ $dt = new DateTime("now", new DateTimeZone($tz));
                         <select class="custom-select d-block w-100" id="event-end-minute" required="">
                             <?php
                             for ($minute = 0; $minute <= 60; $minute++) {
-                                if ($minute == $dt->format('m')) {
+                                if ($minute == 0) {
                                     if ($minute < 10) {
                                         echo "<option value=\"" . $minute . "\" selected=\"selected\">0" . $minute . "</option>";
                                     } else {
@@ -280,6 +284,12 @@ $dt = new DateTime("now", new DateTimeZone($tz));
         })
     }
 
+    function isDateSetValid() {
+        var curDate = moment();
+        var eventDate = moment($('#event-year').val() + '-' + $('#event-month').val() + '-' + $('#event-day').val(),'YYYY-MMM-D');
+        return eventDate.isSameOrAfter(curDate, 'day');
+    }
+
     (function() {
         'use strict';
 
@@ -290,7 +300,34 @@ $dt = new DateTime("now", new DateTimeZone($tz));
                     event.preventDefault();
                     if (form.checkValidity() === false) {
                         event.stopPropagation();
+                        if (!isDateSetValid()) {
+                            event.stopPropagation();
+                            $('.message-space').html("    <div class=\"alert alert-danger alert-dismissible show fade\" role=\"alert\">\n" +
+                                "        <strong>Error!</strong> <span id=\"error-message\">Please provide a valid date.</span>\n" +
+                                "        <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n" +
+                                "            <span aria-hidden=\"true\">&times;</span>\n" +
+                                "        </button>\n" +
+                                "    </div>");
+                            $('#event-day').css('border-color', '#D75452');
+                            $('#event-month').css('border-color', '#D75452');
+                            $('#event-year').css('border-color', '#D75452');
+                        }
+                    } else if (!isDateSetValid()) {
+                        event.stopPropagation();
+                        $('.message-space').html("    <div class=\"alert alert-danger alert-dismissible show fade\" role=\"alert\">\n" +
+                            "        <strong>Error!</strong> <span id=\"error-message\">Please provide a valid date.</span>\n" +
+                            "        <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n" +
+                            "            <span aria-hidden=\"true\">&times;</span>\n" +
+                            "        </button>\n" +
+                            "    </div>");
+                        $('#event-day').css('border-color', '#D75452');
+                        $('#event-month').css('border-color', '#D75452');
+                        $('#event-year').css('border-color', '#D75452');
                     } else {
+                        $('.message-space').html("");
+                        $('#event-day').css('border-color', '#5FB760');
+                        $('#event-month').css('border-color', '#5FB760');
+                        $('#event-year').css('border-color', '#5FB760');
                         createEvent();
                     }
                     form.classList.add('was-validated');
