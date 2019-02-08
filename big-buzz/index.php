@@ -5,7 +5,11 @@
 <?php require "../partials/head.php" ?>
 
 <body>
-
+<?php
+$tz = 'America/New_York';
+$timestamp = time();
+$dt = new DateTime("now", new DateTimeZone($tz));
+?>
 <div class="container mb-3">
     <div class="py-3 text-center">
         <a href="../index.php"><img class="d-block mx-auto mb-4 mt-4" src="/img/brand/official-logo.png" alt="" width="150" height="150"></a>
@@ -15,24 +19,35 @@
         <p>You can request Buzz the mascot here: <a href="http://www.ramblinwreck.com/requests.html">http://www.ramblinwreck.com/requests.html</a></p>
         <img src="/img/promo/big-buzz.jpg" class="img img-responsive rounded" width="500px">
     </div>
-    <div class="message-space row"></div>
+    <div class="row">
+        <div class="message-space col-6 offset-3">
+
+        </div>
+    </div>
     <div class="row">
         <div id="request-form" class="offset-xl-1 col-xl-10 offset-lg-2 col-lg-8 offset-md-3 col-md-6">
             <h4 class="mb-3">Request Details</h4>
             <form class="needs-validation" novalidate="">
                 <div class="row">
-                    <div class="col-6 mb-3">
+                    <div class="col-4 mb-3">
                         <label for="event-name">Name</label>
                         <input type="text" class="form-control" id="renter-name" placeholder="George P. Burdell" value="" required="">
                         <div class="invalid-feedback">
                             Valid name is required.
                         </div>
                     </div>
-                    <div class="col-6 mb-3">
+                    <div class="col-4 mb-3">
                         <label for="event-name">Email</label>
                         <input type="email" class="form-control" id="renter-email" placeholder="gpb@gatech.edu" value="" required="">
                         <div class="invalid-feedback">
                             Valid email is required.
+                        </div>
+                    </div>
+                    <div class="col-4 mb-3">
+                        <label for="event-phone-number">Contact Phone Number</label>
+                        <input type="tel" class="form-control" id="renter-phone-number" placeholder="(xxx) xxx-xxxx" value="" required="" pattern="^((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}$">
+                        <div class="invalid-feedback">
+                            Valid phone number is required.
                         </div>
                     </div>
                 </div>
@@ -64,9 +79,9 @@
                     <div class="col-md-6 mb-3">
                         <label for="event-month">Event Month</label>
                         <select class="custom-select d-block w-100" id="event-month" required="">
-                            <?php $months = ['January', 'Feburary', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+                            <?php $months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
                             foreach ($months as $month) {
-                                if ($month == date("M")) {
+                                if ($month == $dt->format('F')) {
                                     echo "<option value=\"" . $month . "\" selected=\"selected\">" . $month . "</option>";
                                 } else {
                                     echo "<option value=\"" . $month . "\">" . $month . "</option>";
@@ -92,7 +107,6 @@
 
                             ?>
                         </select>
-                        <!--<input type="text" class="form-control" id="event-day" placeholder="" required="">-->
                         <div class="invalid-feedback">
                             Event day required.
                         </div>
@@ -121,6 +135,12 @@
         $(document).load(location.href+" #event-day>*","");
     });
 
+    function isDateSetValid() {
+        var curDate = moment();
+        var eventDate = moment($('#event-year').val() + '-' + $('#event-month').val() + '-' + $('#event-day').val(),'YYYY-MMM-D');
+        return eventDate.isSameOrAfter(curDate, 'day');
+    }
+
     function createEvent() {
         $('#submit-request-button').attr('disabled','disabled')
         $('#submit-request-button').html('Submitting request...');
@@ -130,6 +150,7 @@
             data: {
                 renterName: $('#renter-name').val(),
                 renterEmail: $('#renter-email').val(),
+                renterPhoneNumber: $('#renter-phone-number').val(),
                 eventDetails: $('#event-details').val(),
                 eventName: $('#event-name').val(),
                 eventLocation: $('#event-location').val(),
@@ -165,7 +186,34 @@
                     event.preventDefault();
                     if (form.checkValidity() === false) {
                         event.stopPropagation();
+                        if (!isDateSetValid()) {
+                            event.stopPropagation();
+                            $('.message-space').html("    <div class=\"alert alert-danger alert-dismissible show fade\" role=\"alert\">\n" +
+                                "        <strong>Error!</strong> <span id=\"error-message\">Please provide a valid date.</span>\n" +
+                                "        <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n" +
+                                "            <span aria-hidden=\"true\">&times;</span>\n" +
+                                "        </button>\n" +
+                                "    </div>");
+                            $('#event-day').css('border-color', '#D75452');
+                            $('#event-month').css('border-color', '#D75452');
+                            $('#event-year').css('border-color', '#D75452');
+                        }
+                    } else if (!isDateSetValid()) {
+                        event.stopPropagation();
+                        $('.message-space').html("    <div class=\"alert alert-danger alert-dismissible show fade\" role=\"alert\">\n" +
+                            "        <strong>Error!</strong> <span id=\"error-message\">Please provide a valid date.</span>\n" +
+                            "        <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n" +
+                            "            <span aria-hidden=\"true\">&times;</span>\n" +
+                            "        </button>\n" +
+                            "    </div>");
+                        $('#event-day').css('border-color', '#D75452');
+                        $('#event-month').css('border-color', '#D75452');
+                        $('#event-year').css('border-color', '#D75452');
                     } else {
+                        $('.message-space').html("");
+                        $('#event-day').css('border-color', '#5FB760');
+                        $('#event-month').css('border-color', '#5FB760');
+                        $('#event-year').css('border-color', '#5FB760');
                         createEvent();
                     }
                     form.classList.add('was-validated');

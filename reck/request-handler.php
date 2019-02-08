@@ -1,6 +1,7 @@
 <?php
 
 $renterName = $_POST["renterName"];
+$renterPhoneNumber = $_POST["renterPhoneNumber"];
 $renterEmail = $_POST["renterEmail"];
 $eventDetails = $_POST["eventDetails"];
 $eventName = $_POST["eventName"];
@@ -31,12 +32,14 @@ $mailOptions = [
         "name" => $renterName,
         "email" => $renterEmail
     ],
-    "subject" => "[Ramblin' Reck] Appearance Request from " . $renterName,
+    "subject" => "Appearance Request from " . $renterName,
     "content" => [
         [
             "type" => "text/html",
-            "value" => nl2br("A new Ramblin' Reck appearance request has been submitted via https://reckclub.org/reck/request.php.\n\n" .
-                "<b>Requestor:</b> " . $renterName . " <" . $renterEmail . ">\n" .
+            "value" => nl2br("A new Ramblin' Reck appearance request has been submitted.\n\n" .
+                "<b>Requestor:</b> " . $renterName . " \n" .
+                "<b>Phone Number:</b> " . $renterPhoneNumber . " \n" .
+                "<b>Email:</b> " . $renterEmail . " \n" .
                 "<b>Event Name:</b> " . $eventName . "\n" .
                 "<b>Event Location:</b> " . $eventLocation . "\n" .
                 "<b>Event Date:</b> " . $eventDate . "\n" .
@@ -45,7 +48,7 @@ $mailOptions = [
                 "<b>Distance from GT:</b> " . $eventDistanceAway . (strpos($eventDistanceAway, 'miles') ? '' : ' miles') . "\n" .
                 "<b>Event Details:</b> " . ((strlen($eventDetails) > 0) ? $eventDetails : "No additional information provided.") . "\n" .
                 "\n" .
-                "Please email <a href='mailto:" . $renterEmail . "'>" . $renterName . "</a> at your earliest convenience to confirm or reject this request.\n\n--\nThis email was sent automatically from reckclub.org. Please do not reply to this email -- the sender is a not real inbox. If you received this email in error, please contact technology@reckclub.org.")
+                "--\nThis email was sent automatically from reckclub.org. If you received this email in error, please contact technology@reckclub.org.")
         ]
     ]
 ];

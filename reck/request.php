@@ -35,18 +35,25 @@ $dt = new DateTime("now", new DateTimeZone($tz));
             <h4 class="mb-3">Request Details</h4>
             <form class="needs-validation" novalidate="">
                 <div class="row">
-                    <div class="col-6 mb-3">
+                    <div class="col-4 mb-3">
                         <label for="event-name">Name</label>
                         <input type="text" class="form-control" id="renter-name" placeholder="George P. Burdell" value="" required="">
                         <div class="invalid-feedback">
                             Valid name is required.
                         </div>
                     </div>
-                    <div class="col-6 mb-3">
+                    <div class="col-4 mb-3">
                         <label for="event-name">Email</label>
                         <input type="email" class="form-control" id="renter-email" placeholder="gpb@gatech.edu" value="" required="">
                         <div class="invalid-feedback">
                             Valid email is required.
+                        </div>
+                    </div>
+                    <div class="col-4 mb-3">
+                        <label for="event-phone-number">Contact Phone Number</label>
+                        <input type="tel" class="form-control" id="renter-phone-number" placeholder="(xxx) xxx-xxxx" value="" required="" pattern="^((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}$">
+                        <div class="invalid-feedback">
+                            Valid phone number is required.
                         </div>
                     </div>
                 </div>
@@ -247,6 +254,7 @@ $dt = new DateTime("now", new DateTimeZone($tz));
             data: {
                 renterName: $('#renter-name').val(),
                 renterEmail: $('#renter-email').val(),
+                renterPhoneNumber: $('#renter-phone-number').val(),
                 eventDetails: $('#event-details').val(),
                 eventName: $('#event-name').val(),
                 eventLocation: $('#event-location').val(),

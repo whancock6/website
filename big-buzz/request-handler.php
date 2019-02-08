@@ -2,6 +2,7 @@
 
 $renterName = $_POST["renterName"];
 $renterEmail = $_POST["renterEmail"];
+$renterPhoneNumber = $_POST["renterPhoneNumber"];
 $eventDetails = $_POST["eventDetails"];
 $eventName = $_POST["eventName"];
 $eventLocation = $_POST["eventLocation"];
@@ -24,18 +25,24 @@ $mailOptions = [
         "name" => "Ramblin' Reck Club",
         "email" => "no-reply@reckclub.org"
     ],
-    "subject" => "[Big Buzz] New Appearance Request from " . $renterName,
+    "reply_to" => [
+        "name" => $renterName,
+        "email" => $renterEmail
+    ],
+    "subject" => "[Big Buzz] Appearance Request from " . $renterName,
     "content" => [
         [
             "type" => "text/html",
-            "value" => nl2br("A new Big Buzz appearance request has been submitted via https://reckclub.org/big-buzz.\n\n" .
-                "<b>Requestor:</b> " . $renterName . " <" . $renterEmail . ">\n" .
+            "value" => nl2br("A Big Buzz appearance request has been submitted.\n\n" .
+                "<b>Requestor:</b> " . $renterName . " \n" .
+                "<b>Phone Number:</b> " . $renterPhoneNumber . " \n" .
+                "<b>Email:</b> " . $renterEmail . " \n" .
                 "<b>Event Name:</b> " . $eventName . "\n" .
                 "<b>Event Location:</b> " . $eventLocation . "\n" .
                 "<b>Event Date:</b> " . $eventDate . "\n" .
                 "<b>Event Details:</b> " . ((strlen($eventDetails) > 0) ? $eventDetails : "No additional information provided.") . "\n" .
                 "\n" .
-                "Please email <a href='mailto:" . $renterEmail . "'>" . $renterName . "</a> at your earliest convenience to confirm or reject this request.\n\n--\nThis email was sent automatically from reckclub.org. Please do not reply to this email -- the sender is a not real inbox. If you received this email in error, please contact technology@reckclub.org.")
+                "--\nThis email was sent automatically from reckclub.org. If you received this email in error, please contact technology@reckclub.org.")
         ]
     ]
 ];
