@@ -2,7 +2,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title><%= title %></title>
+    <title>Why You Should Join Reck Club | Ramblin' Reck Club</title>
     <link href="/css/mini-style.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script><script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="/js/jquery.parallax-1.1.3.js"></script>
