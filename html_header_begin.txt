@@ -3,4 +3,4 @@
 <head>
 <title>Ramblin' Reck Club</title>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link href="css_old/style.css" rel="stylesheet" type="text/css">
+<link href="/css/css_old/style.css" rel="stylesheet" type="text/css">
