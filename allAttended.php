@@ -4,7 +4,8 @@
 	
 	require "html_header_begin.txt";
 ?>
-	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <link href="/css/simple-grid.min.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <?php require "html_header_end.txt"; ?>
 
 <h3>All Attended Events</h3>
@@ -93,10 +94,10 @@
 ?>
 	<script type="text/javascript">
       // Load the Visualization API and the piechart package.
-      google.load('visualization', '1.0', {'packages':['corechart','annotatedtimeline']});
+      google.charts.load('current', {'packages':['corechart','annotationchart']});
 		
       // Set a callback to run when the Google Visualization API is loaded.
-      google.setOnLoadCallback(drawCharts);
+      google.charts.setOnLoadCallback(drawCharts);
 
       // Callback that creates and populates a data table,
       // instantiates the pie chart, passes in the data and
@@ -121,7 +122,7 @@
         ]);
 
         // Set chart options
-        var options = {'width':400,'height':175,chartArea:{left:"40%",top:10,width:"100%",height:"90%"},legend:{position: 'right', textStyle: {color: 'black', fontSize: 11}},'is3D':false,pieSliceTextStyle:{color: 'black'}, backgroundColor:'#FFFFFF',colors:['#149F3D','#005ACE','#FFCB00','#D0D0D0']};
+        var options = {'width':400,'height':200,chartArea:{left:"10",top:"10",width:"100%",height:"90%"},legend:{position: 'right', textStyle: {color: 'black', fontSize: 11}},'is3D':false,pieSliceTextStyle:{color: 'black'}, backgroundColor:'#FFFFFF',colors:['#149F3D','#005ACE','#FFCB00','#D0D0D0']};
 
         // Instantiate and draw our chart, passing in some options.
         var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
@@ -144,10 +145,11 @@
 			while($row = $query2->fetch())
 			{
 				if($dateDay!=$row[dateDay] || $dateMonth!=$row[dateMonth]){
+				    $dateYear=$row[dateYear];
 					$dateMonth=$row[dateMonth];
 					$dateDay=$row[dateDay];
 					$pointValue+=$row[pointValue];
-					echo "[new Date(2013, ".($row[dateMonth]-1).", ".$row[dateDay]."), ".$pointValue."],";
+					echo "[new Date(" . $dateYear .", ".($row[dateMonth]-1).", ".$row[dateDay]."), ".$pointValue."],";
 				}
 				else{
 					$pointValue+=$row[pointValue];
@@ -158,15 +160,27 @@
 		  
 		  ]);
 
-		  var annotatedtimeline = new google.visualization.AnnotatedTimeLine(
+		  var annotatedtimeline = new google.visualization.AnnotationChart(
 			  document.getElementById('chart2_div'));
-		  annotatedtimeline.draw(data, {'displayAnnotations': true, 'height':500});
+		  annotatedtimeline.draw(data, {'displayAnnotations': true, 'height':500, 'displayZoomButtons':false,'colors':['#b3a369']});
 		}
 
 	</script>
-	<div id="chart2_div" style="height:300px; width:600px; margin:0 auto; display:block;"></div>
+
+
+    <div class="container">
+        <div class="row" style="margin-bottom: 25px;">
+            <div class="col-12">
+                <div id="chart2_div" style="height:500px;width:600px;"></div>
+            </div>
+        </div>
+        <div class="row" style="margin-bottom: 25px;">
+            <div class="col-12 center">
+                <div id="chart_div" style="height:200px;width:400px;position:relative; margin: 0 auto;"></div>
+            </div>
+        </div>
+    </div>
     <table align="center">
-    <tr><td colspan="5"><div id="chart_div"></div></td></tr>
     <tr bgcolor="#dbcfba"><th colspan="5"><?php echo($currentFirstName) ?> <?php echo($currentLastName) ?></th></tr>
     <tr><td colspan="1">Total Points:</td><td colspan="3"><?php echo($currentMemberPoints) ?></td></tr>
     <tr><td colspan="1">Probate Points Average:</td><td colspan="3"><?php echo($probateAVG) ?></td></tr>
@@ -192,10 +206,8 @@
 		{
 		echo "<tr><td>".$row[eventName]."</td><td>".$row[dateMonth]."-".$row[dateDay]."-".$row[dateYear]."</td><td>".$row[pointValue]."</td></tr>";
 		}
-
-	echo "</table>";
 ?>
-
+    </table>
 <br/><br/><br/><br/>
 
 <?php require "html_footer.txt"; ?>
