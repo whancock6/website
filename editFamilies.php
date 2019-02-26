@@ -45,24 +45,6 @@
 	        sF.options[sF.selectedIndex] = null;
 	    }
 	}
-	/*function moveData5(dir) {
-	    var sF = document.getElementById(((dir == "back")?"family5Select":"sourceSelect"));
-	    var dF = document.getElementById(((dir == "back")?"sourceSelect":"family5Select"));
-	    if(sF.length == 0 || sF.selectedIndex == -1) return;
-	    while (sF.selectedIndex != -1) {
-	        dF.options[dF.length] = new Option(sF.options[sF.selectedIndex].text, sF.options[sF.selectedIndex].value);
-	        sF.options[sF.selectedIndex] = null;
-	    }
-	}
-	function moveData6(dir) {
-	    var sF = document.getElementById(((dir == "back")?"family6Select":"sourceSelect"));
-	    var dF = document.getElementById(((dir == "back")?"sourceSelect":"family6Select"));
-	    if(sF.length == 0 || sF.selectedIndex == -1) return;
-	    while (sF.selectedIndex != -1) {
-	        dF.options[dF.length] = new Option(sF.options[sF.selectedIndex].text, sF.options[sF.selectedIndex].value);
-	        sF.options[sF.selectedIndex] = null;
-	    }
-	}*/
 	function selectAll(selectBox,selectAll) { 
 	    // have we been passed an ID 
 	    if (typeof selectBox == "string") { 
@@ -132,27 +114,6 @@
 							?>
 						</select></td>
 					</tr>
-					<tr>
-						<td align="center">
-							<?php
-								$query = $db->query("SELECT familyName FROM Family WHERE familyID=5");
-									$query->setFetchMode(PDO::FETCH_ASSOC);
-								$row = $query->fetch();
-								echo "<input type=\"text\" width=\"250\" name=\"family5name\" value=\"".$row[familyName]."\">";
-							?>	
-						</td>	
-					</tr>
-					<tr>
-						<td align="center"><select style="width: 200px" name="Family5Select[]" id="family5Select" size="15" multiple="multiple" ondblclick="moveData(); return false;">
-							<?php
-								$query = $db->query("SELECT * FROM Member WHERE memFamilyID = 5 AND status!='alumni' ORDER BY lastName, firstName");
-									$query->setFetchMode(PDO::FETCH_ASSOC);
-					      		while($row = $query->fetch()) {
-					      			echo "<option value=\"".$row[memberID]."\">".$row[firstName]." ".$row[lastName]."</option>";
-					      		}								
-							?>
-						</select></td>
-					</tr>
 				</table>
 			</td>
 			<!--Left Column-->
@@ -172,12 +133,6 @@
 						<td width="50" align="center" valign="middle"><input type="submit" name="back" id="button" value=">>>" onclick="moveData2('back'); return false;"/></td>
 					</tr>
 					<tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
-					<tr>
-						<td width="50" align="center" valign="middle"><input type="submit" name="forward" id="button" value="<<<" onclick="moveData5(); return false;"/></td>
-					</tr>
-					<tr>
-						<td width="50" align="center" valign="middle"><input type="submit" name="back" id="button" value=">>>" onclick="moveData5('back'); return false;"/></td>
-					</tr>
 				</table>	
 			</td>
 			<!--Center Column-->
@@ -200,7 +155,7 @@
 					</tr>
 					<tr><td>&nbsp;</td></tr>
 					<tr>
-						<td><input type="submit" value="Update" onclick="selectAll('sourceSelect',true); selectAll('family1Select',true); selectAll('family2Select',true); selectAll('family3Select',true);  selectAll('family4Select',true); selectAll('family5Select',true); selectAll('family6Select',true); return true;"></td>
+						<td><input type="submit" value="Update" onclick="selectAll('sourceSelect',true); selectAll('family1Select',true); selectAll('family2Select',true); selectAll('family3Select',true);  selectAll('family4Select',true); return true;"></td>
 					</tr>
 				</table>
 			</td>
@@ -221,12 +176,6 @@
 						<td width="50" align="center" valign="middle"><input type="submit" name="back" id="button" value="<<<" onclick="moveData4('back'); return false;"/></td>
 					</tr>
 					<tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
-					<tr>
-						<td width="50" align="center" valign="middle"><input type="submit" name="forward" id="button" value=">>>" onclick="moveData6(); return false;"/></td>
-					</tr>
-					<tr>
-						<td width="50" align="center" valign="middle"><input type="submit" name="back" id="button" value="<<<" onclick="moveData6('back'); return false;"/></td>
-					</tr>
 				</table>	
 			</td>
 			<!--Far Right Column-->
@@ -267,27 +216,6 @@
 						<td align="center"><select style="width: 200px" name="Family4Select[]" id="family4Select" size="15" multiple="multiple" ondblclick="moveData(); return false;">
 							<?php
 								$query = $db->query("SELECT * FROM Member WHERE memFamilyID = 4 AND status!='alumni' ORDER BY lastName, firstName");
-									$query->setFetchMode(PDO::FETCH_ASSOC);
-					      		while($row = $query->fetch()) {
-					      			echo "<option value=\"".$row[memberID]."\">".$row[firstName]." ".$row[lastName]."</option>";
-					      		}								
-							?>
-						</select></td>
-					</tr>
-					<tr>
-						<td align="center">
-							<?php
-								$query = $db->query("SELECT familyName FROM Family WHERE familyID=6");
-									$query->setFetchMode(PDO::FETCH_ASSOC);
-								$row = $query->fetch();
-								echo "<input type=\"text\" width=\"250\" name=\"family6name\" value=\"".$row[familyName]."\">";
-							?>	
-						</td>	
-					</tr>
-					<tr>
-						<td align="center"><select style="width: 200px" name="Family6Select[]" id="family6Select" size="15" multiple="multiple" ondblclick="moveData(); return false;">
-							<?php
-								$query = $db->query("SELECT * FROM Member WHERE memFamilyID = 6 AND status!='alumni' ORDER BY lastName, firstName");
 									$query->setFetchMode(PDO::FETCH_ASSOC);
 					      		while($row = $query->fetch()) {
 					      			echo "<option value=\"".$row[memberID]."\">".$row[firstName]." ".$row[lastName]."</option>";

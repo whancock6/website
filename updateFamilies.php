@@ -13,8 +13,6 @@
 	$family2name = $_POST[family2name];
 	$family3name = $_POST[family3name];
 	$family4name = $_POST[family4name];
-	$family5name = $_POST[family5name];
-	$family6name = $_POST[family6name];
 	
 	$query1 = $db->prepare("UPDATE Family SET familyName=:family1name WHERE familyID=1");
 	$query1->execute(array('family1name'=>$family1name));
@@ -24,10 +22,6 @@
 	$query3->execute(array('family3name'=>$family3name));
 	$query4 = $db->prepare("UPDATE Family SET familyName=:family4name WHERE familyID=4");
 	$query4->execute(array('family4name'=>$family4name));
-	$query5 = $db->prepare("UPDATE Family SET familyName=:family5name WHERE familyID=5");
-	$query5->execute(array('family5name'=>$family5name));
-	$query6 = $db->prepare("UPDATE Family SET familyName=:family6name WHERE familyID=6");
-	$query6->execute(array('family6name'=>$family6name));
 
 	foreach ($_POST[SourceSelect] AS $tempMemberID) {
 		$query = $db->prepare("UPDATE Member SET memFamilyID = NULL WHERE memberID = :tempMemberID");
@@ -47,14 +41,6 @@
 	}
 	foreach ($_POST[Family4Select] AS $tempMemberID) {
 		$query = $db->prepare("UPDATE Member SET memFamilyID = 4 WHERE memberID = :tempMemberID");
-		$query->execute(array('tempMemberID'=>$tempMemberID));
-	}
-	foreach ($_POST[Family5Select] AS $tempMemberID) {
-		$query = $db->prepare("UPDATE Member SET memFamilyID = 5 WHERE memberID = :tempMemberID");
-		$query->execute(array('tempMemberID'=>$tempMemberID));
-	}
-	foreach ($_POST[Family6Select] AS $tempMemberID) {
-		$query = $db->prepare("UPDATE Member SET memFamilyID = 6 WHERE memberID = :tempMemberID");
 		$query->execute(array('tempMemberID'=>$tempMemberID));
 	}
 	
