@@ -3,7 +3,6 @@
 <!DOCTYPE html>
 <html>
 <?php require "partials/head.php" ?>
-<link rel="stylesheet" href="/css/nav-scroller.css">
 <body>
 <?php require "partials/public-header.php" ?>
 <div class="container">
