@@ -13,7 +13,7 @@
     <div class="row mb-2">
         <div class="col-md-6">
             <div class="card flex-md-row mb-4 box-shadow h-md-250">
-                <img class="card-img-right flex-auto d-none d-lg-block" src="/img/promo/2017-gameday-rideout.jpg" data-holder-rendered="true" style="width: 200px; height: 250px;">
+                <img class="card-img-right img-fluid flex-auto d-none d-lg-block" src="/img/promo/2017-gameday-rideout.jpg" data-holder-rendered="true" style="width: 200px; height: 250px;">
                 <div class="card-body d-flex flex-column align-items-start">
                     <h3 class="mb-1">
                         <a class="text-dark" href="#">The Ramblin' Reck</a>
@@ -25,7 +25,7 @@
         </div>
         <div class="col-md-6">
             <div class="card flex-md-row mb-4 box-shadow h-md-250">
-                <img class="card-img-right flex-auto d-none d-lg-block" src="/img/promo/big-buzz.jpg" data-holder-rendered="true" style="width: 200px; height: 250px;">
+                <img class="card-img-right img-fluid flex-auto d-none d-lg-block" src="/img/promo/big-buzz.jpg" data-holder-rendered="true" style="width: 200px; height: 250px;">
                 <div class="card-body d-flex flex-column align-items-start">
                     <h3 class="mb-1">
                         <a class="text-dark" href="#">Big Buzz</a>

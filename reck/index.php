@@ -81,7 +81,7 @@
                     <p class="card-text mb-auto">Each year, one student is chosen from the ranks of the club to be the sole driver and primary caretaker of the Ramblin’ Reck.</p>
                     <a href="/reck/drivers.php">Read more</a>
                 </div>
-                <img class="card-img-right flex-auto d-none d-md-block" src="/img/promo/2014-raj.jpg" style="width: 200px; height: 250px;">
+                <img class="card-img-right img-fluid flex-auto d-none d-md-block" src="/img/promo/2014-raj.jpg" style="width: 200px; height: 250px;">
             </div>
         </div>
         <div class="col-md-6">
@@ -94,7 +94,7 @@
                     <p class="card-text mb-auto">The Reck was formally introduced as Georgia Tech's mascot when it led the football team out on to Grant Field for the 1961 homecoming game...</p>
                     <a href="/reckhistory">Continue reading</a>
                 </div>
-                <img class="card-img-right flex-auto d-none d-md-block" src="/img/promo/1961-reck-debut.jpg" style="width: 200px; height: 250px;">
+                <img class="card-img-right img-fluid flex-auto d-none d-md-block" src="/img/promo/1961-reck-debut.jpg" style="width: 200px; height: 250px;">
             </div>
         </div>
     </div>

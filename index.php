@@ -57,7 +57,7 @@
                     <p class="card-text mb-auto">Each year, one student is chosen from the ranks of the club to be the sole driver and primary caretaker of the Ramblin’ Reck.</p>
                     <a href="/reck/drivers.php">Read more</a>
                 </div>
-                <img class="card-img-right flex-auto d-none d-md-block" data-src="/img/promo/2014-raj.jpg" style="width: 200px; height: 250px;" src="/img/promo/2014-raj.jpg" data-holder-rendered="true">
+                <img class="card-img-right img-fluid flex-auto d-none d-md-block" data-src="/img/promo/2014-raj.jpg" style="width: 200px; height: 250px;" src="/img/promo/2014-raj.jpg" data-holder-rendered="true">
             </div>
         </div>
         <div class="col-md-6">
@@ -70,14 +70,14 @@
                     <p class="card-text mb-auto">The Georgia Tech T-book was originally published by the Georgia Tech YMCA with the intention of providing a guide to the new Tech students abo...</p>
                     <a href="/about/t-book.php">Continue reading</a>
                 </div>
-                <img class="card-img-right flex-auto d-none d-md-block" src="/img/promo/mantle-tbook.jpg" style="width: 200px !important; height: 250px;" data-holder-rendered="true">
+                <img class="card-img-right img-fluid flex-auto d-none d-md-block" src="/img/promo/mantle-tbook.jpg" style="width: 200px !important; height: 250px;" data-holder-rendered="true">
             </div>
         </div>
     </div>
     <div class="row mb-2">
         <div class="col-md-6">
             <div class="card flex-md-row mb-4 box-shadow h-md-250">
-                <img class="card-img-left flex-auto d-none d-md-block" src="/img/promo/1961-reck-debut.jpg" style="width: 200px !important; height: 250px;" data-holder-rendered="true">
+                <img class="card-img-left img-fluid flex-auto d-none d-md-block" src="/img/promo/1961-reck-debut.jpg" style="width: 200px !important; height: 250px;" data-holder-rendered="true">
                 <div class="card-body d-flex flex-column align-items-start">
                     <strong class="d-inline-block mb-2 text-secondary">History</strong>
                     <h3 class="mb-0">
@@ -90,7 +90,7 @@
         </div>
         <div class="col-md-6">
             <div class="card flex-md-row mb-4 box-shadow h-md-250">
-                <img class="card-img-left flex-auto d-none d-md-block" src="/img/promo/2017-gameday-rideout.jpg" style="width: 200px !important; height: 250px;" data-holder-rendered="true">
+                <img class="card-img-left img-fluid flex-auto d-none d-md-block" src="/img/promo/2017-gameday-rideout.jpg" style="width: 200px !important; height: 250px;" data-holder-rendered="true">
                 <div class="card-body d-flex flex-column align-items-start">
                     <strong class="d-inline-block mb-2 text-primary">RECKruitment</strong>
                     <h3 class="mb-0">
