@@ -98,7 +98,7 @@
                        echo " CHECKED";
         } else { }
         echo "><label for=\"event".$count."\"></label></div></div>";
-        echo "<div class=\"date\">".$row[dateMonth]."-".$row[dateDay]."</div><div class=\"event\">".$row[eventName];
+        echo "<div class=\"date\">".$row[dateMonth]."-".$row[dateDay]."</div><div class=\"event\"><a href='/event.php?id=". $row[eventID]."'>".$row[eventName] . "</a>";
         if($row[isBonus] == 1) {
                         echo " (BONUS)";
         }
