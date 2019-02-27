@@ -1,7 +1,7 @@
 <?php
 	require "logged_in_check.php";
 	require "database_connect.php";
-	
+	require "set_session_vars_short.php";
 	require "html_header_begin.txt";
 ?>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -19,7 +19,7 @@
 
 	$currentMemID = $_POST[memberID];
 
-   	$query = $db->prepare("SELECT firstName, lastName, memberPoints FROM Member WHERE memberID=:currentMemID");
+   	$query = $db->prepare("SELECT firstName, lastName, memberPoints, status FROM Member WHERE memberID=:currentMemID");
 	$query->execute(array('currentMemID'=>$currentMemID));
 		$query->setFetchMode(PDO::FETCH_ASSOC);
 
@@ -27,6 +27,7 @@
 	$currentFirstName = $row[firstName];
 	$currentLastName = $row[lastName];
 	$currentMemberPoints = $row[memberPoints];
+	$currentMemberStatus = $row[status];
 
 	// Total number of events
 	//-------------------------------------------
@@ -90,6 +91,11 @@
 	}
 
 	$eventPct = number_format(($events/$totalEvents)*100,1);
+
+    $query = $db->query("SELECT COUNT(*) as CNT FROM Event where type = 'mandatory'");
+    $query->setFetchMode(PDO::FETCH_ASSOC);
+    $row = $query->fetch();
+    $mandatoryEvents = $row[CNT];
 ?>
 	<script type="text/javascript">
       // Load the Visualization API and the piechart package.
@@ -185,7 +191,28 @@
     <tr bgcolor="#005ACE"><td colspan="1">Social Events:</td><td colspan="3"><?php echo($social) ?></td></tr>
     <tr bgcolor="#149F3D"><td colspan="1">Work Events:</td><td colspan="3"><?php echo($work) ?></td></tr>
     <tr><td colspan="1">Total Events:</td><td colspan="2"><?php echo($events) ?> / <?php echo ($totalEvents) ?>  (<?php echo($eventPct)?>%)</td></tr>
-    </tr>
+        <?php
+            if (($isAdmin || $isSecretary || $isTreasurer || $isVP) || $currentMemID == $memberID) {
+                if ($currentMemberStatus == 'member' || $currentMemberStatus == 'probate') {
+                    echo '<tr>';
+                    echo '<td colspan="1">';
+                    echo 'Events minimum met?';
+                    echo '</td>';
+                    echo '<td colspan="3">';
+                    echo  ($events > 10) ? "Yes" : "<b>No</b>";
+                    echo  "</td></tr>";
+
+                    echo '<tr>';
+                    echo '<td colspan="1">';
+                    echo 'Mandatory events missed:';
+                    echo '</td>';
+                    echo '<td colspan="3">';
+                    $diff = $mandatoryEvents - $mandatory;
+                    echo ($diff < 3) ? $diff : "<b>".$diff."</b>";
+                    echo  "</td></tr>";
+                }
+            }
+        ?>
 <?php
 	echo "<tr bgcolor=\"#dbcfba\"><th colspan=\"3\">Events Attended</th></tr>";
 	echo "<tr><th width=350>Event</th><th width=100>Date</th><th>Points</th></tr>\n";
