@@ -1,6 +1,6 @@
 <div class="container">
     <nav class="navbar navbar-expand-md d-flex bg-light navbar-light px-0" style="background: #fff !important;">
-        <div class="blog-header col-12 pt-2 pb-3">
+        <div class="blog-header col-12 pt-2 pb-3 px-0">
             <div class="row">
                 <div class="col-3">
                     <button class="btn btn-sm btn-outline-primary navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar2">
