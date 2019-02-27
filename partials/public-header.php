@@ -36,6 +36,7 @@
                         The Reck
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/reck">The Tradition</a>
                         <a class="dropdown-item" href="/reck/drivers.php">Drivers</a>
                         <a class="dropdown-item" href="/reckhistory">History</a>
                     </div>

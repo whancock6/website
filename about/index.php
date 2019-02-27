@@ -28,9 +28,7 @@
             <div class="card flex-md-row mb-4 box-shadow h-md-250">
                 <div class="card-body d-flex flex-column align-items-start">
                     <strong class="d-inline-block mb-2 text-secondary">Club Info</strong>
-                    <h3 class="mb-1">
-                        <a class="text-dark" href="#">Roster</a>
-                    </h3>
+                    <h3 class="mb-1 text-dark">Roster</h3>
                     <p class="card-text mb-auto">An updated list of our executive board, committee chairs, members, and probates.</p>
                     <a href="/about/roster.php">Read more</a>
                 </div>
@@ -40,9 +38,7 @@
             <div class="card flex-md-row mb-4 box-shadow h-md-250">
                 <div class="card-body d-flex flex-column align-items-start">
                     <strong class="d-inline-block mb-2 text-primary">Traditions</strong>
-                    <h3 class="mb-1">
-                        <a class="text-dark" href="#">The T-Book</a>
-                    </h3>
+                    <h3 class="mb-1 text-dark">The T-Book</h3>
                     <p class="card-text mb-auto">The Georgia Tech T-Book was originally published by the Georgia Tech YMCA with the intention of providing a guide to the new...</p>
                     <a href="/about/t-book.php">Continue reading</a>
                 </div>

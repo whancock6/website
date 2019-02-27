@@ -75,9 +75,7 @@
             <div class="card flex-md-row mb-4 box-shadow h-md-250">
                 <div class="card-body d-flex flex-column align-items-start">
                     <strong class="d-inline-block mb-2 text-secondary">The Reck</strong>
-                    <h3 class="mb-1">
-                        <a class="text-dark" href="#">Drivers</a>
-                    </h3>
+                    <h3 class="mb-1 text-dark">Drivers</h3>
                     <p class="card-text mb-auto">Each year, one student is chosen from the ranks of the club to be the sole driver and primary caretaker of the Ramblin’ Reck.</p>
                     <a href="/reck/drivers.php">Read more</a>
                 </div>
@@ -88,9 +86,7 @@
             <div class="card flex-md-row mb-4 box-shadow h-md-250">
                 <div class="card-body d-flex flex-column align-items-start">
                     <strong class="d-inline-block mb-2 text-secondary">The Reck</strong>
-                    <h3 class="mb-1">
-                        <a class="text-dark" href="#">History</a>
-                    </h3>
+                    <h3 class="mb-1 text-dark">History</h3>
                     <p class="card-text mb-auto">The Reck was formally introduced as Georgia Tech's mascot when it led the football team out on to Grant Field for the 1961 homecoming game...</p>
                     <a href="/reckhistory">Continue reading</a>
                 </div>
