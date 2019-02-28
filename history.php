@@ -152,7 +152,7 @@ $yearPage = $_GET['year'];
 				?>
 				<div style="clear:both;"></div>
 <footer>
-	&copy; Copyright 2014 Ramblin' Reck Club. All Rights Reserved.
+	&copy; Copyright <?php echo date("Y"); ?> Ramblin' Reck Club. All Rights Reserved.
 </footer>
 			</div>
 		</div>

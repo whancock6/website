@@ -47,7 +47,7 @@
 
 							<div class="meta">
 								<ul>
-									<li><a href="memberBalance.php">Balance</a></li>
+<!--									<li><a href="memberBalance.php">Balance</a></li>-->
 									<li><a href="contacts.php">Contacts</a></li>
 									<li><a href="memberSettingsForm.php">Settings</a></li>
 									<li><a href="memberLogout.php">Log Out</a></li>
@@ -77,7 +77,7 @@
 					<?php if($isSecretary == 1 || $isVP == 1 || $isAdmin == 1) :?>
 					<li><a href="manageMembers.php">Edit Members</a></li>
 					<li><a href="managePositions.php">Manage Positions</a></li>
-					<li><a href="manageCommittees.php">Manage Commitees</a></li>
+<!--					<li><a href="manageCommittees.php">Manage Commitees</a></li>-->
 					<li><a href="manageWebsite.php">Manage Website</a></li>
 					<?php endif; ?>
 		<?php if($isSecretary == 1 || $isVP == 1 || $isEventAdmin == 1 || $isAdmin == 1) :?>
@@ -85,16 +85,16 @@
 			</div>
 		</div>
 		<?php endif; ?>
-		<?php if($isTreasurer == 1 || $isAdmin == 1) : ?>
-		<div id="treasurer" class="row">
-			<div class="sixteen columns">
-				<ul>
-					<li class="title">$$$</li>
-					<li><a href="manageLineItems.php">Manage Line Items</a></li>
-					<li><a href="applyLineItems.php">Apply Line Items</a></li>
-					<li><a href="managePayments.php">Manage Payments</a></li>
-					<li><a href="viewMemberBalances.php">View Member Balances</a></li>
-				</ul>
-			</div>
-		</div>
-	<?php endif; ?>
+<!--		--><?php //if($isTreasurer == 1 || $isAdmin == 1) : ?>
+<!--		<div id="treasurer" class="row">-->
+<!--			<div class="sixteen columns">-->
+<!--				<ul>-->
+<!--					<li class="title">$$$</li>-->
+<!--					<li><a href="manageLineItems.php">Manage Line Items</a></li>-->
+<!--					<li><a href="applyLineItems.php">Apply Line Items</a></li>-->
+<!--					<li><a href="managePayments.php">Manage Payments</a></li>-->
+<!--					<li><a href="viewMemberBalances.php">View Member Balances</a></li>-->
+<!--				</ul>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	    --><?php //endif; ?>
