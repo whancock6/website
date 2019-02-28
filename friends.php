@@ -104,27 +104,30 @@ while ($row = $peopleQuery->fetch()) {
 </table>
 <table align="center" width="408px">
     <tr bgcolor="#dbcfba"><th colspan="5">Friends</th></tr>
-    <tr><th>Rank</th><th colspan="3">Member</th><th colspan="2">% Events Shared</th></tr>
     <?php
     $sortedKeys = arsort($memberCountArray);
-    $count = 1;
-    foreach ($memberCountArray as $currentMemberId => $eventCount) {
-        $name = $people[$currentMemberId];
-        if (strlen($name) > 0) {
-            if ($currentMemberId == $memberID) {
-                echo "<tr bgcolor=\"#dbcfba\">";
-            } else {
-                echo "<tr>";
+    if (sizeof($sortedKeys) > 0) {
+        echo "<tr><th>Rank</th><th colspan=\"3\">Member</th><th colspan=\"2\">% Events Shared</th></tr>";
+        $count = 1;
+        foreach ($memberCountArray as $currentMemberId => $eventCount) {
+            $name = $people[$currentMemberId];
+            if (strlen($name) > 0) {
+                if ($currentMemberId == $memberID) {
+                    echo "<tr bgcolor=\"#dbcfba\">";
+                } else {
+                    echo "<tr>";
+                }
+                echo "<td>" . $count . "</td>";
+                echo "<td colspan='3'>" . $people[$currentMemberId] . "</td>";
+
+                $attendancePct = number_format(($eventCount/sizeof($eventIds))*100,1);
+                echo "<td colspan='2'>" . $eventCount . '/' . sizeof($eventIds) . ' (' . $attendancePct . '%)</td></tr>';
+                $count++;
             }
-            echo "<td>" . $count . "</td>";
-            echo "<td colspan='3'>" . $people[$currentMemberId] . "</td>";
-
-            $attendancePct = number_format(($eventCount/sizeof($eventIds))*100,1);
-            echo "<td colspan='2'>" . $eventCount . '/' . sizeof($eventIds) . ' (' . $attendancePct . '%)</td></tr>';
-            $count++;
         }
+    } else {
+        echo "<tr><td>No members with shared events.</td></tr>";
     }
-
     ?>
 
 </table>

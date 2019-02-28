@@ -11,7 +11,7 @@ require "html_header_begin.txt";
 
 <div align="center">
     <a href="points.php">Back to Points</a><br/><br/>
-</div>
+
 <?php
     $currentEventId = $_GET[id];
 
@@ -22,14 +22,16 @@ require "html_header_begin.txt";
     $row = $query->fetch();
 
     $currentEventName = $row[eventName];
-    $currentEventMonth = $row[dateYear];
-    $currentEventDay = $row[dateMonth];
-    $currentEventYear = $row[dateDay];
+    $currentEventMonth = $row[dateMonth];
+    $currentEventDay = $row[dateDay];
+    $currentEventYear = $row[dateYear];
     $currentEventPoints = $row[pointValue];
     $currentEventBonusStatus = $row[isBonus];
     $currentEventFamilyStatus = $row[isFamilyEvent];
     $currentEventType = $row[type];
+    echo "<a href=\"editEvents.php?dateMonth=" . $currentEventMonth . "&dateDay=" . $currentEventDay . "&eventID=" . $currentEventId . "\">Edit Event</a><br/><br/>";
 ?>
+</div>
     <table align="center">
         <td colspan="5">
             <div id="spacing_div" style="width:400px;"></div>
@@ -70,28 +72,31 @@ require "html_header_begin.txt";
         $query = $db->prepare("SELECT Member.memberID, Member.firstName, Member.lastName, Member.status FROM reck_club.AttendsEvent JOIN reck_club.Member ON reck_club.AttendsEvent.memberID = reck_club.Member.memberID WHERE reck_club.AttendsEvent.eventID = :currentEventId ORDER BY firstName ASC, lastName");
         $query->execute(array('currentEventId'=>$currentEventId));
         $query->setFetchMode(PDO::FETCH_ASSOC);
-        $count = 0;
-        while($row = $query->fetch()) {
-            echo "<form action=\"allAttended.php\" method=\"POST\">";
-            echo "<tr><td colspan=\"4\">".$row[firstName]." ".$row[lastName]."</td>";
-            echo "<td colspan=\"1\" align=\"center\"><input type=\"submit\" value=\"Check Events\"></td></tr>";
-            echo "<input type=\"hidden\" name=\"memberID\" value=\"".$row[memberID]."\">";
-            echo "</form>";
+        if ($query->rowCount() > 0) {
+            $count = 0;
+            while($row = $query->fetch()) {
+                echo "<form action=\"allAttended.php\" method=\"POST\">";
+                echo "<tr><td colspan=\"4\">".$row[firstName]." ".$row[lastName]."</td>";
+                echo "<td colspan=\"1\" align=\"center\"><input type=\"submit\" value=\"Check Events\"></td></tr>";
+                echo "<input type=\"hidden\" name=\"memberID\" value=\"".$row[memberID]."\">";
+                echo "</form>";
 //            echo "<tr><td colspan=\"4\">" . $row[firstName]." " . $row[lastName]."</td><td colspan=\"1\">".$row[status]."</td></tr>"; // alternative display if you want
-            $count++;
+                $count++;
+            }
+
+            // Total number of members
+            //-------------------------------------------
+            $query = $db->query("SELECT COUNT(*) as CNT FROM reck_club.Member WHERE NOT status = 'alumni' AND (NOT username = 'gpburdell' AND NOT username = 'gerome.stephens')"); // remove Gerome and GPB from the member count
+            $query->setFetchMode(PDO::FETCH_ASSOC);
+            $row = $query->fetch();
+            $totalMembers = $row[CNT];
+            $memberPct = number_format(($count/$totalMembers)*100,1);
+
+           echo "<tr bgcolor=\"#dbcfba\"><th colspan=\"5\">Overall: " . $count . "/" . $totalMembers . " (" . $memberPct . "%)</th></tr>";
+        } else {
+            echo "<tr><td>No members attended this event.</td></tr>";
         }
-
-        // Total number of members
-        //-------------------------------------------
-        $query = $db->query("SELECT COUNT(*) as CNT FROM reck_club.Member WHERE NOT status = 'alumni' AND (NOT username = 'gpburdell' AND NOT username = 'gerome.stephens')"); // remove Gerome and GPB from the member count
-        $query->setFetchMode(PDO::FETCH_ASSOC);
-        $row = $query->fetch();
-        $totalMembers = $row[CNT];
-        $memberPct = number_format(($count/$totalMembers)*100,1);
         ?>
-        <tr bgcolor="#dbcfba"><th colspan="5">Overall: <?php echo $count; ?> / <?php echo $totalMembers; ?> (<?php echo $memberPct; ?>%)</th></tr>
-<!--        </tr>-->
-
     </table>
     <br/><br/><br/><br/>
 
