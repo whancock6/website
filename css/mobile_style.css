@@ -8,7 +8,7 @@ body {
 	-webkit-user-select:none;
     -webkit-text-size-adjust:none;
 	font-family:helvetica;
-	background:#DBCFBA;
+	background:#b3a369;
 }
 
 #wrapper {
@@ -19,7 +19,7 @@ body {
 	position:relative;	/* On older OS versions "position" and "z-index" must be defined, */
 	z-index:1;			/* it seems that recent webkit is less picky and works anyway. */
 	overflow:hidden;
-	background:#DBCFBA;
+	background:#b3a369;
 
 }
 

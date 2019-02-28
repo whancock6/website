@@ -168,7 +168,7 @@
 <form id="myform" name="myform" action="createEvent.php" method="POST" onsubmit="return validate();">
 <table align="center">
 <tr><th colspan="2">Create Event</th></tr>
-<tr bgcolor="#dbcfba"><td>
+<tr bgcolor="#b3a369"><td>
 <label for="isFamilyEvent">Family Event?: </label></td><td>
 <input type="checkbox" name="isFamilyEvent"  id="isFamilyEvent" onClick="rereload(this.form)"
 <?php
@@ -178,11 +178,11 @@
 ?>
 >
 </td></tr>
-<tr bgcolor="#dbcfba"><td>
+<tr bgcolor="#b3a369"><td>
 <label for="isBonus">Bonus Event?: </label></td><td>
 <input type="checkbox" name="isBonus">
 </td></tr>
-<tr bgcolor="#dbcfba"><td>
+<tr bgcolor="#b3a369"><td>
 <label for="type">Type: </label></td><td>
 <select name="type" id="type">
 	<option value="mandatory"  <?PHP if($currentType=="mandatory") echo "selected";?>>mandatory</option>
@@ -191,11 +191,11 @@
 	<option value="work"  <?PHP if($currentType=="work") echo "selected";?>>work</option>
 </select>
 </td></tr>
-<tr bgcolor="#dbcfba"><td>
+<tr bgcolor="#b3a369"><td>
 <label for="eventName">Event Name: </label></td><td>
 <input type="text" name="eventName" size=32 maxlength=32>
 </td></tr>
-<tr bgcolor="#dbcfba"><td>
+<tr bgcolor="#b3a369"><td>
 <label for="eventDate">Event Date: </label></td><td>
 <select name="dateMonth" id="dateMonth">
 	<option value="01" <?PHP if($currentmonth==1) echo "selected";?>>January</option>
@@ -247,7 +247,7 @@
 <select name="dateYear" id="dateYear">
 	<option value="<?php echo $currentyear; ?>" SELECTED><?php echo $currentyear; ?></option>
 </select></td></tr>
-<tr bgcolor="#dbcfba"><td>
+<tr bgcolor="#b3a369"><td>
 <label for="pointValue">Point Value: </label></td><td>
 <?php
 	if($familyEvent == "false") {
@@ -273,7 +273,7 @@
 <form name="deleteForm" action="deleteEvent.php" method="POST">
 <table align="center">
 <tr><th colspan="2">Delete Event</th></tr>
-<tr bgcolor="#dbcfba"><td>
+<tr bgcolor="#b3a369"><td>
 <label for="eventDate">Event Date: </label></td><td>
 <select name="dateMonth" id="dateMonth" onChange="reload(this.form)">
 	<option value="01"  <?PHP if($selectedMonth==1)echo "selected";?>>January</option>
@@ -327,7 +327,7 @@
 	<option value="<?php echo $currentyear; ?>" SELECTED><?php echo $currentyear; ?></option>
 </select>
 </td></tr>
-<tr bgcolor="#dbcfba"><td>
+<tr bgcolor="#b3a369"><td>
 <label for="eventID">Event Name: </label></td><td>
 <select name="eventID" id="eventID">
                      <option value="">---</option>
@@ -366,7 +366,7 @@
 <form id="changeForm" name="changeForm" onsubmit="return newvalidate();" action="changeEvent.php" method="POST">
 <table align="center">
 <tr><th colspan="2">Edit Event</th></tr>
-<tr bgcolor="#dbcfba"><td>
+<tr bgcolor="#b3a369"><td>
 <label for="eventDate">Event Date: </label></td><td>
 <select name="dateMonth" id="dateMonth" onChange="reload2(this.form)">
 	<option value="01"  <?PHP if($selectedMonth==1) echo "selected";?>>January</option>
@@ -420,7 +420,7 @@
 	<option value="<?php echo $currentyear; ?>" SELECTED><?php echo $currentyear; ?></option>
 </select>
 </td></tr>
-<tr bgcolor="#dbcfba"><td>
+<tr bgcolor="#b3a369"><td>
 <label for="eventID">Event Name: </label></td><td>
 <select name="eventID" id="eventID" onChange="reload2(this.form)">
                      <option value="none">---</option>
@@ -457,7 +457,7 @@
 				$query->setFetchMode(PDO::FETCH_ASSOC);
 				while($row = $query->fetch()) {
 						echo "<tr><td colspan=2><hr/></td></tr>";
-						echo "<tr bgcolor=\"#dbcfba\"><td>";
+						echo "<tr bgcolor=\"#b3a369\"><td>";
 						echo "<label for=\"isFamilyEvent\">Family Event?: </label></td><td>";
 						echo "<input type=\"checkbox\" name=\"isFamilyEvent\"  id=\"isFamilyEvent\" onClick=\"reload3(this.form)\"";
 						if($isFamilyEvent=="none"){
@@ -473,14 +473,14 @@
 	               			}	               			
 	               		}
                			echo "></td></tr>";
-               			echo "<tr bgcolor=\"#dbcfba\"><td>";
+               			echo "<tr bgcolor=\"#b3a369\"><td>";
                			echo "<label for=\"newIsBonus\">Bonus Event?: </label></td><td>";
                			echo "<input type=\"checkbox\" name=\"newIsBonus\" id=\"newIsBonus\"";
                			if($row[isBonus] == 1) {
                				echo " checked=\"yes\"";
                			}
                			echo "></td></tr>";
-               			echo "<tr bgcolor=\"#dbcfba\"><td>";
+               			echo "<tr bgcolor=\"#b3a369\"><td>";
                			echo "<label for=\"newType\">Type: </label></td><td>";
                			echo "<select name=\"newType\" id=\"newType\">";
                				echo "<option value=\"mandatory\"";
@@ -496,11 +496,11 @@
                					if($row[type]=="work") echo " selected";
                				echo ">work</option>";               				               				               				
                			echo "</select></td></tr>";
-               			echo "<tr bgcolor=\"#dbcfba\"><td>";
+               			echo "<tr bgcolor=\"#b3a369\"><td>";
                			echo "<label for=\"newEventName\">Event Name: </label></td><td>";
                			echo "<input type=\"text\" name=\"newEventName\" value=\"".$row[eventName]."\" size=32 maxlength=32>";
                			echo "</td></tr>";
-               			echo "<tr bgcolor=\"#dbcfba\"><td>";
+               			echo "<tr bgcolor=\"#b3a369\"><td>";
                			echo "<label for=\"newEventDate\">Event Date: </label></td><td>";
                			echo "<select name=\"newDateMonth\" id=\"newDateMonth\">";
                				echo "<option value=\"01\"";
@@ -638,7 +638,7 @@
                			echo "<select name=\"newDateYear\" id=\"newDateYear\">";
                				echo "<option value=\"".$row[dateYear]."\" SELECTED>".$row[dateYear]."</option>"; 
                			echo "</select></td></tr>"; 
-               			echo "<tr bgcolor=\"#dbcfba\"><td>";
+               			echo "<tr bgcolor=\"#b3a369\"><td>";
                			echo "<label for=\"newPointValue\">Point Value: </label></td><td>";
                			if($isFamilyEvent == "false") {
                            echo "<select name=\"newPointValue\" id=\"newPointValue\">";

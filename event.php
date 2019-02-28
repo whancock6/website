@@ -36,7 +36,7 @@ require "html_header_begin.txt";
         <td colspan="5">
             <div id="spacing_div" style="width:400px;"></div>
         </td>
-        <tr bgcolor="#dbcfba"><th colspan="5">Event: <?php echo $currentEventName; ?></th></tr>
+        <tr bgcolor="#b3a369"><th colspan="5">Event: <?php echo $currentEventName; ?></th></tr>
         <tr><td colspan="1">Date:</td>
             <td colspan="3">
                 <?php
@@ -65,7 +65,7 @@ require "html_header_begin.txt";
         <tr><td colspan="1">Is Family?:</td><td colspan="3"><?php echo (isset($currentEventFamilyStatus) && $currentEventFamilyStatus == true) ? "Yes" : "No"; ?></td></tr>
     </table>
     <table align="center" width="400">
-        <tr bgcolor="#dbcfba"><th colspan="5">Members in Attendance</th></tr>
+        <tr bgcolor="#b3a369"><th colspan="5">Members in Attendance</th></tr>
 <!--        Column Headers if desired -->
 <!--        <tr><th colspan="4">Member</th><th colspan="1">Profile</th></tr>-->
         <?php
@@ -92,7 +92,7 @@ require "html_header_begin.txt";
             $totalMembers = $row[CNT];
             $memberPct = number_format(($count/$totalMembers)*100,1);
 
-           echo "<tr bgcolor=\"#dbcfba\"><th colspan=\"5\">Overall: " . $count . "/" . $totalMembers . " (" . $memberPct . "%)</th></tr>";
+           echo "<tr bgcolor=\"#b3a369\"><th colspan=\"5\">Overall: " . $count . "/" . $totalMembers . " (" . $memberPct . "%)</th></tr>";
         } else {
             echo "<tr><td>No members attended this event.</td></tr>";
         }

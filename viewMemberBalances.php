@@ -48,7 +48,7 @@
 </br></br>
 <?php
 	echo "<table align=\"center\">";
-	echo "<tr bgcolor=\"#dbcfba\"><th>Member</th><th width=150>Balance</th><th>Check</th></tr>";
+	echo "<tr bgcolor=\"#b3a369\"><th>Member</th><th width=150>Balance</th><th>Check</th></tr>";
 	
         if($sortBy=="all") {
 		   	$query = $db->query("SELECT firstName, lastName, memberID FROM Member WHERE status!='alumni' ORDER BY lastName");

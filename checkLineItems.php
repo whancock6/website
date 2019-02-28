@@ -42,7 +42,7 @@
 	$num_results = $query->rowCount();
 	
 	echo "<table align=\"center\">\n";
-	echo "<tr bgcolor=\"#dbcfba\"><th colspan=\"6\">".$currentFirstName." ".$currentLastName."</th></tr>";
+	echo "<tr bgcolor=\"#b3a369\"><th colspan=\"6\">".$currentFirstName." ".$currentLastName."</th></tr>";
 	if($num_results!=0){   	
 	    echo "<tr><th>Date</th><th width=300>Line Item Name</th><th width=100>Unit Cost</th><th>Quantity</th><th width=30>&nbsp;</th><th>Total</th></tr>\n";
 	    

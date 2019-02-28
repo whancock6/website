@@ -30,7 +30,7 @@ nav{
 	text-align:right;
 }
 nav span{
-	margin-left:20px	;
+	margin-left:20px;
 }
 nav .main{
 	font-family: 'Roboto Slab', serif;
@@ -43,7 +43,10 @@ nav .main{
 }
 
 nav .highlight{
-	color:#CBB57C;
+	color:#b3a369;
+}
+nav .highlight:hover{
+	color:#decc80;
 }
 nav li{
 	display:inline-block;
@@ -64,7 +67,7 @@ nav li a:hover{
 /**** ALERT ******/
 
 #alert{
-	
+
 	background: #D17821;
 	font-family: 'Roboto Slab', serif;
 	text-align: left;
@@ -98,7 +101,7 @@ nav li a:hover{
 	margin-right:15px;
 }
 #admin a:hover, #treasurer a:hover{
-	color:#CBB57C;
+	color:#decc80;
 }
 #admin, #treasurer{
 	margin:0px;
@@ -117,7 +120,7 @@ nav li a:hover{
 	padding-top:30px;
 }
 #points-ribbon{
-	background: #CBB57C;
+	background: #b3a369;
 	padding:20px 0;
 }
 #points-ribbon .value{
@@ -177,11 +180,15 @@ h3{
 #top-5 li:last-child, #family-rankings li:last-child{
 	text-align: center;
 	font-size: 14px;
-	
+
 }
 #top-5 li:last-child a, #family-rankings li:last-child a{
-	color:#CBB57C;
+	color:#b3a369;
 	text-decoration: none;
+}
+
+#top-5 li:last-child a:hover, #family-rankings li:last-child a:hover{
+	color:#decc80;
 }
 
 #top-5 li:last-child:hover, #family-rankings li:last-child:hover{
@@ -242,7 +249,7 @@ h3{
 	text-align: right;
 }
 #upcoming-events input[type="submit"], #settings input[type="submit"]{
-	background:#CBB57C;
+	background:#b3a369;
 	color:#fff;
 	text-transform: uppercase;
 }
@@ -259,7 +266,7 @@ h3{
 
 /* SQUARED FOUR */
 .squaredFour {
-	width: 20px;	
+	width: 20px;
 	position: relative;
 }
 
@@ -372,7 +379,7 @@ padding:10px 15px;
 	padding: 6px 15px;
 }
 #contacts li:not(:first-child):hover{
-	background:#CBB57C;
+	background:#b3a369;
 }
 
 

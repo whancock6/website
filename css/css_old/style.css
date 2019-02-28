@@ -470,7 +470,7 @@ legend {
 	font-weight:bold;	
 }
 .table-gold{
-	background: #dbcfba;	
+	background: #b3a369;
 }
 .table-main{
   border: 1px solid #CCC;
@@ -509,7 +509,7 @@ tr.rowHover:hover{
 	color:#000;
 }
 #mainNav a:hover{
-	color:#dbcfba;
+	color:#decc80;
 	text-decoration:none;
 }
 .breakdown{

@@ -46,7 +46,7 @@ self.location='rankings.php?sortBy=' + sortBy;
 	//---------------------------------------------------
 
 	echo "<table align=\"center\">";
-	echo "<tr bgcolor=\"#dbcfba\"><th>Rank</th><th>Member</th><th width=100>Points</th><th>Check Events</th></tr>";
+	echo "<tr bgcolor=\"#b3a369\"><th>Rank</th><th>Member</th><th width=100>Points</th><th>Check Events</th></tr>";
 
         if($sortBy=="all") {
 		   	$query = $db->query("SELECT firstName, lastName, memberPoints, memberID FROM Member WHERE status!='alumni' ORDER BY memberPoints DESC, lastName");

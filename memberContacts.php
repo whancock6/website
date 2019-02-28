@@ -25,7 +25,7 @@
 			echo "<tr";
 			if($num%2 == 1)
 				{
-				echo " bgcolor=\"#dbcfba\"";
+				echo " bgcolor=\"#b3a369\"";
 				}
 			echo "><td>".$row[firstName]." ".$row[lastName]."</td>";
 			echo "<td>".$row[email]."</td>";

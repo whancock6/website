@@ -112,7 +112,7 @@
 <form name="applyLineItem" action="applyLineItemsAction.php" method="POST">
 <table align="center">
 	<tr><th colspan="10">Apply Line Item</th></tr>
-	<tr bgcolor="#dbcfba"><td>&nbsp</td><td>&nbsp</td><td>
+	<tr bgcolor="#b3a369"><td>&nbsp</td><td>&nbsp</td><td>
 	<label for="lineItemDate">Date: </label></td><td colspan="2">
 	<select name="dateMonth" id="dateMonth" onChange="reload(this.form)">
 		<option value="01"  <?PHP if($selectedMonth==1)echo "selected";?>>January</option>
@@ -183,7 +183,7 @@
 	}
 	?>
 	<td>&nbsp</td><td>&nbsp</td></tr>
-	<tr bgcolor="#dbcfba"><td>&nbsp</td><td>&nbsp</td><td>
+	<tr bgcolor="#b3a369"><td>&nbsp</td><td>&nbsp</td><td>
 	<label for="lineItemID">Line Item Name: </label></td><td colspan="2">
 	<select name="lineItemID" id="lineItemID" onChange="reload(this.form)">
 		<option value="none">---</option>

@@ -54,7 +54,7 @@
 
 	echo "<form id=\"updatePoints\" name=\"updatePoints\" action=\"updatePoints.php\" method=\"POST\">\n";
 	echo "<table align=\"center\">\n";
-	echo "<tr bgcolor=\"#dbcfba\"><th>&nbsp;</th><th width=350>Event</th><th width=100>Date</th><th>Points</th></tr>\n";
+	echo "<tr bgcolor=\"#b3a369\"><th>&nbsp;</th><th width=350>Event</th><th width=100>Date</th><th>Points</th></tr>\n";
 
 	$counter = 0;
 	while($row = $query->fetch())  {
@@ -66,7 +66,7 @@
 		$num_results2 = $query2->rowCount();
 		echo "<tr";
 		if($num_results2 == 1) {
-		             echo " bgcolor=\"#dbcfba\"";
+		             echo " bgcolor=\"#b3a369\"";
 		} else { }
 		echo "><td><input type=\"checkbox\" name=\"";
 		echo $row[eventID];

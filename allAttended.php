@@ -180,13 +180,13 @@
         <td colspan="5">
             <div id="chart_div" style="height:200px;margin-bottom: 25px;"></div>
         </td>
-    <tr bgcolor="#dbcfba"><th colspan="5"><?php echo($currentFirstName) ?> <?php echo($currentLastName) ?></th></tr>
+    <tr bgcolor="#b3a369"><th colspan="5"><?php echo($currentFirstName) ?> <?php echo($currentLastName) ?></th></tr>
     <tr><td colspan="1">Total Points:</td><td colspan="3"><?php echo($currentMemberPoints) ?></td></tr>
     <tr><td colspan="1">Probate Points Average:</td><td colspan="3"><?php echo($probateAVG) ?></td></tr>
     <tr><td colspan="1">Member Points Average:</td><td colspan="3"><?php echo($memberAVG) ?></td></tr>
     <tr><td colspan="1">RRC Points Average (Member + Probates):</td><td colspan="3"><?php echo($pointAVG) ?></td></tr>
     <!--<tr><td colspan="1">RRC Points Standard Deviation :</td><td colspan="3"><?php echo($pointSTD) ?></td></tr>-->
-    <tr bgcolor="#dbcfba"><th colspan="5">Events</th></tr>
+    <tr bgcolor="#b3a369"><th colspan="5">Events</th></tr>
     <tr bgcolor="#D0D0D0"><td colspan="1">Mandatory Events:</td><td colspan="3"><?php echo($mandatory) ?></td></tr>
     <tr bgcolor="#FFCB00"><td colspan="1">Sports Events:</td><td colspan="3"><?php echo($sports) ?></td></tr>
     <tr bgcolor="#005ACE"><td colspan="1">Social Events:</td><td colspan="3"><?php echo($social) ?></td></tr>
@@ -215,7 +215,7 @@
             }
         ?>
 <?php
-	echo "<tr bgcolor=\"#dbcfba\"><th colspan=\"3\">Events Attended</th></tr>";
+	echo "<tr bgcolor=\"#b3a369\"><th colspan=\"3\">Events Attended</th></tr>";
 	echo "<tr><th width=350>Event</th><th width=100>Date</th><th>Points</th></tr>\n";
 
    	$query2 = $db->prepare("SELECT eventName, dateYear, dateMonth, dateDay, pointValue FROM AttendsEvent JOIN Event ON AttendsEvent.eventID = Event.eventID WHERE memberID = :currentMemID ORDER BY Event.dateMonth, Event.dateDay");

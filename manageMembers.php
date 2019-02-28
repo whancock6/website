@@ -135,7 +135,7 @@
 <form>
 <table align="center">
 <tr><th colspan="2">Edit Member</th></tr>
-<tr bgcolor="#dbcfba"><td>Select Member: </td>
+<tr bgcolor="#b3a369"><td>Select Member: </td>
 <td>
 <select name="selectedMember" id="selectedMember" onChange="reload(this.form)">
    <option value="none"  <?PHP if($selectedMember=='NULL') echo "selected";?>>---</option>
@@ -169,34 +169,34 @@ if($selectedMember != "none") {
 <form id="myform" name="myform" onsubmit="return validate();" action="manageMemberSettings.php" method="POST">
 <table align="center">
 <input type="hidden" name="memberID" value="<?php echo($row2[memberID]) ?>">
-<tr bgcolor="#dbcfba"><td>
+<tr bgcolor="#b3a369"><td>
 <label for="username">Username: </label></td><td>
 <input type="text" name="username" size=32 maxlength=32 value="<?php echo($row2[username]) ?>"></td></tr>
-<tr bgcolor="#dbcfba"><td>
+<tr bgcolor="#b3a369"><td>
 <label for="password">Reset Password: </label></td><td>
 <input type="text" name="password" size=32 maxlength=32 value=""></td></tr>
-<tr bgcolor="#dbcfba"><td>
+<tr bgcolor="#b3a369"><td>
 <label for="firstName">First Name: </label></td><td>
 <input type="text" name="firstName" size=32 maxlength=32 value="<?php echo($row2[firstName]) ?>"></td></tr>
-<tr bgcolor="#dbcfba"><td>
+<tr bgcolor="#b3a369"><td>
 <label for="lastName">Last Name: </label></td><td>
 <input type="text" name="lastName" size=32 maxlength=32 value="<?php echo($row2[lastName]) ?>"></td></tr>
-<tr bgcolor="#dbcfba"><td>
+<tr bgcolor="#b3a369"><td>
 <label for="email">E-mail: </label></td><td>
 <input type="text" name="email" size=32 maxlength=32 value="<?php echo($row2[email]) ?>"></td></tr>
-<tr bgcolor="#dbcfba"><td>
+<tr bgcolor="#b3a369"><td>
 <label for="phone">Phone Number: </label></td><td>
 <input type="text" name="phone" size=32 maxlength=32 value="<?php echo($row2[phone]) ?>"></td></tr>
-<tr bgcolor="#dbcfba"><td>
+<tr bgcolor="#b3a369"><td>
 <label for="twitter">Twitter Handle: </label></td><td>
 <input type="text" name="twitter" size=32 maxlength=32 value="<?php echo($row2[twitter]) ?>"></td></tr>
-<tr bgcolor="#dbcfba"><td>
+<tr bgcolor="#b3a369"><td>
 <label for="streetAddress">Street Address: </label></td><td>
 <input type="text" name="streetAddress" size=32 maxlength=100 value="<?php echo($row2[streetAddress]) ?>"></td></tr>
-<tr bgcolor="#dbcfba"><td>
+<tr bgcolor="#b3a369"><td>
 <label for="city">City: </label></td><td>
 <input type="text" name="city" size=32 maxlength=50 value="<?php echo($row2[city]) ?>"></td></tr>
-<tr bgcolor="#dbcfba"><td>
+<tr bgcolor="#b3a369"><td>
 <label for="state">State: </label></td><td>
 <select name="state" id="state">
 	<option value="" <?PHP if($row2[state]==NULL) echo "selected";?>>---</option>
@@ -251,13 +251,13 @@ if($selectedMember != "none") {
 	<option value="WI" <?PHP if($row2[state]=="WI") echo "selected";?>>WI</option>
 	<option value="WY" <?PHP if($row2[state]=="WY") echo "selected";?>>WY</option>
 </select></td></tr>
-<tr bgcolor="#dbcfba"><td>
+<tr bgcolor="#b3a369"><td>
 <label for="zipCode">Zip Code: </label></td><td>
 <input type="text" name="zipCode" size=32 maxlength=5 value="<?php echo($row2[zipCode]) ?>"></td></tr>
-<tr bgcolor="#dbcfba"><td>
+<tr bgcolor="#b3a369"><td>
 <label for="joinYear">Year Joined RRC: </label></td><td>
 <input type="text" name="joinYear" size=32 maxlength=4 value="<?php echo($row2[joinYear]) ?>"></td></tr>
-<tr bgcolor="#dbcfba"><td>
+<tr bgcolor="#b3a369"><td>
 <label for="gradDate">Graduation Date: </label></td><td>
 <select name="gradMonth" id="gradMonth">
     <option value="" <?PHP if($row2[gradMonth]==NULL) echo "selected";?>>---</option>
@@ -275,7 +275,7 @@ if($selectedMember != "none") {
 	<option value="12" <?PHP if($row2[gradMonth]==12) echo "selected";?>>December</option>
 </select>
 <input type="text" name="gradYear" size=15 maxlength=4 value="<?php echo($row2[gradYear]) ?>"></td></tr>
-<tr bgcolor="#dbcfba"><td>
+<tr bgcolor="#b3a369"><td>
 <label for="reckerPair">Big Recker Pair: </label></td><td>
 <select name="reckerPair" id ="reckerPair">
                       <option value="">---</option>
@@ -294,7 +294,7 @@ if($selectedMember != "none") {
 ?>
 </select>
 </td></tr>
-<tr bgcolor="#dbcfba"><td>
+<tr bgcolor="#b3a369"><td>
 <label for="status">Status: </label></td><td>
 <select name="status" id="status">
 	<option value="probate"  <?PHP if($row2[status]=="probate") echo "selected";?>>probate</option>
@@ -320,23 +320,23 @@ if($selectedMember != "none") {
 <form name="createForm" id="createForm" onsubmit="return validateCreate();" action="createMember.php" method="POST">
 <table align="center">
 <tr><th colspan="2">Create Member</th></tr>
-<tr bgcolor="#dbcfba"><td>
+<tr bgcolor="#b3a369"><td>
 <label for="username">Username: </label></td><td>
 <input type="text" name="username" size=32 maxlength=32>
 </td></tr>
-<tr bgcolor="#dbcfba"><td>
+<tr bgcolor="#b3a369"><td>
 <label for="password">Password: </label></td><td>
 <input type="text" name="password" size=32 maxlength=32>
 </td></tr>
-<tr bgcolor="#dbcfba"><td>
+<tr bgcolor="#b3a369"><td>
 <label for="firstName">First Name: </label></td><td>
 <input type="text" name="firstName" size=32 maxlength=32>
 </td></tr>
-<tr bgcolor="#dbcfba"><td>
+<tr bgcolor="#b3a369"><td>
 <label for="lastName">Last Name: </label></td><td>
 <input type="text" name="lastName" size=32 maxlength=32>
 </td></tr>
-<tr bgcolor="#dbcfba"><td>
+<tr bgcolor="#b3a369"><td>
 <label for="status">Status: </label></td><td>
 <select name="status" id="status">
 	<option value="probate">probate</option>
@@ -361,7 +361,7 @@ if($selectedMember != "none") {
 <form name="deleteForm" action="deleteMember.php" method="POST">
 <table align="center">
 <tr><th colspan="2">Delete Member</th></tr>
-<tr bgcolor="#dbcfba"><td>Select Member: </td>
+<tr bgcolor="#b3a369"><td>Select Member: </td>
 <td>
 <select name="memberID" id="memberID">
    <option value="none">---</option>

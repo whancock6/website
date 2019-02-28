@@ -300,7 +300,7 @@
 		                          $num_results3 = $attends_query->rowCount();
 		                          echo "<tr";
 		                          if($num_results3 == 1) {
-		                                         echo " bgcolor=\"#dbcfba\"";
+		                                         echo " bgcolor=\"#b3a369\"";
 		                          } else { }
 		                          echo "><td><input type=\"checkbox\" name=\"";
 		                          echo $row[eventID];

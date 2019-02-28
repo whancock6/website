@@ -99,11 +99,11 @@ while ($row = $peopleQuery->fetch()) {
     <td colspan="5">
         <div id="spacing_div" style="width:400px;"></div>
     </td>
-    <tr bgcolor="#dbcfba"><th colspan="5"><?php echo($currentFirstName) ?> <?php echo($currentLastName) ?></th></tr>
+    <tr bgcolor="#b3a369"><th colspan="5"><?php echo($currentFirstName) ?> <?php echo($currentLastName) ?></th></tr>
     <tr><td colspan="5">Total Events Attended: <?php echo sizeof($eventIds) ?></td></tr>
 </table>
 <table align="center" width="408px">
-    <tr bgcolor="#dbcfba"><th colspan="5">Friends</th></tr>
+    <tr bgcolor="#b3a369"><th colspan="5">Friends</th></tr>
     <?php
     $sortedKeys = arsort($memberCountArray);
     if (sizeof($sortedKeys) > 0) {
@@ -113,7 +113,7 @@ while ($row = $peopleQuery->fetch()) {
             $name = $people[$currentMemberId];
             if (strlen($name) > 0) {
                 if ($currentMemberId == $memberID) {
-                    echo "<tr bgcolor=\"#dbcfba\">";
+                    echo "<tr bgcolor=\"#b3a369\">";
                 } else {
                     echo "<tr>";
                 }

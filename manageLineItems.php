@@ -156,11 +156,11 @@
 <form name="myform" id="myform" onsubmit="return validate();" action="createLineItem.php" method="POST">
 <table align="center">
 	<tr><th colspan="2">Create Line Item</th></tr>         
-	<tr bgcolor="#dbcfba"><td>
+	<tr bgcolor="#b3a369"><td>
 		<label for="lineItemName">Line Item Name: </label></td><td>
 		<input type="text" name="lineItemName" size=32 maxlength=32>
 	</td></tr>
-	<tr bgcolor="#dbcfba"><td>
+	<tr bgcolor="#b3a369"><td>
 	<label for="lineItemDate">Date: </label></td><td>
 	<select name="dateMonth" id="dateMonth">
 		<option value="01" <?PHP if($currentmonth==1) echo "selected";?>>January</option>
@@ -220,11 +220,11 @@
 			}
 		?>
 	</select></td></tr>
-	<tr bgcolor="#dbcfba">
+	<tr bgcolor="#b3a369">
 		<td><label for="unitCost">Unit Cost: </label></td>
 		<td>$<input type="text" name="unitCostDollars" size="4" maxlength="4">.<input type="text" name="unitCostCents" size="2" maxlength="2"></td>
 	</tr>
-	<tr bgcolor="#dbcfba">
+	<tr bgcolor="#b3a369">
 		<td><label for="description">Description: <br/>(optional, limit 100 characters)</label></td>	
 		<td><textarea name="description" columns="3" rows="3" onKeyPress="return (this.value.length < 100);"><description></textarea></td>
 	</tr>
@@ -237,7 +237,7 @@
 <form name="deleteForm" action="deleteLineItem.php" method="POST">
 <table align="center">
 	<tr><th colspan="2">Delete Line Item</th></tr>
-	<tr bgcolor="#dbcfba"><td>
+	<tr bgcolor="#b3a369"><td>
 	<label for="lineItemDate">Date: </label></td><td>
 	<select name="dateMonth" id="dateMonth" onChange="reload(this.form)">
 		<option value="01"  <?PHP if($selectedMonth==1)echo "selected";?>>January</option>
@@ -299,7 +299,7 @@
 		?>
 	</select>
 	</td></tr>
-	<tr bgcolor="#dbcfba"><td>
+	<tr bgcolor="#b3a369"><td>
 	<label for="lineItemID">Line Item Name: </label></td><td>
 	<select name="lineItemID" id="lineItemID">
 	                     <option value="">---</option>
@@ -338,7 +338,7 @@
 	<form name="changeForm" id="changeForm" onsubmit="return newvalidate();" action="changeLineItem.php" method="POST">
 	<table align="center">
 	<tr><th colspan="2">Edit Line Item</th></tr>
-	<tr bgcolor="#dbcfba"><td>
+	<tr bgcolor="#b3a369"><td>
 		<label for="lineItemDate">Date: </label></td><td>
 		<select name="dateMonth" id="dateMonth" onChange="reload2(this.form)">
 			<option value="01"  <?PHP if($selectedMonth==1) echo "selected";?>>January</option>
@@ -400,7 +400,7 @@
 			?>
 		</select>
 		</td></tr>
-		<tr bgcolor="#dbcfba"><td>
+		<tr bgcolor="#b3a369"><td>
 		<label for="lineItemID">Line Item Name: </label></td><td>
 		<select name="lineItemID" id="lineItemID" onChange="reload2(this.form)">
 		                     <option value="none">---</option>
@@ -437,11 +437,11 @@
 				$query->setFetchMode(PDO::FETCH_ASSOC);
 				while($row = $query->fetch()) {
 					echo "<tr><td colspan=2><hr/></td></tr>";
-					echo "<tr bgcolor=\"#dbcfba\"><td>";
+					echo "<tr bgcolor=\"#b3a369\"><td>";
 						echo "<label for=\"newLineItemName\">Line Item Name: </label></td><td>";
 						echo "<input type=\"text\" name=\"newLineItemName\" value=\"".$row[lineItemName]."\" size=32 maxlength=32>";
 					echo "</td></tr>";
-					echo "<tr bgcolor=\"#dbcfba\"><td>";
+					echo "<tr bgcolor=\"#b3a369\"><td>";
                			echo "<label for=\"newLineItemDate\">Date: </label></td><td>";
                			echo "<select name=\"newDateMonth\" id=\"newDateMonth\">";
                				echo "<option value=\"01\"";
@@ -600,11 +600,11 @@
                			if($unitCostCents==8) $unitCostCents="08";
                			if($unitCostCents==9) $unitCostCents="09";
                			
-               			echo "<tr bgcolor=\"#dbcfba\">";
+               			echo "<tr bgcolor=\"#b3a369\">";
 							echo "<td><label for=\"newUnitCost\">Unit Cost: </label></td>";
 							echo "<td>$<input type=\"text\" name=\"newUnitCostDollars\" value=\"".$unitCostDollars."\" size=\"4\" maxlength=\"4\">.<input type=\"text\" name=\"newUnitCostCents\" value=\"".$unitCostCents."\" size=\"2\" maxlength=\"2\"></td>";
 						echo "</tr>";
-						echo "<tr bgcolor=\"#dbcfba\">";
+						echo "<tr bgcolor=\"#b3a369\">";
 							echo "<td><label for=\"newDescription\">Description: <br/>(optional, limit 100 characters)</label></td>";
 							echo "<td><textarea name=\"newDescription\" columns=\"3\" rows=\"3\" onKeyPress=\"return (this.value.length < 100);\">".$row[description]."</textarea></td>";
 						echo "</tr>";

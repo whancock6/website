@@ -106,8 +106,8 @@
 <form name="backupDatabase" action="backupDatabasex.php" method="POST">
 	<table align="center">
 		<tr><th>Back Up All Tables in the Database</th></tr>
-		<tr bgcolor="#dbcfba"><td>This will create a back up table for each table in the database. This allows you to revert to a previous state if an error occurs in the future.</td></tr>
-		<tr bgcolor="#dbcfba"><td>If a back up already exists, then it will be replaced with a new one based on the current data. (i.e. There is only one back up at a time.)</td></tr>
+		<tr bgcolor="#b3a369"><td>This will create a back up table for each table in the database. This allows you to revert to a previous state if an error occurs in the future.</td></tr>
+		<tr bgcolor="#b3a369"><td>If a back up already exists, then it will be replaced with a new one based on the current data. (i.e. There is only one back up at a time.)</td></tr>
 		<?php echo "<tr><td><u>Date of Last Back Up</u>: ".$bkupDate."</td></tr>"; ?>
 		<tr><td><input type="submit" value="Back Up Database" onClick="return confirmSubmitBackup()"></td></tr>
 	</table>
@@ -118,8 +118,8 @@
 <form name="revertDatabase" action="revertDatabasex.php" method="POST">
 	<table align="center">
 		<tr><th>Revert to the Backed Up Version of the Database</th></tr>
-		<tr bgcolor="#dbcfba"><td>This will overwrite the current version of each table with its corresponding backed up version.</td></tr>
-		<tr bgcolor="#dbcfba"><td>This action cannot be undone and should only be taken if important data is lost or there is some other serious error with the database.</td></tr>
+		<tr bgcolor="#b3a369"><td>This will overwrite the current version of each table with its corresponding backed up version.</td></tr>
+		<tr bgcolor="#b3a369"><td>This action cannot be undone and should only be taken if important data is lost or there is some other serious error with the database.</td></tr>
 		<tr><td><input type="submit" value="Revert to Back Up" onClick="return confirmSubmitRevert()"></td></tr>
 	</table>
 </form>
@@ -129,7 +129,7 @@
 <form name="resetPoints" action="resetPointsx.php" method="POST">
 	<table align="center">
 		<tr><th>Delete Events and Reset Points</th></tr>
-		<tr bgcolor="#dbcfba"><td>WARNING: This will delete all events in the database. Use only to reset points for a new semester.</td></tr>
+		<tr bgcolor="#b3a369"><td>WARNING: This will delete all events in the database. Use only to reset points for a new semester.</td></tr>
 		<tr><td><input type="submit" value="Reset Points" onClick="return confirmSubmitReset()"></td></tr>
 	</table>
 </form>
@@ -139,7 +139,7 @@
 <form name="phpInfo" action="testinfo.php" method="POST">
 	<table align="center">
 		<tr><th>Check Current Version of PHP</th></tr>
-		<tr bgcolor="#dbcfba"><td>Get information about the current version and configuration of PHP running on the system.</td></tr>
+		<tr bgcolor="#b3a369"><td>Get information about the current version and configuration of PHP running on the system.</td></tr>
 		<tr><td><input type="submit" value="Check PHP Version"></td></tr>
 	</table>
 </form>

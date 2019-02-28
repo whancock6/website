@@ -27,7 +27,7 @@ if($_SESSION[isAdmin]==1 || $_SESSION[isVP]==1) {
 ?>
 <table align="center">
 <?php
-	echo "<tr bgcolor=\"#dbcfba\"><th width=300>";
+	echo "<tr bgcolor=\"#b3a369\"><th width=300>";
 	$query = $db->query("SELECT familyName FROM Family WHERE familyID=1");
 		$query->setFetchMode(PDO::FETCH_ASSOC);
 	$row = $query->fetch();
@@ -63,7 +63,7 @@ if($_SESSION[isAdmin]==1 || $_SESSION[isVP]==1) {
 		echo $row[memberPoints]."<br>";
 	}
 	echo "</td></tr>";
-	echo "<tr bgcolor=\"#dbcfba\"><th>";
+	echo "<tr bgcolor=\"#b3a369\"><th>";
 	$query = $db->query("SELECT familyName FROM Family WHERE familyID=2");
 		$query->setFetchMode(PDO::FETCH_ASSOC);
 	$row = $query->fetch();

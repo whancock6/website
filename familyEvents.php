@@ -11,11 +11,11 @@
 		$query->setFetchMode(PDO::FETCH_ASSOC);
 	$num_results = $query->rowCount();
 	if($num_results == 0){
-		echo "<div align=\"center\"><a href=\"points.php\">Back to Points</a><br><br><br><br><br>";
+		echo "<div align=\"center\"><a href=\"families.php\">Back to Families</a><br><br><br><br><br>";
 		echo "There are currently no family events</div>";
 	} else {
 		echo "<h3>Family Events</h3>";
-		echo "<div align=\"center\"><a href=\"points.php\">Back to Points</a><br/><br/></div>";
+		echo "<div align=\"center\"><a href=\"families.php\">Back to Families</a><br/><br/></div>";
 		echo "<br>";
 
         if($_SESSION[isAdmin]==1) {
@@ -24,7 +24,7 @@
         	$query3 = $db->query("SELECT * FROM Event WHERE isFamilyEvent = '1' ORDER BY dateMonth, dateDay, eventName");
 			echo "<form action=\"updateFamilyEvents.php\" method=\"POST\">\n";
 			echo "<table align=\"center\">\n";
-			echo "<tr bgcolor=\"#dbcfba\"><th width=300>Event</th><th width=200>Family</th><th>Add</th><th>Remove</th></tr>";
+			echo "<tr bgcolor=\"#b3a369\"><th width=300>Event</th><th width=200>Family</th><th>Add</th><th>Remove</th></tr>";
 			echo "<tr><td><select name=\"event\">";
 			echo "<option value=\"none\">---</option>";
 			while($row = $query3->fetch()) {
@@ -45,7 +45,7 @@
         }
 
 		echo "<table align=\"center\">\n";
-		echo "<tr bgcolor=\"#dbcfba\"><th width=300>Event</th><th width=100>Date</th><th>Points</th><th>Family</th></tr>\n";
+		echo "<tr bgcolor=\"#b3a369\"><th width=300>Event</th><th width=100>Date</th><th>Points</th><th>Family</th></tr>\n";
 	
 		while($row2 = $query->fetch())  {
 			echo "<td>".$row2[eventName];

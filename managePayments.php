@@ -116,7 +116,7 @@
    	$query = $db->query("SELECT memberID, firstName, lastName FROM Member WHERE status != 'alumni' ORDER BY lastName");
 		$query->setFetchMode(PDO::FETCH_ASSOC);
 ?>
-<tr bgcolor="#dbcfba"><td>Select Member: </td><td>
+<tr bgcolor="#b3a369"><td>Select Member: </td><td>
 <select name="memberID" id="memberID">
    <option value="none">---</option>
 <?php
@@ -127,7 +127,7 @@
 ?>
 </select>
 </td></tr>
-<tr bgcolor="#dbcfba"><td>
+<tr bgcolor="#b3a369"><td>
 <label for="lineItemDate">Date: </label></td><td>
 <select name="dateMonth" id="dateMonth">
 	<option value="01" <?PHP if($currentmonth==1) echo "selected";?>>January</option>
@@ -187,11 +187,11 @@
 		}
 	?>
 </select></td></tr>
-<tr bgcolor="#dbcfba">
+<tr bgcolor="#b3a369">
 	<td><label for="amount">Payment Amount: </label></td>
 	<td>$<input type="text" name="amountDollars" size="4" maxlength="4" onKeyPress="return number(event)">.<input type="text" name="amountCents" size="2" maxlength="2" onKeyPress="return number(event)"></td>
 </tr>
-<tr bgcolor="#dbcfba">
+<tr bgcolor="#b3a369">
 	<td><label for="methodOfPayment">Method of Payment: </label></td>
 	<td><select name="methodOfPayment" id="methodOfPayment">
 		<option value="cash">cash</option>
@@ -200,7 +200,7 @@
 		<option value="reimbursement">reimbursement</option>
 	</select></td>
 </tr>
-<tr bgcolor="#dbcfba">
+<tr bgcolor="#b3a369">
 	<td><label for="checkNumber">Description (Chk/Receipt #): </label></td>
 	<td><input type="text" name="checkNumber" size="30" maxlength="30"></td>
 </tr>
@@ -226,7 +226,7 @@
 		$num_rows = $query2->rowCount();
 	}
 ?>
-<tr bgcolor="#dbcfba"><td>&nbsp</td></td><td>Select Member: </td><td>
+<tr bgcolor="#b3a369"><td>&nbsp</td></td><td>Select Member: </td><td>
 <select name="memberID" id="memberID" onChange="reload(this.form)">
    <option value="none">---</option>
 <?php
@@ -252,10 +252,10 @@ if($selectedMember!="none" && $num_rows!=0){
 <?php
 if($selectedMember!="none" && $num_rows!=0){
 	echo "<tr><td colspan=6><hr/></td></tr>";
-	echo "<tr bgcolor=\"#dbcfba\"><th>Date</th><th width=200>Payment Amount</th><th width=50>Method</th><th>Description (Chk/Receipt #)</th><th>Update</th><th>Remove</th></tr>";
+	echo "<tr bgcolor=\"#b3a369\"><th>Date</th><th width=200>Payment Amount</th><th width=50>Method</th><th>Description (Chk/Receipt #)</th><th>Update</th><th>Remove</th></tr>";
 
 	while($row = $query2->fetch()) {
-		echo "<tr bgcolor=\"#dbcfba\"><td>";
+		echo "<tr bgcolor=\"#b3a369\"><td>";
    			echo "<select name=\"newDateMonth".$row[paymentID]."\" id=\"newDateMonth".$row[paymentID]."\">";
    				echo "<option value=\"01\"";
    					if($row[dateMonth]==1) echo " selected";
