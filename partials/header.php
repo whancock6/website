@@ -1,34 +1,57 @@
 <div class="container">
-    <header class="blog-header py-3">
-        <div class="row flex-nowrap justify-content-between align-items-center">
-            <div class="col-3" id="loggedInName">
-                <a class="btn btn-outline-primary btn-sm float-left" href="/memberSettingsForm.php"><?php echo $_SESSION[username] ?></a>
-            </div>
-
-            <div class="col-6 text-center" id="logo-container">
-                <a class="blog-header-logo text-dark" href="/points.php">Ramblin' Reck Club</a>
-            </div>
-            <div class="col-3 d-flex justify-content-end align-items-center" id="userOptions">
-                <a id="sign-out-button" class="btn btn-sm btn-secondary" href="/memberLogout.php">Sign Out</a>
+    <nav class="navbar navbar-expand-md d-flex bg-light navbar-light px-0" style="background: #fff !important;">
+        <div class="blog-header col-12 pt-2 pb-3 px-0">
+            <div class="row">
+                <div class="col-3">
+                    <button class="btn btn-sm btn-outline-primary navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar2">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="col-6 text-center">
+                    <a class="blog-header-logo text-dark text-center" href="/points.php">Ramblin' Reck Club</a>
+                </div>
+                <div class="col-3">
+<!--                    <a class="float-right btn btn-sm btn-outline-primary" href="/points.php">Log In</a>-->
+                    <a class="float-right btn btn-sm btn-secondary" href="/memberLogout.php">Sign Out</a>
+                </div>
             </div>
         </div>
-    </header>
-    <div class="nav-scroller py-1 mb-2">
-        <nav class="nav d-flex justify-content-between">
-            <a class="p-2" href="/events.php">Events</a>
-            <a class="p-2" href="/rankings.php">Members</a>
-            <a class="p-2" href="/families.php">Families</a>
-<!--            <a class="p-2" href="http://reckclub.org/mediastorage">Media</a>-->
-            <?php if($isSecretary == 1 || $isVP == 1 || $isEventAdmin == 1 || $isAdmin == 1) :?>
-            <a class="p-2 dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Admin</a>
-            <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" href="/editEvents.php">Add Event</a>
-                <?php if($isSecretary == 1 || $isVP == 1 || $isAdmin == 1) :?>
-                    <a class="dropdown-item" href="/manageMembers.php">Manage Members</a>
-                    <a class="dropdown-item" href="/manageWebsite.php">Manage Site</a>
+
+    </nav>
+    <nav class="navbar navbar-expand-md bg-light navbar-light pt-0  px-0" style="background: #fff !important;" id="navbar2parent">
+        <div class="navbar-collapse collapse" id="navbar2">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link btn-link" href="/events.php">Events</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn-link" href="/rankings.php">Members</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn-link" href="/families.php">Families</a>
+                </li>
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link btn-link" href="/media.php">Media</a>-->
+<!--                </li>-->
+                <li class="nav-item">
+                    <a class="nav-link btn-link" href="/memberSettingsForm.php">Profile</a>
+                </li>
+                <?php if($isSecretary == 1 || $isVP == 1 || $isEventAdmin == 1 || $isAdmin == 1) :?>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Admin
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/editEvents.php">Add Event</a>
+                        <?php if($isSecretary == 1 || $isVP == 1 || $isAdmin == 1) :?>
+                        <a class="dropdown-item" href="/manageMembers.php">Manage Members</a>
+                        <a class="dropdown-item" href="/managePositions.php">Manage Positions</a>
+                        <a class="dropdown-item" href="/manageWebsite.php">Manage Website</a>
+                        <?php endif; ?>
+                    </div>
+                </li>
                 <?php endif; ?>
-            </div>
-            <?php endif; ?>
-        </nav>
-    </div>
+            </ul>
+        </div>
+    </nav>
 </div>
