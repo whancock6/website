@@ -159,7 +159,7 @@ while($row = $rank_query->fetch()) {
         <div class="col-12">
             <div class="float-right">
                 <a href="/events.php" class="btn btn-outline-secondary mr-2">View All Events</a>
-                <input type="submit" class="btn btn-primary" id="submit-points-button"></input>
+                <input type="submit" class="btn btn-primary" id="submit-points-button">
             </div>
         </div>
     </div>

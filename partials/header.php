@@ -6,7 +6,7 @@
             </div>
 
             <div class="col-6 text-center" id="logo-container">
-                <a class="blog-header-logo text-dark" href="/points">Ramblin' Reck Club</a>
+                <a class="blog-header-logo text-dark" href="/points.php">Ramblin' Reck Club</a>
             </div>
             <div class="col-3 d-flex justify-content-end align-items-center" id="userOptions">
                 <a id="sign-out-button" class="btn btn-sm btn-secondary" href="/memberLogout.php">Sign Out</a>
