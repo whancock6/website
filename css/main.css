@@ -125,6 +125,12 @@ a:hover, .btn-link:hover, #submit-request-button:disabled {
     text-decoration: none;
 }
 
+
+.list-group-item.active {
+    background-color: #b3a369 !important;
+    border-color: #b3a369 !important;
+}
+
 .navbar-nav, .mr-auto {
     flex: auto;
     margin: auto !important;

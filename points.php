@@ -65,11 +65,15 @@ while($row = $rank_query->fetch()) {
 
                     $count = 1;
 
-                    $top5_query = $db->query("SELECT firstName, lastName, memberPoints FROM Member WHERE status!='alumni' ORDER BY memberPoints DESC, lastName LIMIT 5");
+                    $top5_query = $db->query("SELECT memberID, firstName, lastName, memberPoints FROM Member WHERE status!='alumni' ORDER BY memberPoints DESC, lastName LIMIT 5");
                     $top5_query->setFetchMode(PDO::FETCH_ASSOC);
 
                     while($row = $top5_query->fetch()){
-                        echo "<li class='list-group-item d-flex justify-content-between align-items-center'>". $count . ". " . $row[firstName]." ".$row[lastName]." <span class=\"badge badge-primary badge-pill\">".$row[memberPoints]."</span></li>";
+                        if ($row[memberID] != $memberID) {
+                            echo "<li class='list-group-item d-flex justify-content-between align-items-center'>". $count . ". " . $row[firstName]." ".$row[lastName]." <span class=\"badge badge-primary badge-pill\">".$row[memberPoints]."</span></li>";
+                        } else {
+                            echo "<li class='list-group-item active d-flex justify-content-between align-items-center'>". $count . ". " . $row[firstName]." ".$row[lastName]." <span class=\"badge badge-light badge-pill\" style='color:#b3a369;'>".$row[memberPoints]."</span></li>";
+                        }
                         $count++;
                     }
 
