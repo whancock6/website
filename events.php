@@ -40,13 +40,11 @@ if($month=='all') {
 
     echo "<div class=\"row\">
         <div class=\"col-12\">";
-
+    echo "<h2 class=\"float-left\">Events</h2>";
     if($month=='all') {
-        echo "<h2 class=\"float-left\">All Events</h2>";
         $query = $db->query("SELECT * FROM Event WHERE isFamilyEvent = '0' ORDER BY dateMonth, dateDay, eventName");
         $query->setFetchMode(PDO::FETCH_ASSOC);
     } else {
-        echo "<h2 class=\"float-left\">".$monthName." Events</h2>";
         $query = $db->prepare("SELECT * FROM Event WHERE isFamilyEvent = '0' AND dateMonth = :month ORDER BY dateMonth, dateDay, eventName");
         $query->execute(array('month'=>$month));
         $query->setFetchMode(PDO::FETCH_ASSOC);

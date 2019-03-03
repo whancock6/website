@@ -20,10 +20,10 @@ $pageTitle = "Members";
 ?>
 <div class="container">
 <div class="row mb-1">
-    <div class="col-10">
+    <div class="col-md-10">
         <h3>Complete Individual Rankings</h3>
     </div>
-    <div class="col-2">
+    <div class="col-md-2">
         <form>
             <select class="form-control float-right" name="sortBy" id="sortBy" onChange="reload(this.form)">
                 <option value="all"  <?PHP if($sortBy=="all") echo "selected";?>>All</option>
@@ -41,11 +41,11 @@ $pageTitle = "Members";
 </div>
 <div class="row mb-3">
     <div class="col-12">
-        <table class="table table-hover mb-3">
+        <table class="table table-hover table-sm mb-3">
             <thead>
                 <tr>
                     <th scope="col">Rank</th>
-                    <th scope="col">Member</th>
+                    <th scope="col">Name</th>
                     <td scope="col" align="right"><b>Total Points</b></td>
                 </tr>
             </thead>

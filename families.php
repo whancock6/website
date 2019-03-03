@@ -12,9 +12,9 @@ $pageTitle = "Points";
 <?php require "partials/header.php"; ?>
 <div class="container mb-3">
     <div class="row mb-3">
-        <h2 class="col-8">Families</h2>
-        <div class="col-4">
-            <div class="btn-group float-right">
+        <h2 class="col-md-8 col-sm-auto">Families</h2>
+        <div class="col-md-4 col-sm-auto">
+            <div class="btn-group float-md-right">
                 <?php
                 if($_SESSION[isAdmin]==1 || $_SESSION[isVP]==1) {
                     echo "<form action=\"familyEvents.php\" method=\"POST\">";
@@ -29,7 +29,7 @@ $pageTitle = "Points";
         </div>
     </div>
     <div class="row">
-        <div class="col-6">
+        <div class="col-md-6 col-sm-12">
             <?php
                 $query = $db->query("SELECT familyName,familyPoints FROM Family WHERE familyID=1");
                 $query->setFetchMode(PDO::FETCH_ASSOC);
@@ -61,7 +61,7 @@ $pageTitle = "Points";
                 <p>No members are assigned to this family.</p>
             <?php endif; ?>
         </div>
-        <div class="col-6">
+        <div class="col-md-6 col-sm-12">
             <?php
             $query = $db->query("SELECT familyName,familyPoints FROM Family WHERE familyID=2");
             $query->setFetchMode(PDO::FETCH_ASSOC);
@@ -94,7 +94,7 @@ $pageTitle = "Points";
         </div>
     </div>
     <div class="row">
-        <div class="col-6">
+        <div class="col-md-6 col-sm-12">
             <?php
             $query = $db->query("SELECT familyName,familyPoints FROM Family WHERE familyID=3");
             $query->setFetchMode(PDO::FETCH_ASSOC);
@@ -125,7 +125,7 @@ $pageTitle = "Points";
                 <p>No members are assigned to this family.</p>
             <?php endif; ?>
         </div>
-        <div class="col-6">
+        <div class="col-md-6 col-sm-12">
             <?php
             $query = $db->query("SELECT familyName,familyPoints FROM Family WHERE familyID=4");
             $query->setFetchMode(PDO::FETCH_ASSOC);

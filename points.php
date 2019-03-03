@@ -56,7 +56,7 @@ while($row = $rank_query->fetch()) {
 </div>
 <div class="container mb-3">
     <div class="row mb-3">
-        <div class="col-6">
+        <div class="col-md-6 col-sm-12">
             <div class="row">
                 <h2 class="col-12 float-left">Top 5</h2>
             </div>
@@ -82,7 +82,7 @@ while($row = $rank_query->fetch()) {
             </ul>
             <div class="row mt-2"><a class="col-12 text-center" href="rankings.php">Complete Rankings</a></div>
         </div>
-        <div class="col-6">
+        <div class="col-md-6 col-sm-12">
             <div class="row">
                 <h2 class="col-12 float-left">Families</h2>
             </div>
