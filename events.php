@@ -109,7 +109,19 @@ if($month=='all') {
             if($row[isBonus] == 1) {
                 echo " <span class=\"text-muted\">(BONUS)</span>";
             } else { }
-            echo " <span class=\"badge badge-primary\">" . $row[type] ."</span></td>";
+            $typeClass = '';
+            if ($row[type] == 'mandatory') {
+                $typeClass = 'event-type-mandatory';
+            } else if ($row[type] == 'sports') {
+                $typeClass = 'event-type-sports';
+            } else if ($row[type] == 'social') {
+                $typeClass = 'event-type-social';
+            } else if ($row[type] == 'work') {
+                $typeClass = 'event-type-work';
+            } else {
+                $typeClass = '';
+            }
+            echo " <span class=\"badge badge-primary " . $typeClass ."\">" . $row[type] ."</span></td>";
             echo "</div><td align='right'>".$row[pointValue]."</td></tr>";
             $count++;
             echo "<input type=\"hidden\" name=\"query_bound\" value=\"recent\">";
