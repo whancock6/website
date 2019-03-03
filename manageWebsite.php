@@ -1,46 +1,13 @@
 <?php
-	require "logged_in_check.php";
-	if ($_SESSION[isAdmin]==0) {
-		echo "<meta http-equiv=\"REFRESH\" content=\"0;url=points.php\">";
-		die;
-	} else {}
-	require "database_connect.php";
-	
-	require "html_header_begin.txt";
+require "logged_in_check.php";
+require "set_session_vars_full.php";
+require "database_connect.php";
+if ($_SESSION[isAdmin]==0) {
+    echo "<meta http-equiv=\"REFRESH\" content=\"0;url=points.php\">";
+    die;
+} else {}
+$pageTitle = "Manage Website";
 ?>
-<SCRIPT type="text/javascript">
-	function confirmSubmitBackup() 
-	{
-	var agree=confirm("Are you sure you wish to back up all tables in the database? Any previous back up will be overwritten.");
-	if (agree)
-		return true;
-	else
-		return false;
-	}
-	function confirmSubmitRevert() 
-	{
-	var agree=confirm("Are you sure you wish to revert to the backed up version of the database? This action cannot be undone.");
-	if (agree)
-		return true;
-	else
-		return false;
-	}
-	function confirmSubmitReset() 
-	{
-	var agree=confirm("Are you sure you wish to delete all events and reset points? This action cannot be undone.");
-	if (agree)
-		return true;
-	else
-		return false;
-	}
-</SCRIPT>
-<?php require "html_header_end.txt"; ?>
-<br>
-
-<h3>Manage Website</h3>
-<div align="center">
-<a href="points.php">Back to Points</a><br><br>
-</div><br>
 
 <?php
 	$query = $db->query("SELECT DATE_FORMAT(lastBackupDate, '%M %e, %Y %r') AS lastBackup FROM BackupLog;");
@@ -57,93 +24,138 @@
 	$members = $query->fetchAll();
 ?>
 
-<form name="permissions" action="updatePermissions.php" method="POST">
-	<table align="center">
-		<tr><td style="vertical-align:top">
-			<table>
-				<tr><th>Admins</th></tr>
-				<?php
-					foreach($admins as $a) {
-						if($a[isAdmin]==1) {
-							echo "<tr><td>".$a[firstName]." ".$a[lastName]."</td></tr>";
-						}
-					}
-				?>
-			</table>
-		</td><td style="vertical-align:top">
-			<table>
-				<tr><th>Event Admins</th></tr>
-				<?php
-					foreach($admins as $a) {
-						if($a[isEventAdmin]==1) {
-							echo "<tr><td>".$a[firstName]." ".$a[lastName]."</td></tr>";
-						}
-					}
-				?>
-			</table>
-		</td><td style="vertical-align:top">
-			<table>
-				<tr><th>Member</th><th>Role</th><th>Add</th><th>Remove</th></tr>
-				<tr><td><select name="selectedMember">
-					<option value="none">---</option>
-					<?php
-						foreach($members as $m) {
-							echo "<option value=\"".$m[memberID]."\">".$m[lastName].", ".$m[firstName]."</option>";
-						}
-					?>
-				</select></td><td><select name="selectedRole">
-					<option value="none">---</option>
-					<option value="isAdmin">Admin</option>
-					<option value="isEventAdmin">Event Admin</option>
-				</select></td><td><input type="submit" name="add" value="Add"></td><td><input type="submit" name="remove" value="Remove"></td></tr>
-			</table>
-		</td></tr>
-	</table>
-</form>
+<!DOCTYPE html>
+<html>
+<?php require "partials/head.php" ?>
+<body>
+<?php require "partials/header.php" ?>
+<div class="container mb-3">
+    <div class="row justify-content-between">
+        <h2 class="col-12">Manage Site</h2>
+    </div>
 
-<br><br><br>
+    <h4><em>Update Site Permissions</em></h4>
+    <form class="mb-4" name="permissions" action="updatePermissions.php" method="POST">
+        <div class="row">
+            <div class="col-auto">
+                <h6><strong>Admins</strong></h6>
+                <?php
+                foreach($admins as $a) {
+                    if($a[isAdmin]==1) {
+                        echo "<p>".$a[firstName]." ".$a[lastName]."</p>";
+                    }
+                }
+                ?>
+            </div>
+            <div class="col-auto">
+                <h6><strong>Event Admins</strong></h6>
+                <?php
+                foreach($admins as $a) {
+                    if($a[isEventAdmin]==1) {
+                        echo "<p>".$a[firstName]." ".$a[lastName]."</p>";
+                    }
+                }
+                ?>
+            </div>
+            <div class="col-auto">
+                <p class="mb-1"><em>Member:</em></p>
+                <select class="form-control mb-2" name="selectedMember">
+                    <option value="none">---</option>
+                    <?php
+                    foreach($members as $m) {
+                        echo "<option value=\"".$m[memberID]."\">".$m[lastName].", ".$m[firstName]."</option>";
+                    }
+                    ?>
+                </select>
+                <p class="mb-1"><em>Role:</em></p>
+                <select class="form-control mb-3" name="selectedRole">
+                    <option value="none">---</option>
+                    <option value="isAdmin">Admin</option>
+                    <option value="isEventAdmin">Event Admin</option>
+                </select>
+                <input class="btn btn-primary"  type="submit" name="add" value="Add">
+                <input class="btn btn-secondary" type="submit" name="remove" value="Remove">
+            </div>
+        </div>
+    </form>
 
-<form name="backupDatabase" action="backupDatabasex.php" method="POST">
-	<table align="center">
-		<tr><th>Back Up All Tables in the Database</th></tr>
-		<tr bgcolor="#b3a369"><td>This will create a back up table for each table in the database. This allows you to revert to a previous state if an error occurs in the future.</td></tr>
-		<tr bgcolor="#b3a369"><td>If a back up already exists, then it will be replaced with a new one based on the current data. (i.e. There is only one back up at a time.)</td></tr>
-		<?php echo "<tr><td><u>Date of Last Back Up</u>: ".$bkupDate."</td></tr>"; ?>
-		<tr><td><input type="submit" value="Back Up Database" onClick="return confirmSubmitBackup()"></td></tr>
-	</table>
-</form>
+    <h4><em>Other Options</em></h4>
+    <div class="row mb-3 align-content-between">
+        <div class="col-md-3 col-sm-4">
+            <form name="backupDatabase" action="backupDatabasex.php" method="POST">
+                <input type=submit class="btn btn-block bnt-md btn-primary" value="Backup Database" onClick="return confirmSubmitBackup()">
+            </form>
+        </div>
+        <div class="col-md-9 col-sm-8">
+            <p class="text-muted">This will create a back up table for each table in the database. This allows you to revert to a previous state if an error occurs in the future.</p>
+            <p class="text-muted">If a back up already exists, then it will be replaced with a new one based on the current data (IE: there can only be one back up at a time.)</p>
+            <p class="text-muted"><?php echo "<u>Date of Last Backup</u>: ".$bkupDate; ?></p>
+        </div>
+    </div>
 
-<br><br><br>
+    <div class="row mb-3 align-content-between">
+        <div class="col-md-3 col-sm-4">
+            <form name="phpInfo" action="testinfo.php" method="POST">
+                <input class="btn btn-block bnt-md btn-primary" value="Check PHP Version">
+            </form>
+        </div>
+        <div class="col-md-9 col-sm-8">
+            <p class="text-muted align-content-center align-content-end" style="vertical-align: middle;">Get information about the current version and configuration of PHP running on the system.</p>
+        </div>
+    </div>
 
-<form name="revertDatabase" action="revertDatabasex.php" method="POST">
-	<table align="center">
-		<tr><th>Revert to the Backed Up Version of the Database</th></tr>
-		<tr bgcolor="#b3a369"><td>This will overwrite the current version of each table with its corresponding backed up version.</td></tr>
-		<tr bgcolor="#b3a369"><td>This action cannot be undone and should only be taken if important data is lost or there is some other serious error with the database.</td></tr>
-		<tr><td><input type="submit" value="Revert to Back Up" onClick="return confirmSubmitRevert()"></td></tr>
-	</table>
-</form>
+    <div class="row mb-3 align-content-between">
+        <div class="col-md-3 col-sm-4">
+            <form name="revertDatabase" action="revertDatabasex.php" method="POST">
+                <input type=submit class="btn btn-block bnt-md btn-danger" value="Revert Database Backup" onClick="return confirmSubmitRevert()">
+            </form>
+        </div>
+        <div class="col-md-9 col-sm-8">
+            <p class="text-muted">This will overwrite the current version of each table with its corresponding backed up version.</p>
+            <p class="text-muted">This action cannot be undone and should only be taken if important data is lost or there is some other serious error with the database.</p>
+        </div>
+    </div>
 
-<br><br><br>
+    <div class="row align-content-between">
+            <div class="col-md-3 col-sm-4">
+                <form name="resetPoints" action="resetPointsx.php" method="POST">
+                <input type=submit class="btn btn-block bnt-md btn-danger" value="Reset Points and Events" onClick="return confirmSubmitReset()">
+                </form>
+            </div>
+            <div class="col-md-9 col-sm-8">
+                <p class="text-muted">WARNING: This will delete all events in the database. Use only to reset points for a new semester.</p>
+            </div>
+    </div>
 
-<form name="resetPoints" action="resetPointsx.php" method="POST">
-	<table align="center">
-		<tr><th>Delete Events and Reset Points</th></tr>
-		<tr bgcolor="#b3a369"><td>WARNING: This will delete all events in the database. Use only to reset points for a new semester.</td></tr>
-		<tr><td><input type="submit" value="Reset Points" onClick="return confirmSubmitReset()"></td></tr>
-	</table>
-</form>
+</div>
+<?php require "partials/footer.php" ?>
+<?php require "partials/scripts.php" ?>
+<script type="text/javascript">
+    function confirmSubmitBackup()
+    {
+        var agree=confirm("Are you sure you wish to back up all tables in the database? Any previous back up will be overwritten.");
+        if (agree)
+            return true;
+        else
+            return false;
+    }
+    function confirmSubmitRevert()
+    {
+        var agree=confirm("Are you sure you wish to revert to the backed up version of the database? This action cannot be undone.");
+        if (agree)
+            return true;
+        else
+            return false;
+    }
+    function confirmSubmitReset()
+    {
+        var agree=confirm("Are you sure you wish to delete all events and reset points? This action cannot be undone.");
+        if (agree)
+            return true;
+        else
+            return false;
+    }
+</script>
+</body>
 
-<br><br><br>
-
-<form name="phpInfo" action="testinfo.php" method="POST">
-	<table align="center">
-		<tr><th>Check Current Version of PHP</th></tr>
-		<tr bgcolor="#b3a369"><td>Get information about the current version and configuration of PHP running on the system.</td></tr>
-		<tr><td><input type="submit" value="Check PHP Version"></td></tr>
-	</table>
-</form>
-
-<br><br><br><br><br><br>
-
-<?php require "html_footer.txt"; ?>
+</html>
