@@ -44,13 +44,13 @@ a:hover, .btn-link:hover, #submit-request-button:disabled {
     border-color: #B3A369 !important;
 }
 
-.btn-secondary {
+.btn-secondary,.badge-secondary {
     background-color: #00263A;
     color: white;
     border-color: #00263A;
 }
 
-.btn-primary {
+.btn-primary,.badge-primary  {
     background-color: #B3A369;
     color: white;
     border-color: #B3A369;
