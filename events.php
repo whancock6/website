@@ -82,7 +82,7 @@ if($month=='all') {
             echo "<p>There are currently no events recorded for the month of ".$monthName.".</p>";
         }
     } else {
-        echo "<table class='table table-hover mb-3'><thead>
+        echo "<table class='table table-hover table-sm mb-3'><thead>
                 <tr>
                     <th scope=\"col\"></th>
                     <th scope=\"col\">Date</th>
