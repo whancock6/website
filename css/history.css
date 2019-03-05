@@ -1,0 +1,400 @@
+/**
+
+
+font-family: 'Open Sans', sans-serif;
+font-family: 'Roboto Slab', serif;
+
+
+**/
+
+#wrapper{
+	width:100%;
+	background: #CCC;
+	height:100%;
+}
+#container{
+	width:960px;
+	background:#fff;
+	margin:0 auto;
+	height:100%;
+}
+nav{
+	font-family: 'Roboto Slab', serif;
+	padding:20px;
+}
+.leftNav{
+	float:left;
+	font-size:28px;
+}
+.leftNav a{
+	text-decoration: none;
+	color:#000;
+}
+.highlight{
+	color:#CBB57C !important;
+}
+.empty_highlight, .empty_images{
+	text-align:center;
+	font-size: 16px;
+}
+
+.rightNav{
+	float:right;
+	text-align: right;
+}
+.club_title{
+	font-size:28px;
+}
+.meta{
+	font-size:14px;
+}
+#year_nav{
+	width:910px;
+	overflow-x:auto;
+    overflow-y:hidden;
+    white-space: nowrap;
+	height:65px;
+	
+
+}
+#year_nav li{
+	display:inline-block;
+	padding:20px 5px 0 5px;
+	width:52px;
+	text-align: center;
+}
+#year_nav a{
+	color:#6D6E70;
+	text-decoration: none;
+}
+#year_nav a:hover{
+	font-size: 24px;
+}
+.current{
+	font-size: 24px;
+	color:#000 !important;
+}
+
+.sub-header{
+	margin:0 auto;
+	width:92%;
+	padding:5px;
+	border-bottom: 1px #424242 solid;
+	font-family: 'Roboto Slab', serif;
+	font-weight: 300;
+}
+.addBtn{
+	color:#CCC;
+	float:right;
+	line-height: 29px;
+}
+.addBtn:hover{
+	color:#CBB57C;
+	cursor:pointer;
+}
+.sub-title{
+	padding-left:15px;
+	font-size:20px;
+}
+.sub-sub-title{
+	font-size:14px;
+	margin-left: 10px;
+	color:#CCC;
+}
+.sub-content{	
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	line-height: 26px;
+	margin: 20px 0;
+}
+.sub-content ul{
+	list-style:circle; 
+	
+}
+.sub-content li{
+	margin-left:80px;
+	width:inherit;
+}
+.sub-content b{
+	font-weight: bold;
+}
+.sub-content i{
+	font-style: italic;
+}
+.sub-content ol{
+	list-style-type:decimal;
+}
+
+.roster{
+	padding: 5px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	line-height: 26px;
+	margin: 20px auto;
+	width:800px;
+}
+.member-list{
+	list-style: none;
+	column-count:4;
+-moz-column-count:4; /* Firefox */
+-webkit-column-count:4; /* Safari and Chrome */
+}
+.exec table{
+	width:400px;
+	margin:15px auto;
+	font-weight: bold;
+}
+.exec td{
+	width:300px;
+}
+.feature{
+	width: 880px;
+	list-style: none;
+	margin: 20px 0px !important;
+	background: #CBB57C;
+	font-size: 22px;
+	font-family: 'Roboto Slab', serif;
+	padding: 15px 40px;
+	color: #FFE;
+}
+.feature .title:hover{
+	background:#CBB57C !important;
+}
+.feature-text{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 13px;
+	color: #000;
+	margin: 10px 0;
+}
+.feature-meta{
+	font-size:12px;
+}
+
+.hide{
+	display:none;
+}
+
+/*******************  pictures  *******************/
+
+#pics_container{
+	width:92%;
+	padding:5px;
+	margin: 0 auto;
+}
+#pics_container .item-wrap{
+padding:6px;
+max-width: 205px;
+position: relative;
+}
+#pics_container .item-wrap img{
+	width: 100%;
+}
+
+
+.img_thumb{
+	max-width:300px;
+}
+.mfp-title{
+	font-family: 'Open Sans', sans-serif;
+	font-size:14px;
+}
+/********** edit and delete ********/
+.edit, .delete{
+	width:15px;
+	height:15px;
+	display:inline-block;
+	
+	margin-left:7px;
+}
+.delete-image{
+	width: 15px;
+	height:15px;
+	position: absolute;
+	display: block;
+	top:8px;
+	left:8px;
+}
+
+.delete,.delete-image{
+	background: url(../img/icons.png);
+	background-position: 0px 15px;
+}
+.delete:hover,
+.delete-image:hover{
+	background-position: 15px 15px;
+}
+.edit{
+	background: url(../img/icons.png);
+	background-position: 0px 0px;
+}
+.edit:hover{
+	background-position: 15px 0px;
+}
+/************* footer ********/
+footer{
+	font-family: 'Open Sans', sans-serif;
+	width:100%;
+	background: #0b0b0b;
+	color:#fbfbfb;
+	text-align:center;
+	padding:10px 0;
+	margin-top:50px;
+	font-size:13px;
+}
+
+
+/****** MODAL **************/
+#mask{  
+	display:none;
+    position: fixed;  
+    left: 0%; 
+    top: 0%; 
+    background-color: rgb(0, 0, 0);
+    /* RGBa with 0.6 opacity */
+    background-color: rgba(0, 0, 0, 0.6);
+    /* For IE 5.5 - 7*/
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+    /* For IE 8*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";	
+    width: 100%;
+    height: 100%;
+    z-index: 90;
+}
+
+#overlay{
+	display:none;
+	font-family: 'Roboto Slab', serif;
+    position: absolute; /* makes the div go into a position that’s absolute to the browser viewing area */
+    left: 25%; /* positions the div half way horizontally */
+    top: 15%; /* positions the div half way vertically */
+    padding: 25px; 
+    background-color: #ffffff;
+    min-width:300px;
+    width: 50%;
+    z-index: 100;
+
+}
+#overlay header{
+	font-size:25px;
+	padding:0px 0px 14px 0px;
+	margin-bottom:12px;
+	border-bottom: 1px #CCC solid;
+}
+#overlay #addHighlight textarea{
+	width:100%;
+	padding:15px;
+	 -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+#overlay #addImage textarea{
+	width:100%;
+	padding:15px;
+	margin:10px 0;
+	 -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+#overlay input[type="submit"]{
+	background:#CBB57C;
+	border:none;
+	color:#fff;
+	float:right;
+	padding: 10px;
+	font-size: 18px;
+	font-family: 'Roboto Slab', serif;
+	width: 143px;
+	margin: 10px 0 0 0;
+}
+.overlayHelp{
+	font-family: 'Roboto Slab', serif;
+	float:left;
+	font-size:14px;
+	color:#CCC;
+}
+
+#addHighlight, #addStory, #addImage, #delete_prompt{
+	display:none;
+	position:relative;
+}
+#addSotry .field{
+
+}
+#addStory label,input,textarea{
+	display:block;
+	font-family: 'Open Sans', sans-serif;
+}
+#addStory label{
+	margin:15px 0;	
+	text-transform: uppercase;
+	font-weight:600;
+}
+#addStory input{
+	width:50%;
+	padding:5px;
+}
+#stories li .title{
+	padding:0 5px;
+}
+#stories li .title:hover{
+  background:#FCFCFC;
+}
+
+.closeBtn{
+	position:absolute;
+	right:0px;
+	top:-10px;
+	font-weight:bold;
+	font-family: 'Open Sans', sans-serif;
+	color:#CCC;
+	cursor: pointer;
+}
+.closeBtn:hover{
+	color:#424242;
+}
+#delete_prompt header{
+	text-align:center;
+	border:none;
+}
+.delete_btns{
+	margin:20px auto;
+	width:255px;
+}
+.yes_btn{
+	padding: 10px 20px;
+	background:#CBB57C;
+	margin-right:20px;
+	color:#FFF;
+	text-decoration: none;
+}
+.no_btn{
+	padding: 10px 20px;
+	background:#CCC;
+	margin-left:20px;
+	color:#FFF;
+	text-decoration: none;
+}
+
+/************************** POINTS *************************/
+#alert{
+	width:940px;
+	background: #D17821;
+	font-family: 'Roboto Slab', serif;
+	text-align: left;
+	margin-top:20px;
+	padding:10px;
+}
+#alert .title{
+	color:#fff;
+}
+.alertClose{
+	float:right;
+	color:#fff;
+}
+#points_ribbon{
+	background: #CBB57C;
+}
+#points_ribbon .ribbon_square{
+	display:inline-block;
+}
+
+.history-about{
+	margin: 20px 35px;
+}
