@@ -30,7 +30,7 @@
         <div class="message-space"></div>
         <h1 class="mb-3 font-weight-normal">Member Login</h1>
         <label for="username" class="sr-only">Username</label>
-        <input type="text" name="username" class="form-control" placeholder="Username" required autofocus="" onKeyPress="return letternumber(event)">
+        <input type="email" name="username" class="form-control" placeholder="Username" required autofocus="" onKeyPress="return letternumber(event)">
         <div class="invalid-feedback">
             Please enter your email.
         </div>
