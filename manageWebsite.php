@@ -59,7 +59,7 @@ $pageTitle = "Manage Website";
             </div>
             <div class="col-auto">
                 <p class="mb-1"><em>Member:</em></p>
-                <select class="form-control mb-2" name="selectedMember">
+                <select class="form-control custom-select mb-2" name="selectedMember">
                     <option value="none">---</option>
                     <?php
                     foreach($members as $m) {
@@ -68,7 +68,7 @@ $pageTitle = "Manage Website";
                     ?>
                 </select>
                 <p class="mb-1"><em>Role:</em></p>
-                <select class="form-control mb-3" name="selectedRole">
+                <select class="form-control custom-select mb-3" name="selectedRole">
                     <option value="none">---</option>
                     <option value="isAdmin">Admin</option>
                     <option value="isEventAdmin">Event Admin</option>

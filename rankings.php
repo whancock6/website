@@ -25,7 +25,7 @@ $pageTitle = "Members";
     </div>
     <div class="col-md-2">
         <form>
-            <select class="form-control float-right" name="sortBy" id="sortBy" onChange="reload(this.form)">
+            <select class="form-control float-right custom-select" name="sortBy" id="sortBy" onChange="reload(this.form)">
                 <option value="all"  <?PHP if($sortBy=="all") echo "selected";?>>All</option>
                 <option value="members"  <?PHP if($sortBy=="members") echo "selected";?>>Members</option>
                 <option value="probates"  <?PHP if($sortBy=="probates") echo "selected";?>>Probates</option>
@@ -46,6 +46,7 @@ $pageTitle = "Members";
                 <tr>
                     <th scope="col">Rank</th>
                     <th scope="col">Name</th>
+<!--                    <td scope="col" align="right"><b>Total Events</b></td>-->
                     <td scope="col" align="right"><b>Total Points</b></td>
                 </tr>
             </thead>
@@ -56,16 +57,16 @@ $pageTitle = "Members";
                 //---------------------------------------------------
 
                 if($sortBy=="all") {
-                    $query = $db->query("SELECT firstName, lastName, memberPoints, memberID FROM Member WHERE status!='alumni' ORDER BY memberPoints DESC, lastName");
+                    $query = $db->query("SELECT firstName, lastName, memberPoints, memberID, mandatoryEventCount, sportsEventCount, socialEventCount, workEventCount FROM Member WHERE status!='alumni' ORDER BY memberPoints DESC, lastName");
                         $query->setFetchMode(PDO::FETCH_ASSOC);
                 } elseif($sortBy=="members") {
-                    $query = $db->query("SELECT firstName, lastName, memberPoints, memberID FROM Member WHERE status='member' ORDER BY memberPoints DESC, lastName");
+                    $query = $db->query("SELECT firstName, lastName, memberPoints, memberID, mandatoryEventCount, sportsEventCount, socialEventCount, workEventCount FROM Member WHERE status='member' ORDER BY memberPoints DESC, lastName");
                         $query->setFetchMode(PDO::FETCH_ASSOC);
                 } elseif($sortBy=="probates") {
-                    $query = $db->query("SELECT firstName, lastName, memberPoints, memberID FROM Member WHERE status='probate' ORDER BY memberPoints DESC, lastName");
+                    $query = $db->query("SELECT firstName, lastName, memberPoints, memberID, mandatoryEventCount, sportsEventCount, socialEventCount, workEventCount FROM Member WHERE status='probate' ORDER BY memberPoints DESC, lastName");
                         $query->setFetchMode(PDO::FETCH_ASSOC);
                 } elseif($sortBy=="social") {
-                    $query = $db->query("SELECT firstName, lastName, memberPoints, memberID FROM Member WHERE status='social' ORDER BY memberPoints DESC, lastName");
+                    $query = $db->query("SELECT firstName, lastName, memberPoints, memberID, mandatoryEventCount, sportsEventCount, socialEventCount, workEventCount FROM Member WHERE status='social' ORDER BY memberPoints DESC, lastName");
                         $query->setFetchMode(PDO::FETCH_ASSOC);
                 }
 
@@ -76,6 +77,7 @@ $pageTitle = "Members";
                     echo "<form action=\"allAttended.php\" method=\"POST\">";
                     echo "<tr><th>".$count."</th>";
                     echo "<td><input class='btn btn-link p-0' type=\"submit\" value=\"".$row[firstName]." ".$row[lastName]."\"></td>";
+//                    echo "<td align='right'>".($row[mandatoryEventCount] + $row[sportsEventCount] + $row[socialEventCount] + $row[workEventCount])."</td>";
                     echo "<td align=\"right\">".$row[memberPoints]."</td>";
 //                    echo "<td align=\"right\"><input class='btn btn-link' type=\"submit\" value=\"Check Events\"></td></tr>";
                     echo "<input type=\"hidden\" name=\"memberID\" value=\"".$row[memberID]."\">";

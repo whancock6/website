@@ -52,7 +52,7 @@ if($month=='all') {
     ?>
     <div class="float-right">
         <form id="monthSelect" action="/events.php" method="post">
-            <select name="dateMonth" class="form-control" onchange="this.form.submit()">
+            <select name="dateMonth" class="form-control custom-select" onchange="this.form.submit()">
                 <option value="01" <?PHP if($month=='01') echo "selected";?>>January</option>
                 <option value="02" <?PHP if($month=='02') echo "selected";?>>February</option>
                 <option value="03" <?PHP if($month=='03') echo "selected";?>>March</option>
