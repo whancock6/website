@@ -28,34 +28,6 @@
     <div class="row mb-3">
         <div class="col-12">
             <h4>Event Breakdown</h4>
-            <?php
-            $query2 = $db->prepare("SELECT type FROM Event");
-            $query2->setFetchMode(PDO::FETCH_ASSOC);
-
-            $mandatory=0;
-            $sports=0;
-            $social=0;
-            $work=0;
-            $events=0;
-
-            while($row = $query2->fetch()) {
-                $events++;
-                echo($events);
-                if($row[type]=='mandatory'){
-                    $mandatory++;
-                }
-                else if($row[type]=='sports'){
-                    $sports++;
-                }
-                else if($row[type]=='social'){
-                    $social++;
-                }
-                else if($row[type]=='work'){
-                    $work++;
-                }
-            }
-            ?>
-
             <div id="chart2_div"></div>
         </div>
 </div>
