@@ -95,7 +95,7 @@ $pageTitle = "Sports Dashboard";
             $sportEventArray[$sport][] = [
                 'name' => $eventName,
                 'eventId' => $eventId,
-                'attendance' => $eventAttendanceCount[$eventId],
+                'attendance' => ((isset($eventAttendanceCount[$eventId]) && $eventAttendanceCount[$eventId] !== null)) ? $eventAttendanceCount[$eventId] : 0,
                 'date' => date("F d, Y", $d),
                 'dayOfWeek' => date("l", $d),
                 'month' => date('F', $d)
@@ -115,7 +115,7 @@ $pageTitle = "Sports Dashboard";
         $monthsCount = [];
         echo "<u>Events</u>: <br/>";
         foreach ($eventData as $event) {
-            echo "<i>Event: " . $event['name'] . "</i> (Attendance: " . $event['attendance'] . " of " . $totalMembers . " members; Date: " . $event['dayOfWeek'] . ", " . $event['date'] . ")<br/>";
+            echo "<i>Event: " . $event['name'] . "</i> (Attendance: " . ((isset($event['attendance']) && $event['attendance'] !== null) ? $event['attendance'] : 0) . " of " . $totalMembers . " members; Date: " . $event['dayOfWeek'] . ", " . $event['date'] . ")<br/>";
             $totalAttendance += $event['attendance'];
 
             if (!key_exists($event['dayOfWeek'], $daysCount) && (!empty($event['dayOfWeek']) && isset($event['dayOfWeek']) && strlen($event['dayOfWeek']) > 0 && !is_null($event['dayOfWeek']))) {
@@ -146,14 +146,16 @@ $pageTitle = "Sports Dashboard";
         //var_dump($daysCount);
 
         echo "<u>Total Attendance</u>: " . $totalAttendance . ' members<br/>';
-        $avgAtt = number_format($totalAttendance / sizeof(array_keys($eventData)),1);
-        echo "<u>Avg Attendance</u>: " . $avgAtt . ' members/gm' . ' (Member Utilization: ' . number_format(($avgAtt / $totalMembers) * 100,1) . '%)<br/>';
-        $bestSHOTWDay = array_keys($daysCount)[0];
-        $bestSHOTWDayAtt = number_format($daysCount[$bestSHOTWDay]['attendance'] / $daysCount[$bestSHOTWDay]['events'],1);
-        echo "<u>Best Day for SHOTW (based on Avg Attendance)</u>: " . $bestSHOTWDay . " (" . $bestSHOTWDayAtt . " avg members" . ' --> member utilization: ' . number_format(($bestSHOTWDayAtt / $totalMembers) * 100,1) . '%)' . '<br/>';
-        $bestMonth = array_keys($monthsCount)[0];
-        $bestMonthAtt = number_format($monthsCount[$bestMonth]['attendance'] / $monthsCount[$bestMonth]['events'],1);
-        echo "<u>Best Month for Attendance (based on Avg Attendance)</u>: " . $bestMonth . " (" . $bestMonthAtt . " avg members" . ' --> member utilization: ' . number_format(($bestMonthAtt / $totalMembers) * 100,1) . '%)';
+        if ($totalAttendance > 0) {
+            $avgAtt = number_format($totalAttendance / sizeof(array_keys($eventData)),1);
+            echo "<u>Avg Attendance</u>: " . $avgAtt . ' members/gm' . ' (Member Utilization: ' . number_format(($avgAtt / $totalMembers) * 100,1) . '%)<br/>';
+            $bestSHOTWDay = array_keys($daysCount)[0];
+            $bestSHOTWDayAtt = number_format($daysCount[$bestSHOTWDay]['attendance'] / $daysCount[$bestSHOTWDay]['events'],1);
+            echo "<u>Best Day for SHOTW (based on Avg Attendance)</u>: " . $bestSHOTWDay . " (" . $bestSHOTWDayAtt . " avg members" . ' --> member utilization: ' . number_format(($bestSHOTWDayAtt / $totalMembers) * 100,1) . '%)' . '<br/>';
+            $bestMonth = array_keys($monthsCount)[0];
+            $bestMonthAtt = number_format($monthsCount[$bestMonth]['attendance'] / $monthsCount[$bestMonth]['events'],1);
+            echo "<u>Best Month for Attendance (based on Avg Attendance)</u>: " . $bestMonth . " (" . $bestMonthAtt . " avg members" . ' --> member utilization: ' . number_format(($bestMonthAtt / $totalMembers) * 100,1) . '%)';
+        }
         echo '<br/><br/>';
     }
 ?>
