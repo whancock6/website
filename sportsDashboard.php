@@ -108,6 +108,20 @@ $pageTitle = "Sports Dashboard";
     $row = $query->fetch();
     $totalMembers = $row[CNT];
 
+    uasort($sportEventArray, function($a, $b) {
+        $aAttendance = 0;
+        $bAttendance = 0;
+        foreach ($a as $event) {
+            $aAttendance += $event['attendance'];
+        }
+
+        foreach ($b as $event) {
+            $bAttendance += $event['attendance'];
+        }
+
+        return ($bAttendance / sizeof($b))  - ($aAttendance / sizeof($a));
+    });
+
     foreach ($sportEventArray as $sport => $eventData) {
         echo "<b>" . $sports[$sport] . "</b><br/>";
         $totalAttendance = 0;
