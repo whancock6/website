@@ -66,7 +66,9 @@ $pageTitle = "Sports Dashboard";
         'track' => 'Track and Field',
         'women\'s tennis' => 'Women\'s Tennis',
         'men\'s tennis' => 'Men\'s Tennis',
+        'club volleyball' => 'Club Volleyball',
         'volleyball' => 'Volleyball',
+        'club swim' => 'Club Swim',
         'swim' => 'Swimming and Diving',
         'cross country' => 'Cross Country',
         'football' => 'Football',
@@ -76,9 +78,7 @@ $pageTitle = "Sports Dashboard";
         'women\'s lacrosse' => 'Women\'s Lacrosse',
         'men\'s lacrosse' => 'Men\'s Lacrosse',
         'club hockey' => 'Club Hockey',
-        'hockey' => 'Club Hockey',
-        'club volleyball' => 'Club Volleyball',
-        'club swim' => 'Club Swim'
+        'hockey' => 'Club Hockey'
     ];
 
     $sportEventArray = [];
@@ -157,10 +157,10 @@ $pageTitle = "Sports Dashboard";
         return ($b['attendance'] / $b['events'])  - ($a['attendance'] / $a['events']);
     });
 
-    echo "<em>Overall Sports Attendance: " . $overallAttendance . " members</em><br/>";
+    echo "<em>Overall Sports Attendance</em>: " . $overallAttendance . " members<br/>";
     $avgOvrAtt = number_format(($overallAttendance / $numEvents), 1);
     $avgOvrAttPct = number_format(($avgOvrAtt / $totalMembers) * 100, 1);
-    echo "<em>Avg Sports Attendance: " . $avgOvrAtt . " members/gm (" .$avgOvrAttPct . "% of membership)</em><br/>";
+    echo "<em>Avg Sports Attendance</em>: " . $avgOvrAtt . " members/gm (" .$avgOvrAttPct . "% of membership)<br/>";
 
     $bestOverallSHOTWDay = array_keys($overallDaysCount)[0];
     $bestOverallSHOTWDayAtt = number_format($overallDaysCount[$bestOverallSHOTWDay]['attendance'] / $overallDaysCount[$bestOverallSHOTWDay]['events'],1);
