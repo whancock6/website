@@ -164,11 +164,11 @@ $pageTitle = "Sports Dashboard";
 
     $bestOverallSHOTWDay = array_keys($overallDaysCount)[0];
     $bestOverallSHOTWDayAtt = number_format($overallDaysCount[$bestOverallSHOTWDay]['attendance'] / $overallDaysCount[$bestOverallSHOTWDay]['events'],1);
-    echo "<u>Best Day for SHOTW (based on Avg Attendance)</u>: " . $bestOverallSHOTWDay . " (" . $bestOverallSHOTWDayAtt . " avg members" . ' --> ' . number_format(($bestOverallSHOTWDayAtt / $totalMembers) * 100,1) . '% of membership)' . '<br/>';
+    echo "<u>Best Day for SHOTW (based on Avg Attendance)</u>: " . $bestOverallSHOTWDay . " (" . $bestOverallSHOTWDayAtt . " members/gm" . ' --> ' . number_format(($bestOverallSHOTWDayAtt / $totalMembers) * 100,1) . '% of membership)' . '<br/>';
 
     $bestOverallMonth = array_keys($overallMonthCount)[0];
     $bestOverallMonthAtt = number_format($overallMonthCount[$bestOverallMonth]['attendance'] / $overallMonthCount[$bestOverallMonth]['events'],1);
-    echo "<u>Best Month for Attendance (based on Avg Attendance)</u>: " . $bestOverallMonth . " (" . $bestOverallMonthAtt . " avg members" . ' --> ' . number_format(($bestOverallMonthAtt / $totalMembers) * 100,1) . '% of membership)';
+    echo "<u>Best Month for Attendance (based on Avg Attendance)</u>: " . $bestOverallMonth . " (" . $bestOverallMonthAtt . " members/gm" . ' --> ' . number_format(($bestOverallMonthAtt / $totalMembers) * 100,1) . '% of membership)';
     echo '<br/><br/>';
 
     foreach ($sportEventArray as $sport => $eventData) {
@@ -217,10 +217,10 @@ $pageTitle = "Sports Dashboard";
             echo "<u>Avg Attendance</u>: " . $avgAtt . ' members/gm' . ' (' . number_format(($avgAtt / $totalMembers) * 100,1) . '% of membership)<br/>';
             $bestSHOTWDay = array_keys($daysCount)[0];
             $bestSHOTWDayAtt = number_format($daysCount[$bestSHOTWDay]['attendance'] / $daysCount[$bestSHOTWDay]['events'],1);
-            echo "<u>Best Day for SHOTW (based on Avg Attendance)</u>: " . $bestSHOTWDay . " (" . $bestSHOTWDayAtt . " avg members" . ' --> ' . number_format(($bestSHOTWDayAtt / $totalMembers) * 100,1) . '% of membership)' . '<br/>';
+            echo "<u>Best Day for SHOTW (based on Avg Attendance)</u>: " . $bestSHOTWDay . " (" . $bestSHOTWDayAtt . " members/gm" . ' --> ' . number_format(($bestSHOTWDayAtt / $totalMembers) * 100,1) . '% of membership)' . '<br/>';
             $bestMonth = array_keys($monthsCount)[0];
             $bestMonthAtt = number_format($monthsCount[$bestMonth]['attendance'] / $monthsCount[$bestMonth]['events'],1);
-            echo "<u>Best Month for Attendance (based on Avg Attendance)</u>: " . $bestMonth . " (" . $bestMonthAtt . " avg members" . ' --> ' . number_format(($bestMonthAtt / $totalMembers) * 100,1) . '% of membership)';
+            echo "<u>Best Month for Attendance (based on Avg Attendance)</u>: " . $bestMonth . " (" . $bestMonthAtt . " members/gm" . ' --> ' . number_format(($bestMonthAtt / $totalMembers) * 100,1) . '% of membership)';
         }
         echo '<br/><br/>';
     }
