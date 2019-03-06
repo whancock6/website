@@ -64,17 +64,17 @@ $pageTitle = "Sports Dashboard";
         'mbb' => 'Men\'s Basketball',
         'wbb' => 'Women\'s Basketball',
         'track' => 'Track and Field',
+        'women\'s tennis' => 'Women\'s Tennis',
         'men\'s tennis' => 'Men\'s Tennis',
-        'women\'s tennis' => 'Women\'s Basketball',
         'volleyball' => 'Volleyball',
         'swim' => 'Swimming and Diving',
         'cross country' => 'Cross Country',
         'football' => 'Football',
         // Lacrosse alternate titles
-        'men\'s lax' => 'Men\'s Lacrosse',
         'women\'s lax' => 'Women\'s Lacrosse',
-        'men\'s lacrosse' => 'Men\'s Lacrosse',
+        'men\'s lax' => 'Men\'s Lacrosse',
         'women\'s lacrosse' => 'Women\'s Lacrosse',
+        'men\'s lacrosse' => 'Men\'s Lacrosse',
         'club hockey' => 'Club Hockey',
         'hockey' => 'Club Hockey',
         'club volleyball' => 'Club Volleyball',
@@ -122,15 +122,66 @@ $pageTitle = "Sports Dashboard";
         return ($bAttendance / sizeof($b))  - ($aAttendance / sizeof($a));
     });
 
+    $overallAttendance = 0;
+    $numEvents = 0;
+    $overallDaysCount = [];
+    $overallMonthCount = [];
+    foreach ($sportEventArray as $sport => $eventData) {
+        foreach ($eventData as $event) {
+            $overallAttendance += $event['attendance'];
+            $numEvents++;
+
+            if (!key_exists($event['dayOfWeek'], $overallDaysCount) && (!empty($event['dayOfWeek']) && isset($event['dayOfWeek']) && strlen($event['dayOfWeek']) > 0 && !is_null($event['dayOfWeek']))) {
+                $overallDaysCount[$event['dayOfWeek']] = [
+                    'events' => 0,
+                    'attendance' => 0
+                ];
+            }
+            $overallDaysCount[$event['dayOfWeek']]['events']++;
+            $overallDaysCount[$event['dayOfWeek']]['attendance'] += $event['attendance'];
+
+            if (!key_exists($event['month'], $overallMonthCount) && (!empty($event['month']) && isset($event['month']) && strlen($event['month']) > 0 && !is_null($event['month']))) {
+                $overallMonthCount[$event['month']] = [
+                    'events' => 0,
+                    'attendance' => 0
+                ];
+            }
+            $overallMonthCount[$event['month']]['events']++;
+            $overallMonthCount[$event['month']]['attendance'] += $event['attendance'];
+        }
+    }
+    uasort($overallDaysCount, function($a, $b) {
+        return ($b['attendance'] / $b['events'])  - ($a['attendance'] / $a['events']);
+    });
+    uasort($overallMonthCount, function($a, $b) {
+        return ($b['attendance'] / $b['events'])  - ($a['attendance'] / $a['events']);
+    });
+
+    echo "<em>Overall Sports Attendance: " . $overallAttendance . " members</em><br/>";
+    $avgOvrAtt = number_format(($overallAttendance / $numEvents), 1);
+    $avgOvrAttPct = number_format(($avgOvrAtt / $totalMembers) * 100, 1);
+    echo "<em>Avg Sports Attendance: " . $avgOvrAtt . " members/gm (" .$avgOvrAttPct . "% of membership)</em><br/>";
+
+    $bestOverallSHOTWDay = array_keys($overallDaysCount)[0];
+    $bestOverallSHOTWDayAtt = number_format($overallDaysCount[$bestOverallSHOTWDay]['attendance'] / $overallDaysCount[$bestOverallSHOTWDay]['events'],1);
+    echo "<u>Best Day for SHOTW (based on Avg Attendance)</u>: " . $bestOverallSHOTWDay . " (" . $bestOverallSHOTWDayAtt . " members/gm" . ' --> ' . number_format(($bestOverallSHOTWDayAtt / $totalMembers) * 100,1) . '% of membership)' . '<br/>';
+
+    $bestOverallMonth = array_keys($overallMonthCount)[0];
+    $bestOverallMonthAtt = number_format($overallMonthCount[$bestOverallMonth]['attendance'] / $overallMonthCount[$bestOverallMonth]['events'],1);
+    echo "<u>Best Month for Attendance (based on Avg Attendance)</u>: " . $bestOverallMonth . " (" . $bestOverallMonthAtt . " members/gm" . ' --> ' . number_format(($bestOverallMonthAtt / $totalMembers) * 100,1) . '% of membership)';
+    echo '<br/><br/>';
+
     foreach ($sportEventArray as $sport => $eventData) {
         echo "<b>" . $sports[$sport] . "</b><br/>";
         $totalAttendance = 0;
+        $totalEvents = 0;
         $daysCount = [];
         $monthsCount = [];
         echo "<u>Events</u>: <br/>";
         foreach ($eventData as $event) {
             echo "<i>Event: " . $event['name'] . "</i> (Attendance: " . ((isset($event['attendance']) && $event['attendance'] !== null) ? $event['attendance'] : 0) . " of " . $totalMembers . " members; Date: " . $event['dayOfWeek'] . ", " . $event['date'] . ")<br/>";
             $totalAttendance += $event['attendance'];
+            $totalEvents++;
 
             if (!key_exists($event['dayOfWeek'], $daysCount) && (!empty($event['dayOfWeek']) && isset($event['dayOfWeek']) && strlen($event['dayOfWeek']) > 0 && !is_null($event['dayOfWeek']))) {
                 $daysCount[$event['dayOfWeek']] = [
@@ -159,16 +210,17 @@ $pageTitle = "Sports Dashboard";
         });
         //var_dump($daysCount);
 
-        echo "<u>Total Attendance</u>: " . $totalAttendance . ' members<br/>';
+        echo "<u>Total Attendance</u>: " . $totalAttendance . " members (" . number_format(($totalAttendance / $overallAttendance) * 100, 1) . "% of total attendance)<br/>";
+        echo "<u>Total Events</u>: " . $totalEvents . " events (" . number_format(($totalEvents / $numEvents) * 100, 1) . "% of total events)<br/>";
         if ($totalAttendance > 0) {
             $avgAtt = number_format($totalAttendance / sizeof(array_keys($eventData)),1);
-            echo "<u>Avg Attendance</u>: " . $avgAtt . ' members/gm' . ' (Member Utilization: ' . number_format(($avgAtt / $totalMembers) * 100,1) . '%)<br/>';
+            echo "<u>Avg Attendance</u>: " . $avgAtt . ' members/gm' . ' (' . number_format(($avgAtt / $totalMembers) * 100,1) . '% of membership)<br/>';
             $bestSHOTWDay = array_keys($daysCount)[0];
             $bestSHOTWDayAtt = number_format($daysCount[$bestSHOTWDay]['attendance'] / $daysCount[$bestSHOTWDay]['events'],1);
-            echo "<u>Best Day for SHOTW (based on Avg Attendance)</u>: " . $bestSHOTWDay . " (" . $bestSHOTWDayAtt . " avg members" . ' --> member utilization: ' . number_format(($bestSHOTWDayAtt / $totalMembers) * 100,1) . '%)' . '<br/>';
+            echo "<u>Best Day for SHOTW (based on Avg Attendance)</u>: " . $bestSHOTWDay . " (" . $bestSHOTWDayAtt . " members/gm" . ' --> ' . number_format(($bestSHOTWDayAtt / $totalMembers) * 100,1) . '% of membership)' . '<br/>';
             $bestMonth = array_keys($monthsCount)[0];
             $bestMonthAtt = number_format($monthsCount[$bestMonth]['attendance'] / $monthsCount[$bestMonth]['events'],1);
-            echo "<u>Best Month for Attendance (based on Avg Attendance)</u>: " . $bestMonth . " (" . $bestMonthAtt . " avg members" . ' --> member utilization: ' . number_format(($bestMonthAtt / $totalMembers) * 100,1) . '%)';
+            echo "<u>Best Month for Attendance (based on Avg Attendance)</u>: " . $bestMonth . " (" . $bestMonthAtt . " members/gm" . ' --> ' . number_format(($bestMonthAtt / $totalMembers) * 100,1) . '% of membership)';
         }
         echo '<br/><br/>';
     }
