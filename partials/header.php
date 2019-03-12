@@ -28,6 +28,9 @@
                     <a class="nav-link btn-link" href="/rankings.php">Members</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link btn-link" href="/history.php">History</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link btn-link" href="/families.php">Families</a>
                 </li>
 <!--                <li class="nav-item">-->
