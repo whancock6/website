@@ -8,7 +8,7 @@
 			<li><b>Stories:</b> Personal stories submitted by Members and Alumni.</li>
 			<li><b>Pictures:</b> Photos from that year. All uploaded images are stored on the server so please be aware of the file size when uploading.</li>
 		</ul>
-		This is not facebook. Please do not upload every photo you have ever taken.
+        <b>This is not Facebook. Please do not upload every photo you have ever taken.</b>
 	</div>
 </div>
 

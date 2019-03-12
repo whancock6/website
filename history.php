@@ -13,21 +13,21 @@ $yearPage = $_GET['year'];
 <!doctype html>
 <html lang="en">
 	<head>
-		<title>Ramblin' Reck Club</title>
-		<link rel="stylesheet" href="css/reset.css" type="text/css">
-		<link rel="stylesheet" href="css/history.css" type="text/css">
-		<link rel="stylesheet" href="css/redactor.css" type="text/css">
-		<link href="css/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css" />
-		<link rel="stylesheet" href="css/magnific-popup.css">
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab:400,300,700' rel='stylesheet' type='text/css'>
+		<title>Club History | Ramblin' Reck Club</title>
+		<link rel="stylesheet" href="/css/reset.css?v=<?php echo filemtime(getcwd() . '/css/reset.css'); ?>" type="text/css">
+		<link rel="stylesheet" href="/css/history.css?v=<?php echo filemtime(getcwd() . '/css/history.css'); ?>" type="text/css">
+		<link rel="stylesheet" href="/css/redactor.css?v=<?php echo filemtime(getcwd() . '/css/redactor.css'); ?>" type="text/css">
+		<link rel="stylesheet" href="/css/jquery.mCustomScrollbar.css?v=<?php echo filemtime(getcwd() . '/css/jquery.mCustomScrollbar.css'); ?>" type="text/css" />
+		<link rel="stylesheet" href="/css/magnific-popup.css?v=<?php echo filemtime(getcwd() . '/css/magnific-popup.css'); ?>">
+		<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab:400,300,700' type='text/css'>
 
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-		<script src="js/imagesloaded.pkgd.min.js"></script>
-		<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-		<!--<script src="js/jquery.mCustomScrollbar.min.js"></script>-->
-		<script src="js/redactor.min.js"></script>
-		<script src="js/jquery.magnific-popup.min.js"></script>
-		<script src="js/masonry.pkgd.min.js"></script>
+		<script src="/js/jquery-3.2.1.min.js?v=<?php echo filemtime(getcwd() . '/js/jquery-3.2.1.min.js'); ?>"></script>
+		<script src="/js/imagesloaded.pkgd.min.js?v=<?php echo filemtime(getcwd() . '/js/imagesloaded.pkgd.min.js'); ?>"></script>
+		<script src="/js/jquery.mCustomScrollbar.concat.min.js?v=<?php echo filemtime(getcwd() . '/js/jquery.mCustomScrollbar.concat.min.js'); ?>"></script>
+		<!--<script src="/js/jquery.mCustomScrollbar.min.js?v=<?php echo filemtime(getcwd() . '/js/jquery.mCustomScrollbar.min.js'); ?>"></script>-->
+		<script src="/js/redactor.min.js?v=<?php echo filemtime(getcwd() . '/js/jquery-3.2.1.min.js'); ?>"></script>
+		<script src="/js/jquery.magnific-popup.min.js?v=<?php echo filemtime(getcwd() . '/js/jquery.magnific-popup.min.js'); ?>"></script>
+		<script src="/js/masonry.pkgd.min.js?v=<?php echo filemtime(getcwd() . '/js/masonry.pkgd.min.js.js'); ?>"></script>
 		
 		<script>
 		$(document).ready(function(){
