@@ -1,4 +1,5 @@
-<html lang="en"><head>
+<html lang="en">
+<head>
     <style>
         /**
  * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
@@ -183,17 +184,32 @@
         #reck-club{
             background:url('/img/t-night/reck-club.png');
         }
-        #saa{
-            background:url('/img/t-night/saa.png');
+        #tiffs{
+            background:url('/img/t-night/tiffs.png');
         }
-        #scpc{
-            background:url('/img/t-night/scpc.png');
+        #pops{
+            background:url('/img/t-night/pops.png');
         }
-        #sga{
-            background:url('/img/t-night/sga.png');
+        #adidas{
+            background:url('/img/t-night/adidas.png');
         }
         #gtaa{
             background:url('/img/t-night/gtaa.png');
+        }
+        #waho{
+            background:url('/img/t-night/waho.png');
+        }
+        #wings{
+            background:url('/img/t-night/wings.png');
+        }
+        #chik{
+            background:url('/img/t-night/chik.png');
+        }
+        #bj{
+            background:url('/img/t-night/bj.png');
+        }
+        #theory{
+            background:url('/img/t-night/theory.png');
         }
         footer{
             text-align: center;
@@ -362,13 +378,13 @@
     <script type="text/javascript">
         $(document).ready(function(){
             $('.main').hover(function(){
-                $(this).text("AUG 28 2016").fadeIn("slow");
+                $(this).text("AUG 25 2019").fadeIn("slow");
             }, function() {
                 $(this).text("T-Night").fadeIn("slow");
             });
         });
     </script>
-    <title><%= title %></title>
+    <title>T-Night 2019 | Ramblin' Reck Club</title>
 </head>
 <body style="">
 <div id="banner-wrap">
@@ -376,59 +392,52 @@
         <div class="main">T-Night</div>
         <div class="sub">Welcome to the Family Tradition</div>
         <div class="gt-logo"></div>
-
     </div>
     <div class="scroll-down"></div>
 </div>
 <div id="wrapper">
     <div class="container">
         <div id="intro" class="clearfix">
-            <div id="invitation">Ramblin' Reck Club is proud to present its annual traditions celebration on <span class="highlight">Sunday, August 28th</span> from <span class="highlight">7:00-9:00 pm</span> at McCamish Pavilion. You don't want to miss this exciting event!</div>
+<!--            <div id="invitation">Ramblin' Reck Club is proud to present its annual traditions celebration on <span class="highlight">Sunday, August 28th</span> from <span class="highlight">7:00-9:00 pm</span> at McCamish Pavilion. You don't want to miss this exciting event!</div>-->
+                <div id="invitation">Ramblin' Reck Club is proud to present its annual traditions celebration on <span class="highlight">Sunday, August 25th, 2019</span>. You don't want to miss this exciting event!</div>
             <div id="schedule">
                 <h2>Schedule of Events</h2>
                 <ul>
-                    <li>Block Party<span>7:00-8:00pm</span></li>
-                    <li>Traditions Presentation<span>8:00-9:00pm</span></li>
-                    <!--<li>Fireworks<span>9:00pm</span></li>-->
+<!--                    <li>Block Party<span>7:00-8:00pm</span></li>-->
+<!--                    <li>Traditions Presentation<span>8:00-9:00pm</span></li>-->
+<!--                    <li>Fireworks<span>9:00pm</span></li>-->
+                    <li>Coming soon!</li>
                 </ul>
             </div>
         </div>
         <div id="history">
             <h2>What is T-Night?</h2>
-            <p>
-                A tradition only exists if it stands the test of time. The reason Tech students today still know about Sideways, George P. Burdell, and the Freshman Cake Race can be attributed to the passing down of lore decade to decade. "Traditions Night", now referred to as simply T-Night, has emerged over the past half century as a more engaging and exciting way to preserve Tech history and traditions.
+            <p>					A tradition only exists if it stands the test of time. The reason Tech students today still know about Sideways, George P. Burdell, and the Freshman Cake Race can be attributed to the passing down of lore decade to decade. "Traditions Night", now referred to as simply T-Night, has emerged over the past half century as a more engaging and exciting way to preserve Tech history and traditions.
             </p>
-            <p>
-                T-Night is an annual, campus-wide event that serves to teach the student body, particularly the incoming freshman class, Tech history and traditions in a fun and interactive manner. With the help of the GT Band, the Student Alumni Association (SAA), the Georgia Tech Athletic Association (GTAA), and many other student organizations, the Ramblin' Reck Club seeks to instill a sense of pride in students along with knowledge of our school's past. And there's no better way to get excited about football season than a block party with all your fellow students!
-            </p>
+            <p>					T-Night is an annual, campus-wide event that serves to teach the student body, particularly the incoming freshman class, Tech history and traditions in a fun and interactive manner. With the help of the GT Band, the Georgia Tech Athletic Association (GTAA), and many other student organizations, the Ramblin' Reck Club seeks to instill a sense of pride in students along with knowledge of our school's past. And there's no better way to get excited about football season than a block party with all your fellow students!</p>
+            <p></p>
         </div>
-        <!-- <div id="speakers">
-          <h2>Speakers</h2>
-          <ul>
-              <li><div>Dr. Peterson</div></li>
-              <li><div>Coach Paul Johnson</div></li>
-              <li><div>Coach Brian Greggory</div></li>
-              <li><div>Johnathan Doe</div></li>
-          </ul>
-      </div> -->
         <div id="sponsors">
-            <h2 align="center">Put on by one big family...</h2>
-            <!-- <center><img src="/img/t-night/sponsors.png" /></center> -->
+            <h2 align="center">Put on by Ramblin' Reck Club with the support of its sponsors:</h2>
             <div id="sponsor_block" align="center">
                 <div id="reck-club" class="sponsor"></div>
-                <!--<div id="gtband" class="sponsor"></div>-->
-                <div id="saa" class="sponsor"></div>
                 <div id="gtaa" class="sponsor"></div>
+                <div id="adidas" class="sponsor"></div>
+                <div id="bj" class="sponsor"></div>
+                <div id="chik" class="sponsor"></div>
+            </div>
+            <div id="sponsor_block" align="center">
+                <div id="pops" class="sponsor"></div>
+                <div id="theory" class="sponsor"></div>
+                <div id="tiffs" class="sponsor"></div>
+                <div id="waho" class="sponsor"></div>
+                <div id="wings" class="sponsor"></div>
             </div>
         </div>
     </div>
-    <iframe width="100%" height="300" frameborder="0" src="http://a.tiles.mapbox.com/v3/dbyassmith.map-crfmub6e.html#17/33.77319458124425/-84.39320147037506"></iframe>
     <div class="container">
-        <footer>
-            © Copyright <?php echo date("Y"); ?> Ramblin' Reck Club. All Rights Reserved.
-        </footer>
+        <footer>© Copyright <?php echo date('Y'); ?> Ramblin' Reck Club. All Rights Reserved.</footer>
     </div>
 </div>
-
 
 </body></html>
