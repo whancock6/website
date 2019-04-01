@@ -1,7 +1,11 @@
 body {
     /*font-family: 'Open Sans', sans-serif;*/
     font-family: 'Comic Sans MS', sans-serif;
-    src: url("comic-sans-ms/comici.ttf");
+    @font-face {
+        font-family: "Comic Sans MS";
+        src: url("https://www.reckclub.org/fonts/comic-sans-ms/ComicSansMS3.ttf");
+        url("https://www.reckclub.org/fonts/comic-sans-ms/ComicSans.svg") format("svg");
+    }
 }
 
 h1,h2,h3,h4 {
