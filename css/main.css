@@ -1,6 +1,7 @@
 body {
     /*font-family: 'Open Sans', sans-serif;*/
     font-family: 'Comic Sans MS', sans-serif;
+    src: url("comic-sans-ms/comici.ttf");
 }
 
 h1,h2,h3,h4 {
