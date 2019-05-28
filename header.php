@@ -42,7 +42,6 @@
 							<div>
 								<span><a href="points.php" class="main highlight">Points</a></span>
 <!--								<span><a href="http://reckclub.org/mediastorage" class="main">Media</a></span>-->
-								<span><a href="history.php" class="main">History</a></span>
 							</div>
 
 							<div class="meta">
