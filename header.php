@@ -49,7 +49,7 @@
 								<ul>
 <!--									<li><a href="memberBalance.php">Balance</a></li>-->
 									<li><a href="contacts.php">Contacts</a></li>
-									<li><a href="memberSettingsForm.php">Settings</a></li>
+									<li><a href="memberProfile.php">Settings</a></li>
 									<li><a href="memberLogout.php">Log Out</a></li>
 								</ul>
 							</div>
