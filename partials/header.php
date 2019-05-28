@@ -45,7 +45,7 @@
                         Admin
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/editEvents.php">Add Event</a>
+                        <a class="dropdown-item" href="/editEvents.php">Edit Events</a>
                         <?php if($isSecretary == 1 || $isVP == 1 || $isAdmin == 1) :?>
                         <a class="dropdown-item" href="/manageMembers.php">Manage Members</a>
                         <a class="dropdown-item" href="/managePositions.php">Manage Positions</a>
