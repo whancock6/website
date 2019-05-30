@@ -320,7 +320,7 @@
     <hr class="mb-4">
     <div class="row">
         <form class="col-12" id="changeForm" name="changeForm" onsubmit="return newvalidate();" action="changeEvent.php" method="POST">
-            <h4 class="mb-3">Edit Event</h4>
+            <h4 class="mb-3">Update Event Information</h4>
             <div class="row">
                 <div class="offset-lg-1 col-6 mb-3">
                     <label for="dateMonth">Month</label>
@@ -394,7 +394,7 @@
             </div>
             <div class="row">
                 <div class="offset-md-3 col-md-6 col-xs-12 mb-3">
-                    <label for="eventID">Event Name: </label>
+                    <label for="eventID">Event to update: </label>
                     <select class="custom-select d-block w-100" name="eventID" id="eventID" onchange="reload2(this.form)">
                         <option value="">---</option>
                         <?php
@@ -434,10 +434,9 @@
             <?php if ($selectedEvent!="none" && $retrievedEvent != null): ?>
                 <div class="row mb-3">
                     <div class="offset-md-3 col-md-6 col-xs-12">
-                        <!--                    <hr class="mb-0">-->
-                        <h4 class="mt-3 mb-3">Event information</h4>
+<!--                        <h4 class="mt-3 mb-3">Event information</h4>-->
                         <input type="hidden" name="selectedEventID" value="<?php echo $selectedEvent; ?>">
-                        <div class="row">
+                        <div class="mt-3 row">
                             <div class="col-12 mb-3">
                                 <label for="event-name">Event name</label>
                                 <input type="text" class="form-control" name="newEventName" placeholder="" value="<?php echo $retrievedEvent['eventName'] ?>" required="" size="32" maxlength="32">
