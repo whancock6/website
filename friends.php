@@ -2,7 +2,6 @@
     require "logged_in_check.php";
     require "database_connect.php";
     require "set_session_vars_short.php";
-    require "html_header_begin.txt";
     $pageTitle = "Friends";
 ?>
 
