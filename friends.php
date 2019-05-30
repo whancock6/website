@@ -1,40 +1,10 @@
 <?php
-require "logged_in_check.php";
-require "database_connect.php";
-require "set_session_vars_short.php";
-require "html_header_begin.txt";
+    require "logged_in_check.php";
+    require "database_connect.php";
+    require "set_session_vars_short.php";
+    require "html_header_begin.txt";
+    $pageTitle = "Friends";
 ?>
-<title>Friends | Ramblin' Reck Club</title>
-<style>
-    .navigation-link {
-        background:none!important;
-        color: #005ace;
-        border:none;
-        padding:0!important;
-        font: inherit;
-        /*border is optional*/
-        /*border-bottom:1px solid #444;*/
-        cursor: pointer;
-    }
-
-    .navigation-link:hover {
-        text-decoration: underline;
-        color: #39f;
-    }
-</style>
-<?php require "html_header_end.txt"; ?>
-
-<h3>Friends List</h3>
-
-<div align="center">
-<!--    <a href="points.php">Back to Points</a><br/><br/>-->
-    <?php
-        echo "<form action=\"allAttended.php\" method=\"POST\">";
-        echo "<tr><td><button class='navigation-link' type=\"submit\">Back to Profile</button></td></tr>";
-        echo "<input type=\"hidden\" name=\"memberID\" value=\"".$_GET[memberId]."\">";
-        echo "</form>";
-    ?>
-</div>
 
 <?php
 
@@ -95,42 +65,55 @@ while ($row = $peopleQuery->fetch()) {
 
 ?>
 
-<table align="center">
-    <td colspan="5">
-        <div id="spacing_div" style="width:400px;"></div>
-    </td>
-    <tr bgcolor="#b3a369"><th colspan="5"><?php echo($currentFirstName) ?> <?php echo($currentLastName) ?></th></tr>
-    <tr><td colspan="5">Total Events Attended: <?php echo sizeof($eventIds) ?></td></tr>
-</table>
-<table align="center" width="408px">
-    <tr bgcolor="#b3a369"><th colspan="5">Friends</th></tr>
-    <?php
-    $sortedKeys = arsort($memberCountArray);
-    if (sizeof($sortedKeys) > 0) {
-        echo "<tr><th>Rank</th><th colspan=\"3\">Member</th><th colspan=\"2\">% Events Shared</th></tr>";
-        $count = 1;
-        foreach ($memberCountArray as $currentMemberId => $eventCount) {
-            $name = $people[$currentMemberId];
-            if (strlen($name) > 0) {
-                if ($currentMemberId == $memberID) {
-                    echo "<tr bgcolor=\"#b3a369\">";
-                } else {
-                    echo "<tr>";
-                }
-                echo "<td>" . $count . "</td>";
-                echo "<td colspan='3'>" . $people[$currentMemberId] . "</td>";
+<!DOCTYPE html>
+<html>
+<?php require "partials/head.php"; ?>
+<body>
+<?php require "partials/header.php"; ?>
 
-                $attendancePct = number_format(($eventCount/sizeof($eventIds))*100,1);
-                echo "<td colspan='2'>" . $eventCount . '/' . sizeof($eventIds) . ' (' . $attendancePct . '%)</td></tr>';
-                $count++;
-            }
-        }
-    } else {
-        echo "<tr><td>No members with shared events.</td></tr>";
-    }
-    ?>
+<div class="container">
+    <div class="row mb-3">
+        <div class="col-12">
+            <h3 class="float-left">Friends List for: <?php echo $currentFirstName . " " . $currentLastName; ?></h3>
+            <h3 class="float-right">Total Events Attended: <?php echo sizeof($eventIds) ?></h3>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-12">
+            <table class="table table-hover table-sm mb-3">
+                <?php
+                    $sortedKeys = arsort($memberCountArray);
+                    if (sizeof($sortedKeys) > 0) {
+                        echo "<thead><tr><th>Rank</th><th>Member</th><th>% Events Shared</th></tr></thead>";
+                        echo "<tbody>";
+                        $count = 1;
+                        foreach ($memberCountArray as $currentMemberId => $eventCount) {
+                            $name = $people[$currentMemberId];
+                            if (strlen($name) > 0) {
+                                if ($currentMemberId == $memberID) {
+                                    echo "<tr bgcolor=\"#b3a369\">";
+                                } else {
+                                    echo "<tr>";
+                                }
+                                echo "<td>" . $count . "</td>";
+                                echo "<td>" . $people[$currentMemberId] . "</td>";
 
-</table>
-<br/><br/><br/><br/>
+                                $attendancePct = number_format(($eventCount/sizeof($eventIds))*100,1);
+                                echo "<td>" . $eventCount . '/' . sizeof($eventIds) . ' (' . $attendancePct . '%)</td></tr>';
+                                $count++;
+                            }
+                        }
+                        echo "</tbody>";
+                    } else {
+                        echo "<tbody><tr><td>No members with shared events.</td></tr></tbody>";
+                    }
+                ?>
+            </table>
+        </div>
+    </div>
+</div>
+<?php require "partials/footer.php"; ?>
+<?php require "partials/scripts.php"; ?>
+</body>
 
-<?php require "html_footer.txt"; ?>
+</html>
