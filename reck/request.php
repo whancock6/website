@@ -130,9 +130,7 @@ $dt = new DateTime("now", new DateTimeZone($tz));
                     </div>
                     <div class="col-md-3 mb-3">
                         <label for="event-year">Event Year</label>
-                        <select class="custom-select d-block w-100" id="event-year" required="">
-                            <option selected="selected" value="<?php echo $dt->format('Y'); ?>"><?php echo $dt->format('Y'); ?></option>
-                        </select>
+                        <input id="event-year" class="form-control" maxlength="4" type="text" placeholder="Year" value="<?php echo $dt->format('Y'); ?>" required>
                         <div class="invalid-feedback">
                             Event year required.
                         </div>
