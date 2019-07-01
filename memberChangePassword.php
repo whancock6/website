@@ -11,7 +11,7 @@
 	
 	print("<h3>Password Changed</h3>");
 	print("<meta http-equiv=\"refresh\" ");
-	print("content=\"2; url=memberSettingsForm.php\">");
+	print("content=\"2; url=memberProfile.php\">");
 	
 	require "html_footer.txt";
 ?>

@@ -40,7 +40,7 @@
 ?>
 
 <br/><br/><br/>
-<h3>Settings Updated</h3>
-<meta http-equiv="refresh" content="2; url=memberSettingsForm.php">
+<h3>Profile Updated</h3>
+<meta http-equiv="refresh" content="2; url=memberProfile.php">
 
 <?php require "html_footer.txt"; ?>
