@@ -48,7 +48,7 @@
                         <a class="dropdown-item" href="/editEvents.php">Add Event</a>
                         <?php if($isSecretary == 1 || $isVP == 1 || $isAdmin == 1) :?>
                         <a class="dropdown-item" href="/manageMembers.php">Manage Members</a>
-                        <a class="dropdown-item" href="/managePositions.php">Manage Positions</a>
+<!--                        <a class="dropdown-item" href="/managePositions.php">Manage Positions</a>-->
                         <a class="dropdown-item" href="/manageWebsite.php">Manage Website</a>
                         <?php endif; ?>
                     </div>
