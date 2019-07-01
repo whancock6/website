@@ -30,29 +30,28 @@
     <h3>Manage Members</h3>
 
 
-<form>
-<table align="center">
-<tr><th colspan="2">Edit Member</th></tr>
-<tr bgcolor="#b3a369"><td>Select Member: </td>
-<td>
-<select name="selectedMember" id="selectedMember" onChange="reload(this.form)">
-   <option value="none"  <?PHP if($selectedMember=='NULL') echo "selected";?>>---</option>
+    <form>
+    <table align="center">
+    <tr><th colspan="2">Edit Member</th></tr>
+    <tr bgcolor="#b3a369"><td>Select Member: </td>
+    <td>
+    <select name="selectedMember" id="selectedMember" onChange="reload(this.form)">
+       <option value="none"  <?PHP if($selectedMember=='NULL') echo "selected";?>>---</option>
 
-<?php
-   while($row = $query->fetch()) {
-          echo "<option value=\"".$row[memberID]."\" ";
-           if($selectedMember==$row[memberID]) {
-                  echo "selected";
-           }
-          echo ">".$row[lastName].", ".$row[firstName]."</option>";
-   }    
-?>
+    <?php
+       while($row = $query->fetch()) {
+              echo "<option value=\"".$row[memberID]."\" ";
+               if($selectedMember==$row[memberID]) {
+                      echo "selected";
+               }
+              echo ">".$row[lastName].", ".$row[firstName]."</option>";
+       }
+    ?>
 
-</select>
-</td></tr>
-</table>
-</form>
-</br></br>
+    </select>
+    </td></tr>
+    </table>
+    </form>
 
 <?php
 	if($selectedMember != "none") {
@@ -207,61 +206,75 @@ if($selectedMember != "none") {
 </td></tr></table>
 </form>
 
-</br></br>
 
 <?php
 } else{
 ?>
+    
 
-<br/><hr/ width=800><br/>
+    <div class="row">
+        <form class="col-12" name="createForm" onsubmit="return validateCreate();" action="createMember.php" method="POST">
+            <h4 class="mb-3">Create Member</h4>
+            <div class="row">
+                <div class="col-lg-6 mb-3">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" name="username" placeholder="gpburdell" value="" required="" size="32" maxlength="32">
+                    <div class="invalid-feedback">
+                        Valid username is required.
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-3">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" name="password" placeholder="reckclub1930" value="" required="" size="32" maxlength="32">
+                    <div class="invalid-feedback">
+                        Valid password is required.
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 mb-3">
+                    <label for="firstName">First Name</label>
+                    <input type="text" class="form-control" name="firstName" placeholder="George" value="" required="" size="32" maxlength="32">
+                    <div class="invalid-feedback">
+                        Valid username is required.
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-3">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" class="form-control" name="lastName" placeholder="Burdell" value="" required="" size="32" maxlength="32">
+                    <div class="invalid-feedback">
+                        Valid password is required.
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-3">
+                    <label for="status">Status</label>
+                    <select class="custom-select d-block w-100 mb-3" name="status" id="status">
+                    <option value="probate">Probate</option>
+                    <option value="member">Member</option>
+                    <option value="social">Social</option>
+                    <option value="alumni">Alumni</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="offset-md-3 col-md-6 col-xs-12 mb-3">
+                    <button class="btn btn-primary btn-md btn-block" type="submit">Create member</button>
+                </div>
+            </div>
+        </form>
+    </div>
 
-<form name="createForm" id="createForm" onsubmit="return validateCreate();" action="createMember.php" method="POST">
-<table align="center">
-<tr><th colspan="2">Create Member</th></tr>
-<tr bgcolor="#b3a369"><td>
-<label for="username">Username: </label></td><td>
-<input type="text" name="username" size=32 maxlength=32>
-</td></tr>
-<tr bgcolor="#b3a369"><td>
-<label for="password">Password: </label></td><td>
-<input type="text" name="password" size=32 maxlength=32>
-</td></tr>
-<tr bgcolor="#b3a369"><td>
-<label for="firstName">First Name: </label></td><td>
-<input type="text" name="firstName" size=32 maxlength=32>
-</td></tr>
-<tr bgcolor="#b3a369"><td>
-<label for="lastName">Last Name: </label></td><td>
-<input type="text" name="lastName" size=32 maxlength=32>
-</td></tr>
-<tr bgcolor="#b3a369"><td>
-<label for="status">Status: </label></td><td>
-<select name="status" id="status">
-	<option value="probate">probate</option>
-	<option value="member">member</option>
-	<option value="social">social</option>
-	<option value="alumni">alumni</option>
-</select>
-</td></tr>
-<tr><td colspan="2">
-<input type="submit" value="Create">
-</td></tr>
-</table>
-</form>
-
-<br/><hr/ width=800><br/>
-
-<?php
-	$query3 = $db->query("SELECT memberID, firstName, lastName FROM Member ORDER BY lastName");
-    $query3->setFetchMode(PDO::FETCH_ASSOC);
-?>
+    <?php
+        $query3 = $db->query("SELECT memberID, firstName, lastName FROM Member ORDER BY lastName");
+        $query3->setFetchMode(PDO::FETCH_ASSOC);
+    ?>
 
     <div class="row">
         <form class="col-12" name="deleteForm" action="deleteMember.php" method="POST">
             <h4 class="mb-3">Delete Member</h4>
             <div class="row">
                 <div class="offset-md-3 col-md-6 col-xs-12 mb-3">
-                    <label for="memberID">Member Name: </label>
+                    <label for="memberID">Member Name </label>
                     <select class="custom-select d-block w-100 mb-3" name="memberID" id="memberID">
                         <option value="">---</option>
                         <?php
