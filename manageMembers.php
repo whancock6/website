@@ -1,121 +1,22 @@
 <?php
 	require "logged_in_check.php";
-	if ($_SESSION[isAdmin]==0 && $_SESSION[isSecretary]==0) {
+	if ($_SESSION['isAdmin']==0 && $_SESSION['isSecretary']==0) {
 		echo "<meta http-equiv=\"REFRESH\" content=\"0;url=points.php\">";
 		die;
-	} else {}
-	require "database_connect.php";
-	
-	require "html_header_begin.txt";
+	}
+    require "set_session_vars_full.php";
+    require "database_connect.php";
+    $pageTitle = "Manage Members";
 ?>
-<SCRIPT type="text/javascript">
-	function confirmSubmit() 
-	{
-	var agree=confirm("Are you sure you wish to DELETE this member?");
-	if (agree)
-		return true ;
-	else
-		return false ;
-	}
-	var whitespace = " \t\n\r";
-	function isEmpty(s) {
-	   var i;
-	   if((s == null) || (s.length == 0))
-	      return true;
-	   // Search string looking for characters that are not whitespace
-	   for (i = 0; i < s.length; i++) {   
-	      var c = s.charAt(i);
-	      if (whitespace.indexOf(c) == -1) 
-	        return false;
-	    }
-	    // At this point all characters are whitespace.
-	    return true;
-	}
-	var intRegex = /^\d+$/;
-	function hasWhiteSpace(s) {
-	  return s.indexOf(' ') >= 0;
-	}
-	function validate() {
-	  if (isEmpty(document.myform.username.value)) {
-	        alert("Error: Username is required.");
-	        document.myform.username.focus();
-	        return false;
-	    }
-	  if (hasWhiteSpace(document.myform.username.value)) {
-	        alert("Error: Username cannot contain a space. Try again.");
-	        document.myform.username.focus();
-	        return false;
-	    }
-	  if (hasWhiteSpace(document.myform.password.value)) {
-	        alert("Error: Password cannot contain a space. Try again.");
-	        document.myform.password.focus();
-	        return false;
-	    }
-	  if (isEmpty(document.myform.firstName.value)) {
-	        alert("Error: First name is required.");
-	        document.myform.firstName.focus();
-	        return false;
-	    }
-	  if (isEmpty(document.myform.lastName.value)) {
-	        alert("Error: Last name is required.");
-	        document.myform.lastName.focus();
-	        return false;
-	    }
-	  if (!intRegex.test(document.myform.zipCode.value) && !isEmpty(document.myform.zipCode.value)) {
-	        alert("Error: Zip code must be an integer.");
-	        document.myform.zipCode.focus();
-	        return false;
-	    }
-	  if (!intRegex.test(document.myform.joinYear.value) && !isEmpty(document.myform.joinYear.value)) {
-	        alert("Error: Join year must be an integer.");
-	        document.myform.joinYear.focus();
-	        return false;
-	    }
-	  if (!intRegex.test(document.myform.gradYear.value) && !isEmpty(document.myform.gradYear.value)) {
-	        alert("Error: Graduation year must be an integer.");
-	        document.myform.gradYear.focus();
-	        return false;
-	    }
-	  return true;		  
-	}
-	function validateCreate() {
-	  if (isEmpty(document.createForm.username.value)) {
-	        alert("Error: Username is required.");
-	        document.createForm.username.focus();
-	        return false;
-	    }
-	  if (hasWhiteSpace(document.createForm.username.value)) {
-	        alert("Error: Username cannot contain a space. Try again.");
-	        document.createForm.username.focus();
-	        return false;
-	    }
-	  if (hasWhiteSpace(document.createForm.password.value)) {
-	        alert("Error: Password cannot contain a space. Try again.");
-	        document.createForm.password.focus();
-	        return false;
-	    }
-	  if (isEmpty(document.createForm.firstName.value)) {
-	        alert("Error: First name is required.");
-	        document.createForm.firstName.focus();
-	        return false;
-	    }
-	  if (isEmpty(document.createForm.lastName.value)) {
-	        alert("Error: Last name is required.");
-	        document.createForm.lastName.focus();
-	        return false;
-	    }
-	  return true;
-	}
-	function reload(form){
-	var selectedMember=form.selectedMember.options[form.selectedMember.options.selectedIndex].value;
-	self.location='manageMembers.php?selectedMember=' + selectedMember;
-	}
-</SCRIPT>
-<?php require "html_header_end.txt"; ?>
-<br>
+
+<!DOCTYPE html>
+<html>
+<?php require "partials/head.php"; ?>
+<body>
+<?php require "partials/header.php"; ?>
 
 <?php
-	@$selectedMember=$_GET[selectedMember];
+	@$selectedMember=$_GET['selectedMember'];
 	
 	if(isset($selectedMember)) {
 	} else {
@@ -125,12 +26,9 @@
 	$query = $db->query("SELECT firstName, lastName, memberID FROM Member ORDER BY lastName");
 		$query->setFetchMode(PDO::FETCH_ASSOC);
 ?>
+<div class="container mb-3">
+    <h3>Manage Members</h3>
 
-
-<h3>Manage Members</h3>
-<div align="center">
-<a href="points.php">Back to Points</a><br><br>
-</div><br>
 
 <form>
 <table align="center">
@@ -355,37 +253,142 @@ if($selectedMember != "none") {
 
 <?php
 	$query3 = $db->query("SELECT memberID, firstName, lastName FROM Member ORDER BY lastName");
-		$query3->setFetchMode(PDO::FETCH_ASSOC);
+    $query3->setFetchMode(PDO::FETCH_ASSOC);
 ?>
 
-<form name="deleteForm" action="deleteMember.php" method="POST">
-<table align="center">
-<tr><th colspan="2">Delete Member</th></tr>
-<tr bgcolor="#b3a369"><td>Select Member: </td>
-<td>
-<select name="memberID" id="memberID">
-   <option value="none">---</option>
-<?php
-   while($row3 = $query3->fetch()) {
-          echo "<option value=\"".$row3[memberID]."\" ";
-           if($selectedMember==$row3[memberID]) {
-                  echo "selected";
-           }
-          echo ">".$row3[lastName].", ".$row3[firstName]."</option>";
-   }    
-?>
-</select>
-</td></tr>
-<tr><td colspan="2">
-<input type="submit" value="Delete" onClick="return confirmSubmit()">
-</td></tr>
-</table>
-</form>
+    <div class="row">
+        <form class="col-12" name="deleteForm" action="deleteMember.php" method="POST">
+            <h4 class="mb-3">Delete Member</h4>
+            <div class="row">
+                <div class="offset-md-3 col-md-6 col-xs-12 mb-3">
+                    <label for="memberID">Member Name: </label>
+                    <select class="custom-select d-block w-100 mb-3" name="memberID" id="memberID">
+                        <option value="">---</option>
+                        <?php
+                        while($row3 = $query3->fetch()) {
+                            echo "<option value=\"".$row3['memberID']."\" ";
+                            if($selectedMember==$row3['memberID']) {
+                                echo "selected";
+                            }
+                            echo ">".$row3['lastName'].", ".$row3['firstName']."</option>";
+                        }
+                        ?>
+                    </select>
+                    <button class="btn btn-danger btn-md btn-block" type="submit" onClick="return confirmSubmit()">Delete member</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
 
 <?php
 }
 ?>
-
-</br></br>
-
-<?php require "html_footer.txt"; ?>
+</div>
+<?php require "partials/footer.php"; ?>
+<?php require "partials/scripts.php"; ?>
+<SCRIPT type="text/javascript">
+    function confirmSubmit()
+    {
+        var agree=confirm("Are you sure you wish to DELETE this member?");
+        if (agree)
+            return true ;
+        else
+            return false ;
+    }
+    var whitespace = " \t\n\r";
+    function isEmpty(s) {
+        var i;
+        if((s == null) || (s.length == 0))
+            return true;
+        // Search string looking for characters that are not whitespace
+        for (i = 0; i < s.length; i++) {
+            var c = s.charAt(i);
+            if (whitespace.indexOf(c) == -1)
+                return false;
+        }
+        // At this point all characters are whitespace.
+        return true;
+    }
+    var intRegex = /^\d+$/;
+    function hasWhiteSpace(s) {
+        return s.indexOf(' ') >= 0;
+    }
+    function validate() {
+        if (isEmpty(document.myform.username.value)) {
+            alert("Error: Username is required.");
+            document.myform.username.focus();
+            return false;
+        }
+        if (hasWhiteSpace(document.myform.username.value)) {
+            alert("Error: Username cannot contain a space. Try again.");
+            document.myform.username.focus();
+            return false;
+        }
+        if (hasWhiteSpace(document.myform.password.value)) {
+            alert("Error: Password cannot contain a space. Try again.");
+            document.myform.password.focus();
+            return false;
+        }
+        if (isEmpty(document.myform.firstName.value)) {
+            alert("Error: First name is required.");
+            document.myform.firstName.focus();
+            return false;
+        }
+        if (isEmpty(document.myform.lastName.value)) {
+            alert("Error: Last name is required.");
+            document.myform.lastName.focus();
+            return false;
+        }
+        if (!intRegex.test(document.myform.zipCode.value) && !isEmpty(document.myform.zipCode.value)) {
+            alert("Error: Zip code must be an integer.");
+            document.myform.zipCode.focus();
+            return false;
+        }
+        if (!intRegex.test(document.myform.joinYear.value) && !isEmpty(document.myform.joinYear.value)) {
+            alert("Error: Join year must be an integer.");
+            document.myform.joinYear.focus();
+            return false;
+        }
+        if (!intRegex.test(document.myform.gradYear.value) && !isEmpty(document.myform.gradYear.value)) {
+            alert("Error: Graduation year must be an integer.");
+            document.myform.gradYear.focus();
+            return false;
+        }
+        return true;
+    }
+    function validateCreate() {
+        if (isEmpty(document.createForm.username.value)) {
+            alert("Error: Username is required.");
+            document.createForm.username.focus();
+            return false;
+        }
+        if (hasWhiteSpace(document.createForm.username.value)) {
+            alert("Error: Username cannot contain a space. Try again.");
+            document.createForm.username.focus();
+            return false;
+        }
+        if (hasWhiteSpace(document.createForm.password.value)) {
+            alert("Error: Password cannot contain a space. Try again.");
+            document.createForm.password.focus();
+            return false;
+        }
+        if (isEmpty(document.createForm.firstName.value)) {
+            alert("Error: First name is required.");
+            document.createForm.firstName.focus();
+            return false;
+        }
+        if (isEmpty(document.createForm.lastName.value)) {
+            alert("Error: Last name is required.");
+            document.createForm.lastName.focus();
+            return false;
+        }
+        return true;
+    }
+    function reload(form){
+        var selectedMember=form.selectedMember.options[form.selectedMember.options.selectedIndex].value;
+        self.location='manageMembers.php?selectedMember=' + selectedMember;
+    }
+</SCRIPT>
+</body>
+</html>
