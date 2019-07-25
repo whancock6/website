@@ -185,14 +185,14 @@
             background:url('/img/t-night/reck-club.png');
         }
         #tiffs{
-            background:url('/img/t-night/tiffs.png');
+            background:url('/img/t-night/tiffsFinal.png');
         }
-        #pops{
-            background:url('/img/t-night/pops.png');
+        #gusto{
+            background:url('/img/t-night/gusto.png');
         }
-        #adidas{
-            background:url('/img/t-night/adidas.png');
-        }
+        /*#adidas{*/
+        /*    background:url('/img/t-night/adidas.png');*/
+        /*}*/
         #gtaa{
             background:url('/img/t-night/gtaa.png');
         }
@@ -208,8 +208,8 @@
         #bj{
             background:url('/img/t-night/bj.png');
         }
-        #theory{
-            background:url('/img/t-night/theory.png');
+        #parent{
+            background:url('/img/t-night/parents_fund.png');
         }
         footer{
             text-align: center;
@@ -422,13 +422,13 @@
             <div id="sponsor_block" align="center">
                 <div id="reck-club" class="sponsor"></div>
                 <div id="gtaa" class="sponsor"></div>
-                <div id="adidas" class="sponsor"></div>
+<!--                <div id="adidas" class="sponsor"></div>-->
                 <div id="bj" class="sponsor"></div>
                 <div id="chik" class="sponsor"></div>
             </div>
             <div id="sponsor_block" align="center">
-                <div id="pops" class="sponsor"></div>
-                <div id="theory" class="sponsor"></div>
+                <div id="gusto" class="sponsor"></div>
+                <div id="parent" class="sponsor"></div>
                 <div id="tiffs" class="sponsor"></div>
                 <div id="waho" class="sponsor"></div>
                 <div id="wings" class="sponsor"></div>
