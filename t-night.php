@@ -403,10 +403,10 @@
             <div id="schedule">
                 <h2>Schedule of Events</h2>
                 <ul>
-<!--                    <li>Block Party<span>7:00-8:00pm</span></li>-->
-<!--                    <li>Traditions Presentation<span>8:00-9:00pm</span></li>-->
+                    <li>Traditions Festival<span>6:00 PM</span></li>
+                    <li>T-Night Show<span>7:00 PM</span></li>
 <!--                    <li>Fireworks<span>9:00pm</span></li>-->
-                    <li>Coming soon!</li>
+<!--                    <li>Coming soon!</li>-->
                 </ul>
             </div>
         </div>
