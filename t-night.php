@@ -190,9 +190,9 @@
         #gusto{
             background:url('/img/t-night/gusto.png');
         }
-        /*#adidas{*/
-        /*    background:url('/img/t-night/adidas.png');*/
-        /*}*/
+        #king{
+            background:url('/img/t-night/kingofpops.png');
+        }
         #gtaa{
             background:url('/img/t-night/gtaa.png');
         }
@@ -420,9 +420,9 @@
         <div id="sponsors">
             <h2 align="center">Put on by Ramblin' Reck Club with the support of its sponsors:</h2>
             <div id="sponsor_block" align="center">
-                <div id="reck-club" class="sponsor"></div>
                 <div id="gtaa" class="sponsor"></div>
-<!--                <div id="adidas" class="sponsor"></div>-->
+                <div id="king" class="sponsor"></div>
+                <div id="reck-club" class="sponsor"></div>
                 <div id="bj" class="sponsor"></div>
                 <div id="chik" class="sponsor"></div>
             </div>
