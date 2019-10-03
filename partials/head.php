@@ -7,7 +7,7 @@
     <meta name="author" content="Ramblin' Reck Club">
     <title><?php echo $pageTitle. " | Ramblin' Reck Club" ?></title>
 
-    <link rel="stylesheet" href="/css/bootstrap.min.css?v=<?php echo filemtime(getcwd() . '/css/bootstrap.min.css'); ?>">
-    <link rel="stylesheet" href="/css/main.css?v=<?php echo filemtime(getcwd() . '/css/main.css'); ?>">
-    <link rel="stylesheet" href="/css/fontawesome-all.min.css?v=<?php echo filemtime(getcwd() . '/css/login.css'); ?>">
+    <link rel="stylesheet" href="/css/bootstrap.min.css?v=<?php echo filemtime(dirname(__FILE__, 2) . '/css/bootstrap.min.css'); ?>">
+    <link rel="stylesheet" href="/css/main.css?v=<?php echo filemtime(dirname(__FILE__, 2) . '/css/main.css'); ?>">
+    <link rel="stylesheet" href="/css/fontawesome-all.min.css?v=<?php echo filemtime(dirname(__FILE__, 2) . '/css/login.css'); ?>">
 </head>
