@@ -44,6 +44,16 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Homecoming
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/Hoco/Mini500.php">Mini 500</a>
+<!--                        <a class="dropdown-item" >Cake Race</a>-->
+<!--                        <a class="dropdown-item" >Reck Parade</a>-->
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         RECKruitment
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
