@@ -9,20 +9,20 @@
 	require "html_header_begin.txt";
 	require "html_header_begin.txt";
 
-	if($_POST[newIsBonus] == 'on') {
+	if($_POST['newIsBonus'] == 'on') {
 		$bonus = 1;
 	} else {
 		$bonus = 0;
 	}
 	
-	if($_POST[isFamilyEvent] == 'on') {
+	if($_POST['newIsFamilyEvent'] == 'on') {
 		$family = 1;
 	} else {
 		$family = 0;
 	}
 	
 	$query = $db->prepare("UPDATE Event SET eventName=:newEventName, dateYear=:newDateYear, dateMonth=:newDateMonth, dateDay=:newDateDay, pointValue=:newPointValue, isBonus=:bonus, isFamilyEvent=:family, type=:newType WHERE eventID=:eventID");
-	$query->execute(array('newEventName'=>$_POST[newEventName], 'newDateYear'=>$_POST[newDateYear], 'newDateMonth'=>$_POST[newDateMonth], 'newDateDay'=>$_POST[newDateDay], 'newPointValue'=>$_POST[newPointValue], 'bonus'=>$bonus, 'family'=>$family, 'newType'=>$_POST[newType], 'eventID'=>$_POST[eventID]));
+	$query->execute(array('newEventName'=>$_POST[newEventName], 'newDateYear'=>$_POST[newDateYear], 'newDateMonth'=>$_POST[newDateMonth], 'newDateDay'=>$_POST[newDateDay], 'newPointValue'=>$_POST[newPointValue], 'bonus'=>$bonus, 'family'=>$family, 'newType'=>$_POST[newType], 'eventID'=>$_POST['selectedEventID']));
 
 	// CALCULATE ALL MEMBERS' TOTAL POINTS
 	//------------------------------------
