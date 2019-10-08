@@ -24,6 +24,7 @@
         <div class="message-space row"></div>
         <div class="row">
             <form class="needs-validation col-12 mb-3" novalidate="" action="memberSettings.php" method="POST">
+                <input type="hidden" name="memberID" value="<?php echo $currentMemberId; ?>">
                 <h4 class="mb-3">Personal Information</h4>
                 <div class="row">
                     <div class="col-md-6 mb-3">
@@ -44,7 +45,7 @@
                 <div class="mb-3">
                     <label for="member-username">Username</label>
                     <div class="input-group">
-                        <input type="text" class="form-control" name="username" size=32 maxlength=32 value="<?php echo($currentMember['username']) ?>" <?php echo $readonlyStatus; ?>>
+                        <input type="text" class="form-control" name="username" size=32 maxlength=32 value="<?php echo($currentMember['username']) ?>" disabled>
                         <div class="invalid-feedback" style="width: 100%;">
                             Your username is required.
                         </div>
