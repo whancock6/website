@@ -47,7 +47,7 @@
                         Homecoming
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/Hoco/Mini500.php">Mini 500</a>
+                        <a class="dropdown-item" href="/homecoming/mini500.php">Mini 500</a>
 <!--                        <a class="dropdown-item" >Cake Race</a>-->
 <!--                        <a class="dropdown-item" >Reck Parade</a>-->
                     </div>
