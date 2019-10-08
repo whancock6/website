@@ -13,35 +13,29 @@
 
     <h4 class="mb-3">Overview of Application Process and Timeline</h4>
 
-    <p>A full and complete application for membership includes:</p>
-
+    <p class="mb-0">A full and complete application for membership includes:</p>
+    <p class="mt-0 text-muted"><i>Note: submission deadline and all event dates TBD for 2020</i></p>
     <ul>
-<!--        <li>A written application submitted by January 26th at 11:59PM</li>-->
-<!--        <li>Attendance at one of the three selected GT athletic events</li>-->
-<!--        <li>Attendance at the first social on Monday, January 28th</li>-->
-<!--        <li>Interviews (individual and group),  January 29th – 31st</li>-->
-<!--        <li>Attendance at the second social on Monday, February 4th (by invitation only)</li>-->
-<!--        <li>Attendance at the all-club Spring Retreat on Sunday, February 10th (if selected to be a 2019 probate)</li>-->
-        <li>A written application submitted by TBD</li>
+        <li>A submitted written application</li>
         <li>Attendance at one of the three selected GT athletic events</li>
-        <li>Attendance at the first social on TBD</li>
-        <li>Interviews (individual and group),  Dates TBD</li>
-        <li>Attendance at the second social on Date TBD (by invitation only)</li>
-        <li>Attendance at the all-club Spring Retreat on Date TBD (if selected to be a 2019 probate)</li>
+        <li>Attendance at the first social</li>
+        <li>Interviews (individual and group)</li>
+        <li>Attendance at the second social (by invitation only)</li>
+        <li>Attendance at the all-club Spring Retreat (if selected to be a 2019 probate)</li>
     </ul>
 
-    <p>For details about the above requirements, see below for more information!</p>
+    <p>For details about each of the above requirements, check out the sections below for more information!</p>
 
-    <p>Any absences or potential conflicts with the required events should be brought to the attention of <a href="mailto:membershipchair@reckclub.org">Halle Bryan</a> no later than January 26th.</p>
+    <p>Any absences or potential conflicts with the required events should be brought to the attention of <a href="mailto:membershipchair@reckclub.org">Halle Bryan</a>, Ramblin’ Reck Club Recruitment Chair, no later than (TBD for 2020 cycle).</p>
 <h4 class="mb-3">Probate Requirements</h4>
 
 <p>Before applying be sure to read the following requirements:</p>
 
 <ul>
     <li>Applicants must be in good academic and judicial standing. We will verify your academic and judicial standing with the Institute.</li>
-    <li>Applicants may <strong>not</strong> graduate prior to December 2019.</li>
+    <li>Applicants may <strong>not</strong> graduate prior to December 2020.</li>
     <li>Applicants must be able to attend a weekly probate meeting on Monday evenings from 6:15-7:15 PM and then the full club meeting at 7:15 PM. Exceptions to this can be made, but very rarely.</li>
-    <li>Spring 2020 out-of-town co-ops and study abroad students are not eligible to apply this RECKruitment season. Fall 2020 out-of-town co-ops will be dealt with on a case by case basis. Email <a href="mailto:membershipchair@reckclub.org">Halle Bryan</a> if you have questions or concerns.</li>
+    <li>Spring 2020 out-of-town co-ops and study abroad students are not eligible to apply this RECKruitment season. Fall 2020 out-of-town co-ops will be dealt with on a case by case basis. Email <a href="mailto:membershipchair@reckclub.org">Halle Bryan</a>, Ramblin’ Reck Club Recruitment Chair, if you have questions or concerns.</li>
 </ul>
 
 <h4 class="mb-3">Written Application</h4>
@@ -57,7 +51,7 @@
 <!--    <li><strong>Thursday, January 17</strong>: DM Smith 304 from 6:00pm-7:00pm</li>-->
 <!--    <li><strong>Tuesday, January 22</strong>: DM Smith 304 from 6:00pm-7:00pm</li>-->
 <!--    <li><strong>First Social: Monday, January 28th at 7:15pm (Mandatory)</strong></li>-->
-  <text>Dates, times, and locations TBD</text>
+  <li>Check back here in December 2019 for info session dates for the 2020 recruitment cycle!</li>
 </ul>
 
     <p>Attending this social is your chance as an applicant to meet Reck Clubbers for the first time, get a feel for what Ramblin’ Reck Club is all about, ask any questions you may have about the Club or getting involved, and most importantly, sign up for an interview time. No need to stress about this event; be yourself and talk to anyone you do not already know! Dress code for this event is <strong>business casual</strong>, and will be hosted in the Edge Building Trophy Room (on the corner of Techwood and Bobby Dodd).</p>
@@ -71,14 +65,14 @@
 <!--    <li><strong>Wednesday, January 23rd</strong>: Tech Rec Bowling at 7pm in the Student Center</li>-->
 <!--    <li><strong>Sunday, January 27th</strong>: Women’s Basketball game vs. NC State at 2pm in McCamish Pavilion</li>-->
 <!--    <li><strong>Interviews: Tuesday, January 29th through Thursday, January 31st from 5:30-9pm (Mandatory)</strong></li>-->
-    <text>Dates, times, and location TBD</text>
+    <li>Check back here in December 2019 for athletic social dates for the 2020 recruitment cycle!</li>
 </ul>
 
-    <p>The interview portion of RECKruitment is designed to allow for Reck Clubbers to get to know applicants on a more personal basis. No need to stress! We just want to give each applicant the time to express their ideas, commitment, and personality. The interview stage will include a 20 minute individual interview followed by a short group interview activity. Dress code for this event is <strong>business semi-formal</strong>, and will be hosted in the Student Success Center Skyboxes. <a href="http://admission.gatech.edu/visit/bill-moore-student-success-center">Click here</a> for directions to the building, and be on the lookout for directions inside the building to the Skyboxes once you arrive. Interviewees will sign up for an interview time slot during check-in at the first social on (TBD).</p>
+    <p>The interview portion of RECKruitment is designed to allow for Reck Clubbers to get to know applicants on a more personal basis. No need to stress! We just want to give each applicant the time to express their ideas, commitment, and personality. The interview stage will include a 20 minute individual interview followed by a short group interview activity. Dress code for this event is <strong>business semi-formal</strong>, and will be hosted in the Student Success Center Skyboxes. <a href="http://admission.gatech.edu/visit/bill-moore-student-success-center">Click here</a> for directions to the building, and be on the lookout for directions inside the building to the Skyboxes once you arrive. Interviewees will sign up for an interview time slot during check-in at the first social.</p>
 
 <p>After all interviews have been conducted, the Recruitment Chair will notify each applicant whether they will advance to the second round of RECKruitment. During this second round, applicants will attend a mandatory second social (invitation only) held on the evening of Monday, February 4th. Further details for this event will be published to applicants personally.</p>
 
-    <p>Any time conflicts with these events should be brought to the attention of <a href="mailto:membershipchair@reckclub.org">Halle Bryan</a>, Ramblin’ Reck Club Recruitment Chair, no later than <strong>Date TBD</strong>.</p>
+    <p>Any time conflicts with these events should be brought to the attention of <a href="mailto:membershipchair@reckclub.org">Halle Bryan</a>, Ramblin’ Reck Club Recruitment Chair, no later than <strong>(TBD for 2020 cycle)</strong>.</p>
 
 
     <p>We wish you the best of luck during this recruitment process, and we look forward to meeting you soon! Thank you for considering joining Ramblin’ Reck Club!</p>
