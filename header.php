@@ -76,7 +76,7 @@
 					<?php endif; ?>
 					<?php if($isSecretary == 1 || $isVP == 1 || $isAdmin == 1) :?>
 					<li><a href="manageMembers.php">Edit Members</a></li>
-					<li><a href="managePositions.php">Manage Positions</a></li>
+<!--					<li><a href="managePositions.php">Manage Positions</a></li>-->
 <!--					<li><a href="manageCommittees.php">Manage Commitees</a></li>-->
 					<li><a href="manageWebsite.php">Manage Website</a></li>
 					<?php endif; ?>
