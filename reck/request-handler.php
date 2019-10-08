@@ -21,6 +21,12 @@ $mailOptions = [
                     "name" => "Ramblin\' Reck Driver",
                     "email" => getenv("RECK_REQUEST_RECIPIENT") // add the actual email here from the .env IN PLESK. DO NOT ADD IT IN THE SOURCE CODE.
                 ]
+            ],
+            "bcc" => [
+                [
+                    "name" => "Backup Email",
+                    "email" => getenv("BACKUP_REQUEST_RECIPIENT") //add the actual email here ""
+                ]
             ]
         ]
     ],
