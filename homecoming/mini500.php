@@ -36,10 +36,10 @@
 
 <div class="container">
     <div class='row text-center'>
-        <div class='col-sm-4 col-xs-12'>
+        <div class='col-sm-4 col-xs-12 mb-3 mb-sm-0'>
             <a class='btn btn-md btn-secondary' href="#race-day-info">Race Day Info</a>
         </div>
-        <div class='col-sm-4 col-xs-12'>
+        <div class='col-sm-4 col-xs-12 mb-3 mb-sm-0'>
             <a class='btn btn-md btn-primary' href="/assets/2019-Mini-500-Rule-Book.pdf" target="_blank">2019 Mini 500 Rule Book</a>
         </div>
         <div class='col-sm-4 col-xs-12'>
@@ -96,9 +96,9 @@
     
     foreach ($info1 as $item) {
         echo "<div class='row mb-3'>";
-        echo "<div class='col-sm-5 col-xs-12'><img class= \"img-fluid\" src=\"" . $item["image"] . "\"/></div>";
+        echo "<div class='col-sm-5 col-xs-12'><img class= \"img-fluid mb-3 mb-sm-0\" src=\"" . $item["image"] . "\"/></div>";
         echo "<div class='col-sm-7 col-xs-12'>";
-        echo "<h2><strong>". $item["title"] . "</strong></h2><p> " . $item["main"] . "<p></div>";
+        echo "<h4>". $item["title"] . "</h4><p> " . $item["main"] . "<p></div>";
         echo "</div>";
     }
 ?>
@@ -155,15 +155,14 @@
 
         echo "<br><div class= 'blog-header'>";
         echo "<div class='col-12' style=\"text-align: center;\">";
-        echo "<h1 id='race-day-info'><strong>Race Day Info</strong></h1></div></div><br>";
+        echo "<h1 id='race-day-info'>Race Day Info</h1></div></div><br>";
 
 
         foreach ($info2 as $item) {
             echo "<div class='row mb-3'>";
-            echo "<div class='col-sm-5 col-xs-12'><img class= \"img-fluid\" src=\"" . $item["image"] . "\"/></div>";
+            echo "<div class='col-sm-5 col-xs-12'><img class= \"img-fluid mb-3 mb-sm-0\" src=\"" . $item["image"] . "\"/></div>";
             echo "<div class='col-sm-7 col-xs-12'>";
-            echo "<h2><strong>". $item["title"] .
-                "</strong></h2><p> " . $item["main"] . "<p><br></div>";
+            echo "<h4>". $item["title"] . "</h4><p> " . $item["main"] . "<p><br></div>";
             echo "</div>";
         }
 
