@@ -92,7 +92,7 @@
                 <div class="row">
                     <div class="col-md-6 mb-3">
                         <label for="event-type">Type</label>
-                        <select class="custom-select d-block w-100" name="type" id="event-type" onChange="reload(this.form)" required="">
+                        <select class="custom-select d-block w-100" name="type" id="event-type" required="">
                             <option value="mandatory"  <?PHP if($currentType=="mandatory") echo "selected";?>>Mandatory</option>
                             <option value="sports"  <?PHP if($currentType=="sports") echo "selected";?>>Sports</option>
                             <option value="social"  <?PHP if($currentType == NULL || $currentType=="social") echo "selected";?>>Social</option>
