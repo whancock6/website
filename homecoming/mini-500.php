@@ -96,8 +96,8 @@
     
     foreach ($info1 as $item) {
         echo "<div class='row mb-3'>";
-        echo "<div class='col-sm-5 col-xs-12'><img class= \"img-fluid mb-3 mb-sm-0\" src=\"" . $item["image"] . "\"/></div>";
-        echo "<div class='col-sm-7 col-xs-12'>";
+        echo "<div class='col-md-5 col-sm-12'><img class= \"img-fluid mb-3 mb-md-0\" src=\"" . $item["image"] . "\"/></div>";
+        echo "<div class='col-md-7 col-sm-12'>";
         echo "<h4>". $item["title"] . "</h4><p> " . $item["main"] . "<p></div>";
         echo "</div>";
     }
@@ -160,8 +160,8 @@
 
         foreach ($info2 as $item) {
             echo "<div class='row mb-3'>";
-            echo "<div class='col-sm-5 col-xs-12'><img class= \"img-fluid mb-3 mb-sm-0\" src=\"" . $item["image"] . "\"/></div>";
-            echo "<div class='col-sm-7 col-xs-12'>";
+            echo "<div class='col-md-5 col-sm-12'><img class= \"img-fluid mb-3 mb-md-0\" src=\"" . $item["image"] . "\"/></div>";
+            echo "<div class='col-md-7 col-sm-12'>";
             echo "<h4>". $item["title"] . "</h4><p> " . $item["main"] . "<p><br></div>";
             echo "</div>";
         }
