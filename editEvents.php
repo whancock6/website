@@ -122,7 +122,7 @@
                 <div class="row">
                     <div class="col-md-6 mb-3">
                         <label for="dateMonth">Month</label>
-                        <select class="custom-select d-block w-100" id="dateMonth" name="dateMonth" onChange="reload(this.form)" required="">
+                        <select class="custom-select d-block w-100" id="dateMonth" name="dateMonth" required="">
                             <option value="01"  <?PHP if($currentmonth==1)echo "selected";?>>January</option>
                             <option value="02"  <?PHP if($currentmonth==2)echo "selected";?>>February</option>
                             <option value="03"  <?PHP if($currentmonth==3)echo "selected";?>>March</option>
@@ -142,7 +142,7 @@
                     </div>
                     <div class="col-md-3 mb-3">
                         <label for="event-day">Day</label>
-                        <select class="custom-select d-block w-100" name="dateDay" onChange="reload(this.form)" required="">
+                        <select class="custom-select d-block w-100" name="dateDay" required="">
                             <option value="00"  <?PHP if($currentday==0) echo "selected";?>>--</option>
                             <option value="01"  <?PHP if($currentday==1) echo "selected";?>>01</option>
                             <option value="02"  <?PHP if($currentday==2) echo "selected";?>>02</option>
@@ -182,7 +182,7 @@
                     </div>
                     <div class="col-md-3 mb-3">
                         <label for="event-year">Year</label>
-                        <select class="custom-select d-block w-100" name="dateYear" onChange="reload(this.form)" required="">
+                        <select class="custom-select d-block w-100" name="dateYear" required="">
                             <option value="<?php echo $currentyear; ?>" SELECTED><?php echo $currentyear; ?></option>
                         </select>
                         <div class="invalid-feedback">
