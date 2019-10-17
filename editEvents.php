@@ -1,6 +1,7 @@
 <?php
 	require "logged_in_check.php";
-	if ($_SESSION[isAdmin]==0 && $_SESSION[isEventAdmin]==0) {
+    require "set_session_vars_full.php";
+    if ($_SESSION[isAdmin]==0 && $_SESSION[isEventAdmin]==0) {
 		echo "<meta http-equiv=\"REFRESH\" content=\"0;url=points.php\">";
 		die;
 	} else {}
@@ -122,7 +123,7 @@
                 <div class="row">
                     <div class="col-md-6 mb-3">
                         <label for="dateMonth">Month</label>
-                        <select class="custom-select d-block w-100" id="dateMonth" name="dateMonth" onChange="reload(this.form)" required="">
+                        <select class="custom-select d-block w-100" id="dateMonth" name="dateMonth" required="">
                             <option value="01"  <?PHP if($currentmonth==1)echo "selected";?>>January</option>
                             <option value="02"  <?PHP if($currentmonth==2)echo "selected";?>>February</option>
                             <option value="03"  <?PHP if($currentmonth==3)echo "selected";?>>March</option>
@@ -142,7 +143,7 @@
                     </div>
                     <div class="col-md-3 mb-3">
                         <label for="event-day">Day</label>
-                        <select class="custom-select d-block w-100" name="dateDay" onChange="reload(this.form)" required="">
+                        <select class="custom-select d-block w-100" name="dateDay" required="">
                             <option value="00"  <?PHP if($currentday==0) echo "selected";?>>--</option>
                             <option value="01"  <?PHP if($currentday==1) echo "selected";?>>01</option>
                             <option value="02"  <?PHP if($currentday==2) echo "selected";?>>02</option>
@@ -182,7 +183,7 @@
                     </div>
                     <div class="col-md-3 mb-3">
                         <label for="event-year">Year</label>
-                        <select class="custom-select d-block w-100" name="dateYear" onChange="reload(this.form)" required="">
+                        <select class="custom-select d-block w-100" name="dateYear" required="">
                             <option value="<?php echo $currentyear; ?>" SELECTED><?php echo $currentyear; ?></option>
                         </select>
                         <div class="invalid-feedback">
@@ -449,7 +450,7 @@
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="event-type">Type</label>
-                                <select class="custom-select d-block w-100" name="newType" id="newType" onChange="reload(this.form)" required="">
+                                <select class="custom-select d-block w-100" name="newType" id="newType" required="">
                                     <option value="mandatory"  <?PHP if($retrievedEvent['type']=="mandatory") echo "selected";?>>Mandatory</option>
                                     <option value="sports"  <?PHP if($retrievedEvent['type']=="sports") echo "selected";?>>Sports</option>
                                     <option value="social"  <?PHP if($retrievedEvent['type'] == NULL || !isset($retrievedEvent['type']) || $retrievedEvent['type']=="social") echo "selected";?>>Social</option>
@@ -462,7 +463,7 @@
                             <div class="col-md-3 mb-3">
                                 <label for="newPointValue">Points</label>
                                 <?php
-                                if($isFamilyEvent == "false") {
+                                if($isFamilyEvent == "false" || $isFamilyEvent == "none") {
                                     echo "<select class=\"custom-select d-block w-100\" name=\"newPointValue\" id=\"newPointValue\">";
                                     echo "<option value=\"5\"" . (($retrievedEvent['pointValue']==5) ? 'selected' : '') . ">5</option>";
                                     echo "<option value=\"10\"" . (($retrievedEvent['pointValue']==10) ? 'selected' : '') . ">10</option>";
