@@ -49,6 +49,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="/homecoming/mini-500.php">Mini 500</a>
                         <a class="dropdown-item" href="/homecoming/cake-race.php">Freshmen Cake Race</a>
+                        <a class="dropdown-item" href="/homecoming/wreck-parade.php">Wreck Parade</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
