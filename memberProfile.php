@@ -269,6 +269,7 @@
                 <hr class="mb-4">
                 <h4 class="mb-3">Change Password</h4>
                 <form name="thisform" class="mb-3" onsubmit="return passwordCheck();" action="memberChangePassword.php" method="POST">
+                    <input type="hidden" name="memberID" value="<?php echo $currentMemberId; ?>">
                     <div class="mb-3 row">
                         <div class="col-md-6">
                             <label for="password">New Password</label>
