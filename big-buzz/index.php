@@ -45,7 +45,7 @@ $dt = new DateTime("now", new DateTimeZone($tz));
                     </div>
                     <div class="col-4 mb-3">
                         <label for="event-phone-number">Contact Phone Number</label>
-                        <input type="text" class="form-control" id="renter-phone-number" placeholder="(xxx) xxx-xxxx" value="" required="" pattern="^((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}$">
+                        <input type="text" class="form-control" id="renter-phone-number" placeholder="(xxx) xxx-xxxx" value="" required="">
                         <div class="invalid-feedback">
                             Valid phone number is required.
                         </div>
