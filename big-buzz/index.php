@@ -45,9 +45,18 @@ $dt = new DateTime("now", new DateTimeZone($tz));
                     </div>
                     <div class="col-4 mb-3">
                         <label for="event-phone-number">Contact Phone Number</label>
-                        <input type="tel" class="form-control" id="renter-phone-number" placeholder="(xxx) xxx-xxxx" value="" required="" pattern="^((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}$">
+                        <input type="text" class="form-control" id="renter-phone-number" placeholder="(xxx) xxx-xxxx" value="" required="">
                         <div class="invalid-feedback">
                             Valid phone number is required.
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 mb-3">
+                        <label for="org-dept-name">Organization/Department Name</label>
+                        <input type="text" class="form-control" id="org-dept-name" placeholder="What organization or department is the event for?" value="" required="">
+                        <div class="invalid-feedback">
+                            Valid organization or department name is required.
                         </div>
                     </div>
                 </div>
@@ -151,6 +160,7 @@ $dt = new DateTime("now", new DateTimeZone($tz));
                 renterName: $('#renter-name').val(),
                 renterEmail: $('#renter-email').val(),
                 renterPhoneNumber: $('#renter-phone-number').val(),
+                orgDeptName: $('#org-dept-name').val(),
                 eventDetails: $('#event-details').val(),
                 eventName: $('#event-name').val(),
                 eventLocation: $('#event-location').val(),
