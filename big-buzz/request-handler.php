@@ -3,6 +3,7 @@
 $renterName = $_POST["renterName"];
 $renterEmail = $_POST["renterEmail"];
 $renterPhoneNumber = $_POST["renterPhoneNumber"];
+$orgDeptName = $_POST["orgDeptName"];
 $eventDetails = $_POST["eventDetails"];
 $eventName = $_POST["eventName"];
 $eventLocation = $_POST["eventLocation"];
@@ -17,6 +18,12 @@ $mailOptions = [
                 [
                     "name" => "RRC Big Buzz Chair",
                     "email" => getenv("BIG_BUZZ_REQUEST_RECIPIENT") // add the actual email here from the .env IN PLESK. DO NOT ADD IT IN THE SOURCE CODE.
+                ]
+            ],
+            "bcc" => [
+                [
+                    "name" => "Backup Email",
+                    "email" => getenv("BACKUP_REQUEST_RECIPIENT") //add the actual email here ""
                 ]
             ]
         ]
@@ -37,6 +44,7 @@ $mailOptions = [
                 "<b>Requestor:</b> " . $renterName . " \n" .
                 "<b>Phone Number:</b> " . $renterPhoneNumber . " \n" .
                 "<b>Email:</b> " . $renterEmail . " \n" .
+                "<b>Organization/Department:</b> " . $orgDeptName . " \n" .
                 "<b>Event Name:</b> " . $eventName . "\n" .
                 "<b>Event Location:</b> " . $eventLocation . "\n" .
                 "<b>Event Date:</b> " . $eventDate . "\n" .
