@@ -146,7 +146,7 @@
             ?>
         </div>
         <div class="col-md-2">
-            <?php $members = ['Matt DeJonge', 'McKade Stewart', 'Noah Bryant', 'Rachel Hurst','Ronnie Ludwin','Samantha White','Sunny Thomson','Sydney Weisenburger','Zoe Sieling']; ?>
+            <?php $members = ['Matt DeJonge', 'McKade Stewart', 'Noah Bryant', 'Rachel Hurst','Ronnie Ludwin','Samantha White','Sunny Thomson','Sydney Weisenburger','Whitney Miller','Zoe Sieling']; ?>
             <?php
             foreach ($members as $item) {
                 echo "<p>" . $item . "</p>";
