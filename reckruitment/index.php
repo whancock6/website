@@ -49,9 +49,9 @@
 <p>For anyone interested in learning more about Ramblin’ Reck Club, what we are involved in on campus, opportunities within the Club, and the recruitment process, we will be hosting three non-mandatory information sessions before the application deadline closes. Feel free to stop in and introduce yourself and get the low-down on all things RRC during one of the following sessions:</p>
 
 <ul>
-    <li><strong>Tuesday, January 14th</strong>: Skiles 309 from 7:00pm-8:00pm</li>
-    <li><strong>Thursday, January 16th</strong>: Skiles 309 from 7:00pm-8:00pm</li>
-    <li><strong>Tuesday, January 21st</strong>: Skiles 309 from 7:00pm-8:00pm</li>
+    <li><strong>Tuesday, January 14th</strong>: Skiles 308 from 7:00pm-8:00pm</li>
+    <li><strong>Thursday, January 16th</strong>: Skiles 308 from 7:00pm-8:00pm</li>
+    <li><strong>Tuesday, January 21st</strong>: Skiles 308 from 7:00pm-8:00pm</li>
 <!--    <li><strong>First Social: Monday, January 28th at 7:15pm (Mandatory)</strong></li>-->
 <!--  <li>Check back here in December 2019 for info session dates for the 2020 recruitment cycle!</li>-->
 </ul>
