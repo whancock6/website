@@ -12,15 +12,15 @@
     <div class="row">
         <div class="col-md-6">
             <p><strong>Faculty Advisor:</strong> <a href="mailto:estephens34@gatech.edu">Gerome Stephens</a></p>
-            <p><strong>Reck Driver:</strong> <a href="mailto:driver@reckclub.org">Ben Damus</a></p>
-            <p><strong>President:</strong> <a href="mailto:president@reckclub.org">Jill Riley</a></p>
-            <p><strong>Vice President:</strong> <a href="mailto:mcdonnellelisabeth@gmail.com">Elisabeth McDonnell</a></p>
+            <p><strong>Reck Driver:</strong> <a href="mailto:driver@reckclub.org">Abi Ivemeyer</a></p>
+            <p><strong>President:</strong> <a href="mailto:president@reckclub.org">Cade Lawson</a></p>
+            <p><strong>Vice President:</strong> <a href="mailto:ethanrosman@gatech.edu">Ethan Rosman</a></p>
         </div>
         <div class="col-md-6">
-            <p><strong>Treasurer:</strong> <a href="mailto:treasurer@reckclub.org">Ethan Kreager</a></p>
-            <p><strong>Secretary:</strong> <a href="mailto:secretary@reckclub.org">Cade Lawson</a></p>
-            <p><strong>Member-at-Large:</strong> <a href="mailto:kassiedlee@gatech.edu">Kassie Lee</a></p>
-            <p><strong>Member-at-Large:</strong> <a href="mailto:lhancher3@gatech.edu">Laura Hancher</a></p>
+            <p><strong>Treasurer:</strong> <a href="mailto:treasurer@reckclub.org">Derek Prusener</a></p>
+            <p><strong>Secretary:</strong> <a href="mailto:secretary@reckclub.org">Jen O'Brien</a></p>
+            <p><strong>Member-at-Large:</strong> <a href="mailto:wmiller48@gatech.edu">Whitney Miller</a></p>
+            <p><strong>Member-at-Large:</strong> <a href="mailto:haleyrmcelroy@gmail.com">Haley McElroy</a></p>
         </div>
     </div>
     <hr class="mb-3">
@@ -80,19 +80,19 @@
                 ],
                 [
                     "chair" => 'Probatemaster',
-                    "name" => 'Josh Philliber'
+                    "name" => 'Caroline Means'
                 ],
                 [
                     "chair" => 'RECKruitment',
-                    "name" => 'Halle Bryan'
+                    "name" => 'Kassie Lee'
                 ],
                 [
                     "chair" => 'T-Book',
-                    "name" => 'Katie Coveny'
+                    "name" => 'Katie Earles'
                 ],
                 [
                     "chair" => 'T-Night',
-                    "name" => 'Marissa Klee'
+                    "name" => 'Jack Crawford'
                 ],
                 [
                     "chair" => 'Technology',
@@ -114,7 +114,7 @@
     <h4 class="mb-3">Members</h4>
     <div class="row">
         <div class="col-md-2">
-            <?php $members = ['Abi Ivemeyer','Adam Lederer','Ally Rosenthal','Amanda Healy','Annie Robinson','Benjamin Damus', 'Brandon Dobson','Brayton Miles','Brendan Mindiak', 'Brittany Powell']; ?>
+            <?php $members = ['Abi Ivemeyer','Adam Lederer','Ally Rosenthal','Amanda Healy','Annie Robinson', 'Brandon Dobson','Brayton Miles','Brendan Mindiak', 'Brittany Powell']; ?>
             <?php
             foreach ($members as $item) {
                 echo "<p>" . $item . "</p>";
@@ -122,7 +122,7 @@
             ?>
         </div>
         <div class="col-md-2">
-            <?php $members = ['Brittany Ritter','Brooke Brennan', 'Cade Lawson','Caroline Means','Daley Cass','Davis Burson','Dean Plaskon', 'Derek Prusener','Diana Michael', 'Ebie McDonnell']; ?>
+            <?php $members = ['Brittany Ritter','Brooke Brennan', 'Cade Lawson','Caroline Means','Dean Plaskon', 'Derek Prusener','Diana Michael', 'Ebie McDonnell', 'Ethan Kreager']; ?>
             <?php
             foreach ($members as $item) {
                 echo "<p>" . $item . "</p>";
@@ -130,7 +130,7 @@
             ?>
         </div>
         <div class="col-md-2">
-            <?php $members = ['Ethan Kreager', 'Ethan Rosman','Gracie Curran','Haley McElroy','Inika Jain', 'Isabel Wickliffe','Isabelle Liffiton', 'Jack Crawford', 'Jake Grant', 'Jen O\'Brien']; ?>
+            <?php $members = ['Ethan Rosman','Gracie Curran','Haley McElroy','Inika Jain','Isabelle Liffiton', 'Jack Crawford', 'Jake Grant', 'Jen O\'Brien', 'Jill Riley']; ?>
             <?php
             foreach ($members as $item) {
                 echo "<p>" . $item . "</p>";
@@ -138,7 +138,7 @@
             ?>
         </div>
         <div class="col-md-2">
-            <?php $members = ['Jill Riley', 'Jo\'De Cummings', 'Josh Philliber', 'Kassie Lee', 'Katie Coveny','Katie Earles', 'Kayleigh Nortje', 'Kirby Crisswell', 'Laura Hancher', 'Marissa Klee']; ?>
+            <?php $members = ['Kassie Lee', 'Katie Coveny','Katie Earles', 'Kayleigh Nortje', 'Kirby Crisswell', 'Laura Hancher', 'Marissa Klee', 'Matt DeJonge', 'McKade Stewart']; ?>
             <?php
             foreach ($members as $item) {
                 echo "<p>" . $item . "</p>";
@@ -146,7 +146,7 @@
             ?>
         </div>
         <div class="col-md-2">
-            <?php $members = ['Matt DeJonge', 'McKade Stewart', 'Noah Bryant', 'Rachel Hurst','Ronnie Ludwin','Samantha White','Sunny Thomson','Sydney Weisenburger','Whitney Miller','Zoe Sieling']; ?>
+            <?php $members = ['Noah Bryant', 'Rachel Hurst','Ronnie Ludwin','Samantha White','Sunny Thomson','Sydney Weisenburger','Whitney Miller','Zoe Sieling']; ?>
             <?php
             foreach ($members as $item) {
                 echo "<p>" . $item . "</p>";
