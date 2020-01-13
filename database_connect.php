@@ -1,5 +1,5 @@
 <?php
-$host = '127.0.0.1';
+$host = getenv('DB_HOST');
 $port = getenv('DB_PORT');
 $database = 'reck_club';
 $username = getenv('DB_USER');
