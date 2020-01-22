@@ -59,7 +59,7 @@
 <h4 class="mb-2" id="first-social">First Social (Mandatory)</h4>
     <p>Attending this social is your chance as an applicant to meet Reck Clubbers for the first time, get a feel for what Ramblin’ Reck Club is all about, ask any questions you may have about the Club or getting involved, and most importantly, sign up for an interview time. No need to stress about this event; be yourself and talk to anyone you do not already know! Dress code for this event is <strong>business casual</strong>, and will be hosted in the Edge Building Trophy Room (on the corner of Techwood and Bobby Dodd).</p>
     <ul>
-        <li><strong>First Social: Monday, February 3rd</strong></li>
+        <li><strong>First Social: Monday, February 3rd in the </strong><a href="https://google.com/maps/place/150+Bobby+Dodd+Way+NW,+Atlanta,+GA+30313/@33.7725579,-84.3955688,17z/data=!3m1!4b1!4m5!3m4!1s0x88f50463078b1861:0xd9b0d387d74cdb9b!8m2!3d33.7725579!4d-84.3933801" target="blank">Arthur B. Edge Intercollegiate Athletics Center</a> (We'll have greeters outside)</li>
     </ul>
     <p>There are two time slots for the first social: <strong>7:00pm-8:00pm and 8:30pm-9:30pm</strong>. Please note down your availability on the application. If you are not available during either of these times, please email <a href="mailto:membershipchair@reckclub.org">Kassie Lee</a>.</p>
 
@@ -70,7 +70,7 @@
 <ul>
     <li><strong>Thursday, January 23rd (6pm)</strong>: Women’s Basketball game vs. UNC in <strong>McCamish Pavilion</strong></li>
     <li><strong>Wednesday, January 29th (7:30pm-9:30pm)</strong>: Tech Rec Bowling Social in <strong>Student Center's Tech Rec</strong></li>
-    <li><strong>Saturday, February 1st (12:00pm)</strong>: Men’s Basketball game watch party vs. Notre Dame <strong>(Location TBD)</strong></li>
+    <li><strong>Saturday, February 1st (12:00pm)</strong>: Men’s Basketball game watch party vs. Notre Dame <strong>in Student Center room 319</strong></li>
 <!--    <li><strong>Interviews: Tuesday, January 29th through Thursday, January 31st from 5:30-9pm (Mandatory)</strong></li>-->
 <!--    <li>Check back here in December 2019 for athletic social dates for the 2020 recruitment cycle!</li>-->
 </ul>
