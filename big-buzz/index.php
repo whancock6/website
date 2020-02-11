@@ -80,8 +80,8 @@ $dt = new DateTime("now", new DateTimeZone($tz));
                 </div>
                 <div class="row">
                     <div class="col-12 mb-3">
-                        <label for="event-name">Event details</label>
-                        <textarea class="form-control" id="event-details" placeholder="Please provide all important setup details, event start/end times, and other pertinent information here."></textarea>
+                        <label for="event-name">Event time and details</label>
+                        <textarea class="form-control" id="event-details" placeholder="Please provide event start/end times, all important setup details, and other pertinent information here."></textarea>
                     </div>
                 </div>
                 <div class="row">
