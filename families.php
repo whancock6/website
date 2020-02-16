@@ -157,6 +157,142 @@ $pageTitle = "Points";
             <?php endif; ?>
         </div>
     </div>
+
+
+    <div class="row">
+        <div class="col-md-6 col-sm-12">
+            <?php
+            $query = $db->query("SELECT familyName,familyPoints FROM Family WHERE familyID=5");
+            $query->setFetchMode(PDO::FETCH_ASSOC);
+            $row = $query->fetch();
+            ?>
+            <h4 class="m-0"><?php echo (strlen($row[familyName]) > 0) ? $row[familyName] : 'Family 5'; ?> </h4>
+            <p class="text-primary mb-2">Points: <?php echo (isset($row[familyPoints]) ? $row[familyPoints] : '0'); ?></p>
+            <?php
+            $query = $db->query("SELECT firstName, lastName, memberPoints FROM Member WHERE memFamilyID=5 AND status != 'alumni' ORDER BY memberPoints DESC, lastName, firstName");
+            $query->setFetchMode(PDO::FETCH_ASSOC);
+            ?>
+            <?php if ($query->rowCount() > 0): ?>
+                <table class="table table-sm table-hover">
+                    <thead>
+                    <th scope="col">Member</th>
+                    <th scope="col" style="text-align:right !important;">Points</th>
+                    </thead>
+                    <tbody>
+
+                    <?php
+                    while($row = $query->fetch()) {
+                        echo "<tr><td>" . $row[firstName]." ".$row[lastName]."</td><td align=\"right\">" . $row[memberPoints] . "</td></tr>";
+
+                    }
+                    ?>
+                    </tbody>
+                </table>
+            <?php else: ?>
+                <p>No members are assigned to this family.</p>
+            <?php endif; ?>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <?php
+            $query = $db->query("SELECT familyName,familyPoints FROM Family WHERE familyID=6");
+            $query->setFetchMode(PDO::FETCH_ASSOC);
+            $row = $query->fetch();
+            ?>
+            <h4 class="m-0"><?php echo (strlen($row[familyName]) > 0) ? $row[familyName] : 'Family 6'; ?> </h4>
+            <p class="text-primary mb-2">Points: <?php echo (isset($row[familyPoints]) ? $row[familyPoints] : '0'); ?></p>
+            <?php
+            $query = $db->query("SELECT firstName, lastName, memberPoints FROM Member WHERE memFamilyID=6 AND status != 'alumni' ORDER BY memberPoints DESC, lastName, firstName");
+            $query->setFetchMode(PDO::FETCH_ASSOC);
+            ?>
+            <?php if ($query->rowCount() > 0): ?>
+                <table class="table table-sm table-hover">
+                    <thead>
+                    <th scope="col">Member</th>
+                    <th scope="col" style="text-align:right !important;">Points</th>
+                    </thead>
+                    <tbody>
+
+                    <?php
+                    while($row = $query->fetch()) {
+                        echo "<tr><td>" . $row[firstName]." ".$row[lastName]."</td><td align=\"right\">" . $row[memberPoints] . "</td></tr>";
+                    }
+                    ?>
+                    </tbody>
+                </table>
+            <?php else: ?>
+                <p>No members are assigned to this family.</p>
+            <?php endif; ?>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 col-sm-12">
+            <?php
+            $query = $db->query("SELECT familyName,familyPoints FROM Family WHERE familyID=7");
+            $query->setFetchMode(PDO::FETCH_ASSOC);
+            $row = $query->fetch();
+            ?>
+            <h4 class="m-0"><?php echo (strlen($row[familyName]) > 0) ? $row[familyName] : 'Family 7'; ?> </h4>
+            <p class="text-primary mb-2">Points: <?php echo (isset($row[familyPoints]) ? $row[familyPoints] : '0'); ?></p>
+            <?php
+            $query = $db->query("SELECT firstName, lastName, memberPoints FROM Member WHERE memFamilyID=7 AND status != 'alumni' ORDER BY memberPoints DESC, lastName, firstName");
+            $query->setFetchMode(PDO::FETCH_ASSOC);
+            ?>
+            <?php if ($query->rowCount() > 0): ?>
+                <table class="table table-sm table-hover">
+                    <thead>
+                    <th scope="col">Member</th>
+                    <th scope="col" style="text-align:right !important;">Points</th>
+                    </thead>
+                    <tbody>
+
+                    <?php
+                    while($row = $query->fetch()) {
+                        echo "<tr><td>" . $row[firstName]." ".$row[lastName]."</td><td align=\"right\">" . $row[memberPoints] . "</td></tr>";
+
+                    }
+                    ?>
+                    </tbody>
+                </table>
+            <?php else: ?>
+                <p>No members are assigned to this family.</p>
+            <?php endif; ?>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <?php
+            $query = $db->query("SELECT familyName,familyPoints FROM Family WHERE familyID=8");
+            $query->setFetchMode(PDO::FETCH_ASSOC);
+            $row = $query->fetch();
+            ?>
+            <h4 class="m-0"><?php echo (strlen($row[familyName]) > 0) ? $row[familyName] : 'Family 8'; ?> </h4>
+            <p class="text-primary mb-2">Points: <?php echo (isset($row[familyPoints]) ? $row[familyPoints] : '0'); ?></p>
+            <?php
+            $query = $db->query("SELECT firstName, lastName, memberPoints FROM Member WHERE memFamilyID=8 AND status != 'alumni' ORDER BY memberPoints DESC, lastName, firstName");
+            $query->setFetchMode(PDO::FETCH_ASSOC);
+            ?>
+            <?php if ($query->rowCount() > 0): ?>
+                <table class="table table-sm table-hover">
+                    <thead>
+                    <th scope="col">Member</th>
+                    <th scope="col" style="text-align:right !important;">Points</th>
+                    </thead>
+                    <tbody>
+
+                    <?php
+                    while($row = $query->fetch()) {
+                        echo "<tr><td>" . $row[firstName]." ".$row[lastName]."</td><td align=\"right\">" . $row[memberPoints] . "</td></tr>";
+                    }
+                    ?>
+                    </tbody>
+                </table>
+            <?php else: ?>
+                <p>No members are assigned to this family.</p>
+            <?php endif; ?>
+        </div>
+    </div>
+
+
+
 <!--    <table align="center">-->
 <!--        --><?php
 //        echo "<tr bgcolor=\"#b3a369\"><th width=300>";
