@@ -7,7 +7,7 @@
 <body>
 <?php require "../partials/public-header.php" ?>
 <div class="container">
-    <h2 class="mb-3">2019 Roster</h2>
+    <h2 class="mb-3">2020 Roster</h2>
     <h4 class="mb-4">Executive Board</h4>
     <div class="row">
         <div class="col-md-6">
@@ -31,11 +31,11 @@
             <?php $chairs = array(
                     [
                 "chair" => 'Alumni Relations',
-                "name" => 'Matt DeJonge'
+                "name" => 'Sydney Weisenburger'
                 ],
                 [
                     "chair" => 'Baseball',
-                    "name" => 'McKade Stewart'
+                    "name" => 'Brendan Mindiak'
                 ],
                 [
                     "chair" => 'Basketball',
@@ -43,23 +43,23 @@
                 ],
                 [
                     "chair" => 'Big Buzz',
-                    "name" => 'Sydney Weisenburger'
+                    "name" => 'Laura Hancher'
                 ],
                 [
                     "chair" => 'Campus Outreach',
-                    "name" => 'Brayton Miles'
+                    "name" => 'Diana Michael'
                 ],
                 [
                     "chair" => 'Football',
-                    "name" => 'Abi Ivemeyer'
+                    "name" => 'Adam Lederer'
                 ],
                 [
                     "chair" => 'Fundraising',
-                    "name" => 'Ronnie Ludwin'
+                    "name" => 'Brittany Ritter'
                 ],
                 [
                     "chair" => 'Homecoming',
-                    "name" => 'Isabel Wickliffe'
+                    "name" => 'McKade Stewart'
                 ]);
 
             foreach ($chairs as $item) {
@@ -72,11 +72,11 @@
             <?php $chairs = array(
                 [
                     "chair" => 'Non-Revenue Sports',
-                    "name" => 'Jake Grant'
+                    "name" => 'Ethan Kreager & Rachel Hurst'
                 ],
                 [
                     "chair" => 'Public Relations',
-                    "name" => 'Noah Bryant'
+                    "name" => 'Ebie McDonnell'
                 ],
                 [
                     "chair" => 'Probatemaster',
@@ -96,11 +96,11 @@
                 ],
                 [
                     "chair" => 'Technology',
-                    "name" => 'Ethan Rosman'
+                    "name" => 'Kirby Criswell'
                 ],
                 [
                     "chair" => 'Traditions',
-                    "name" => 'Isabelle Liffiton'
+                    "name" => 'Ally Rosenthal'
                 ]);
 
             foreach ($chairs as $item) {
@@ -154,42 +154,42 @@
             ?>
         </div>
     </div>
-<!--    <hr class="mb-3">-->
-<!--    <h4 class="mb-4">Probates</h4>-->
-<!--    <div class="row mb-3">-->
-<!--        <div class="col-md-3">-->
-<!--            --><?php //$members = ['Adam Lederer','Ally Rosenthal','Annie Robinson','Brendan Mindiak', 'Brittany Ritter']; ?>
-<!--            --><?php
-//            foreach ($members as $item) {
-//                echo "<p>" . $item . "</p>";
-//            }
-//            ?>
-<!--        </div>-->
-<!--        <div class="col-md-3">-->
-<!--            --><?php //$members = ['Dean Plaskon','Derek Prusener','Diana Michael', 'Haley McElroy']; ?>
-<!--            --><?php
-//            foreach ($members as $item) {
-//                echo "<p>" . $item . "</p>";
-//            }
-//            ?>
-<!--        </div>-->
-<!--        <div class="col-md-3">-->
-<!--            --><?php //$members = ['Jack Crawford',"Jen O'Brien",'Katie Earles','Kirby Crisswell']; ?>
-<!--            --><?php
-//            foreach ($members as $item) {
-//                echo "<p>" . $item . "</p>";
-//            }
-//            ?>
-<!--        </div>-->
-<!--        <div class="col-md-3">-->
-<!--            --><?php //$members = ['Michael Xiao','Rachel Hurst','Whitney Miller', 'William Platt']; ?>
-<!--            --><?php
-//            foreach ($members as $item) {
-//                echo "<p>" . $item . "</p>";
-//            }
-//            ?>
-<!--        </div>-->
-<!--    </div>-->
+    <hr class="mb-3">
+    <h4 class="mb-4">Probates</h4>
+    <div class="row mb-3">
+        <div class="col-md-3">
+            <?php $members = ['Andy Begazo','Anilyn Benge','Austin Gies','Brendon Thaler', 'Briana Sims']; ?>
+            <?php
+            foreach ($members as $item) {
+                echo "<p>" . $item . "</p>";
+            }
+            ?>
+        </div>
+        <div class="col-md-3">
+            <?php $members = ['Carter Kubes','Emma Wojack','Grace Mallon', 'Isheeta Mukherjee', 'Jacob Lewis']; ?>
+            <?php
+            foreach ($members as $item) {
+                echo "<p>" . $item . "</p>";
+            }
+            ?>
+        </div>
+        <div class="col-md-3">
+            <?php $members = ['Keshav Ramanathan','Kevin Hopper','Nick Isaf', 'Paul Weiland', 'Ross LeRoy']; ?>
+            <?php
+            foreach ($members as $item) {
+                echo "<p>" . $item . "</p>";
+            }
+            ?>
+        </div>
+        <div class="col-md-3">
+            <?php $members = ['Sofia Eidizadeh', 'Tae Kim', 'Taylor Gray', 'Zach Bellis']; ?>
+            <?php
+            foreach ($members as $item) {
+                echo "<p>" . $item . "</p>";
+            }
+            ?>
+        </div>
+    </div>
     <hr class="mb-3">
 </div>
 
