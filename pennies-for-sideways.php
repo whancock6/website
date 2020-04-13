@@ -34,7 +34,7 @@
 
     $info1 = array(
         [
-            "image" => '/img/pennies/p-001.jpg',
+            "image" => '/img/pennies/p-001small.jpg',
             "title" => 'Intro to Sideways the Dog',
             "main" => '<p>In March 1945, the Georgia Tech community was introduced to a girl that stole everyone’s hearts: an eight month old white terrier with a black patch on one of her eyes named Sideways. After being thrown from a car on North Avenue, Georgia Tech adopted Sideways, and she soon became a campus icon. Known for walking at a slight angle as a result of her injury—giving her the name Sideways—she would commonly be found walking in and out of lectures, marching with the drill team, and even leading the football team onto the field. After living on campus for a few years, Sideways mysteriously passed away on August 14th, 1947. Her life was forever memorialized on campus with a slightly slanted grave underneath Tech Tower where all students, past and present, could go to pay their respects to the beloved campus celebrity. Today, it is tradition for students to leave pennies on her grave to get some luck before their final exams.</p>'
         ],
