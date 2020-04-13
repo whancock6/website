@@ -14,26 +14,22 @@
         </div>
     </div>
 </div>
-<div class="container mb-3">
-    <div class="row">
-        <div class="col-4 text-center">
-            <p class="mb-0" style="text-align:center"><i>Venmo</i></p>
-            <p class="mb-0" style="text-align:center"><a href="venmo.com/Ramblin-Reck-Club"><b>@Ramblin-Reck-Club</b></a></p>
+<div class="container">
+    <div class='row text-center'>
+        <div class='col-sm-4 col-xs-12 mb-3 mb-sm-0'>
+            <a class='btn btn-md btn-secondary' href="https://venmo.com/Ramblin-Reck-Club">Venmo</a>
         </div>
-        <div class="col-4 text-center">
-            <p class="mb-0" style="text-align:center"><i>Cash App</i></p>
-            <p class="mb-0" style="text-align:center"><a href="../cash.app/$RamblinReckClub"><b>$RamblinReckClub</b></a></p>
+        <div class='col-sm-4 col-xs-12 mb-3 mb-sm-0'>
+            <a class='btn btn-md btn-primary' href="https://cash.app/$RamblinReckClub" target="_blank">CashApp</a>
         </div>
-        <div class="col-4 text-center">
-            <p class="mb-0" style="text-align:center"><i>Paypal</i></p>
-            <p class="mb-0" style="text-align:center"><a href=""><b>treasurer@reckclub.org</b></a></p>
+        <div class='col-sm-4 col-xs-12'>
+            <a class='btn btn-md btn-secondary' href="https://paypal.me/RamblinReckClub" target="_blank">PayPal</a>
         </div>
     </div>
     <hr class="mb-3">
 </div>
 
 <div class="container">
-
     <?php
 
     $info1 = array(
