@@ -93,15 +93,15 @@
                 "chair" => 'Traditions',
                 "name" => 'Ally Rosenthal'
             ]);
-
+        uasort($chairs, function($a, $b) {
+            return $a["chair"] > $b["chair"];
+        });
         chunkAndFormatArray($chairs, 2, function ($chunk) {
             echo "<div class=\"col-md-6 text-center\">";
             foreach ($chunk as $item) {
                 echo "<p class='text-left'><strong>". $item["chair"] .":</strong> " . $item["name"] . "</p>";
             }
             echo "</div>";
-        }, true, function($a, $b) {
-            return $a["chair"] > $b["chair"];
         });
 
         ?>
@@ -111,14 +111,13 @@
     <div class="row">
         <?php
         $members = ['Abi Ivemeyer','Adam Lederer','Ally Rosenthal','Amanda Healy','Annie Robinson', 'Brandon Dobson','Brayton Miles','Brendan Mindiak', 'Brittany Powell','Brittany Ritter','Brooke Brennan', 'Cade Lawson','Caroline Means','Dean Plaskon', 'Derek Prusener','Diana Michael', 'Ebie McDonnell', 'Ethan Kreager','Ethan Rosman','Gracie Curran','Haley McElroy','Inika Jain','Isabelle Liffiton', 'Jack Crawford', 'Jake Grant', 'Jen O\'Brien', 'Jill Riley','Kassie Lee', 'Katie Coveny','Katie Earles', 'Kayleigh Nortje', 'Kirby Criswell', 'Laura Hancher', 'Marissa Klee', 'Matt DeJonge', 'McKade Stewart','Noah Bryant', 'Rachel Hurst','Ronnie Ludwin','Samantha White','Sunny Thomson','Sydney Weisenburger','Whitney Miller','Zoe Sieling'];
+        sort($members);
         chunkAndFormatArray($members, 6, function ($chunk) {
             echo "<div class=\"col-md-2 text-center\">";
             foreach ($chunk as $item) {
                 echo "<p class='text-left'>" . $item . "</p>";
             }
             echo "</div>";
-        }, true, function($a, $b) {
-            return $a > $b;
         });
         ?>
     </div>
@@ -127,14 +126,13 @@
     <div class="row mb-3">
         <?php
         $probates = ['Andy Begazo','Anilyn Benge','Austin Gies','Brendon Thaler', 'Briana Sims','Carter Kubes','Emma Wojack','Grace Mallon', 'Isheeta Mukherjee', 'Jacob Lewis','Keshav Ramanathan','Kevin Hopper','Nick Isaf', 'Paul Weiland', 'Ross LeRoy','Sofia Eidizadeh', 'Tae Kim', 'Taylor Gray', 'Zach Bellis'];
+        sort($probates);
         chunkAndFormatArray($probates,4, function ($chunk) {
             echo "<div class=\"col-md-3 text-center\">";
             foreach ($chunk as $item) {
                 echo "<p class='text-left'>" . $item . "</p>";
             }
             echo "</div>";
-        }, true, function($a, $b) {
-            return $a > $b;
         });
         ?>
     </div>

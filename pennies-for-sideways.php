@@ -82,14 +82,13 @@
     <div class="row">
         <?php
         $donors = ['Akshay Easwaran','Ana Jafarinia','Annie Robinson','Arushi Gupta','Carter Kubes','Chelsea Yangnouvong','CJ Young','Daley Cass','Derek Prusener','Elizabeth Cowan','Emmett Halloran','Gigi P','Isabelle Liffiton','Jasper and Florence Jackson','Jen O\'Brien','Jill Riley','Marissa Klee','Matt O\'Brien','Matthew Askari','McKade Stewart','Megha Desai','Rachel Hurst','Robert Cottingham','Shivanee Persaud'];
+        sort($donors);
         chunkAndFormatArray($donors, 4, function ($chunk) {
             echo "<div class=\"col-md-3 text-center\">";
             foreach ($chunk as $item) {
                 echo "<p class='text-left'>" . $item . "</p>";
             }
             echo "</div>";
-        },true, function ($a, $b) {
-            return $a > $b;
         });
         ?>
     </div>
