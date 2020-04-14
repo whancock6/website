@@ -1,4 +1,5 @@
 <?php $pageTitle = "Pennies For Sideways"; ?>
+<?php require "utils/array_formatter.php"; ?>
 
 <!DOCTYPE html>
 <html>
@@ -67,47 +68,25 @@
 
 
 <div class="container">
-    <div class="blog-header">
+    <hr class="mb-3">
+    <div class="row">
         <div class="col-12" style="text-align: center;">
             <h2 id="thank-you-donors">Thank You Donors</h2>
         </div>
     </div>
     <div class="row">
-        <div class="col-md-3 text-center">
-            <?php $donors = ['Akshay Easwaran','Ana Jafarinia','Annie Robinson','Arushi Gupta','Carter Kubes','Chelsea Yangnouvong']; ?>
-            <?php
-            foreach ($donors as $item) {
-                echo "<p>" . $item . "</p>";
-            }
-            ?>
-        </div>
-        <div class="col-md-3 text-center">
-            <?php $donors = ['CJ Young','Daley Cass','Derek Prusener','Elizabeth Cowan','Emmett Halloran','Gigi P']; ?>
-            <?php
-            foreach ($donors as $item) {
-                echo "<p>" . $item . "</p>";
-            }
-            ?>
-        </div>
-        <div class="col-md-3 text-center">
-            <?php $donors = ['Isabelle Liffiton','Jasper and Florence Jackson','Jen O\'Brien','Jill Riley','Marissa Klee','Matt O\'Brien']; ?>
-            <?php
-            foreach ($donors as $item) {
-                echo "<p>" . $item . "</p>";
-            }
-            ?>
-        </div>
-        <div class="col-md-3 text-center">
-            <?php $donors = ['Matthew Askari','McKade Stewart','Megha Desai','Rachel Hurst','Robert Cottingham','Shivanee Persaud']; ?>
-            <?php
-            foreach ($donors as $item) {
-                echo "<p>" . $item . "</p>";
-            }
-            ?>
-        </div>
+        <?php
+        $donors = ['Akshay Easwaran','Ana Jafarinia','Annie Robinson','Arushi Gupta','Carter Kubes','Chelsea Yangnouvong','CJ Young','Daley Cass','Derek Prusener','Elizabeth Cowan','Emmett Halloran','Gigi P','Isabelle Liffiton','Jasper and Florence Jackson','Jen O\'Brien','Jill Riley','Marissa Klee','Matt O\'Brien','Matthew Askari','McKade Stewart','Megha Desai','Rachel Hurst','Robert Cottingham','Shivanee Persaud'];
+        chunkAndFormatArray($donors, function ($donor) {
+            echo "<p>" . $donor . "</p>";
+        });
+        ?>
     </div>
-    <div class="row justify-content-center">
-        <div class="col-8">
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
             <p class="text-muted"><i>Have any questions not covered here? Reach out to the organizers at <a href="mailto:help@reckclub.org">help@reckclub.org</a>.</i></p>
         </div>
     </div>
