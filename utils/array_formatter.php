@@ -1,6 +1,12 @@
 <?php
 
 
+/**
+ * Partitions array into given number of chunks and then applies the given function to each chunk.
+ * @param $array the list to partition
+ * @param $columns the number of chunks to create
+ * @param callable $formatFunction the function to be applied on each chunk
+ */
 function chunkAndFormatArray($array, $columns, callable $formatFunction) {
     $chunks = array_chunk($array, ceil(count($array) / $columns));
 
