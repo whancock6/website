@@ -1,20 +1,20 @@
 <?php
 
 
-function chunkAndFormatArray($array = [], $shouldSort = true, $columns = 4, callable $formatFunction = null) {
+function chunkAndFormatArray($array, $columns, callable $formatFunction, $shouldSort = false, callable $sortFunction = null) {
     if ($shouldSort) {
-        sort($array);
+        if (isset($sortFunction) && $sortFunction != null) {
+            uasort($array, $sortFunction);
+        } else {
+            asort($array);
+        }
     }
     $chunks = array_chunk($array, ceil(count($array) / $columns));
 
     foreach ($chunks as $chunk) {
-        echo "<div class=\"col-md-" . (12 / $columns) ." text-center\">";
-        foreach ($chunk as $item) {
-            if ($formatFunction != null) {
-                $formatFunction($item);
-            }
+        if (isset($formatFunction) && $formatFunction != null) {
+            $formatFunction($chunk);
         }
-        echo "</div>";
     }
 }
 
