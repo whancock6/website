@@ -86,7 +86,7 @@
         chunkAndFormatArray($donors, 4, function ($chunk) {
             echo "<div class=\"col-md-3 text-center\">";
             foreach ($chunk as $item) {
-                echo "<p class='text-left'>" . $item . "</p>";
+                echo "<p class='text-center'>" . $item . "</p>";
             }
             echo "</div>";
         });
