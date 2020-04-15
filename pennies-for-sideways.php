@@ -1,4 +1,5 @@
 <?php $pageTitle = "Pennies For Sideways"; ?>
+<?php require "utils/array_formatter.php"; ?>
 
 <!DOCTYPE html>
 <html>
@@ -46,7 +47,7 @@
         [
             "image" => '/img/pennies/p-003.jpg',
             "title" => 'How to Participate',
-            "main" => '<p>To participate, you can send your donation or proof of donation via one of the options below. Make sure to send us your name or the name of your chosen honoree along with your submission if you would like to be listed as a participant on this page!</p><ul><li>Venmo: @Ramblin-Reck-Club</li><li>Cash App: $RamblinReckClub</li><li>Paypal: treasurer@reckclub.org</li><li>Directly to the Student Relief Fund: Follow the instructions detailed <a href="https://news.gatech.edu/2020/03/23/student-emergency-funding-now-available">here</a> and email a screenshot of your confirmation to <a href="mailto:help@reckclub.org">help@reckclub.org</a></li></ul><p>If you are donating on behalf of a student organization, write the organization’s name along with your contribution. <strong>The Ramblin’ Reck will make an appearance at a meeting to give members rides for the organization that raises the most money and the one that has the highest number of participants!</strong></p><p>Finally, please participate however you can! If you cannot afford to give the traditional penny or more right now, fill out <a href="https://docs.google.com/forms/d/e/1FAIpQLSfoRHly0488iTVOzzt-HJw8lnUgexxf6VL1Bv9vv-ohnbF-Sw/viewform">this form</a> and we will place one on the grave for you and list you on the website anyway. We believe that traditions should be accessible for everyone!</p><p>*100% of all funds submitted to Ramblin’ Reck Club accounts will be compiled and sent directly to the Student Relief Fund.</p>'
+            "main" => '<p>To participate, you can send your donation or proof of donation via one of the options below. Make sure to send us your name or the name of your chosen honoree along with your submission if you would like to be listed as a participant on <a href="#thank-you-donors">this page</a>!</p><ul><li>Venmo: @Ramblin-Reck-Club</li><li>Cash App: $RamblinReckClub</li><li>Paypal: treasurer@reckclub.org</li><li>Directly to the Student Relief Fund: Follow the instructions detailed <a href="https://news.gatech.edu/2020/03/23/student-emergency-funding-now-available">here</a> and email a screenshot of your confirmation to <a href="mailto:help@reckclub.org">help@reckclub.org</a></li></ul><p>If you are donating on behalf of a student organization, write the organization’s name along with your contribution. <strong>The Ramblin’ Reck will make an appearance at a meeting to give members rides for the organization that raises the most money and the one that has the highest number of participants!</strong></p><p>Finally, please participate however you can! If you cannot afford to give the traditional penny or more right now, fill out <a href="https://docs.google.com/forms/d/e/1FAIpQLSfoRHly0488iTVOzzt-HJw8lnUgexxf6VL1Bv9vv-ohnbF-Sw/viewform">this form</a> and we will place one on the grave for you and list you on the website anyway. We believe that traditions should be accessible for everyone!</p><p>*100% of all funds submitted to Ramblin’ Reck Club accounts will be compiled and sent directly to the Student Relief Fund.</p>'
         ],
         [
             "image" => '/img/pennies/p-004.jpg',
@@ -63,54 +64,35 @@
         echo "</div>";
     }
     ?>
+    <div class="row">
+        <div class="col-12">
+            <p class="text-muted"><i>Have any questions not covered here? Reach out to the organizers at <a href="mailto:help@reckclub.org">help@reckclub.org</a>.</i></p>
+        </div>
+    </div>
 </div>
 
 
 <div class="container">
-    <div class="blog-header">
+    <hr class="mb-3">
+    <div class="row">
         <div class="col-12" style="text-align: center;">
-            <h2 id="thank-you-donors">Thank You Donors</h2>
+            <h2 id="thank-you-donors">Thank You Donors!</h2>
         </div>
     </div>
     <div class="row">
-        <div class="col-md-3 text-center">
-            <?php $donors = ['Akshay Easwaran','Ana Jafarinia','Annie Robinson','Arushi Gupta','Carter Kubes','Chelsea Yangnouvong']; ?>
-            <?php
-            foreach ($donors as $item) {
-                echo "<p>" . $item . "</p>";
+        <?php
+        $donors = ['Akshay Easwaran','Ana Jafarinia','Annie Robinson','Arushi Gupta','Carter Kubes','Chelsea Yangnouvong','CJ Young','Daley Cass','Derek Prusener','Elizabeth Cowan','Emmett Halloran','Gigi P','Isabelle Liffiton','Jasper and Florence Jackson','Jen O\'Brien','Jill Riley','Marissa Klee','Matt O\'Brien','Matthew Askari','McKade Stewart','Megha Desai','Rachel Hurst','Robert Cottingham','Shivanee Persaud'];
+        sort($donors);
+        chunkAndFormatArray($donors, 4, function ($chunk) {
+            echo "<div class=\"col-md-3 text-center\">";
+            foreach ($chunk as $item) {
+                echo "<p class='text-left'>" . $item . "</p>";
             }
-            ?>
-        </div>
-        <div class="col-md-3 text-center">
-            <?php $donors = ['CJ Young','Daley Cass','Derek Prusener','Elizabeth Cowan','Emmett Halloran','Gigi P']; ?>
-            <?php
-            foreach ($donors as $item) {
-                echo "<p>" . $item . "</p>";
-            }
-            ?>
-        </div>
-        <div class="col-md-3 text-center">
-            <?php $donors = ['Isabelle Liffiton','Jasper and Florence Jackson','Jen O\'Brien','Jill Riley','Marissa Klee','Matt O\'Brien']; ?>
-            <?php
-            foreach ($donors as $item) {
-                echo "<p>" . $item . "</p>";
-            }
-            ?>
-        </div>
-        <div class="col-md-3 text-center">
-            <?php $donors = ['Matthew Askari','McKade Stewart','Megha Desai','Rachel Hurst','Robert Cottingham','Shivanee Persaud']; ?>
-            <?php
-            foreach ($donors as $item) {
-                echo "<p>" . $item . "</p>";
-            }
-            ?>
-        </div>
+            echo "</div>";
+        });
+        ?>
     </div>
-    <div class="row justify-content-center">
-        <div class="col-8">
-            <p class="text-muted"><i>Have any questions not covered here? Reach out to the organizers at <a href="mailto:help@reckclub.org">help@reckclub.org</a>.</i></p>
-        </div>
-    </div>
+    <hr class="mb-3">
 </div>
 
 <?php require "partials/footer.php" ?>
