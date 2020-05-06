@@ -10,7 +10,7 @@
 <div class="container mb-3">
     <div class="row">
         <div class="col-12">
-            <img class="img-fluid img-responsive" src="/homecoming/images/fcr-001.jpg.jpg">
+            <img class="img-fluid img-responsive" src="/homecoming/images/CakeRaceBanner.jpg">
         </div>
     </div>
 </div>
