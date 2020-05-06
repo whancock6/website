@@ -1,4 +1,4 @@
-0000<?php $pageTitle = "Freshman Cake Race"; ?>
+<?php $pageTitle = "Freshman Cake Race"; ?>
 
 <!DOCTYPE html>
 <html>
