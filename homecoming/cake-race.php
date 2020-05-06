@@ -1,4 +1,4 @@
-<?php $pageTitle = "Freshmen Cake Race"; ?>
+0000<?php $pageTitle = "Freshman Cake Race"; ?>
 
 <!DOCTYPE html>
 <html>
@@ -17,15 +17,15 @@
 <div class="container mb-3">
     <div class="row">
         <div class="col-4 text-center">
-            <p class="mb-0" style="text-align:center"><a href="mailto:Isabel.Wickliffe@gatech.edu"><b>Isabel Wickliffe</b></a></p>
+            <p class="mb-0" style="text-align:center"><a href="mailto:rrchomecoming@gmail.com"><b>McKade Stewart</b></a></p>
             <p class="mb-0" style="text-align:center"><i>Reck Club Homecoming Chair</i></p>
         </div>
         <div class="col-4 text-center">
-            <p class="mb-0" style="text-align:center"><a href="mailto:haleyrmcelroy@gmail.com"><b>Haley McElroy</b></a></p>
+            <p class="mb-0" style="text-align:center"><a href="mailto:gtfreshmancakerace@gmail.com"><b>Rachel Hurst</b></a></p>
             <p class="mb-0" style="text-align:center"><i>Cake Race Sub-Chair</i></p>
         </div>
         <div class="col-4 text-center">
-            <p class="mb-0" style="text-align:center"><a href="mailto:brittanypowell@gatech.edu"><b>Brittany Powell</b></a></p>
+            <p class="mb-0" style="text-align:center"><a href="mailto:gtfreshmancakerace@gmail.com"><b>Briana Sims</b></a></p>
             <p class="mb-0" style="text-align:center"><i>Cake Race Sub-Chair</i></p>
         </div>
     </div>
@@ -57,13 +57,13 @@
         [
             "image" => '/homecoming/images/fcr-002.jpg',
             "title" => 'Sign Ups',
-            "main" => 'All first years can sign up for the Freshmen Cake Race through October 25th at <a href="https://gatech.campuslabs.com/engage/submitter/form/start/338342">https://gatech.campuslabs.com/engage/submitter/form/start/338342</a>.'
+            "main" => 'All first years can sign up for the Freshman Cake Race through October 9th. Check back in the fall for a link to the signup.'
 
         ],
         [
             "image" => '/homecoming/images/fcr-005.jpg',
             "title" => 'Race Bib Pickup',
-            "main" => '<p><strong>All first years <i>MUST</i> be wearing a race bib in order to run.</strong> Each first year is responsible for picking up their race bib from any of the bib distribution locations below.</p><table class="table table-responsive"><tr> <th>Date</th> <th>Location</th> <th>Times</th> </tr> <tr> <td>Wednesday, October 30th</td> <td>East Campus Dorms</td> <td>10:00AM-3:00PM</td> </tr> <tr> <td>Thursday, October 31st</td> <td>West Campus Dorms</td> <td>10:00AM-3:00PM</td> </tr> <tr> <td>Friday, November 1st</td> <td>Skiles Walkway</td> <td>9:00AM-1:00PM</td> </tr> </table> <ul><li>You will need to bring your BuzzCard or another form of I.D. to pick up the race bib.</li> 
+            "main" => '<p><strong>All first years <i>MUST</i> be wearing a race bib in order to run.</strong> Each first year is responsible for picking up their race bib from any of the bib distribution locations that will be posted in the fall.</p><table class="table table-responsive"><tr> <th>Date</th> <th>Location</th> <th>Times</th> </tr> <tr> <td>TBA</td> <td>TBA</td> <td>TBA</td> </tr> <tr> <td>TBA</td> <td>TBA</td> <td>TBA</td> </tr> <tr> <td>TBA</td> <td>TBA</td> <td>TBA</td> </tr> </table> <ul><li>You will need to bring your BuzzCard or another form of I.D. to pick up the race bib.</li> 
 <li>Students are allowed to pick up another student’s race bib if they present the other student’s BuzzCard.</li> 
 <li><strong>No race bibs will be distributed the morning of the race.</strong>
 <li>The race bibs are to be worn on the front of the participant’s shirt and should be on by the time you arrive at the start line at 6:00AM.</li></ul> 
@@ -87,7 +87,7 @@
         [
             "image" => '/homecoming/images/fcr-map-2019.png',
             "title" => 'Racer Entry',
-            "main" => '<i>When:</i> <strong>Saturday, November 2nd</strong>. All racers should arrive at <strong>6:00AM</strong>. The first heat will begin at <strong>6:30AM</strong>.\n<i>Where:</i> Racers should <strong>ENTER ON Techwood Drive</strong>, then <strong>turn left onto 6th St</strong>.\nThey will then be corralled into heats that line up starting at <strong>the intersection of Fowler St and 6th St</strong> and continuing back towards McCamish Pavilion.\nThe starting line of the race will be at <strong>the intersection of Fowler St and 6th St</strong>.'
+            "main" => '<i>When:</i> <strong>Saturday, October 17th, 2020</strong>. All racers should arrive at <strong>6:00AM</strong>. The first heat will begin at <strong>6:30AM</strong>.\n<i>Where:</i> Racers should <strong>ENTER ON Techwood Drive</strong>, then <strong>turn left onto 6th St</strong>.\nThey will then be corralled into heats that line up starting at <strong>the intersection of Fowler St and 6th St</strong> and continuing back towards McCamish Pavilion.\nThe starting line of the race will be at <strong>the intersection of Fowler St and 6th St</strong>.'
         ],
         [
             "image" => '/homecoming/images/fcr-004.jpg',
@@ -131,7 +131,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <p class="text-muted"><i>Have any questions? Reach out to Isabel Wickliffe, Reck Club Homecoming Chair, at <a href="mailto:isabel.wickliffe@gatech.edu">isabel.wickliffe@gatech.edu</a>.</i></p>
+            <p class="text-muted"><i>Have any questions? Reach out to us at <a href="mailto:gtfreshmancakerace@gmail.com">gtfreshmancakerace@gmail.com</a> or <a href="mailto:rrchomecoming@gmail.com">rrchomecoming@gmail.com</a>.</i></p>
         </div>
     </div>
 </div>
