@@ -19,15 +19,15 @@
 <div class="container mb-3">
     <div class="row">
         <div class="col-4 text-center">
-            <p class="mb-0" style="text-align:center"><a href="mailto:Isabel.Wickliffe@gatech.edu"><b>Isabel Wickliffe</b></a></p>
+            <p class="mb-0" style="text-align:center"><a href="mailto:rrchomecoming@gmail.com"><b>McKade Stewart</b></a></p>
             <p class="mb-0" style="text-align:center"><i>Reck Club Homecoming Chair</i></p>
         </div>
         <div class="col-4 text-center">
-            <p class="mb-0" style="text-align:center"><a href="mailto:brandon.dobson@gatech.edu"><b>Brandon Dobson</b></a></p>
+            <p class="mb-0" style="text-align:center"><a href="mailto:georgiatechmini500@gmail.com"><b>Kassie Lee</b></a></p>
             <p class="mb-0" style="text-align:center"><i>Mini 500 Sub-Chair</i></p>
         </div>
         <div class="col-4 text-center">
-            <p class="mb-0" style="text-align:center"><a href="mailto:rhurst8@gatech.edu"><b>Rachel Hurst</b></a></p>
+            <p class="mb-0" style="text-align:center"><a href="mailto:georgiatechmini500@gmail.com"><b>Ani Benge</b></a></p>
             <p class="mb-0" style="text-align:center"><i>Mini 500 Sub-Chair</i></p>
         </div>
     </div>
@@ -59,13 +59,15 @@
                                of seven members: 4 to take turns as the driver and three on the pit crew. 
                                Each team is required to rotate the front tire of their tricycle three times 
                                throughout the course of the race. All teams try to complete 8 laps without 
-                               destroying their tricycle.'
+                               destroying their tricycle.
+                               The 2020 Mini 500 will be on Friday, October 16th at 5:30 PM at Peter"s Parking Deck'
+
                 ],
                 [
                     "image" => '/homecoming/images/M51.jpg',
                     "title" => 'Sign Ups',
-                    "main" => 'Sign ups for Mini 500 are within the general homecoming sign ups and will be 
-                              September 24th through September 27th at tickets.studentcenter.gatech.edu. 
+                    "main" => 'Sign ups for Mini 500 are within the general homecoming sign ups and will be
+                              in mid to late September at tickets.studentcenter.gatech.edu. 
                               Mini 500 costs $100 dollars to participate in and include the tricycle and 
                               t-shirts for members of your Mini 500 team.'
 
@@ -73,9 +75,7 @@
                 [
                     "image" => '/homecoming/images/M52.jpg',
                     "title" => 'Tricycle Pickup',
-                    "main" => 'Each team must pick up their tricycle from the Spring room on the second floor of the 
-                               student center during the designated pick up days and times, October 10th and October 11th, 
-                               or they will not be allowed to race. Each team participating will receive a reminder 
+                    "main" => 'Each team must pick up their tricycle during the designated pick up days and times, in early October, or they will not be allowed to race. Each team participating will receive a reminder 
                                email about these days'
 
                 ],
@@ -172,7 +172,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <p class="text-muted"><i>Have any questions? Reach out to Isabel Wickliffe, Reck Club Homecoming Chair, at <a href="mailto:isabel.wickliffe@gatech.edu">isabel.wickliffe@gatech.edu</a>.</i></p>
+            <p class="text-muted"><i>Have any questions? Reach out to us at <a href="mailto:georgiatechmini500@gmail.com">georgiatechmini500@gmail.com</a> or <a href="mailto:rrchomecoming@gmail.com">rrchomecoming@gmail.com</a>.</i></p>
         </div>
     </div>
 </div>
