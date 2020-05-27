@@ -8,9 +8,17 @@
 <?php require "../partials/public-header.php" ?>
 
 <div class="container mb-3">
+    <div class= 'blog-header'>
+        <div class='col-12' style="text-align: center;">
+            <h1>Freshman Cake Race 2020</h1>
+        </div>
+    </div>
+</div>
+
+<div class="container mb-3">
     <div class="row">
         <div class="col-12">
-            <img class="img-fluid img-responsive" src="/homecoming/images/CakeRaceBanner.jpg">
+            <img class="img-fluid img-responsive" src="/homecoming/images/CakeRaceBanner2020.PNG">
         </div>
     </div>
 </div>
@@ -34,13 +42,14 @@
 
 <div class="container">
     <div class='row text-center'>
-        <div class='col-sm-4 col-xs-12 mb-3 mb-sm-0'>
+        <div class='col-sm-6 col-xs-12 mb-3 mb-sm-0'>
             <a class='btn btn-md btn-primary' href="#race-day-logistics">Race Day Logistics</a>
         </div>
-        <div class='col-sm-4 col-xs-12 mb-3 mb-sm-0'>
-            <a class='btn btn-md btn-secondary' href="https://gatech.campuslabs.com/engage/submitter/form/start/338342">Sign Ups</a>
-        </div>
-        <div class='col-sm-4 col-xs-12 mb-sm-0'>
+<!--        sign up button-->
+<!--        <div class='col-sm-4 col-xs-12 mb-3 mb-sm-0'>-->
+<!--            <a class='btn btn-md btn-secondary' href="https://gatech.campuslabs.com/engage/submitter/form/start/338342">Sign Ups</a>-->
+<!--        </div>-->
+        <div class='col-sm-6 col-xs-12 mb-sm-0'>
             <?php //If you change the name of the rules section further down, change the href here too. ?>
             <a class='btn btn-md btn-primary' href="#race-rules">Race Rules</a>
         </div>
@@ -63,7 +72,9 @@
         [
             "image" => '/homecoming/images/fcr-005.jpg',
             "title" => 'Race Bib Pickup',
-            "main" => '<p><strong>All first years <i>MUST</i> be wearing a race bib in order to run.</strong> Each first year is responsible for picking up their race bib from any of the bib distribution locations that will be posted in the fall.</p><table class="table table-responsive"><tr> <th>Date</th> <th>Location</th> <th>Times</th> </tr> <tr> <td>TBA</td> <td>TBA</td> <td>TBA</td> </tr> <tr> <td>TBA</td> <td>TBA</td> <td>TBA</td> </tr> <tr> <td>TBA</td> <td>TBA</td> <td>TBA</td> </tr> </table> <ul><li>You will need to bring your BuzzCard or another form of I.D. to pick up the race bib.</li> 
+            "main" => '<p><strong>All first years <i>MUST</i> be wearing a race bib in order to run.</strong> Each first year is responsible for picking up their race bib from any of the bib distribution locations that will be posted in the fall.</p>
+<!--<table class="table table-responsive"><tr> <th>Date</th> <th>Location</th> <th>Times</th> </tr> <tr> <td>TBA</td> <td>TBA</td> <td>TBA</td> </tr> <tr> <td>TBA</td> <td>TBA</td> <td>TBA</td> </tr> <tr> <td>TBA</td> <td>TBA</td> <td>TBA</td> </tr> </table> -->
+<ul><li>You will need to bring your BuzzCard or another form of I.D. to pick up the race bib.</li> 
 <li>Students are allowed to pick up another student’s race bib if they present the other student’s BuzzCard.</li> 
 <li><strong>No race bibs will be distributed the morning of the race.</strong>
 <li>The race bibs are to be worn on the front of the participant’s shirt and should be on by the time you arrive at the start line at 6:00AM.</li></ul> 

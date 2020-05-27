@@ -10,9 +10,16 @@
 <?php require "../partials/public-header.php" ?>
 
 <div class="container mb-3">
+    <div class= 'blog-header'>
+        <div class='col-12' style="text-align: center;">
+            <h1>Mini 500 2020</h1>
+        </div>
+    </div>
+</div>
+<div class="container mb-3">
     <div class="row">
         <div class="col-12">
-            <img class="img-fluid img-responsive" src="/homecoming/images/Mini500Banner.png">
+            <img class="img-fluid img-responsive" src="/homecoming/images/Mini500Banner2020.png">
         </div>
     </div>
 </div>
@@ -36,15 +43,19 @@
 
 <div class="container">
     <div class='row text-center'>
-        <div class='col-sm-4 col-xs-12 mb-3 mb-sm-0'>
-            <a class='btn btn-md btn-secondary' href="#race-day-info">Race Day Info</a>
+<!--        <div class='col-sm-4 col-xs-12 mb-3 mb-sm-0'>-->
+<!--            <a class='btn btn-md btn-secondary' href="#race-day-info">Race Day Info</a>-->
+<!--        </div>-->
+<!--        to go back to 3 buttons, change primary to secondary, change the 6 to 4 on the col-sm-6-->
+        <div class='col-sm-6 col-xs-12 mb-3 mb-sm-0'>
+            <a class='btn btn-md btn-primary' href="#race-day-info">Race Day Info</a>
         </div>
-        <div class='col-sm-4 col-xs-12 mb-3 mb-sm-0'>
-            <a class='btn btn-md btn-primary' href="/assets/2019-Mini-500-Rule-Book.pdf" target="_blank">2019 Mini 500 Rule Book</a>
+        <div class='col-sm-6 col-xs-12 mb-3 mb-sm-0'>
+            <a class='btn btn-md btn-primary' href="/assets/2020-Mini-500-Rule-Book.pdf" target="_blank">2020 Mini 500 Rule Book</a>
         </div>
-        <div class='col-sm-4 col-xs-12'>
-            <a class='btn btn-md btn-secondary' href="/assets/A-Guide-to-Mini-500.pdf" target="_blank">Guide to Mini 500</a>
-        </div>
+<!--        <div class='col-sm-4 col-xs-12'>-->
+<!--            <a class='btn btn-md btn-secondary' href="/assets/A-Guide-to-Mini-500.pdf" target="_blank">Guide to Mini 500</a>-->
+<!--        </div>-->
     </div>
     <hr class="mb-3">
 <?php
@@ -60,7 +71,7 @@
                                Each team is required to rotate the front tire of their tricycle three times 
                                throughout the course of the race. All teams try to complete 8 laps without 
                                destroying their tricycle.
-                               The 2020 Mini 500 will be on Friday, October 16th at 5:30 PM at Peter"s Parking Deck'
+                               The 2020 Mini 500 will be on Friday, October 16th at 5:30 PM at Peter\'s Parking Deck'
 
                 ],
                 [
@@ -76,7 +87,7 @@
                     "image" => '/homecoming/images/M52.jpg',
                     "title" => 'Tricycle Pickup',
                     "main" => 'Each team must pick up their tricycle during the designated pick up days and times, in early October, or they will not be allowed to race. Each team participating will receive a reminder 
-                               email about these days'
+                               email about these days.'
 
                 ],
                 [
