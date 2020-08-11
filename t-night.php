@@ -399,7 +399,7 @@
     <div class="container">
         <div id="intro" class="clearfix">
 <!--            <div id="invitation">Ramblin' Reck Club is proud to present its annual traditions celebration on <span class="highlight">Sunday, August 28th</span> from <span class="highlight">7:00-9:00 pm</span> at McCamish Pavilion. You don't want to miss this exciting event!</div>-->
-                <div id="invitation">Ramblin' Reck Club is proud to present its annual traditions celebration on <span class="highlight">Sunday, August 25th, 2019</span>. You don't want to miss this exciting event!</div>
+                <div id="invitation">Due to the COVID-19 pandemic, we have decided to postpone Traditions Night 2020 to the <span class="highlight">Spring 2021 semester</span>. Keep an eye out for an official date to be set for this exciting event!</div>
             <div id="schedule">
                 <h2>Schedule of Events</h2>
                 <ul>
