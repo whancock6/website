@@ -66,16 +66,16 @@
         [
             "image" => '/homecoming/images/fcr-001.jpg',
             "title" => 'COVID Update',
-            "main" => 'Due to the current situation with COVID-19, Freshman Cake Race will look slightly different than previous years. But fear not! The spirit and fun of one of Georgia Tech’s oldest traditions will be kept intact. We have listed a few of the changes below that we have made to keep the event safe!
-\n - The race will be held on a day when there is no football game scheduled to accommodate a longer race time. The race will span 6 hours in order to run a larger amount of heats, with a maximum of 15 freshmen in each heat spaced 6 feet apart to begin the race
-\n - Each residence hall will be given a time block for its residents to come and race during any time within the block. Each freshman will undergo a temperature check upon arrival. 
-\n - All volunteers helping execute the event will be wearing proper PPE and will be screened before they begin working the event
-\n - Freshmen will be appropriately spaced 6 feet apart throughout the race staging and start
-\n - At the finish line, cupcakes and water bottles will be spaced multiple feet apart on tables. Volunteers wearing PPE will restock the cupcakes as they are taken by freshmen as they finish. 
-\n - Freshmen will be encouraged to quickly take a photo with the Reck and then move through the finish area to discourage crowding.
-\n - The top three female and male racers will have a cake delivered to their residence hall!
+            "main" => 'Due to the current situation with COVID-19, Freshman Cake Race will look slightly different than previous years. But fear not! The spirit and fun of one of Georgia Tech’s oldest traditions will be kept intact. We have listed a few of the changes below that we have made to keep the event safe!'
+\n '- The race will be held on a day when there is no football game scheduled to accommodate a longer race time. The race will span 6 hours in order to run a larger amount of heats, with a maximum of 15 freshmen in each heat spaced 6 feet apart to begin the race'
+\n '- Each residence hall will be given a time block for its residents to come and race during any time within the block. Each freshman will undergo a temperature check upon arrival.'
+\n '- All volunteers helping execute the event will be wearing proper PPE and will be screened before they begin working the event'
+\n '- Freshmen will be appropriately spaced 6 feet apart throughout the race staging and start'
+\n '- At the finish line, cupcakes and water bottles will be spaced multiple feet apart on tables. Volunteers wearing PPE will restock the cupcakes as they are taken by freshmen as they finish.'
+\n '- Freshmen will be encouraged to quickly take a photo with the Reck and then move through the finish area to discourage crowding.'
+\n '- The top three female and male racers will have a cake delivered to their residence hall!'
 
-\n We are so excited to still get to put on this event and are taking every precaution we can to keep it safe and fun! If you have any questions or concerns please reach out to gtfreshmancakerace@gmail.com.
+\n 'We are so excited to still get to put on this event and are taking every precaution we can to keep it safe and fun! If you have any questions or concerns please reach out to gtfreshmancakerace@gmail.com.
 '
         ],
         [
