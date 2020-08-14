@@ -53,14 +53,24 @@
  <?php
 	require "html_header_end.txt";
 	if (isset($_SESSION[memberID])==1) {
+<<<<<<< Updated upstream
         print("<h3><script type=\"text/javascript\">printImage();</script></h3>");
         // print("<meta http-equiv=\"refresh\" ");
+=======
+		//print("<h3><script type=\"text/javascript\">printImage();</script></h3>");
+		print("<meta http-equiv=\"refresh\" ");
+>>>>>>> Stashed changes
         print("<h3>Login successful</h3>\n");
 		if($_SESSION['status']=="alumni"){
 			print("content=\"1; url=history.php\">");
 		} else{
+<<<<<<< Updated upstream
             //print("content=\"1; url=points.php\">");
             header('Location: points.php');exit();
+=======
+			print("content=\"1; url=points.php\">");
+			//header('Location: points.php');exit();
+>>>>>>> Stashed changes
 		}
 	} else {
 		print("<h3>Login failed</h3>\n");

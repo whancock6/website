@@ -378,7 +378,7 @@
     <script type="text/javascript">
         $(document).ready(function(){
             $('.main').hover(function(){
-                $(this).text("AUG 25 2019").fadeIn("slow");
+                $(this).text("DATE: TBA").fadeIn("slow");
             }, function() {
                 $(this).text("T-Night").fadeIn("slow");
             });
