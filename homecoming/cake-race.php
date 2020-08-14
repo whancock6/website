@@ -64,7 +64,7 @@
             "main" => 'The Freshman Cake Race is a half-mile race held before sunrise on the morning of the Homecoming game every year. This unique long-standing tradition is open to <strong>first year</strong> Georgia Tech students. Each first year receives a cupcake at the end of the race. The male and female winners of the race receive a cake and are brought to the field during halftime of the Homecoming game where they are bestowed a kiss from Mr. and Ms. Georgia Tech. This race dates back to 1911, when the first Cake Race was held as an open cross-country run at Georgia Tech. Two years later, some of the faculty member’s wives started baking cakes for the winners, thus the name Cake Race was created. While the race’s original purpose was to scout men for the track team, today\'s participants are encouraged to run, jog, or walk. First years, sign up today to take part in one of Georgia Tech’s greatest traditions!'
         ],
         [
-            "image" => '/homecoming/images/fcr-001.jpg',
+            "image" => '/homecoming/images/fcr-003.jpg',
             "title" => 'COVID Update',
             "main" => 'Due to the current situation with COVID-19, Freshman Cake Race will look slightly different than previous years. But fear not! The spirit and fun of one of Georgia Tech’s oldest traditions will be kept intact. We have listed a few of the changes below that we have made to keep the event safe!  
                              <ul> <li>The race will be held on a day when there is no football game scheduled to accommodate a longer race time. The race will span 6 hours in order to run a larger amount of heats, with a maximum of 15 freshmen in each heat spaced 6 feet apart to begin the race</li>
