@@ -8,9 +8,17 @@
 <?php require "../partials/public-header.php" ?>
 
 <div class="container mb-3">
+    <div class= 'blog-header'>
+        <div class='col-12' style="text-align: center;">
+            <h1>Ramblin Wreck Parade 2020</h1>
+        </div>
+    </div>
+</div>
+
+<div class="container mb-3">
     <div class="row">
         <div class="col-12">
-            <img class="img-fluid img-responsive" src="/homecoming/images/WreckParadeBanner.png">
+            <img class="img-fluid img-responsive" src="/homecoming/images/WreckParadeBanner2020.png">
         </div>
     </div>
 </div>
