@@ -74,6 +74,19 @@
 '
 
                 ],
+        [
+            "image" => '/homecoming/images/M59.jpg',
+            "title" => 'COVID Update',
+            "main" => 'In light of the COVID-19 situation, this year\'s Mini 500 has undergone some new changes to keep participants and spectators healthy. However, the spirit and fun of one of Georgia Tech’s most beloved traditions will be upheld!
+
+The event itself has been moved from Peters Parking Deck to the track around the Stamps Recreation Fields. This change will allow for entrance monitoring of participants and spectators. Every person entering the premises will have a standard temperature check and must be wearing a face covering.
+
+To limit the amount of teams racing at one time, only four teams will race at a time in a time trial fashion. Each team will start at opposing sides of the field and 4 racers from each team will compete. Racers will complete a half lap before sanitizing their trikes and passing it along to the next rider. Every team will compete two laps around the track!
+
+We are excited to be able to adapt the Mini 500 to keep everyone involved safe. If you are interested in competing in the Mini 500 this year please fill out the form here: <a href="https://forms.gle/LCZJM4VhE3tvF3Sh8">Mini 500 Form</a>. Stay safe and race on!
+'
+
+        ],
                 [
                     "image" => '/homecoming/images/M51.jpg',
                     "title" => 'Sign Ups',
