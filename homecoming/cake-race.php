@@ -33,7 +33,7 @@
             <p class="mb-0" style="text-align:center"><i>Cake Race Sub-Chair</i></p>
         </div>
         <div class="col-4 text-center">
-            <p class="mb-0" style="text-align:center"><a href="mailto:gtfreshmancakerace@gmail.com"><b>Briana Sims</b></a></p>
+            <p class="mb-0" style="text-align:center"><a href="mailto:gtfreshmancakerace@gmail.com"><b>Paul Weiland</b></a></p>
             <p class="mb-0" style="text-align:center"><i>Cake Race Sub-Chair</i></p>
         </div>
     </div>
@@ -82,19 +82,13 @@
         [
             "image" => '/homecoming/images/fcr-002.jpg',
             "title" => 'Sign Ups',
-            "main" => 'All first years can sign up for the Freshman Cake Race through October 9th. Check back in the fall for a link to the signup.'
+            "main" => 'Please fill out the following interest form if you are interested in participating in the Freshman Cake Race. We will be sending each person who filled out the form the official sign-up once it is finalized. Interest Form: <a href="https://forms.gle/7XLJ7N6cFG7um1pV8">https://forms.gle/7XLJ7N6cFG7um1pV8</a>'
 
         ],
         [
             "image" => '/homecoming/images/fcr-005.jpg',
             "title" => 'Race Bib Pickup',
-            "main" => '<p><strong>All first years <i>MUST</i> be wearing a race bib in order to run.</strong> Each first year is responsible for picking up their race bib from any of the bib distribution locations that will be posted in the fall.</p>
-<!--<table class="table table-responsive"><tr> <th>Date</th> <th>Location</th> <th>Times</th> </tr> <tr> <td>TBA</td> <td>TBA</td> <td>TBA</td> </tr> <tr> <td>TBA</td> <td>TBA</td> <td>TBA</td> </tr> <tr> <td>TBA</td> <td>TBA</td> <td>TBA</td> </tr> </table> -->
-<ul><li>You will need to bring your BuzzCard or another form of I.D. to pick up the race bib.</li> 
-<li>Students are allowed to pick up another student’s race bib if they present the other student’s BuzzCard.</li> 
-<li><strong>No race bibs will be distributed the morning of the race.</strong>
-<li>The race bibs are to be worn on the front of the participant’s shirt and should be on by the time you arrive at the start line at 6:00AM.</li></ul> 
-'
+            "main" => 'The Freshman Cake Race Co-Chairs are still evaluating the best way to safely proceed with bib distribution. Each participant who signs up will be emailed with more exact information or one can check back here for updates.'
         ]
     );
 
@@ -111,12 +105,7 @@
 
     <?php
     $info2 = array(
-        [
-            "image" => '/homecoming/images/fcr-map-2019.png',
-            "title" => 'Racer Entry',
-            "main" => '<i>When:</i> <strong>Saturday, October 17th, 2020</strong>. All racers should arrive at <strong>6:00AM</strong>. The first heat will begin at <strong>6:30AM</strong>.\n<i>Where:</i> Racers should <strong>ENTER ON Techwood Drive</strong>, then <strong>turn left onto 6th St</strong>.\nThey will then be corralled into heats that line up starting at <strong>the intersection of Fowler St and 6th St</strong> and continuing back towards McCamish Pavilion.\nThe starting line of the race will be at <strong>the intersection of Fowler St and 6th St</strong>.'
-        ],
-        [
+               [
             "image" => '/homecoming/images/fcr-004.jpg',
             "title" => 'Clothing Recommendations',
             "main" => 'Be sure to wear tennis shoes/sneakers and clothes that you would be comfortable running or walking in. Remember, you are encouraged to run or walk at your own pace. Depending on the temperature, make sure to dress in clothes that will keep you warm (sweatshirt/jacket, pants, hats, gloves, etc).'
