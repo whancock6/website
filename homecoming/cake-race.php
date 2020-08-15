@@ -119,7 +119,10 @@
 <li>Race bibs must be visible and worn outside of clothing and blankets.</li> 
 <li>Any student that is intoxicated will <strong>not</strong> be allowed to race.</li> 
 <li>Students are not allowed to litter the trash from cupcakes and cakes.</li> 
-</ul><p><strong>Any violations of these rules will result in disqualification of the participant and that participant’s organization will not receive points towards Homecoming. The violator’s organization will not be allowed to participate in Homecoming the following year.</strong> Violators will be brought to the Office of Student Integrity.</p>'
+</ul><p><strong>Any violations of these rules will result in disqualification of the participant and that participant’s organization will not receive points towards Homecoming. The violator’s organization will not be allowed to participate in Homecoming the following year.</strong> Violators will be brought to the Office of Student Integrity.</p>
+The full rule book can be found here: <a href="https://docs.google.com/document/d/1OVVEh-vWnf0hrs1GoqRK3VUM1JRjKcr0ErBGR7mBexg/edit?usp=sharing
+">https://docs.google.com/document/d/1OVVEh-vWnf0hrs1GoqRK3VUM1JRjKcr0ErBGR7mBexg/edit?usp=sharing
+</a> '
         ]
     );
 
