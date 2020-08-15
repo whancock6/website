@@ -51,7 +51,7 @@
             <a class='btn btn-md btn-primary' href="#race-day-info">Race Day Info</a>
         </div>
         <div class='col-sm-6 col-xs-12 mb-3 mb-sm-0'>
-            <a class='btn btn-md btn-primary' href="/assets/2020-Mini-500-Rule-Book.pdf" target="_blank">2020 Mini 500 Rule Book</a>
+            <a class='btn btn-md btn-primary' href="https://docs.google.com/document/d/1QETEAXTW7mL24TAS2zP9QKjvbu1QIefPbL1MvQk2I_s/edit" target="_blank">2020 Mini 500 Rule Book</a>
         </div>
 <!--        <div class='col-sm-4 col-xs-12'>-->
 <!--            <a class='btn btn-md btn-secondary' href="/assets/A-Guide-to-Mini-500.pdf" target="_blank">Guide to Mini 500</a>-->
@@ -64,30 +64,26 @@
                 [
                     "image" => '/homecoming/images/M55.jpg',
                     "title" => 'The Tradition',
-                    "main" => 'The Mini 500 is an annual tricycle race around Peters Parking Deck that occurs on the
-                               Friday afternoon before the homecoming football game. It is one of Georgia Tech’s 
-                               most unique traditions put on by Ramblin’ Reck Club since 1969. Teams are comprised 
-                               of seven members: 4 to take turns as the driver and three on the pit crew. 
+                    "main" => 'The Mini 500 is an annual tricycle race that usually takes place around Peters Parking Deck that occurs on the Friday afternoon before the Homecoming football game. However, this year, the race will be relocated to the Stamps Field Track at the CRC.
+ It is one of Georgia Tech’s most unique traditions put on by Ramblin’ Reck Club since 1969. Teams normally consisted of seven members: 4 to take turns as the driver and three on the pit crew. To monitor numbers, pit crews will be cut and racers will also act as the pit.
+ 
                                Each team is required to rotate the front tire of their tricycle three times 
-                               throughout the course of the race. All teams try to complete 8 laps without 
+                               throughout the course of the race. All teams try to complete 2 laps without 
                                destroying their tricycle.
-                               The 2020 Mini 500 will be on Friday, October 16th at 5:30 PM at Peter\'s Parking Deck'
+                              The 2020 Mini 500 will be on Friday, October 16th at 6:30 PM at the Stamps Field Track.
+'
 
                 ],
                 [
                     "image" => '/homecoming/images/M51.jpg',
                     "title" => 'Sign Ups',
-                    "main" => 'Sign ups for Mini 500 are within the general homecoming sign ups and will be
-                              in mid to late September at tickets.studentcenter.gatech.edu. 
-                              Mini 500 costs $100 dollars to participate in and include the tricycle and 
-                              t-shirts for members of your Mini 500 team.'
+                    "main" => 'Signups for the 2020 Mini 500 are now in early September'
 
                 ],
                 [
                     "image" => '/homecoming/images/M52.jpg',
                     "title" => 'Tricycle Pickup',
-                    "main" => 'Each team must pick up their tricycle during the designated pick up days and times, in early October, or they will not be allowed to race. Each team participating will receive a reminder 
-                               email about these days.'
+                    "main" => 'Mini 500 Co-Chairs are still evaluating the safest way to distribute tricycles.'
 
                 ],
                 [
