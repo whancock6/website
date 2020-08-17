@@ -73,7 +73,6 @@
         ],
         [
             "image" => '/homecoming/images/fcr-004.jpg',
-            "title" => ' ',
             "main" => ' <ul> <li>All volunteers helping execute the event will be wearing proper PPE and will be screened before they begin working the event</li>
                               <li>Freshmen will be appropriately spaced 6 feet apart throughout the race staging and start</li>
                               <li>At the finish line, cupcakes and water bottles will be spaced multiple feet apart on tables. Volunteers wearing PPE will restock the cupcakes as they are taken by freshmen as they finish.</li>
