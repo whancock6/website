@@ -41,6 +41,15 @@
 </div>
 
 <div class="container">
+    <div class="row justify-content-center">
+        <div margin="col-4">
+            <iframe margin="0 auto" width="560" height="315" src="https://www.youtube.com/embed/JrRwcHtUDyc" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+    <hr class="mb-3">
+</div>
+
+<div class="container">
 
     <?php
 
@@ -64,7 +73,7 @@
         [
             "image" => '/homecoming/images/wp-003.jpg',
             "title" => 'Logistics',
-            "main" => '<ul><li>Location: Begins at the McCamish Parking Lot and Fowler. Then make a lap around campus and end at the McCamish Parking Lot and Fowler. </li><li>Date for Participants: October 10th, 2020</li><li>Date of Video: October 17th, 2020</li></ul>'
+            "main" => '<ul><li>Location: Begins at the McCamish Parking Lot and Fowler. Then make a lap around campus and end at the McCamish Parking Lot and Fowler. </li><li>Date for Participants: October 11th, 2020</li><li>Date of Video: October 17th, 2020</li></ul>'
         ],
         [
             "image" => '/homecoming/images/wp-001.jpg',
