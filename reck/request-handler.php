@@ -74,7 +74,7 @@ $mailOptions = [
                 "<b>Phone Number:</b> " . $renterPhoneNumber . " \n" .
                 "<b>Email:</b> " . $renterEmail . " \n" .
                 "<b>Event Name:</b> " . $eventName . "\n" .
-                "<b>Event Location:</b> " . $eventStreetAddress . ", " . $eventCity . " " . $eventState . ", " . $eventZipCode . "\n" .
+                //"<b>Event Location:</b> " . $eventStreetAddress . ", " . $eventCity . " " . $eventState . ", " . $eventZipCode . "\n" .
                 "<b>Event Date:</b> " . $eventDate . "\n" .
                 "<b>Event Start Time:</b> " . $eventStartTime . "\n" .
                 "<b>Event End Time:</b> " . $eventEndTime . "\n" .
