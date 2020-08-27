@@ -37,21 +37,21 @@ $dt = new DateTime("now", new DateTimeZone($tz));
                 <div class="row">
                     <div class="col-4 mb-3">
                         <label for="event-name">Name</label>
-                        <input type="text" class="form-control" id="renter-name" placeholder="George P. Burdell" value="" required="">
+                        <input type="text" class="form-control" id="renter-name" placeholder="George P. Burdell" value="" required="" maxlength="63">
                         <div class="invalid-feedback">
                             Valid name is required.
                         </div>
                     </div>
                     <div class="col-4 mb-3">
                         <label for="event-name">Email</label>
-                        <input type="email" class="form-control" id="renter-email" placeholder="gpb@gatech.edu" value="" required="">
+                        <input type="email" class="form-control" id="renter-email" placeholder="gpb@gatech.edu" value="" required="" maxlength="127">
                         <div class="invalid-feedback">
                             Valid email is required.
                         </div>
                     </div>
                     <div class="col-4 mb-3">
                         <label for="event-phone-number">Contact Phone Number</label>
-                        <input type="text" class="form-control" id="renter-phone-number" placeholder="(xxx) xxx-xxxx" value="" required="">
+                        <input type="text" class="form-control" id="renter-phone-number" placeholder="(xxx) xxx-xxxx" value="" required="" maxlength="15">
                         <div class="invalid-feedback">
                             Valid phone number is required.
                         </div>
@@ -59,8 +59,8 @@ $dt = new DateTime("now", new DateTimeZone($tz));
                 </div>
                 <div class="row">
                     <div class="col-12 mb-3">
-                        <label for="event-name">Event name</label>
-                        <input type="text" class="form-control" id="event-name" placeholder="" value="" required="">
+                        <label for="event-name">Event Name</label>
+                        <input type="text" class="form-control" id="event-name" placeholder="" value="" required="" maxlength="63">
                         <div class="invalid-feedback">
                             Valid event name is required.
                         </div>
@@ -68,17 +68,50 @@ $dt = new DateTime("now", new DateTimeZone($tz));
                 </div>
                 <div class="row">
                     <div class="col-12 mb-3">
-                        <label for="event-name">Event address</label>
-                        <input type="text" class="form-control" id="event-location" placeholder="Please include the city and state." value="" required="">
+                        <label for="event-name">Event Street Address</label>
+                        <input type="text" class="form-control" id="event-streetAddress" placeholder="Street address for the event" value="" required="" maxlength="127">
                         <div class="invalid-feedback">
-                            Valid event location is required.
+                            Valid event street adress is required.
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="event-name">City</label>
+                        <input type="text" class="form-control" id="event-city" placeholder="City" value="" required="" maxlength="63">
+                        <div class="invalid-feedback">
+                            Valid event city is required.
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="event-name">State</label>
+                        <select class="custom-select d-block w-100" id="event-state" required="">
+                            <?php $states = ['AK', 'AL', 'AR', 'AZ', 'CA', 'CO', 'CT', 'DC', 'DE', 'FL', 'GA', 'HI', 'IA', 'ID', 'IL', 'IN', 'KS', 'KY', 'LA', 'MA', 'MD', 'ME', 'MI', 'MN', 'MO', 'MS', 'MT', 'NC', 'ND', 'NE', 'NH', 'NJ', 'NM', 'NV', 'NY', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VA', 'VT', 'WA', 'WI', 'WV', 'WY'];
+                            foreach ($states as $state) {
+                                if ($state == 'GA') {
+                                    echo "<option value=\"" . $state . "\" selected=\"selected\">" . $state . "</option>";
+                                } else {
+                                    echo "<option value=\"" . $state . "\">" . $state . "</option>";
+                                }
+                            }
+                            ?>
+                        </select>
+                        <div class="invalid-feedback">
+                            Please provide a valid state.
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="event-name">Zip Code</label>
+                        <input type="text" class="form-control" id="event-zipCode" placeholder="Zip Code" value="" required="" maxlength="5">
+                        <div class="invalid-feedback">
+                            Valid event zip code is required.
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12 mb-3">
                         <label for="event-name">Distance from Campus</label>
-                        <input type="text" class="form-control" id="event-distance-away" placeholder="In miles" value="" required="">
+                        <input type="text" class="form-control" id="event-distance-away" placeholder="In miles" value="" required="" maxlength="10">
                         <div class="invalid-feedback">
                             Valid event distance is required.
                         </div>
@@ -87,8 +120,8 @@ $dt = new DateTime("now", new DateTimeZone($tz));
                 </div>
                 <div class="row">
                     <div class="col-12 mb-3">
-                        <label for="event-name">Event details</label>
-                        <textarea class="form-control" id="event-details" placeholder="Please provide all important setup details and other pertinent information here." value=""></textarea>
+                        <label for="event-name">Event Details</label>
+                        <textarea class="form-control" id="event-details" placeholder="Please provide all important setup details and other pertinent information here." value="" maxlength="254"></textarea>
                     </div>
                 </div>
                 <div class="row">
@@ -255,7 +288,10 @@ $dt = new DateTime("now", new DateTimeZone($tz));
                 renterPhoneNumber: $('#renter-phone-number').val(),
                 eventDetails: $('#event-details').val(),
                 eventName: $('#event-name').val(),
-                eventLocation: $('#event-location').val(),
+                eventStreetAddress: $('#event-streetAddress').val(),
+                eventCity: $('#event-city').val(),
+                eventState: $('#event-state').val(),
+                eventZipCode: $('#event-ZipCode').val(),
                 eventDate: $('#event-month').val() + ' ' + $('#event-day').val() + ', ' + $('#event-year').val(),
                 eventStartTime: $('#event-start-hour').val() + ':' + (parseInt($('#event-start-minute').val()) < 10 ? '0'+$('#event-start-minute').val() : $('#event-start-minute').val()) + ' ' + $('#event-start-mode').val(),
                 eventEndTime: $('#event-end-hour').val() + ':' + (parseInt($('#event-end-minute').val()) < 10 ? '0'+$('#event-end-minute').val() : $('#event-end-minute').val()) + ' ' + $('#event-end-mode').val(),
