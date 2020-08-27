@@ -16,29 +16,29 @@ $eventStartTime = $_POST["eventStartTime"];
 $eventEndTime = $_POST["eventEndTime"];
 $eventDistanceAway = $_POST["eventDistanceAway"];
 
-date_default_timezone_set(America/New_York);
-$createdAt = date("Y-m-d") . " " . date("H:i:s");
-$status = "requested";
+//date_default_timezone_set(America/New_York);
+//$createdAt = date("Y-m-d") . " " . date("H:i:s");
+//$status = "requested";
 
 $url = "https://api.sendgrid.com/v3/mail/send";
 
-$query = $db->prepare("INSERT INTO reck_request (createdAt, status, name, email, phone, eventName, streetAddress, city, state, zipCode, distance, startDateTime, endDateTime, details) VALUES (:createdAt, :status, :name, :email, :phone, :eventName, :streetAddress, :city, :state, :zipCode, :distance, :startDateTime, :endDateTime, :details)");
-$query->bindParam(':createdAt', $createdAt);
-$query->bindParam(':status', $status);
-$query->bindParam(':name', $name);
-$query->bindParam(':email', $email);
-$query->bindParam(':phone', $phone);
-$query->bindParam(':eventName', $eventName);
-$query->bindParam(':streetAddress', $streetAddress);
-$query->bindParam(':city', $city);
-$query->bindParam(':state', $state);
-$query->bindParam(':zipCode', $zipCode);
-$query->bindParam(':distance', $distance);
-$query->bindParam(':startDateTime', $startDateTime);
-$query->bindParam(':endDateTime', $endDateTime);
-$query->bindParam(':details', $details);
-
-$query->execute();
+//$query = $db->prepare("INSERT INTO reck_request (createdAt, status, name, email, phone, eventName, streetAddress, city, state, zipCode, distance, startDateTime, endDateTime, details) VALUES (:createdAt, :status, :name, :email, :phone, :eventName, :streetAddress, :city, :state, :zipCode, :distance, :startDateTime, :endDateTime, :details)");
+//$query->bindParam(':createdAt', $createdAt);
+//$query->bindParam(':status', $status);
+//$query->bindParam(':name', $name);
+//$query->bindParam(':email', $email);
+//$query->bindParam(':phone', $phone);
+//$query->bindParam(':eventName', $eventName);
+//$query->bindParam(':streetAddress', $streetAddress);
+//$query->bindParam(':city', $city);
+//$query->bindParam(':state', $state);
+//$query->bindParam(':zipCode', $zipCode);
+//$query->bindParam(':distance', $distance);
+//$query->bindParam(':startDateTime', $startDateTime);
+//$query->bindParam(':endDateTime', $endDateTime);
+//$query->bindParam(':details', $details);
+//
+//$query->execute();
 
 $mailOptions = [
     "personalizations" => [
