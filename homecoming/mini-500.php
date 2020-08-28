@@ -10,24 +10,31 @@
 <?php require "../partials/public-header.php" ?>
 
 <div class="container mb-3">
+    <div class= 'blog-header'>
+        <div class='col-12' style="text-align: center;">
+            <h1>Mini 500 2020</h1>
+        </div>
+    </div>
+</div>
+<div class="container mb-3">
     <div class="row">
         <div class="col-12">
-            <img class="img-fluid img-responsive" src="/homecoming/images/Mini500Banner.png">
+            <img class="img-fluid img-responsive" src="/homecoming/images/Mini500Banner2020.png">
         </div>
     </div>
 </div>
 <div class="container mb-3">
     <div class="row">
         <div class="col-4 text-center">
-            <p class="mb-0" style="text-align:center"><a href="mailto:Isabel.Wickliffe@gatech.edu"><b>Isabel Wickliffe</b></a></p>
+            <p class="mb-0" style="text-align:center"><a href="mailto:rrchomecoming@gmail.com"><b>McKade Stewart</b></a></p>
             <p class="mb-0" style="text-align:center"><i>Reck Club Homecoming Chair</i></p>
         </div>
         <div class="col-4 text-center">
-            <p class="mb-0" style="text-align:center"><a href="mailto:brandon.dobson@gatech.edu"><b>Brandon Dobson</b></a></p>
+            <p class="mb-0" style="text-align:center"><a href="mailto:georgiatechmini500@gmail.com"><b>Kassie Lee</b></a></p>
             <p class="mb-0" style="text-align:center"><i>Mini 500 Sub-Chair</i></p>
         </div>
         <div class="col-4 text-center">
-            <p class="mb-0" style="text-align:center"><a href="mailto:rhurst8@gatech.edu"><b>Rachel Hurst</b></a></p>
+            <p class="mb-0" style="text-align:center"><a href="mailto:georgiatechmini500@gmail.com"><b>Ani Benge</b></a></p>
             <p class="mb-0" style="text-align:center"><i>Mini 500 Sub-Chair</i></p>
         </div>
     </div>
@@ -36,47 +43,69 @@
 
 <div class="container">
     <div class='row text-center'>
-        <div class='col-sm-4 col-xs-12 mb-3 mb-sm-0'>
-            <a class='btn btn-md btn-secondary' href="#race-day-info">Race Day Info</a>
+<!--        <div class='col-sm-4 col-xs-12 mb-3 mb-sm-0'>-->
+<!--            <a class='btn btn-md btn-secondary' href="#race-day-info">Race Day Info</a>-->
+<!--        </div>-->
+<!--        to go back to 3 buttons, change primary to secondary, change the 6 to 4 on the col-sm-6-->
+        <div class='col-sm-6 col-xs-12 mb-3 mb-sm-0'>
+            <a class='btn btn-md btn-primary' href="#race-day-info">Race Day Info</a>
         </div>
-        <div class='col-sm-4 col-xs-12 mb-3 mb-sm-0'>
-            <a class='btn btn-md btn-primary' href="/assets/2019-Mini-500-Rule-Book.pdf" target="_blank">2019 Mini 500 Rule Book</a>
+        <div class='col-sm-6 col-xs-12 mb-3 mb-sm-0'>
+            <a class='btn btn-md btn-primary' href="https://docs.google.com/document/d/1QETEAXTW7mL24TAS2zP9QKjvbu1QIefPbL1MvQk2I_s/edit" target="_blank">2020 Mini 500 Rule Book</a>
         </div>
-        <div class='col-sm-4 col-xs-12'>
-            <a class='btn btn-md btn-secondary' href="/assets/A-Guide-to-Mini-500.pdf" target="_blank">Guide to Mini 500</a>
-        </div>
+<!--        <div class='col-sm-4 col-xs-12'>-->
+<!--            <a class='btn btn-md btn-secondary' href="/assets/A-Guide-to-Mini-500.pdf" target="_blank">Guide to Mini 500</a>-->
+<!--        </div>-->
     </div>
     <hr class="mb-3">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div margin="col-4">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/VF45Fb0uPU4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <hr class="mb-3">
+    </div>
+
 <?php
 
     $info1 = array(
                 [
                     "image" => '/homecoming/images/M55.jpg',
                     "title" => 'The Tradition',
-                    "main" => 'The Mini 500 is an annual tricycle race around Peters Parking Deck that occurs on the
-                               Friday afternoon before the homecoming football game. It is one of Georgia Tech’s 
-                               most unique traditions put on by Ramblin’ Reck Club since 1969. Teams are comprised 
-                               of seven members: 4 to take turns as the driver and three on the pit crew. 
+                    "main" => 'The Mini 500 is an annual tricycle race that usually takes place around Peters Parking Deck that occurs on the Friday afternoon before the Homecoming football game. However, this year, the race will be relocated to the Stamps Field Track at the CRC.
+ It is one of Georgia Tech’s most unique traditions put on by Ramblin’ Reck Club since 1969. Teams normally consisted of seven members: 4 to take turns as the driver and three on the pit crew. To monitor numbers, pit crews will be cut and racers will also act as the pit.
+ 
                                Each team is required to rotate the front tire of their tricycle three times 
-                               throughout the course of the race. All teams try to complete 8 laps without 
-                               destroying their tricycle.'
+                               throughout the course of the race. All teams try to complete 2 laps without 
+                               destroying their tricycle.
+                              The 2020 Mini 500 will be on Friday, October 16th at 6:30 PM at the Stamps Field Track.
+'
+
                 ],
+        [
+            "image" => '/homecoming/images/M59.jpg',
+            "title" => 'COVID Update',
+            "main" => 'In light of the COVID-19 situation, this year\'s Mini 500 has undergone some new changes to keep participants and spectators healthy. However, the spirit and fun of one of Georgia Tech’s most beloved traditions will be upheld!
+
+The event itself has been moved from Peters Parking Deck to the track around the Stamps Recreation Fields. This change will allow for entrance monitoring of participants and spectators. Every person entering the premises will have a standard temperature check and must be wearing a face covering.
+
+To limit the amount of teams racing at one time, only four teams will race at a time in a time trial fashion. Each team will start at opposing sides of the field and 4 racers from each team will compete. Racers will complete a half lap before sanitizing their trikes and passing it along to the next rider. Every team will compete two laps around the track!
+
+We are excited to be able to adapt the Mini 500 to keep everyone involved safe. If you are interested in competing in the Mini 500 this year please fill out the form here: <a href="https://forms.gle/LCZJM4VhE3tvF3Sh8">Mini 500 Form</a>. Stay safe and race on!
+'
+
+        ],
                 [
                     "image" => '/homecoming/images/M51.jpg',
                     "title" => 'Sign Ups',
-                    "main" => 'Sign ups for Mini 500 are within the general homecoming sign ups and will be 
-                              September 24th through September 27th at tickets.studentcenter.gatech.edu. 
-                              Mini 500 costs $100 dollars to participate in and include the tricycle and 
-                              t-shirts for members of your Mini 500 team.'
+                    "main" => 'Signups for the 2020 Mini 500 are now in early September'
 
                 ],
                 [
                     "image" => '/homecoming/images/M52.jpg',
                     "title" => 'Tricycle Pickup',
-                    "main" => 'Each team must pick up their tricycle from the Spring room on the second floor of the 
-                               student center during the designated pick up days and times, October 10th and October 11th, 
-                               or they will not be allowed to race. Each team participating will receive a reminder 
-                               email about these days'
+                    "main" => 'Mini 500 Co-Chairs are still evaluating the safest way to distribute tricycles.'
 
                 ],
                 [
@@ -172,7 +201,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <p class="text-muted"><i>Have any questions? Reach out to Isabel Wickliffe, Reck Club Homecoming Chair, at <a href="mailto:isabel.wickliffe@gatech.edu">isabel.wickliffe@gatech.edu</a>.</i></p>
+            <p class="text-muted"><i>Have any questions? Reach out to us at <a href="mailto:georgiatechmini500@gmail.com">georgiatechmini500@gmail.com</a> or <a href="mailto:rrchomecoming@gmail.com">rrchomecoming@gmail.com</a>.</i></p>
         </div>
     </div>
 </div>
