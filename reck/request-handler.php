@@ -1,6 +1,6 @@
 <?php
 
-require "database_connect.php";
+require "../database_connect.php";
 
 $renterName = $_POST["renterName"];
 $renterPhoneNumber = $_POST["renterPhoneNumber"];
@@ -16,29 +16,33 @@ $eventStartTime = $_POST["eventStartTime"];
 $eventEndTime = $_POST["eventEndTime"];
 $eventDistanceAway = $_POST["eventDistanceAway"];
 
-//date_default_timezone_set(America/New_York);
-//$createdAt = date("Y-m-d") . " " . date("H:i:s");
-//$status = "requested";
+date_default_timezone_set("America/New_York");
+$createdAt = date("Y-m-d") . " " . date("H:i:s");
+$status = "requested";
+
+
+$eventStartDateTime = date('Y-m-d H:i:s', strtotime($eventDate . " " . $eventStartTime));
+$eventEndDateTime = date('Y-m-d H:i:s', strtotime($eventDate . " " . $eventEndTime));
 
 $url = "https://api.sendgrid.com/v3/mail/send";
 
-//$query = $db->prepare("INSERT INTO reck_request (createdAt, status, name, email, phone, eventName, streetAddress, city, state, zipCode, distance, startDateTime, endDateTime, details) VALUES (:createdAt, :status, :name, :email, :phone, :eventName, :streetAddress, :city, :state, :zipCode, :distance, :startDateTime, :endDateTime, :details)");
-//$query->bindParam(':createdAt', $createdAt);
-//$query->bindParam(':status', $status);
-//$query->bindParam(':name', $name);
-//$query->bindParam(':email', $email);
-//$query->bindParam(':phone', $phone);
-//$query->bindParam(':eventName', $eventName);
-//$query->bindParam(':streetAddress', $streetAddress);
-//$query->bindParam(':city', $city);
-//$query->bindParam(':state', $state);
-//$query->bindParam(':zipCode', $zipCode);
-//$query->bindParam(':distance', $distance);
-//$query->bindParam(':startDateTime', $startDateTime);
-//$query->bindParam(':endDateTime', $endDateTime);
-//$query->bindParam(':details', $details);
-//
-//$query->execute();
+$query = $db->prepare("INSERT INTO reck_request (createdAt, status, name, email, phone, eventName, streetAddress, city, state, zipCode, distance, startDateTime, endDateTime, details) VALUES (:createdAt, :status, :name, :email, :phone, :eventName, :streetAddress, :city, :state, :zipCode, :distance, :startDateTime, :endDateTime, :details)");
+$query->bindParam(':createdAt', $createdAt);
+$query->bindParam(':status', $status);
+$query->bindParam(':name', $renterName);
+$query->bindParam(':email', $renterEmail);
+$query->bindParam(':phone', $renterPhoneNumber);
+$query->bindParam(':eventName', $eventName);
+$query->bindParam(':streetAddress', $eventStreetAddress);
+$query->bindParam(':city', $eventCity);
+$query->bindParam(':state', $eventState);
+$query->bindParam(':zipCode', $eventZipCode);
+$query->bindParam(':distance', $eventDistanceAway);
+$query->bindParam(':startDateTime', $eventStartDateTime);
+$query->bindParam(':endDateTime', $eventEndDateTime);
+$query->bindParam(':details', $eventDetails);
+
+$query->execute();
 
 $mailOptions = [
     "personalizations" => [
@@ -74,7 +78,7 @@ $mailOptions = [
                 "<b>Phone Number:</b> " . $renterPhoneNumber . " \n" .
                 "<b>Email:</b> " . $renterEmail . " \n" .
                 "<b>Event Name:</b> " . $eventName . "\n" .
-                //"<b>Event Location:</b> " . $eventStreetAddress . ", " . $eventCity . " " . $eventState . ", " . $eventZipCode . "\n" .
+                "<b>Event Location:</b> " . $eventStreetAddress . ", " . $eventCity . " " . $eventState . ", " . $eventZipCode . "\n" .
                 "<b>Event Date:</b> " . $eventDate . "\n" .
                 "<b>Event Start Time:</b> " . $eventStartTime . "\n" .
                 "<b>Event End Time:</b> " . $eventEndTime . "\n" .
@@ -104,7 +108,14 @@ if ($result && array_key_exists("errors", $result_dict)) {
         "status" => "bad",
         "message" => "Something bad happened to this request. :("
     ]);
-} else {
+}elseif (is_null($result)){
+    echo json_encode([
+        "status" => "bad",
+        "message" => "Something bad has happened to this request. :("
+    ]);
+}
+
+else {
     echo json_encode([
         "status" => "ok",
         "message" => "Reck request email sent successfully!"

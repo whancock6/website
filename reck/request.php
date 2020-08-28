@@ -295,6 +295,9 @@ $dt = new DateTime("now", new DateTimeZone($tz));
                 eventDate: $('#event-month').val() + ' ' + $('#event-day').val() + ', ' + $('#event-year').val(),
                 eventStartTime: $('#event-start-hour').val() + ':' + (parseInt($('#event-start-minute').val()) < 10 ? '0'+$('#event-start-minute').val() : $('#event-start-minute').val()) + ' ' + $('#event-start-mode').val(),
                 eventEndTime: $('#event-end-hour').val() + ':' + (parseInt($('#event-end-minute').val()) < 10 ? '0'+$('#event-end-minute').val() : $('#event-end-minute').val()) + ' ' + $('#event-end-mode').val(),
+                eventStartDateTime: $('#event-year').val() + '-' + $('#event-month').val() + '-' + $('#event-day').val() + ' ' + $('#event-start-hour').val() + ':' + (parseInt($('#event-start-minute').val()) < 10 ? '0'+$('#event-start-minute').val() : $('#event-start-minute').val()) + ':00',
+                //'Y-m-d H:i:s'
+                eventEndDateTime: $('#event-year').val() + '-' + $('#event-month').val() + '-' + $('#event-day').val() + ' ' + $('#event-end-hour').val() + ':' + (parseInt($('#event-end-minute').val()) < 10 ? '0'+$('#event-end-minute').val() : $('#event-end-minute').val()) + ':00',
                 eventDistanceAway: $('#event-distance-away').val()
             },
             contentType: 'application/x-www-form-urlencoded',
