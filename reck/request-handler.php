@@ -20,7 +20,6 @@ date_default_timezone_set("America/New_York");
 $createdAt = date("Y-m-d") . " " . date("H:i:s");
 $status = "requested";
 
-
 $eventStartDateTime = date('Y-m-d H:i:s', strtotime($eventDate . " " . $eventStartTime));
 $eventEndDateTime = date('Y-m-d H:i:s', strtotime($eventDate . " " . $eventEndTime));
 
