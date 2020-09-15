@@ -108,6 +108,7 @@
                         <?php
                         if($familyEvent == "false") {
                             echo "<select class=\"custom-select d-block w-100\" name=\"pointValue\" id=\"pointValue\">";
+                            echo "<option value=\"0\">0</option>";
                             echo "<option value=\"5\">5</option>";
                             echo "<option value=\"10\" selected>10</option>";
                             echo "<option value=\"15\">15</option>";
