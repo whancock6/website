@@ -110,7 +110,7 @@
     <h4 class="mb-3">Members</h4>
     <div class="row">
         <?php
-        $members = ['Abi Ivemeyer','Adam Lederer','Ally Rosenthal','Amanda Healy','Annie Robinson', 'Brandon Dobson','Brayton Miles','Brendan Mindiak', 'Brittany Powell','Brittany Ritter','Brooke Brennan', 'Cade Lawson','Caroline Means','Dean Plaskon', 'Derek Prusener','Diana Michael', 'Ebie McDonnell', 'Ethan Kreager','Ethan Rosman','Gracie Curran','Haley McElroy','Inika Jain','Isabelle Liffiton', 'Jack Crawford', 'Jake Grant', 'Jen O\'Brien', 'Jill Riley','Kassie Lee', 'Katie Coveny','Katie Earles', 'Kayleigh Nortje', 'Kirby Criswell', 'Laura Hancher', 'Marissa Klee', 'Matt DeJonge', 'McKade Stewart','Noah Bryant', 'Rachel Hurst','Ronnie Ludwin','Samantha White','Sunny Thomson','Sydney Weisenburger','Whitney Miller','Zoe Sieling'];
+        $members = ['Abi Ivemeyer','Adam Lederer','Ally Rosenthal','Amanda Healy','Annie Robinson', 'Brandon Dobson','Brayton Miles','Brendan Mindiak','Brittany Ritter', 'Cade Lawson','Caroline Means','Dean Plaskon', 'Derek Prusener','Diana Michael', 'Ebie McDonnell', 'Ethan Kreager','Ethan Rosman','Haley McElroy','Inika Jain','Isabelle Liffiton', 'Jack Crawford', 'Jake Grant', 'Jen O\'Brien', 'Jill Riley','Kassie Lee', 'Katie Coveny','Katie Earles', 'Kirby Criswell', 'Laura Hancher', 'Marissa Klee', 'McKade Stewart', 'Rachel Hurst','Ronnie Ludwin','Samantha White','Sydney Weisenburger','Whitney Miller'];
         sort($members);
         chunkAndFormatArray($members, 6, function ($chunk) {
             echo "<div class=\"col-md-2 text-center\">";
