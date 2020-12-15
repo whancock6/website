@@ -18,6 +18,10 @@
     <?php
     $drivers = [
         [
+            "year" => "2021",
+            "name" => "Ethan Rosman"
+        ],
+        [
             "year" => "2020",
             "name" => "Abi Ivemeyer"
         ],
@@ -171,7 +175,7 @@
         ],
         [
             "year" =>"1985",
-            "name" =>"Todd Wheeler"
+            "name" =>"Todd Kelso"
         ],
         [
             "year" =>"1984",
