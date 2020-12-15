@@ -111,19 +111,17 @@
     </div>
     <hr class="mb-3">
     <h4 class="mb-3">Members</h4>
-    <div class="row">
-        <?php
-        $members = ['Abi Ivemeyer','Adam Lederer','Ally Rosenthal','Amanda Healy','Anilyn Benge','Annie Robinson', 'Austin Gies', 'Brandon Dobson','Brendan Mindiak', 'Brendon Thaler', 'Briana Sims', 'Brittany Ritter', 'Cade Lawson','Caroline Means', 'Carter Kubes', 'Dean Plaskon', 'Derek Prusener', 'Emma Wojack', 'Ethan Kreager','Ethan Rosman', 'Grace Mallon', 'Haley McElroy','Inika Jain','Isabelle Liffiton', 'Isheeta Mukherjee', 'Jack Crawford', 'Jacob Lewis', 'Jake Grant', 'Jen O\'Brien', 'Jill Riley','Kassie Lee', 'Katie Earles', 'Keshav Ramanathan', 'Kevin Hopper', 'Kirby Criswell', 'Marissa Klee', 'McKade Stewart', 'Nick Isaf','Paul Weiland', 'Ross LeRoy','Samantha White','Sofia Eidizadeh','Sydney Weisenburger', 'Taylor Gray', 'Whitney Miller', 'Zach Bellis'];
-        sort($members);
-        chunkAndFormatArray($members, 6, function ($chunk) {
-            echo "<div class=\"col-md-2 text-center\">";
-            foreach ($chunk as $item) {
-                echo "<p class='text-left'>" . $item . "</p>";
-            }
-            echo "</div>";
-        });
-        ?>
-    </div>
+    <?php
+    $members = ['Abi Ivemeyer','Adam Lederer','Ally Rosenthal','Amanda Healy','Anilyn Benge','Annie Robinson', 'Austin Gies', 'Brandon Dobson','Brendan Mindiak', 'Brendon Thaler', 'Briana Sims', 'Brittany Ritter', 'Cade Lawson','Caroline Means', 'Carter Kubes', 'Dean Plaskon', 'Derek Prusener', 'Emma Wojack', 'Ethan Kreager','Ethan Rosman', 'Grace Mallon', 'Haley McElroy','Inika Jain','Isabelle Liffiton', 'Isheeta Mukherjee', 'Jack Crawford', 'Jacob Lewis', 'Jake Grant', 'Jen O\'Brien', 'Jill Riley','Kassie Lee', 'Katie Earles', 'Keshav Ramanathan', 'Kevin Hopper', 'Kirby Criswell', 'Marissa Klee', 'McKade Stewart', 'Nick Isaf','Paul Weiland', 'Ross LeRoy','Samantha White','Sofia Eidizadeh','Sydney Weisenburger', 'Taylor Gray', 'Whitney Miller', 'Zach Bellis'];
+    sort($members);
+    chunkAndFormatArray($members, 6, function ($chunk) {
+        echo "<div class=\"col-md-2 text-center\">";
+        foreach ($chunk as $item) {
+            echo "<p class='text-left'>" . $item . "</p>";
+        }
+        echo "</div>";
+    });
+    ?>
     <hr class="mb-3">
     <h4 class="mb-4">Probates</h4>
     <div class="row mb-3">
