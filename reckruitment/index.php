@@ -66,9 +66,9 @@
     <p>In order to provide applicants a casual setting to interact with Reck Clubbers and get a better feel for the kind of spirit Reck Club has for Georgia Tech, all applicants must attend one of the following virtual Get To Know You events. Please note that applicants need only attend one of the following events in order to satisfy the recruitment requirements. More details to come.</p>
 
 <ul>
-    <li><strong>Thursday, January 21st</li>
-    <li><strong>Wednesday, January 27th</li>
-    <li><strong>Saturday, January 31st</li>
+    <li><strong>Thursday, January 21st</strong></li>
+    <li><strong>Wednesday, January 27th</strong></li>
+    <li><strong>Saturday, January 31st</strong></li>
 <!--    <li><strong>Interviews: Tuesday, January 29th through Thursday, January 31st from 5:30-9pm (Mandatory)</strong></li>-->
 <!--    <li>Check back here in December 2019 for athletic social dates for the 2020 recruitment cycle!</li>-->
 </ul>
