@@ -77,9 +77,9 @@
 
     <p>The interview portion of RECKruitment is designed to allow for Reck Clubbers to get to know applicants on a more personal basis. We just want to give each applicant the time to express their ideas, commitment, and personality. The interview portion will include an individual interview followed by a short group interview activity. The encouraged attire is business semi-formal, but wear what is comfortable. Interviewees will sign up for an interview time slot during check-in at the first social.</p>
     <ul>
-        <li>Tuesday, February 2nd</li>
-        <li>Wednesday, February 3rd</li>
-        <li>Thursday, February 4th</li>
+        <li><strong>Tuesday, February 2nd</strong></li>
+        <li><strong>Wednesday, February 3rd</strong></li>
+        <li><strong>Thursday, February 4th</strong></li>
     </ul>
 
 <h4 class="mb-2" id="second-social">Second Social (Mandatory)</h4>
