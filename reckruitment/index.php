@@ -57,7 +57,7 @@
 <h4 class="mb-2" id="first-social">First Social (Mandatory)</h4>
     <p>Attending this social is your chance as an applicant to meet Reck Clubbers for the first time, get a feel for what Ramblin’ Reck Club is all about, ask any questions you may have about the Club or getting involved, and most importantly, sign up for an interview time. No need to stress about this event; be yourself and talk to anyone you do not already know! Dress code for this event is <strong>business casual</strong>, and will be hosted virtually. More details to come.</p>
     <ul>
-        <li><strong>First Social: Monday, February 1st</li>
+        <li><strong>First Social: Monday, February 1st</strong></li>
     </ul>
     <p>There are two time slots for the first social: <strong>7:00pm-8:00pm and 8:30pm-9:30pm</strong>. Please note down your availability on the application. If you are not available during either of these times, please email <a href="mailto:membershipchair@reckclub.org">Whitney Miller</a>.</p>
 
