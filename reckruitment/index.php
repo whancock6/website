@@ -42,7 +42,7 @@
 <h4 class="mb-2" id="written-application">Written Application</h4>
 
 <!--<p>The 2020 Ramblin’ Reck Club application is now closed. Check back next December for 2021's application!</p>-->
-    <p>The 2019 Ramblin’ Reck Club application can be found <a href="https://docs.google.com/forms/d/e/1FAIpQLScR6kvfBfSwumvjsYtCxIZYkAl3fp1qhCyYRxyuAGbPMfiMAQ/viewform?usp=sf_link" target="blank">here</a>. A completed written application must be submitted no later than <strong>Friday, January 29th at 11:59pm</strong>.</p>
+    <p>The 2021 Ramblin’ Reck Club application can be found <a href="https://docs.google.com/forms/d/e/1FAIpQLScR6kvfBfSwumvjsYtCxIZYkAl3fp1qhCyYRxyuAGbPMfiMAQ/viewform?usp=sf_link" target="blank">here</a>. A completed written application must be submitted no later than <strong>Friday, January 29th at 11:59pm</strong>.</p>
 
 <h4 class="mb-2" id="info-sessions">Information Sessions (Non-Mandatory)</h4>
 
