@@ -21,7 +21,7 @@
             -moz-animation:bounce .40s linear;
             -webkit-animation:bounce .40s linear;
         }
-        h2.sub {
+        h4.sub {
             font-family: 'Montserrat', sans-serif;
             /*font-size: 30px;*/
             text-transform: uppercase;
@@ -101,7 +101,7 @@
 <div id="container-fluid">
     <div class="dark-bg">
         <h1>Tradition Keepers</h1>
-        <h2 class="sub">Participate in traditions. <span class="highlight">Submit photos.</span> Win prizes.</h2>
+        <h4 class="sub">Participate in traditions. <span class="highlight">Submit photos.</span> Win prizes.</h4>
     </div>
 
 </div>
