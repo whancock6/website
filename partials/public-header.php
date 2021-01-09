@@ -1,9 +1,9 @@
 <div class="container">
-    <nav class="navbar navbar-expand-md d-flex bg-light navbar-light px-0" style="background: #fff !important;">
+    <nav class="navbar navbar-expand-lg d-flex bg-light navbar-light px-0" style="background: #fff !important;">
         <div class="blog-header col-12 pt-2 pb-3 px-0">
             <div class="row">
                 <div class="col-3">
-                    <button class="btn btn-sm btn-outline-primary navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar2">
+                    <button class="btn btn-md btn-outline-primary navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar2">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                 </div>
@@ -17,7 +17,7 @@
         </div>
 
     </nav>
-    <nav class="navbar navbar-expand-md bg-light navbar-light pt-0  px-0" style="background: #fff !important;" id="navbar2parent">
+    <nav class="navbar navbar-expand-lg bg-light navbar-light pt-0  px-0" style="background: #fff !important;" id="navbar2parent">
         <div class="navbar-collapse collapse" id="navbar2">
             <ul class="navbar-nav">
                 <li class="nav-item dropdown">
@@ -73,6 +73,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link btn-link" href="https://reckclub.ecwid.com">Store</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn-link" href="/traditionkeepers">Tradition Keepers</a>
                 </li>
             </ul>
         </div>
