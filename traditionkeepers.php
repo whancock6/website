@@ -67,19 +67,11 @@
         html, body{
             height:100%;
         }
-        #banner-wrap{
+        .bg-dark{
             text-align: center;
             background: #444 ;
-            height:25%	;
-            position: relative;
             background-size:100%;
-
-        }
-        #banner{
-            text-align: center;
-            height:100%	;
-            position: fixed;
-            width: 100%;
+            padding-bottom: 20px;
         }
         .main{
             font-family: 'Montserrat', sans-serif;
@@ -385,15 +377,11 @@
     <title>Tradition Keepers</title>
 </head>
 <body style="">
-<div id="banner-wrap">
-    <div id="banner">
+<div id="wrapper">
+    <div class="bg-dark">
         <div class="main">Tradition Keepers</div>
         <div class="sub">Participate in traditions. <span class="highlight">Submit photos.</span> Win prizes.</div>
-
     </div>
-</div>
-<div id="wrapper">
-
     <div class="container">
 
         <button class="button" onclick="window.location.href='https://docs.google.com/document/d/1e87hYj82Iq7S8y3JaOTsgdgKqw4uA2y_YsaLxv8BSBM/edit?usp=sharing';">Traditions Checklist</button>
