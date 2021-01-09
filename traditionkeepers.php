@@ -107,13 +107,13 @@
 </div>
 <div class="container">
     <div class="row mt-3 text-center mb-3">
-        <div class="col-md-4 col-sm-12 mb-sm-2 mb-md-0">
+        <div class='col-sm-4 col-xs-12 mb-3 mb-sm-0'>
             <a class="btn btn-primary" href="https://docs.google.com/document/d/1e87hYj82Iq7S8y3JaOTsgdgKqw4uA2y_YsaLxv8BSBM/edit?usp=sharing">Traditions Checklist</a>
         </div>
-        <div class="col-md-4 col-sm-12 mb-sm-2 mb-md-0">
+        <div class='col-sm-4 col-xs-12 mb-3 mb-sm-0'>
             <a class="btn btn-primary" href="https://gatech.campuslabs.com/engage/submitter/form/start/453661">Submit a Tradition</a>
         </div>
-        <div class="col-md-4 col-sm-12 mb-sm-2 mb-md-0">
+        <div class='col-sm-4 col-xs-12 mb-sm-0'>
             <a class="btn btn-primary" href="https://docs.google.com/document/d/1jjwOSCR-S3jLyGq6DaLLPIXChuH6GIfLy1kf7QSagdE/edit?usp=sharing">Prizes and Tiers</a>
         </div>
     </div>
