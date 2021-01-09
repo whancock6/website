@@ -142,3 +142,5 @@ Temporary Items
 
 # Firebase Service Account credentials
 service-account-key.json
+.idea
+.phpunit.result.cache
