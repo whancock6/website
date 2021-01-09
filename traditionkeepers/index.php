@@ -1,6 +1,6 @@
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="/css/bootstrap.min.css?v=<?php echo filemtime(dirname(__FILE__, 1) . '/css/bootstrap.min.css'); ?>">
+    <link rel="stylesheet" href="/css/bootstrap.min.css?v=<?php echo filemtime(dirname(__FILE__, 2) . '/css/bootstrap.min.css'); ?>">
     <style>
         .dark-bg{
             text-align: center;
