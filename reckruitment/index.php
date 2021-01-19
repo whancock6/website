@@ -49,7 +49,7 @@
 <p>For anyone interested in learning more about Ramblin’ Reck Club, what we are involved in on campus, opportunities within the Club, and the recruitment process, we will be hosting a non-mandatory information sessions before the application deadline closes. Feel free to stop in and introduce yourself and get the low-down on all things RRC during the session. If you cannot attend, do not fret! This information will be made available following the meeting. </p>
 
 <ul>
-    <li><strong>Tuesday, January 19th</strong> on BlueJeans. Please RSVP <a href="https://docs.google.com/forms/d/e/1FAIpQLSeZaYJvdWcWPtwGN8MZsKKcwL5gFBEuoll8aDVcO6FR7q6N_w/viewform?usp=sf_link" target="blank">here to get the link.</a> </li>
+    <li><strong>Tuesday, January 19th</strong> on <a href="https://bluejeans.com/603892164" target="blank">BlueJeans.</a> </li>
 <!--    <li><strong>First Social: Monday, January 28th at 7:15pm (Mandatory)</strong></li>-->
 <!--  <li>Check back here in December 2019 for info session dates for the 2020 recruitment cycle!</li>-->
 </ul>
