@@ -49,7 +49,7 @@
 <p>For anyone interested in learning more about Ramblin’ Reck Club, what we are involved in on campus, opportunities within the Club, and the recruitment process, we will be hosting a non-mandatory information sessions before the application deadline closes. Feel free to stop in and introduce yourself and get the low-down on all things RRC during the session. If you cannot attend, do not fret! This information will be made available following the meeting. </p>
 
 <ul>
-    <li><strong>Tuesday, January 19th</strong> on BlueJeans. Please RSVP <a href="https://docs.google.com/forms/d/e/1FAIpQLSeZaYJvdWcWPtwGN8MZsKKcwL5gFBEuoll8aDVcO6FR7q6N_w/viewform?usp=sf_link" target="blank">here to get the link.</a> </li>
+    <li><strong>Tuesday, January 19th at 7:00pm-8:00pm</strong> on BlueJeans. Please RSVP <a href="https://docs.google.com/forms/d/e/1FAIpQLSeZaYJvdWcWPtwGN8MZsKKcwL5gFBEuoll8aDVcO6FR7q6N_w/viewform?usp=sf_link" target="blank">here to get the link.</a> </li>
 <!--    <li><strong>First Social: Monday, January 28th at 7:15pm (Mandatory)</strong></li>-->
 <!--  <li>Check back here in December 2019 for info session dates for the 2020 recruitment cycle!</li>-->
 </ul>
@@ -66,9 +66,9 @@
     <p>In order to provide applicants a casual setting to interact with Reck Clubbers and get a better feel for the kind of spirit Reck Club has for Georgia Tech, all applicants must attend one of the following virtual Get To Know You events. Please note that applicants need only attend one of the following events in order to satisfy the recruitment requirements. More details to come.</p>
 
 <ul>
-    <li><strong>Thursday, January 21st</strong></li>
-    <li><strong>Wednesday, January 27th</strong></li>
-    <li><strong>Saturday, January 31st</strong></li>
+    <li><strong>Thursday, January 21st from 7:00pm-9:00pm</strong></li>
+    <li><strong>Wednesday, January 27th from 7:00pm-9:00pm</strong></li>
+    <li><strong>Sunday, January 31st 1:00pm-3:00pm</strong></li>
 <!--    <li><strong>Interviews: Tuesday, January 29th through Thursday, January 31st from 5:30-9pm (Mandatory)</strong></li>-->
 <!--    <li>Check back here in December 2019 for athletic social dates for the 2020 recruitment cycle!</li>-->
 </ul>
@@ -77,13 +77,13 @@
 
     <p>The interview portion of RECKruitment is designed to allow for Reck Clubbers to get to know applicants on a more personal basis. We just want to give each applicant the time to express their ideas, commitment, and personality. The interview portion will include an individual interview followed by a short group interview activity. The encouraged attire is business semi-formal, but wear what is comfortable. Interviewees will sign up for an interview time slot during check-in at the first social.</p>
     <ul>
-        <li><strong>Tuesday, February 2nd</strong></li>
-        <li><strong>Wednesday, February 3rd</strong></li>
-        <li><strong>Thursday, February 4th</strong></li>
+        <li><strong>Tuesday, February 2nd from 7:00pm-9:00pm</strong></li>
+        <li><strong>Wednesday, February 3rd from 7:00pm-9:00pm</strong></li>
+        <li><strong>Thursday, February 4th from 7:00pm-9:00pm</strong></li>
     </ul>
 
 <h4 class="mb-2" id="second-social">Second Social (Mandatory)</h4>
-    <p>After all interviews have been conducted, the Recruitment Chair will notify each applicant whether they will advance to the second round of RECKruitment. During this second round, applicants will attend a mandatory second social held on the <strong>afternoon of Saturday, February 6th</strong>. Further details for this event will be sent out to those invited applicants only.</p>
+    <p>After all interviews have been conducted, the Recruitment Chair will notify each applicant whether they will advance to the second round of RECKruitment. During this second round, applicants will attend a mandatory second social held from <strong>1:00pm-3:00pm on Saturday, February 6th</strong>. Further details for this event will be sent out to those invited applicants only.</p>
 
 <hr class="mb-3"> <!--    adds dividing line-->
     <p>Any time conflicts with these events should be brought to the attention of <a href="mailto:membershipchair@reckclub.org">Whitney Miller</a>, Ramblin’ Reck Club Recruitment Chair, no later than <strong>Friday, January 29th</strong>.</p>
