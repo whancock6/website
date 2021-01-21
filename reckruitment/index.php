@@ -63,7 +63,7 @@
 
 <h4 class="mb-2" id="gtky-events">RRC “Get To Know You” Events (Mandatory)</h4>
 
-    <p>In order to provide applicants a casual setting to interact with Reck Clubbers and get a better feel for the kind of spirit Reck Club has for Georgia Tech, all applicants must attend one of the following virtual Get To Know You events. Please note that applicants need only attend one of the following events in order to satisfy the recruitment requirements. You can join the event on Wonder<a href="https://www.wonder.me/r?id=85936b0e-0eab-413c-80f8-980d9aff29cc" target="blank">here</a>. </p>
+    <p>In order to provide applicants a casual setting to interact with Reck Clubbers and get a better feel for the kind of spirit Reck Club has for Georgia Tech, all applicants must attend one of the following virtual Get To Know You events. Please note that applicants need only attend one of the following events in order to satisfy the recruitment requirements. You can join the event on Wonder<a href="https://www.wonder.me/r?id=85936b0e-0eab-413c-80f8-980d9aff29cc" target="blank"> here</a>. </p>
 
 <ul>
     <li><strong>Thursday, January 21st from 7:00pm-9:00pm</strong></li>
