@@ -8,7 +8,7 @@
 <body>
 <?php require "../partials/public-header.php" ?>
 <div class="container">
-    <h2 class="mb-3">2020 Roster</h2>
+    <h2 class="mb-3">2021 Roster</h2>
     <h4 class="mb-4">Executive Board</h4>
     <div class="row">
         <div class="col-md-6">
@@ -31,43 +31,43 @@
         <?php $chairs = array(
             [
                 "chair" => 'Alumni Relations',
-                "name" => 'Sydney Weisenburger'
+                "name" => 'Annie Robinson'
             ],
             [
                 "chair" => 'Baseball',
-                "name" => 'Brendan Mindiak'
+                "name" => 'Kassie Lee'
             ],
             [
                 "chair" => 'Basketball',
                 "name" => 'Keshav Ramanathan'
             ],
             [
-                "chair" => 'Big Buzz',
-                "name" => 'Laura Hancher'
+                "chair" => 'Fundraising and Big Buzz',
+                "name" => 'Paul Weiland'
             ],
             [
                 "chair" => 'Campus Outreach',
-                "name" => 'Annie Robinson'
+                "name" => 'Abi Ivemeyer'
             ],
             [
                 "chair" => 'Football',
+                "name" => 'Keshav Ramanathan'
+            ],
+            [
+                "chair" => 'CSON',
                 "name" => 'Adam Lederer'
             ],
             [
-                "chair" => 'Fundraising',
-                "name" => 'Brittany Ritter'
-            ],
-            [
                 "chair" => 'Homecoming',
-                "name" => 'McKade Stewart'
+                "name" => 'Anilyn Benge and Jack Crawford'
             ],
             [
                 "chair" => 'Non-Revenue Sports',
-                "name" => 'Ethan Kreager & Rachel Hurst'
+                "name" => 'Nick Isaf'
             ],
             [
                 "chair" => 'Public Relations',
-                "name" => 'Ebie McDonnell'
+                "name" => 'Haley McElroy'
             ],
             [
                 "chair" => 'Probate Guide',
@@ -87,7 +87,7 @@
             ],
             [
                 "chair" => 'Technology',
-                "name" => 'Kirby Criswell'
+                "name" => 'Dean Plaskon'
             ],
             [
                 "chair" => 'Traditions',
@@ -128,7 +128,7 @@
     <h4 class="mb-4">Probates</h4>
     <div class="row mb-3">
         <?php
-        $probates = [ ];
+        $probates = ['Andreea Juravschi','Andrew McGraw','Andrew Norlin','Austin Reitano','Bethany McMorris','Charlie Hammer','Eleanor Froula','Erin Prusener','Evalyn Edwards','Jack Godfrey',"Joey D'Adamio",'Jonathan Brooks','Jordan Lawson','Josh Fernandes','Josh Thrift','Kayvon Dibai','Kelsey Watkins','Madison Meyers','Matt Warrington','Melissa Braunstein','Nevin Aresh','Reid Spencer','Ross Kreager','Sam Derry','Sarah Wiedetz','Shawn McKelvey','Sumayyah Ahmed ','Will Hancock' ];
         sort($probates);
         chunkAndFormatArray($probates,4, function ($chunk) {
             echo "<div class=\"col-md-3 text-center\">";
