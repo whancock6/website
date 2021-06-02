@@ -378,13 +378,13 @@
     <script type="text/javascript">
         $(document).ready(function(){
             $('.main').hover(function(){
-                $(this).text("DATE: TBA").fadeIn("slow");
+                $(this).text("August 28th").fadeIn("slow");
             }, function() {
                 $(this).text("T-Night").fadeIn("slow");
             });
         });
     </script>
-    <title>T-Night 2019 | Ramblin' Reck Club</title>
+    <title>T-Night 2021 | Ramblin' Reck Club</title>
 </head>
 <body style="">
 <div id="banner-wrap">
@@ -398,13 +398,15 @@
 <div id="wrapper">
     <div class="container">
         <div id="intro" class="clearfix">
-<!--            <div id="invitation">Ramblin' Reck Club is proud to present its annual traditions celebration on <span class="highlight">Sunday, August 28th</span> from <span class="highlight">7:00-9:00 pm</span> at McCamish Pavilion. You don't want to miss this exciting event!</div>-->
-                <div id="invitation">Due to the COVID-19 pandemic, we have decided to postpone Traditions Night 2020 to the <span class="highlight">Spring 2021 semester</span>. Keep an eye out for an official date to be set for this exciting event!</div>
+<!--            <div id="invitation">Ramblin' Reck Club is proud to present its annual traditions celebration on <span class="highlight">Sunday, August 28th</span> from <span class="highlight">7:00-9:00 pm</span> at McCamish Pavilion. You don't want to miss this exciting event!</div>
+                <div id="invitation">Due to the COVID-19 pandemic, we have decided to postpone Traditions Night 2020 to the <span class="highlight">Spring 2021 semester</span>. Keep an eye out for an official date to be set for this exciting event!</div>-->
+                <div id="invitation">Kickoff the start of the new school year with Georgia Tech’s biggest celebration of the year. Located at Bobby Dodd Stadium, T-Night 2021 will feature food, games, giveaways, prizes, performances, and so much more. All members of the Tech community, from incoming first-years to returning PhD candidates, are invited to attend. T-Night 2021 is an event you won’t want to miss!</div>
             <div id="schedule">
                 <h2>Schedule of Events</h2>
                 <ul>
-                    <li>Traditions Festival<span>6:00 PM</span></li>
-                    <li>T-Night Show<span>7:00 PM</span></li>
+                    <li>Saturday, August 28th, 2021</span></li>
+                    <li>Traditions Festival<span>6:30 PM</span></li>
+                    <li>T-Night Show<span>7:30 PM</span></li>
 <!--                    <li>Fireworks<span>9:00pm</span></li>-->
 <!--                    <li>Coming soon!</li>-->
                 </ul>
