@@ -25,15 +25,15 @@
 <div class="container mb-3">
     <div class="row">
         <div class="col-4 text-center">
-            <p class="mb-0" style="text-align:center"><a href="mailto:rrchomecoming@gmail.com"><b>McKade Stewart</b></a></p>
+            <p class="mb-0" style="text-align:center"><a href="mailto:rrchomecoming@gmail.com"><b>Ani Benge & Jack Crawford</b></a></p>
             <p class="mb-0" style="text-align:center"><i>Reck Club Homecoming Chair</i></p>
         </div>
         <div class="col-4 text-center">
-            <p class="mb-0" style="text-align:center"><a href="mailto:wreckparade@gmail.com"><b>Samantha White</b></a></p>
+            <p class="mb-0" style="text-align:center"><a href="mailto:wreckparade@gmail.com"><b>Ross LeRoy</b></a></p>
             <p class="mb-0" style="text-align:center"><i>Wreck Parade Sub-Chair</i></p>
         </div>
         <div class="col-4 text-center">
-            <p class="mb-0" style="text-align:center"><a href="mailto:wreckparade@gmail.com"><b>Grace Mallon</b></a></p>
+            <p class="mb-0" style="text-align:center"><a href="mailto:wreckparade@gmail.com"><b>Will Hancock</b></a></p>
             <p class="mb-0" style="text-align:center"><i>Wreck Parade Sub-Chair</i></p>
         </div>
     </div>

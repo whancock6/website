@@ -10,7 +10,7 @@
 <div class="container mb-3">
     <div class= 'blog-header'>
         <div class='col-12' style="text-align: center;">
-            <h1>Freshman Cake Race 2020</h1>
+            <h1>Freshman Cake Race 2021</h1>
         </div>
     </div>
 </div>
@@ -25,15 +25,15 @@
 <div class="container mb-3">
     <div class="row">
         <div class="col-4 text-center">
-            <p class="mb-0" style="text-align:center"><a href="mailto:rrchomecoming@gmail.com"><b>McKade Stewart</b></a></p>
+            <p class="mb-0" style="text-align:center"><a href="mailto:rrchomecoming@gmail.com"><b>Ani Benge & Jack Crawford</b></a></p>
             <p class="mb-0" style="text-align:center"><i>Reck Club Homecoming Chair</i></p>
         </div>
         <div class="col-4 text-center">
-            <p class="mb-0" style="text-align:center"><a href="mailto:gtfreshmancakerace@gmail.com"><b>Rachel Hurst</b></a></p>
+            <p class="mb-0" style="text-align:center"><a href="mailto:gtfreshmancakerace@gmail.com"><b>Dean Plaskon</b></a></p>
             <p class="mb-0" style="text-align:center"><i>Cake Race Sub-Chair</i></p>
         </div>
         <div class="col-4 text-center">
-            <p class="mb-0" style="text-align:center"><a href="mailto:gtfreshmancakerace@gmail.com"><b>Paul Weiland</b></a></p>
+            <p class="mb-0" style="text-align:center"><a href="mailto:gtfreshmancakerace@gmail.com"><b>Erin Prusener</b></a></p>
             <p class="mb-0" style="text-align:center"><i>Cake Race Sub-Chair</i></p>
         </div>
     </div>
@@ -73,7 +73,7 @@
             "title" => 'The Tradition',
             "main" => 'The Freshman Cake Race is a half-mile race held before sunrise on the morning of the Homecoming game every year. This unique long-standing tradition is open to <strong>first year</strong> Georgia Tech students. Each first year receives a cupcake at the end of the race. The male and female winners of the race receive a cake and are brought to the field during halftime of the Homecoming game where they are bestowed a kiss from Mr. and Ms. Georgia Tech. This race dates back to 1911, when the first Cake Race was held as an open cross-country run at Georgia Tech. Two years later, some of the faculty member’s wives started baking cakes for the winners, thus the name Cake Race was created. While the race’s original purpose was to scout men for the track team, today\'s participants are encouraged to run, jog, or walk. First years, sign up today to take part in one of Georgia Tech’s greatest traditions!'
         ],
-        [
+ /*       [
             "image" => '/homecoming/images/fcr-003.jpg',
             "title" => 'COVID Update',
             "main" => 'Due to the current situation with COVID-19, Freshman Cake Race will look slightly different than previous years. But fear not! The spirit and fun of one of Georgia Tech’s oldest traditions will be kept intact. We have listed a few of the changes below that we have made to keep the event safe!  
@@ -91,7 +91,7 @@
                               We are so excited to still get to put on this event and are taking every precaution we can to keep it safe and fun! If you have any questions or concerns please reach out to gtfreshmancakerace@gmail.com.
                               '
 
-        ],
+        ],*/
         [
             "image" => '/homecoming/images/fcr-002.jpg',
             "title" => 'Sign Ups',
@@ -121,7 +121,12 @@
                [
             "image" => '/homecoming/images/fcr-004.jpg',
             "title" => 'Clothing Recommendations',
-            "main" => 'Be sure to wear tennis shoes/sneakers and clothes that you would be comfortable running or walking in. Remember, you are encouraged to run or walk at your own pace. Depending on the temperature, make sure to dress in clothes that will keep you warm (sweatshirt/jacket, pants, hats, gloves, etc).'
+            "main" => 'Be sure to wear tennis shoes/sneakers and clothes that you would be comfortable running 
+                            or walking in. Remember, you are encouraged to run or walk at your own pace. 
+                            Depending on the temperature, make sure to dress in clothes that will keep you warm 
+                            (sweatshirt/jacket, pants, hats, gloves, etc). In the spirit of ’Halloweekend’ participants
+                            are encouraged to dress in costume, with a prize and additional homecoming points awarded 
+                            to the most spirited runner!'
         ],
         [
             "image" => '/homecoming/images/fcr-003.jpg',

@@ -26,21 +26,21 @@
 <div class="container mb-3">
     <div class="row">
         <div class="col-4 text-center">
-            <p class="mb-0" style="text-align:center"><a href="mailto:rrchomecoming@gmail.com"><b>McKade Stewart</b></a></p>
+            <p class="mb-0" style="text-align:center"><a href="mailto:rrchomecoming@gmail.com"><b>Ani Benge & Jack Crawford</b></a></p>
             <p class="mb-0" style="text-align:center"><i>Reck Club Homecoming Chair</i></p>
         </div>
         <div class="col-4 text-center">
-            <p class="mb-0" style="text-align:center"><a href="mailto:georgiatechmini500@gmail.com"><b>Kassie Lee</b></a></p>
+            <p class="mb-0" style="text-align:center"><a href="mailto:georgiatechmini500@gmail.com"><b>Brandon Dobson</b></a></p>
             <p class="mb-0" style="text-align:center"><i>Mini 500 Sub-Chair</i></p>
         </div>
         <div class="col-4 text-center">
-            <p class="mb-0" style="text-align:center"><a href="mailto:georgiatechmini500@gmail.com"><b>Ani Benge</b></a></p>
+            <p class="mb-0" style="text-align:center"><a href="mailto:georgiatechmini500@gmail.com"><b>Josh Thrift</b></a></p>
             <p class="mb-0" style="text-align:center"><i>Mini 500 Sub-Chair</i></p>
         </div>
     </div>
     <hr class="mb-3">
 </div>
-
+s
 <div class="container">
     <div class='row text-center'>
 <!--        <div class='col-sm-4 col-xs-12 mb-3 mb-sm-0'>-->
@@ -51,7 +51,7 @@
             <a class='btn btn-md btn-primary' href="#race-day-info">Race Day Info</a>
         </div>
         <div class='col-sm-6 col-xs-12 mb-3 mb-sm-0'>
-            <a class='btn btn-md btn-primary' href="https://docs.google.com/document/d/1QETEAXTW7mL24TAS2zP9QKjvbu1QIefPbL1MvQk2I_s/edit" target="_blank">2020 Mini 500 Rule Book</a>
+            <a class='btn btn-md btn-primary' href="https://docs.google.com/document/d/1n5vIXj4beVUq1LP5mvF7KxquxEGdb6WbncgA8Wv9eSI/edit" target="_blank">2021 Mini 500 Rule Book</a>
         </div>
 <!--        <div class='col-sm-4 col-xs-12'>-->
 <!--            <a class='btn btn-md btn-secondary' href="/assets/A-Guide-to-Mini-500.pdf" target="_blank">Guide to Mini 500</a>-->
@@ -79,33 +79,34 @@
                                Each team is required to rotate the front tire of their tricycle three times 
                                throughout the course of the race. All teams try to complete 2 laps without 
                                destroying their tricycle.
-                              The 2020 Mini 500 will be on Friday, October 16th at 6:30 PM at the Stamps Field Track.
+                              The 2021 Mini 500 will be on Friday, October 29th at 5:30 PM at Peter’s Parking Deck.
 '
 
                 ],
-        [
-            "image" => '/homecoming/images/M59.jpg',
-            "title" => 'COVID Update',
-            "main" => 'In light of the COVID-19 situation, this year\'s Mini 500 has undergone some new changes to keep participants and spectators healthy. However, the spirit and fun of one of Georgia Tech’s most beloved traditions will be upheld!
+        /*        [
+              "image" => '/homecoming/images/M59.jpg',
+               "title" => 'COVID Update',
+               "main" => 'In light of the COVID-19 situation, this year\'s Mini 500 has undergone some new changes to keep participants and spectators healthy. However, the spirit and fun of one of Georgia Tech’s most beloved traditions will be upheld!
 
-The event itself has been moved from Peters Parking Deck to the track around the Stamps Recreation Fields. This change will allow for entrance monitoring of participants and spectators. Every person entering the premises will have a standard temperature check and must be wearing a face covering.
+       The event itself has been moved from Peters Parking Deck to the track around the Stamps Recreation Fields. This change will allow for entrance monitoring of participants and spectators. Every person entering the premises will have a standard temperature check and must be wearing a face covering.
 
-To limit the amount of teams racing at one time, only four teams will race at a time in a time trial fashion. Each team will start at opposing sides of the field and 4 racers from each team will compete. Racers will complete a half lap before sanitizing their trikes and passing it along to the next rider. Every team will compete two laps around the track!
+       To limit the amount of teams racing at one time, only four teams will race at a time in a time trial fashion. Each team will start at opposing sides of the field and 4 racers from each team will compete. Racers will complete a half lap before sanitizing their trikes and passing it along to the next rider. Every team will compete two laps around the track!
 
-We are excited to be able to adapt the Mini 500 to keep everyone involved safe. If you are interested in competing in the Mini 500 this year please fill out the form here: <a href="https://forms.gle/LCZJM4VhE3tvF3Sh8">Mini 500 Form</a>. Stay safe and race on!
-'
+       We are excited to be able to adapt the Mini 500 to keep everyone involved safe. If you are interested in competing in the Mini 500 this year please fill out the form here: <a href="https://forms.gle/LCZJM4VhE3tvF3Sh8">Mini 500 Form</a>. Stay safe and race on!
+       '
 
-        ],
+               ],*/
                 [
                     "image" => '/homecoming/images/M51.jpg',
                     "title" => 'Sign Ups',
-                    "main" => 'Signups for the 2020 Mini 500 are now in early September'
+                    "main" => 'Sign ups for the 2021 Mini 500 will begin in early fall.'
 
                 ],
                 [
                     "image" => '/homecoming/images/M52.jpg',
                     "title" => 'Tricycle Pickup',
-                    "main" => 'Mini 500 Co-Chairs are still evaluating the safest way to distribute tricycles.'
+                    "main" => 'Tricycles will be distributed a few weeks prior to the race to allow for proper modification. 
+                    Please keep an eye out regarding further communication of exact dates and pick up location.'
 
                 ],
                 [
@@ -143,8 +144,9 @@ We are excited to be able to adapt the Mini 500 to keep everyone involved safe. 
                             Peters Parking Deck side of Fowler Street and the start being at the corner of Fowler St. 
                             and Bobby Dodd Way. Each team will receive an email with their assigned pit number. 
                             The team will report to THEIR PIT between 5:00pm and 5:25PM and check in with their 
-                            pit boss (A member of Ramblin Reck Club). Everything a team will need for the race other 
-                            than their tricycle and wheel rotation mechanisms will be at their starting pit.'
+                            pit boss (A member of Ramblin Reck Club). Teams should arrive with their racers, pit crew, 
+                            tricycles, and any approved tools required for wheel rotations. Mini 500 shirts will be 
+                            provided at your assigned pit.'
 
     ],
     [
@@ -162,7 +164,9 @@ We are excited to be able to adapt the Mini 500 to keep everyone involved safe. 
                                  and bruises so we recommend wearing some form of bottom that covers your legs 
                                  (jeans, sweatpants, leggings) as well are wearing reinforcement on your shoes 
                                  (such as duct tape) or shoes you don’t care about because they will be hitting the 
-                                pavement and may get scuffed up!'
+                                pavement and may get scuffed up! In the spirit of ’Halloweekend,’ 
+                                teams have the option to dress in costume. Please remember that the Mini 500 shirt 
+                                should be able to fit over your costume.'
     ],
     [
         "image" => '/homecoming/images/M56.jpg',

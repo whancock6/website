@@ -182,31 +182,28 @@
             margin:5px;
         }
         #reck-club{
-            background:url('/img/t-night/reck-club.png');
+            background:url('/img/t-night/reck_club.png');
         }
         #tiffs{
-            background:url('/img/t-night/tiffsFinal.png');
+            background:url('/img/t-night/tiffs_treats.png');
         }
-        #gusto{
-            background:url('/img/t-night/gusto.png');
+        #inspire{
+            background:url('/img/t-night/inspire.png');
         }
-        #king{
-            background:url('/img/t-night/kingofpops.png');
-        }
-        #gtaa{
-            background:url('/img/t-night/gtaa.png');
+        #lotto{
+            background:url('/img/t-night/georgia_lottery.jpg');
         }
         #waho{
-            background:url('/img/t-night/waho.png');
+            background:url('/img/t-night/waffle_house.png');
         }
-        #wings{
-            background:url('/img/t-night/wings.png');
+        #athlete{
+            background:url('/img/t-night/gatech_athletics.png');
         }
         #chik{
-            background:url('/img/t-night/chik.png');
+            background:url('/img/t-night/chick_fil_a.png');
         }
         #bj{
-            background:url('/img/t-night/bj.png');
+            background:url('/img/t-night/ben_jerry.png');
         }
         #parent{
             background:url('/img/t-night/parents_fund.png');
@@ -405,8 +402,8 @@
                 <h2>Schedule of Events</h2>
                 <ul>
                     <li>Saturday, August 28th, 2021</span></li>
-                    <li>Traditions Festival<span>6:30 PM</span></li>
-                    <li>T-Night Show<span>7:30 PM</span></li>
+                    <li>Traditions Festival - Callaway Plaza<span>5:30 PM</span></li>
+                    <li>T-Night Show - Bobby Dodd<span>7:00 PM</span></li>
 <!--                    <li>Fireworks<span>9:00pm</span></li>-->
 <!--                    <li>Coming soon!</li>-->
                 </ul>
@@ -422,18 +419,17 @@
         <div id="sponsors">
             <h2 align="center">Put on by Ramblin' Reck Club with the support of its sponsors:</h2>
             <div id="sponsor_block" align="center">
-                <div id="gtaa" class="sponsor"></div>
-                <div id="king" class="sponsor"></div>
+                <div id="athlete" class="sponsor"></div>
+                <div id="inspire" class="sponsor"></div>
                 <div id="reck-club" class="sponsor"></div>
                 <div id="bj" class="sponsor"></div>
                 <div id="chik" class="sponsor"></div>
             </div>
             <div id="sponsor_block" align="center">
-                <div id="gusto" class="sponsor"></div>
                 <div id="parent" class="sponsor"></div>
                 <div id="tiffs" class="sponsor"></div>
                 <div id="waho" class="sponsor"></div>
-                <div id="wings" class="sponsor"></div>
+                <div id="lotto" class="sponsor"></div>
             </div>
         </div>
     </div>
