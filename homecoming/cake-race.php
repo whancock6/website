@@ -95,7 +95,10 @@
         [
             "image" => '/homecoming/images/fcr-002.jpg',
             "title" => 'Sign Ups',
-            "main" => 'Please fill out the following interest form if you are interested in participating in the Freshman Cake Race. We will be sending each person who filled out the form the official sign-up once it is finalized. Interest Form: <a href="https://forms.gle/7XLJ7N6cFG7um1pV8">https://forms.gle/7XLJ7N6cFG7um1pV8</a>'
+            "main" => 'Please fill out the following interest form if you are interested in participating in the 
+                                    Freshman Cake Race. We will be sending each person who filled out the form the 
+                                    official sign-up once it is finalized. Interest Form: 
+                                    <a href="https://forms.gle/5JWEZE8zVJcSgEVo8">https://forms.gle/5JWEZE8zVJcSgEVo8</a>'
 
         ],
         [
@@ -138,8 +141,8 @@
 <li>Any student that is intoxicated will <strong>not</strong> be allowed to race.</li> 
 <li>Students are not allowed to litter the trash from cupcakes and cakes.</li> 
 </ul><p><strong>Any violations of these rules will result in disqualification of the participant and that participant’s organization will not receive points towards Homecoming. The violator’s organization will not be allowed to participate in Homecoming the following year.</strong> Violators will be brought to the Office of Student Integrity.</p>
-The full rule book can be found here: <a href="https://docs.google.com/document/d/1OVVEh-vWnf0hrs1GoqRK3VUM1JRjKcr0ErBGR7mBexg/edit?usp=sharing
-">FCR 2020 Rule Book
+The full rule book can be found here: <a href="https://docs.google.com/document/d/1iWAjlXLN0hJ4s_TWiy6fEXVTar39WjkWMf89LXT8urM/edit?usp=sharing
+">FCR 2021 Rule Book
 </a> '
         ]
     );

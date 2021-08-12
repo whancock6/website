@@ -12,7 +12,7 @@
 <div class="container mb-3">
     <div class= 'blog-header'>
         <div class='col-12' style="text-align: center;">
-            <h1>Mini 500 2020</h1>
+            <h1>Mini 500 2021</h1>
         </div>
     </div>
 </div>
