@@ -10,7 +10,7 @@
 <div class="container mb-3">
     <div class= 'blog-header'>
         <div class='col-12' style="text-align: center;">
-            <h1>Ramblin Wreck Parade 2020</h1>
+            <h1>Ramblin Wreck Parade</h1>
         </div>
     </div>
 </div>
@@ -26,7 +26,7 @@
     <div class="row">
         <div class="col-4 text-center">
             <p class="mb-0" style="text-align:center"><a href="mailto:rrchomecoming@gmail.com"><b>Ani Benge & Jack Crawford</b></a></p>
-            <p class="mb-0" style="text-align:center"><i>Reck Club Homecoming Chair</i></p>
+            <p class="mb-0" style="text-align:center"><i>Reck Club Homecoming Co-Chairs</i></p>
         </div>
         <div class="col-4 text-center">
             <p class="mb-0" style="text-align:center"><a href="mailto:wreckparade@gmail.com"><b>Ross LeRoy</b></a></p>
@@ -39,8 +39,35 @@
     </div>
     <hr class="mb-3">
 </div>
-
 <div class="container">
+    <div class= 'blog-header'>
+        <div class='col-12' style="text-align: center;">
+            <h1>9:00 AM October 30th</h1>
+        </div>
+
+        <!--    </div>-->
+
+        <div class='row text-center'>
+            <div class='col-sm-4 col-xs-12 mb-0 mb-sm-3'>
+                <a class='btn btn-md btn-primary' href="#race-day-logistics">Event Information</a>
+            </div>
+            <!--        sign up button-->
+            <div class='col-sm-4 col-xs-12 mb-3 mb-sm-6' style="text-align: center;">
+                <a class='btn btn-md btn-secondary' href="https://forms.gle/HhY5QLjPHhzyQGyq7">Event Waiver</a>
+            </div>
+            <div class='col-sm-4 col-xs-12 mb-sm-3'>
+                <?php //If you change the name of the rules section further down, change the href here too. ?>
+                <a class='btn btn-md btn-primary' href="#race-rules">Event Rules</a>
+            </div>
+            <div class='row text-center'>
+                <!--        <div class='col-sm-4 col-xs-12 mb-3 mb-sm-6' style="text-align: center;">-->
+                <i>The Ramblin Reck Club’s sign-up form is for individual registrations. Organizations wishing to receive
+                    points must also sign up for this event using SCPC’s Homecoming waiver,
+                    found at <a href="https://gatech.universitytickets.com/w/event.aspx?id=1837&p=1">this link</a></i>
+            </div>
+        </div>
+<div class="container">
+    <hr class="mb-3">
     <div class="row justify-content-center">
         <div margin="col-4">
             <iframe margin="0 auto" width="560" height="315" src="https://www.youtube.com/embed/JrRwcHtUDyc" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -69,35 +96,19 @@
                                     category - contraptions - which are built and powered by students.</p>'
         ],
         [
-            "image" => '/homecoming/images/wp-004.jpg',
-            "title" => 'COVID Update',
-            "main" => '<p> In light of the COVID-19 situation, this year\'s Wreck Parade has undergone some new changes
-                                    to keep participants and spectators safe and healthy. However, the spirit and 
-                                    fun of one of Georgia Tech’s most beloved traditions will be upheld. 
-                                    To keep the Ramblin\' Wreck Parade as safe as possible, this year the parade 
-                                    will be a car parade, consisting of classic cars and decorated vehicles 
-                                    (fixed bodies) that will travel a route around the entire campus.
-                                    </p><p>This year we are encouraging spectators to watch from dorms/lawns along 
-                                    the new route. For those who are not physically on campus, the parade will be 
-                                    showcased the morning of Homecoming through a video produced at a later date.
-                                    </p><p>We are excited to be able to adapt Wreck Parade to keep everyone involved 
-                                    safe. For more information on Wreck Parade changes please refer to the 
-                                    <a href="https://docs.google.com/document/d/1Vdwo-ry5RfMOV2bIns11-hk6edXz6lolbpRMjc6g06s/edit?usp=sharing">
-                                    Wreck Parade 2021 Homecoming Rulebook.</a></p>'
-        ],
-        [
             "image" => '/homecoming/images/wp-002.jpg',
             "title" => 'Sign Ups',
-            "main" => '<p>Sign ups are now in early September. If you are interested in participating in Wreck 
-                                Parade this year please fill out this form:  <a href="https://forms.gle/7ZvBrVHfk6NFBn6P6">Wreck Parade Form</a> </p>'
+            "main" => '<p>Participants must sign BOTH
+                        our waiver <a href="https://forms.gle/HhY5QLjPHhzyQGyq7">found here</a> and through SCPC
+                        which can be found at <a href="https://gatech.universitytickets.com/w/event.aspx?id=1837&p=1">this link.</a> </p>'
 
         ],
         [
             "image" => '/homecoming/images/wp-003.jpg',
             "title" => 'Logistics',
-            "main" => '<ul><li>Location: Begins at the McCamish Parking Lot and Fowler. Then make a lap around 
-                                    campus and end at the McCamish Parking Lot and Fowler. </li><li>Date for 
-                                    Participants: TBA</li><li>Date of Video: TBA</li></ul>'
+            "main" => '<p>The Wreck parade will begin at the McCamish Parking Lot and proceed up Fowler street finishing
+                        across Ferst Drive. The parade will commence at 9:00AM on October 30th. A full list of the rules
+                        can be <a href="https://docs.google.com/document/d/1Vdwo-ry5RfMOV2bIns11-hk6edXz6lolbpRMjc6g06s/edit?usp=sharing">found here.</a></p>'
         ],
         [
             "image" => '/homecoming/images/wp-001.jpg',

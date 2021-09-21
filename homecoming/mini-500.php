@@ -12,7 +12,7 @@
 <div class="container mb-3">
     <div class= 'blog-header'>
         <div class='col-12' style="text-align: center;">
-            <h1>Mini 500 2021</h1>
+            <h1>Mini 500</h1>
         </div>
     </div>
 </div>
@@ -24,10 +24,11 @@
     </div>
 </div>
 <div class="container mb-3">
+
     <div class="row">
         <div class="col-4 text-center">
             <p class="mb-0" style="text-align:center"><a href="mailto:rrchomecoming@gmail.com"><b>Ani Benge & Jack Crawford</b></a></p>
-            <p class="mb-0" style="text-align:center"><i>Reck Club Homecoming Chair</i></p>
+            <p class="mb-0" style="text-align:center"><i>Reck Club Homecoming Co-Chairs</i></p>
         </div>
         <div class="col-4 text-center">
             <p class="mb-0" style="text-align:center"><a href="mailto:georgiatechmini500@gmail.com"><b>Brandon Dobson</b></a></p>
@@ -42,16 +43,23 @@
 </div>
 s
 <div class="container">
+    <div class= 'blog-header'>
+        <div class='col-12' style="text-align: center;">
+            <h1>5:30PM October 29th</h1>
+        </div>
     <div class='row text-center'>
 <!--        <div class='col-sm-4 col-xs-12 mb-3 mb-sm-0'>-->
 <!--            <a class='btn btn-md btn-secondary' href="#race-day-info">Race Day Info</a>-->
 <!--        </div>-->
 <!--        to go back to 3 buttons, change primary to secondary, change the 6 to 4 on the col-sm-6-->
-        <div class='col-sm-6 col-xs-12 mb-3 mb-sm-0'>
-            <a class='btn btn-md btn-primary' href="#race-day-info">Race Day Info</a>
+        <div class='col-sm-4 col-xs-12 mb-3 mb-sm-0'>
+            <a class='btn btn-md btn-primary' href="#race-day-info">Event Information</a>
         </div>
-        <div class='col-sm-6 col-xs-12 mb-3 mb-sm-0'>
-            <a class='btn btn-md btn-primary' href="https://docs.google.com/document/d/1n5vIXj4beVUq1LP5mvF7KxquxEGdb6WbncgA8Wv9eSI/edit" target="_blank">2021 Mini 500 Rule Book</a>
+        <div class='col-sm-4 col-xs-12 mb-3 mb-sm-6' style="text-align: center;">
+            <a class='btn btn-md btn-secondary' href="https://gatech.universitytickets.com/w/event.aspx?id=1837&p=1">Event Waiver</a>
+        </div>
+        <div class='col-sm-4 col-xs-12 mb-3 mb-sm-0'>
+            <a class='btn btn-md btn-primary' href="https://docs.google.com/document/d/1n5vIXj4beVUq1LP5mvF7KxquxEGdb6WbncgA8Wv9eSI/edit" target="_blank">Event Rules</a>
         </div>
 <!--        <div class='col-sm-4 col-xs-12'>-->
 <!--            <a class='btn btn-md btn-secondary' href="/assets/A-Guide-to-Mini-500.pdf" target="_blank">Guide to Mini 500</a>-->
@@ -73,13 +81,13 @@ s
                 [
                     "image" => '/homecoming/images/M55.jpg',
                     "title" => 'The Tradition',
-                    "main" => 'The Mini 500 is an annual tricycle race that usually takes place around Peters Parking Deck that occurs on the Friday afternoon before the Homecoming football game. However, this year, the race will be relocated to the Stamps Field Track at the CRC.
- It is one of Georgia Tech’s most unique traditions put on by Ramblin’ Reck Club since 1969. Teams normally consisted of seven members: 4 to take turns as the driver and three on the pit crew. To monitor numbers, pit crews will be cut and racers will also act as the pit.
- 
-                               Each team is required to rotate the front tire of their tricycle three times 
-                               throughout the course of the race. All teams try to complete 2 laps without 
-                               destroying their tricycle.
-                              The 2021 Mini 500 will be on Friday, October 29th at 5:30 PM at Peter’s Parking Deck.
+                    "main" => 'The Mini 500 is an annual 8 lap tricycle race that takes place around Peter’s Parking 
+                    Deck on the Friday afternoon before the Homecoming football game. It is one of Georgia Tech’s most 
+                    unique traditions put on by Ramblin’ Reck Club since 1969. Teams consist of seven members: four 
+                    racers and three pit crew who are responsible for maintenance and tire rotations. Each team is 
+                    required to rotate their front tire three times throughout the course of the race, typically 
+                    following the second, fourth, and sixth lap. All teams attempt to complete all 8 laps as quickly 
+                    as possible without destroying their tricycle.
 '
 
                 ],
@@ -99,7 +107,10 @@ s
                 [
                     "image" => '/homecoming/images/M51.jpg',
                     "title" => 'Sign Ups',
-                    "main" => 'Sign ups for the 2021 Mini 500 will begin in early fall.'
+                    "main" => 'Sign-Ups opened on Monday September 20th and will remain open until Friday September 
+                    24th. You can sign up <a href="https://gatech.universitytickets.com/w/event.aspx?id=1837&p=1">here</a> 
+                    Before registering, be sure you’re logged in, and then press "Get Tickets." Scroll until you find Mini 500. 
+'
 
                 ],
                 [
