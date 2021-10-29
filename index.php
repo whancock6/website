@@ -12,10 +12,12 @@
             <li data-target="#img-carousel" data-slide-to="0" class="active"></li>
             <li data-target="#img-carousel" data-slide-to="1"></li>
             <li data-target="#img-carousel" data-slide-to="2"></li>
+            <li data-target="#img-carousel" data-slide-to="3"></li>
+
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="img-responsive d-block w-100" src="/img/promo/2017-mini-500-club.jpg" alt="2017 Mini 500 RRC Picture">
+                <img class="img-responsive d-block w-100" src="img/2021/club_before_game.jpg" alt="2021 T-night picture">
                 <div class="gradient">
                 </div>
                 <div class="carousel-caption d-none d-md-block">
@@ -24,7 +26,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="img-responsive d-block w-100" src="/img/promo/2013-wreck-parade.jpg" alt="2013 Wreck Parade">
+                <img class="img-responsive d-block w-100" src="/img/2021/merc_ride_out.jpg" alt="2013 Wreck Parade">
                 <div class="gradient">
                 </div>
                 <div class="carousel-caption d-none d-md-block">
@@ -33,11 +35,20 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="img-responsive d-block w-100" src="/img/promo/2017-ROIS-turnaround.jpg" alt="2017 Reck at Clough turnaround for Ride Out in Style">
+                <img class="img-responsive d-block w-100" src="/img/promo/2013-wreck-parade.jpg" alt="2017 Reck at Clough turnaround for Ride Out in Style">
                 <div class="gradient">
                 </div>
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Want the Reck at your event?</h5>
+                    <p>When not on official duty, the Ramblin’ Reck may appear at various alumni functions. Proceeds are used to support the maintenance and upkeep of the car. Click <a href="/requests.php">here</a> to make your request!</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="img-responsive d-block w-100" src="/img/2021/merc_alma_mater.jpg" alt="2017 Reck at Clough turnaround for Ride Out in Style">
+                <div class="gradient">
+                </div>
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Want to join the team?</h5>
                     <p>When not on official duty, the Ramblin’ Reck may appear at various alumni functions. Proceeds are used to support the maintenance and upkeep of the car. Click <a href="/requests.php">here</a> to make your request!</p>
                 </div>
             </div>
@@ -55,7 +66,7 @@
                     <p class="card-text mb-auto">Each year, one student is chosen from the ranks of the club to be the sole driver and primary caretaker of the Ramblin’ Reck.</p>
                     <a href="/reck/drivers.php">Read more</a>
                 </div>
-                <img class="card-img-right img-fluid flex-auto d-none d-md-block" data-src="/img/promo/2014-raj.jpg" style="width: 200px; height: 250px;" src="/img/promo/2014-raj.jpg" data-holder-rendered="true">
+                <img class="card-img-right img-fluid flex-auto d-none d-md-block" data-src="/img/2021/rosman.jpg" style="width: 200px; height: 250px;" src="/img/2021/rosman.jpg" data-holder-rendered="true">
             </div>
         </div>
         <div class="col-md-6">
