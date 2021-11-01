@@ -26,7 +26,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="img-responsive d-block w-100" src="/img/2021/merc_ride_out.jpg" alt="2013 Wreck Parade">
+                <img class="img-responsive d-block w-100" src="/img/2021/merc_ride_out.jpg" alt="2021 Mercedes-Benz game ride-out">
                 <div class="gradient">
                 </div>
                 <div class="carousel-caption d-none d-md-block">
@@ -44,12 +44,12 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="img-responsive d-block w-100" src="/img/2021/merc_alma_mater.jpg" alt="2017 Reck at Clough turnaround for Ride Out in Style">
+                <img class="img-responsive d-block w-100" src="/img/2021/merc_alma_mater.jpg" alt="2021 Alma mater on the Mercedes Benz field">
                 <div class="gradient">
                 </div>
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Want to join the team?</h5>
-                    <p>When not on official duty, the Ramblin’ Reck may appear at various alumni functions. Proceeds are used to support the maintenance and upkeep of the car. Click <a href="/requests.php">here</a> to make your request!</p>
+                    <p>Recruitment happens every Spring, find out more information about the process <a href="/reckruitment/index.php">here!</a></p>
                 </div>
             </div>
         </div>
