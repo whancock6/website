@@ -63,11 +63,11 @@
             ],
             [
                 "chair" => 'Non-Revenue Sports',
-                "name" => 'Nick Isaf'
+                "name" => 'Charlie Hammer'
             ],
             [
                 "chair" => 'Public Relations',
-                "name" => 'Haley McElroy'
+                "name" => 'Melissa Braunstein and Sarah Wieditz'
             ],
             [
                 "chair" => 'Probate Guide',
@@ -94,7 +94,7 @@
                 "name" => 'Cade Lawson'
             ],
             [   "chair" => 'Diversity and Inclusion',
-                "name" => 'Sofia Eidizadeh'
+                "name" => 'Andrew McGraw and Kayvon Dibai'
              ]);
         uasort($chairs, function($a, $b) {
             return $a["chair"] > $b["chair"];
@@ -113,7 +113,7 @@
     <h4 class="mb-3">Members</h4>
     <div class="row mb-3">
     <?php
-  $members = ['Abi Ivemeyer','Adam Lederer','Ally Rosenthal','Amanda Healy','Anilyn Benge','Annie Robinson', 'Austin Gies', 'Brandon Dobson','Brendan Mindiak', 'Brendon Thaler', 'Briana Sims', 'Brittany Ritter', 'Cade Lawson','Caroline Means', 'Carter Kubes', 'Dean Plaskon', 'Derek Prusener', 'Emma Wojack', 'Ethan Kreager','Ethan Rosman', 'Grace Mallon', 'Haley McElroy','Inika Jain','Isabelle Liffiton', 'Isheeta Mukherjee', 'Jack Crawford', 'Jacob Lewis', 'Jake Grant', 'Jen O\'Brien', 'Jill Riley','Kassie Lee', 'Katie Earles', 'Keshav Ramanathan', 'Kevin Hopper', 'Kirby Criswell', 'Marissa Klee', 'McKade Stewart', 'Nick Isaf','Paul Weiland', 'Ross LeRoy','Samantha White','Sofia Eidizadeh','Sydney Weisenburger', 'Taylor Gray', 'Whitney Miller', 'Zach Bellis'];
+  $members = ['Abi Ivemeyer','Adam Lederer','Anilyn Benge','Annie Robinson', 'Austin Gies', 'Brandon Dobson','Brendan Mindiak', 'Brendon Thaler', 'Briana Sims', 'Cade Lawson','Caroline Means', 'Carter Kubes', 'Dean Plaskon', 'Derek Prusener', 'Emma Wojack', 'Ethan Rosman', 'Grace Mallon', 'Isheeta Mukherjee', 'Jacob Lewis', 'Jen O\'Brien','Kassie Lee', 'Katie Earles', 'Keshav Ramanathan','Paul Weiland', 'Ross LeRoy','Sofia Eidizadeh','Sydney Weisenburger', 'Taylor Gray', 'Zach Bellis'];
     sort($members);
     chunkAndFormatArray($members, 6, function ($chunk) {
         echo "<div class=\"col-md-2 text-center\">";
@@ -125,13 +125,13 @@
     ?>
     </div>
     <hr class="mb-3">
-    <h4 class="mb-4">Probates</h4>
+    <h4 class="mb-3">Probates</h4>
     <div class="row mb-3">
         <?php
-        $probates = ['Andreea Juravschi','Andrew McGraw','Andrew Norlin','Austin Reitano','Bethany McMorris','Charlie Hammer','Eleanor Froula','Erin Prusener','Evalyn Edwards','Jack Godfrey',"Joey D'Adamio",'Jonathan Brooks','Jordan Lawson','Josh Fernandes','Josh Thrift','Kayvon Dibai','Kelsey Watkins','Madison Meyers','Matt Warrington','Melissa Braunstein','Nevin Aresh','Reid Spencer','Ross Kreager','Sam Derry','Sarah Wiedetz','Shawn McKelvey','Sumayyah Ahmed ','Will Hancock' ];
+        $probates = ['Andreea Juravschi','Andrew McGraw','Andrew Norlin','Austin Reitano','Bethany McMorris','Charlie Hammer','Eleanor Froula','Erin Prusener','Evalyn Edwards',"Joey D'Adamio",'Jonathan Brooks','Jordan Lawson','Josh Fernandes','Josh Thrift','Kayvon Dibai','Kelsey Watkins','Madison Meyers','Matt Warrington','Melissa Braunstein','Reid Spencer','Sam Derry','Sarah Wiedetz','Shawn McKelvey','Sumayyah Ahmed ','Will Hancock' ];
         sort($probates);
-        chunkAndFormatArray($probates,4, function ($chunk) {
-            echo "<div class=\"col-md-3 text-center\">";
+        chunkAndFormatArray($probates,6, function ($chunk) {
+            echo "<div class=\"col-md-2 text-center\">";
             foreach ($chunk as $item) {
                 echo "<p class='text-left'>" . $item . "</p>";
             }
