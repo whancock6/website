@@ -68,7 +68,7 @@
     <div class="story">
         <div class="bg"></div>
         <div style="margin-top: 0px; z-index: 250;" class="float-left"> <img height="300" src="/img/why/test.png"><img height="150" src="/img/why/family_title.png">
-            <p>Reck Club is made up of 50 Georgia Tech Students. While we come from a variety of different backgrounds and majors, we all share a common love of Georgia Tech and its traditions, sports and history. If you let it, Reck Club will become like family and you will build life-long friendships.</p> <img height="300" src="/img/why/fam_line2.png">
+            <p>Reck Club is made up of 55 Georgia Tech Students. While we come from a variety of different backgrounds and majors, we all share a common love of Georgia Tech and its traditions, sports and history. If you let it, Reck Club will become like family and you will build life-long friendships.</p> <img height="300" src="/img/why/fam_line2.png">
         </div>
     </div><!--.story-->
 </div><!--#second-->
@@ -84,7 +84,7 @@
     </div>
     <div class="spirit">
         <div class="float-left">
-            <p id="trad_text">Reck Club is committed to promoting the many traditions that Georgia Tech boasts. Our pride and joy <g id="44" data-gr-id="44" class="gr_ gr_44 gr-alert gr_gramm gr_run_anim Grammar multiReplace">is</g> the 1930 Ford Model A <g id="43" data-gr-id="43" class="gr_ gr_43 gr-alert gr_gramm gr_run_anim Grammar multiReplace">Sport</g> Coupe, which has led the football team onto Grant Field in every game since 1961. Some of the other traditions that we still keep and manage are the Ramblin’ Reck Parade, the Mini 500 and the Freshman Cake Race.</p>
+            <p id="trad_text">Reck Club is committed to promoting the many traditions that Georgia Tech boasts. Our pride and joy <g id="44" data-gr-id="44" class="gr_ gr_44 gr-alert gr_gramm gr_run_anim Grammar multiReplace">is</g> the 1930 Ford Model A <g id="43" data-gr-id="43" class="gr_ gr_43 gr-alert gr_gramm gr_run_anim Grammar multiReplace">Sport</g> Coupe, which has led the football team onto Grant Field in every game since 1961. Some of the other traditions that we still keep and manage are the Ramblin’ Wreck Parade, the Mini 500 and the Freshman Cake Race.</p>
         </div>
     </div><!--.story-->
 </div><!--#third-->
@@ -101,13 +101,13 @@
 <div id="sixth">
     <div class="spirit">
         <div class="float-left"> <img src="/img/why/polo.png">
-            <p>The Ramblin’ Reck Club Membership Drive starts first thing in the spring semester. The first event for RECKcruitment 2019 is Monday, January 28th at <g id="51" data-gr-id="51" class="gr_ gr_51 gr-alert gr_gramm gr_run_anim Style multiReplace">7:15PM</g> in the Edge Building. Recruitment Process information can be found <a href="/reckruitment">here</a>! Please contact Kassie Lee (RECKruitment Chair) at <a href="mailto:membershipchair@reckclub.org">membershipchair@reckclub.org</a> if you have any questions about the recruitment process, becoming a member, or just want to know more about our organization! Go Jackets and To Hell With <g id="52" data-gr-id="52" class="gr_ gr_52 gr-alert gr_spell gr_run_anim ContextualSpelling ins-del multiReplace">georgia</g>!</p> <center><a href="/reckruitment"><img width="300" src="/img/why/info_btn.png"></a></center>
+            <p>The Ramblin’ Reck Club Membership Recruitment starts first thing in the spring semester. The first event for RECKcruitment 2022 is Tuesday, January 25th at <g id="51" data-gr-id="51" class="gr_ gr_51 gr-alert gr_gramm gr_run_anim Style multiReplace">7:00PM</g> in the Exhibition Hall: Home Park Room. Recruitment Process information can be found <a href="/reckruitment">here</a>! Please contact Derek Prusener and/or Abi Ivemeyer (Membership Co-Chairs) at <a href="mailto:membershipchair@reckclub.org">membershipchair@reckclub.org</a> if you have any questions about the recruitment process, becoming a member, or just want to know more about our organization! Go Jackets and To Hell With <g id="52" data-gr-id="52" class="gr_ gr_52 gr-alert gr_spell gr_run_anim ContextualSpelling ins-del multiReplace">georgia</g>!</p> <center><a href="/reckruitment"><img width="300" src="/img/why/info_btn.png"></a></center>
         </div>
     </div><!--.story-->
 </div><!--#third-->
 <div id="seventh">
     <div>
-        <p>© <?php echo date("Y"); ?> Ramblin' Reck Club. Salute! We miss Juniors Ian Lunn for the parallax plugin. Find out more info about Reck Club <a href="/">here</a>. THWG LIFE.</p>
+        <p>© <?php echo date("Y"); ?> Ramblin' Reck Club. Salute! We miss Juniors. Ian Lunn for the parallax plugin. Find out more info about Reck Club <a href="/">here</a>. THWG LIFE.</p>
     </div><!--.story-->
 </div><!--#fifth-->
 
