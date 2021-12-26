@@ -53,6 +53,12 @@
 <!--<p>The 2020 Ramblin’ Reck Club application is now closed. Check back next December for 2021's application!</p>-->
     <p>The 2022 Ramblin’ Reck Club application can be found <a href="https://docs.google.com/forms/d/e/1FAIpQLScR6kvfBfSwumvjsYtCxIZYkAl3fp1qhCyYRxyuAGbPMfiMAQ/viewform?usp=sf_link" target="blank">here</a>. A completed written application must be submitted no later than <strong>Friday, February 4th at 11:59pm</strong>.</p>
 
+<div class='row text-center'>
+    <div class='col-sm col-xs-12 mb-5 mb-sm-0'>
+        <a class='btn btn-md btn-primary' href="https://docs.google.com/forms/d/e/1FAIpQLScR6kvfBfSwumvjsYtCxIZYkAl3fp1qhCyYRxyuAGbPMfiMAQ/viewform?usp=sf_link"><strong>APPLY HERE!</strong></a>
+    </div>
+</div>
+
 <h4 class="mb-2" id="info-sessions">Information Sessions (Non-Mandatory)</h4>
 
 <p>For anyone interested in learning more about Ramblin’ Reck Club, what we are involved in on campus, opportunities within the Club, and the recruitment process, we will be hosting non-mandatory information sessions before the application deadline closes. Pizza will be provided, so feel free to stop in and introduce yourself and get the low-down on all things RRC during the session. If you cannot attend, do not fret! This information will be made available following the meeting. </p>
