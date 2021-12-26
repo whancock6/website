@@ -9,7 +9,7 @@
 <div class="container">
 <h2 class="mb-3">RECKruitment Process</h2>
     <img class="img-responsive mb-2" src="/img/promo/old-rrc-polo.jpg" width="100%">
-    <p>Every spring semester, Ramblin’ Reck Club holds RECKruitment in order to take in a new class of probates (probationary members). These probates are selected from a pool of applicants who must first submit an application and attend a series of RECKruitment events. This year's RECKruitment cycle will be held in-person with appropriate COVID-19 precautions (mask wearing, social distancing, and testing) being observed. Any issues related to COVID-19 quarantine/isolation will be worked out on a case-by-case basis. Email <a href="mailto:membershipchair@reckclub.org">Derek Prusener and Abi Ivemeyer</a>, Ramblin' Reck Club Membership Co-Chairs, if you have questions or concerns. Find the breakdown of these events below:</p>
+    <p>Every spring semester, Ramblin’ Reck Club holds RECKruitment in order to take in a new class of probates (probationary members). These probates are selected from a pool of applicants who must first submit an application and attend a series of RECKruitment events. This year's RECKruitment cycle will be held in-person with appropriate COVID-19 precautions (mask wearing, social distancing, and testing) being observed. In-person events may be changed to virtual based on the on-campus status of COVID-19. Any changes will be communicated on the website, via email, and social media outlets. Any issues related to COVID-19 quarantine/isolation will be worked out on a case-by-case basis. Email <a href="mailto:membershipchair@reckclub.org">Derek Prusener and Abi Ivemeyer</a>, Ramblin' Reck Club Membership Co-Chairs, if you have questions or concerns. Find the breakdown of these events below:</p>
 
     <h4 class="mb-3">Overview of the 2022 Application Process and Timeline</h4>
 
@@ -45,7 +45,7 @@
     <li>Have fun! The socials and "Get To Know You" events will have fun activities and should not feel like an interview; that's what the interview is for.</li>
     <li>Meet as many members as possible across the socials and "Get To Know You" events. Don't be afraid to ask a member you already know to introduce you to someone new.</li>
     <li>Put time and effort into your application. Follow the suggested word counts for each question to make sure you answer it fully.</li>
-    <li>While dress codes are listed for both the socials and interview, we understand there may be circumstances that may prevent some applicants from having proper attire. Don't sweat it, we just want to see you there regardless! If you do need assistance with interview clothing, <a href="https://career.gatech.edu/campus-closet-open">Georgia Tech's Campus Closet</a> provides this service free of charge to students.</li>
+    <li>While dress codes are listed for both the socials and interview, we understand there are circumstances that may prevent some applicants from having proper attire. Don't sweat it, we just want to see you there regardless! If you do need assistance with interview clothing, <a href="https://career.gatech.edu/campus-closet-open">Georgia Tech's Campus Closet</a> provides this service free of charge to students.</li>
 </ul>
 
 <h4 class="mb-2" id="written-application">Written Application</h4>
@@ -55,7 +55,7 @@
 
 <h4 class="mb-2" id="info-sessions">Information Sessions (Non-Mandatory)</h4>
 
-<p>For anyone interested in learning more about Ramblin’ Reck Club, what we are involved in on campus, opportunities within the Club, and the recruitment process, we will be hosting non-mandatory information sessions before the application deadline closes. Feel free to stop in and introduce yourself and get the low-down on all things RRC during the session. If you cannot attend, do not fret! This information will be made available following the meeting. </p>
+<p>For anyone interested in learning more about Ramblin’ Reck Club, what we are involved in on campus, opportunities within the Club, and the recruitment process, we will be hosting non-mandatory information sessions before the application deadline closes. Pizza will be provided, so feel free to stop in and introduce yourself and get the low-down on all things RRC during the session. If you cannot attend, do not fret! This information will be made available following the meeting. </p>
 
 <ul>
     <li><strong>Wednesday, January 19th at 7:00pm-8:00pm</strong> in Skiles 154</li>
@@ -78,7 +78,7 @@
     </ul>
 
 <h4 class="mb-2" id="first-social">First Social (Mandatory)</h4>
-    <p>Attending this social is your chance as an applicant to meet Reck Clubbers, get a feel for what Ramblin’ Reck Club is all about, ask any questions you may have about the Club or getting involved, and most importantly, sign up for an interview time. No need to stress about this event; be yourself and talk to anyone you do not already know! Dress code for this event is <strong>business casual</strong>, and will be hosted in-person at ???.</p>
+    <p>Attending this social is your chance as an applicant to meet Reck Clubbers, get a feel for what Ramblin’ Reck Club is all about, ask any questions you may have about the Club or getting involved, and most importantly, sign up for an interview time. No need to stress about this event; be yourself and talk to anyone you do not already know! Dress code for this event is <strong>business casual</strong>, and will be hosted in-person at Bobby Dodd Stadium. More details to come.</p>
     <ul>
         <li><strong>First Social: Monday, February 14th</strong></li>
     </ul>

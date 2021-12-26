@@ -15,7 +15,7 @@
     <h4 class="mb-4">What's the difference between a probate and a member?</h4>
     <p>The only true difference between probates and members is that members have full voting rights and probates do not. Other than that, probates can do anything and everything members can, including voicing their opinions in sessions that require a vote! Probates are never treated any differently, just because they are a probate!</p>
     <h4 class="mb-4">Why does Probateship exist? Why do applicants not become members upon acceptance into RRC?</h4>
-    <p>Probateship is intended to serve as a learning and training period for our newest Reck Clubbers to see the inner and outer workings of the club. We believe that by having this year long period, probates are able to really appreciate just how special it is to be a full member of Reck Club. Probates also come in with an entire class (usually around ~25 people total). Each probate class gets to experience being new to RRC together and get to know each other really well.</p>
+    <p>Probateship is intended to serve as a learning and training period for our newest Reck Clubbers to see the inner and outer workings of the club. In the spring and fall, Probates work on "stealing T's" that relate to different aspects of the club, such as the Reck, sports, and traditions. We believe that by having this year long period, probates are able to really appreciate just how special it is to be a full member of Reck Club. Probates also come in with an entire class (usually around ~25 people total). Each probate class gets to experience being new to RRC together and get to know each other really well.</p>
 </div>
 
 <?php require "../partials/footer.php" ?>
