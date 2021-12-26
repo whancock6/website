@@ -113,7 +113,7 @@
                     <p class="card-text mb-auto">Reck Club is an unforgettable college experience and you should join in on the fun!</p>
                     <a href="/reckruitment/why.php">Continue reading</a>
                 </div>
-                <img class="card-img-right img-fluid flex-auto d-none d-md-block" src="/img/promo/2017-probates-football.jpg" alt="RRC's 2017 probate class posing in front of the Reck at a football game during the 2017 football season." style="width: 200px; height: 250px;">
+                <img class="card-img-right img-fluid flex-auto d-none d-md-block" src="/img/promo/Gameday21.png" alt="Members of RRC posing in the RRC section at a football game during the 2021 football season." style="width: 200px; height: 250px;">
             </div>
         </div>
         <div class="col-md-6">
@@ -124,7 +124,7 @@
                     <p class="card-text mb-auto">During RECKruitment each year, we fill a new class of probates to add to the club’s already existing member base.</p>
                     <a href="/reckruitment/probateship.php">Read more</a>
                 </div>
-                <img class="card-img-right img-fluid flex-auto d-none d-md-block" src="/img/promo/PC20Pic.jpg" alt="RRC's 2020 probate class by the old Reck Garage." style="width: 200px; height: 250px;">
+                <img class="card-img-right img-fluid flex-auto d-none d-md-block" src="/img/promo/PC20Pic-small.png" alt="RRC's 2020 probate class by the old Reck Garage." style="width: 200px; height: 250px;">
             </div>
         </div>
     </div>
