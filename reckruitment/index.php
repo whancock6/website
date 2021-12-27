@@ -45,7 +45,7 @@
     <li>Have fun! The socials and "Get To Know You" events will have fun activities and should not feel like an interview; that's what the interview is for.</li>
     <li>Meet as many members as possible across the socials and "Get To Know You" events. Don't be afraid to ask a member you already know to introduce you to someone new.</li>
     <li>Put time and effort into your application. Follow the suggested word counts for each question to make sure you answer it fully.</li>
-    <li>While dress codes are listed for both the socials and interview, we understand there are circumstances that may prevent some applicants from having proper attire. Don't sweat it, we just want to see you there regardless! If you do need assistance with interview clothing, <a href="https://career.gatech.edu/campus-closet-open">Georgia Tech's Campus Closet</a> provides this service free of charge to students.</li>
+    <li>While dress codes are listed for both the socials and interview, we understand there are circumstances that may prevent some applicants from having proper attire. Don't sweat it, we just want to see you there regardless! If you do need assistance with interview clothing, <a href="https://career.gatech.edu/campus-closet-open" target="blank">Georgia Tech's Campus Closet</a> provides this service free of charge to students.</li>
 </ul>
 
 <h4 class="mb-2" id="written-application">Written Application</h4>
@@ -55,7 +55,7 @@
 
 <div class='row text-center'>
     <div class='col-sm col-xs-12 mb-5 mb-sm-0'>
-        <a class='btn btn-md btn-primary' href="https://forms.gle/MEmoRNLSTvwYHEgL7"><strong>APPLY HERE!</strong></a>
+        <a class='btn btn-md btn-primary' href="https://forms.gle/MEmoRNLSTvwYHEgL7" target="blank"><strong>APPLY HERE!</strong></a>
     </div>
 </div>
 
@@ -92,7 +92,7 @@
 
 <h4 class="mb-2" id="interviews">Interviews (Mandatory)</h4>
 
-    <p>The interview portion of RECKruitment is designed to allow for Reck Clubbers to get to know applicants on a more personal basis. We just want to give each applicant the time to express their ideas, commitment, and personality. The interview portion will include an individual interview followed by a short group interview activity. The encouraged attire is business semi-formal, but wear what is comfortable. Interviewees will sign up for an interview time slot during check-in at the first social. All interviews will be at the <strong>Bill Moore Student Success Center.</strong>></p>
+    <p>The interview portion of RECKruitment is designed to allow for Reck Clubbers to get to know applicants on a more personal basis. We just want to give each applicant the time to express their ideas, commitment, and personality. The interview portion will include an individual interview followed by a short group interview activity. The encouraged attire is business semi-formal, but wear what is comfortable. Interviewees will sign up for an interview time slot during check-in at the first social. All interviews will be at the <strong>Bill Moore Student Success Center.</strong></p>
     <ul>
         <li><strong>Tuesday, February 15th from 7:00pm-10:30pm</strong></li>
         <li><strong>Wednesday, February 16th from 7:00pm-10:30pm</strong></li>
