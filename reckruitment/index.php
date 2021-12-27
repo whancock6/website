@@ -51,11 +51,11 @@
 <h4 class="mb-2" id="written-application">Written Application</h4>
 
 <!--<p>The 2020 Ramblin’ Reck Club application is now closed. Check back next December for 2021's application!</p>-->
-    <p>The 2022 Ramblin’ Reck Club application can be found <a href="https://docs.google.com/forms/d/e/1FAIpQLScR6kvfBfSwumvjsYtCxIZYkAl3fp1qhCyYRxyuAGbPMfiMAQ/viewform?usp=sf_link" target="blank">here</a>. A completed written application must be submitted no later than <strong>Friday, February 4th at 11:59pm</strong>.</p>
+    <p>The 2022 Ramblin’ Reck Club application can be found <a href="https://forms.gle/MEmoRNLSTvwYHEgL7" target="blank">here</a>. A completed written application must be submitted no later than <strong>Friday, February 4th at 11:59pm</strong>.</p>
 
 <div class='row text-center'>
     <div class='col-sm col-xs-12 mb-5 mb-sm-0'>
-        <a class='btn btn-md btn-primary' href="https://docs.google.com/forms/d/e/1FAIpQLScR6kvfBfSwumvjsYtCxIZYkAl3fp1qhCyYRxyuAGbPMfiMAQ/viewform?usp=sf_link"><strong>APPLY HERE!</strong></a>
+        <a class='btn btn-md btn-primary' href="https://forms.gle/MEmoRNLSTvwYHEgL7"><strong>APPLY HERE!</strong></a>
     </div>
 </div>
 
@@ -66,7 +66,7 @@
 <ul>
     <li><strong>Wednesday, January 19th at 7:00pm-8:00pm</strong> in Skiles 154</li>
     <li><strong>Thursday, January 27th at 7:00pm-8:00pm</strong> in Skiles 154</li>
-    <li><strong>Thursday, February 3rd at 7:00pm-8:00pm</strong> on <a href="https://bluejeans.com/603892164" target="blank">BlueJeans.</a> </li>
+    <li><strong>Thursday, February 3rd at 7:00pm-8:00pm</strong> on <a href="https://bluejeans.com/886908279/6387" target="blank">BlueJeans.</a> </li>
     <!--    <li><strong>First Social: Monday, January 28th at 7:15pm (Mandatory)</strong></li>-->
 <!--  <li>Check back here in December 2019 for info session dates for the 2020 recruitment cycle!</li>-->
 </ul>
@@ -92,11 +92,11 @@
 
 <h4 class="mb-2" id="interviews">Interviews (Mandatory)</h4>
 
-    <p>The interview portion of RECKruitment is designed to allow for Reck Clubbers to get to know applicants on a more personal basis. We just want to give each applicant the time to express their ideas, commitment, and personality. The interview portion will include an individual interview followed by a short group interview activity. The encouraged attire is business semi-formal, but wear what is comfortable. Interviewees will sign up for an interview time slot during check-in at the first social.</p>
+    <p>The interview portion of RECKruitment is designed to allow for Reck Clubbers to get to know applicants on a more personal basis. We just want to give each applicant the time to express their ideas, commitment, and personality. The interview portion will include an individual interview followed by a short group interview activity. The encouraged attire is business semi-formal, but wear what is comfortable. Interviewees will sign up for an interview time slot during check-in at the first social. All interviews will be at the <strong>Bill Moore Student Success Center.</strong>></p>
     <ul>
-        <li><strong>Tuesday, February 2nd from 7:00pm-9:00pm</strong></li>
-        <li><strong>Wednesday, February 3rd from 7:00pm-9:00pm</strong></li>
-        <li><strong>Thursday, February 4th from 7:00pm-9:00pm</strong></li>
+        <li><strong>Tuesday, February 15th from 7:00pm-10:30pm</strong></li>
+        <li><strong>Wednesday, February 16th from 7:00pm-10:30pm</strong></li>
+        <li><strong>Thursday, February 17th from 7:00pm-10:30pm</strong></li>
     </ul>
 
 <h4 class="mb-2" id="second-social">Second Social (Mandatory)</h4>
