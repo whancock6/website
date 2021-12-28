@@ -8,7 +8,7 @@
 <?php require "../partials/public-header.php" ?>
 <div class="container">
 <h2 class="mb-3">RECKruitment Process</h2>
-    <img class="img-responsive mb-2" src="/img/promo/old-rrc-polo.jpg" width="100%">
+    <img class="img-responsive mb-2" src="/img/why/RRCPolos21.png" width="100%">
     <p>Every spring semester, Ramblin’ Reck Club holds RECKruitment in order to take in a new class of probates (probationary members). These probates are selected from a pool of applicants who must first submit an application and attend a series of RECKruitment events. This year's RECKruitment cycle will be held in-person with appropriate COVID-19 precautions (mask wearing, social distancing, and testing) being observed. In-person events may be changed to virtual based on the on-campus status of COVID-19. Any changes will be communicated on the website, via email, and social media outlets. Any issues related to COVID-19 quarantine/isolation will be worked out on a case-by-case basis. Email <a href="mailto:membershipchair@reckclub.org">Derek Prusener and Abi Ivemeyer</a>, Ramblin' Reck Club Membership Co-Chairs, if you have questions or concerns. Find the breakdown of these events below:</p>
 
     <h4 class="mb-3">Overview of the 2022 Application Process and Timeline</h4>
