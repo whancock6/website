@@ -35,7 +35,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="img-responsive d-block w-100" src="/img/promo/2013-wreck-parade.jpg" alt="2017 Reck at Clough turnaround for Ride Out in Style">
+                <img class="img-responsive d-block w-100" src="/img/promo/ReckEcoCommons.png" alt="2021 Reck at Eco Commons building for a Reck Event">
                 <div class="gradient">
                 </div>
                 <div class="carousel-caption d-none d-md-block">
