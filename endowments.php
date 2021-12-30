@@ -15,7 +15,7 @@
     <h4 class="mb-4">Donation Information</h4>
     <p>Those interested in donating can send a check to the following address:
 
-    <p>Ramblin’ Reck Club<br/>Georgia Tech<br/>350 Ferst Drive, Room 2211<br/>Atlanta, GA 30332-0283</p>
+    <p>GT Ramblin Reck Club<br/>711 Marietta Street<br/>Atlanta, GA 30332</p>
 
     <p>Please make checks out to the Georgia Tech Foundation mentioning the Dean Dull Endowment in the subject line.</p>
     <h4 class="mb-4">Background Materials</h4>
