@@ -13,15 +13,15 @@
     <div class="row">
         <div class="col-md-6">
             <p><strong>Faculty Advisor:</strong> <a href="mailto:estephens34@gatech.edu">Gerome Stephens</a></p>
-            <p><strong>Reck Driver:</strong> <a href="mailto:driver@reckclub.org">Ethan Rosman</a></p>
-            <p><strong>President:</strong> <a href="mailto:president@reckclub.org">Jen O'Brien</a></p>
-            <p><strong>Vice President:</strong> <a href="mailto:tgray43@gatech.edu">Taylor Gray</a></p>
+            <p><strong>Reck Driver:</strong> <a href="mailto:driver@reckclub.org">Evalyn Edwards</a></p>
+            <p><strong>President:</strong> <a href="mailto:president@reckclub.org">Grace Mallon</a></p>
+            <p><strong>Vice President:</strong> <a href="mailto:imukherjee300@gatech.edu">Isheeta Mukherjee</a></p>
         </div>
         <div class="col-md-6">
-            <p><strong>Treasurer:</strong> <a href="mailto:treasurer@reckclub.org">Grace Mallon</a></p>
-            <p><strong>Secretary:</strong> <a href="mailto:secretary@reckclub.org">Austin Gies</a></p>
-            <p><strong>Member-at-Large:</strong> <a href="mailto:bthaler3@gatech.edu">Brendon Thaler</a></p>
-            <p><strong>Member-at-Large:</strong> <a href="mailto:ewojack3@gatech.edu">Emma Wojack</a></p>
+            <p><strong>Treasurer:</strong> <a href="mailto:treasurer@reckclub.org">Josh Fernandes</a></p>
+            <p><strong>Secretary:</strong> <a href="mailto:secretary@reckclub.org">Reid Spencer</a></p>
+            <p><strong>Member-at-Large:</strong> <a href="mailto:jdadamio3@gatech.edu">Joey D'Adamio</a></p>
+            <p><strong>Member-at-Large:</strong> <a href="mailto:chammer6@gatech.edu">Charlie Hammer</a></p>
         </div>
     </div>
     <hr class="mb-3">
@@ -39,7 +39,7 @@
             ],
             [
                 "chair" => 'Basketball',
-                "name" => 'Keshav Ramanathan'
+                "name" => 'Brendon Thaler'
             ],
             [
                 "chair" => 'Fundraising and Big Buzz',
@@ -67,23 +67,23 @@
             ],
             [
                 "chair" => 'Public Relations',
-                "name" => 'Melissa Braunstein and Sarah Wieditz'
+                "name" => 'Jordan Lawson'
             ],
             [
-                "chair" => 'Probate Guide',
-                "name" => 'Caroline Means'
+                "chair" => 'Probate Guides',
+                "name" => 'Austin Gies and Carter Kubes'
             ],
             [
                 "chair" => 'RECKruitment',
-                "name" => 'Whitney Miller'
+                "name" => 'Abi Ivemeyer and Derek Prusener'
             ],
             [
                 "chair" => 'T-Book',
-                "name" => 'Isheeta Mukherjee'
+                "name" => 'Erin Prusener'
             ],
             [
                 "chair" => 'T-Night',
-                "name" => 'Derek Prusener'
+                "name" => 'Bethany McMorris'
             ],
             [
                 "chair" => 'Technology',
@@ -94,10 +94,16 @@
                 "name" => 'Cade Lawson'
             ],
             [   "chair" => 'Diversity and Inclusion',
-                "name" => 'Andrew McGraw and Kayvon Dibai'
+                "name" => 'Bethany McMorris and Matt Warrington'
              ]);
         uasort($chairs, function($a, $b) {
-            return $a["chair"] > $b["chair"];
+            if ($a["chair"] > $b["chair"]) {
+                return 1;
+            } elseif ($a["chair"] < $b["chair"]){
+                return -1;
+            } else {
+                return 0;
+            }
         });
         chunkAndFormatArray($chairs, 2, function ($chunk) {
             echo "<div class=\"col-md-6 text-center\">";
@@ -113,7 +119,7 @@
     <h4 class="mb-3">Members</h4>
     <div class="row mb-3">
     <?php
-  $members = ['Abi Ivemeyer','Adam Lederer','Anilyn Benge','Annie Robinson', 'Austin Gies', 'Brandon Dobson','Brendan Mindiak', 'Brendon Thaler', 'Briana Sims', 'Cade Lawson','Caroline Means', 'Carter Kubes', 'Dean Plaskon', 'Derek Prusener', 'Emma Wojack', 'Ethan Rosman', 'Grace Mallon', 'Isheeta Mukherjee', 'Jacob Lewis', 'Jen O\'Brien','Kassie Lee', 'Katie Earles', 'Keshav Ramanathan','Paul Weiland', 'Ross LeRoy','Sofia Eidizadeh','Sydney Weisenburger', 'Taylor Gray', 'Zach Bellis'];
+  $members = ['Abi Ivemeyer', 'Adam Lederer', 'Andreea Juravschi', 'Andrew Norlin', 'Anilyn Benge', 'Austin Gies', 'Austin Reitano', 'Bethany McMorris', 'Brendan Mindiak', 'Brendon Thaler', 'Cade Lawson', 'Carter Kubes', 'Charlie Hammer', 'Dean Plaskon', 'Derek Prusener', 'Eleanor Froula', 'Emma Wojack', 'Erin Prusener', 'Evalyn Edwards', 'Grace Mallon', 'Isheeta Mukherjee', 'Jacob Lewis', 'Jen O\'Brien', 'Joey D\'Adamio', 'Jonathan Brooks', 'Jordan Lawson', 'Josh Fernandes', 'Josh Thrift', 'Kassie Lee', 'Katie Earles', 'Kayvon Dibai', 'Kelsey Watkins', 'Keshav Ramanathan', 'Madison Meyers', 'Matt Warrington', 'Melissa Braunstein', 'Reid Spencer', 'Ross LeRoy', 'Sam Derry', 'Sarah Wiedetz', 'Shawn McKelvey', 'Sofia Eidizadeh', 'Sumayyah Ahmed', 'Taylor Gray', 'Will Hancock', 'Zach Bellis'];
     sort($members);
     chunkAndFormatArray($members, 6, function ($chunk) {
         echo "<div class=\"col-md-2 text-center\">";
@@ -128,7 +134,7 @@
     <h4 class="mb-3">Probates</h4>
     <div class="row mb-3">
         <?php
-        $probates = ['Andreea Juravschi','Andrew McGraw','Andrew Norlin','Austin Reitano','Bethany McMorris','Charlie Hammer','Eleanor Froula','Erin Prusener','Evalyn Edwards',"Joey D'Adamio",'Jonathan Brooks','Jordan Lawson','Josh Fernandes','Josh Thrift','Kayvon Dibai','Kelsey Watkins','Madison Meyers','Matt Warrington','Melissa Braunstein','Reid Spencer','Sam Derry','Sarah Wiedetz','Shawn McKelvey','Sumayyah Ahmed ','Will Hancock' ];
+        $probates = [""];
         sort($probates);
         chunkAndFormatArray($probates,6, function ($chunk) {
             echo "<div class=\"col-md-2 text-center\">";

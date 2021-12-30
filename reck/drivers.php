@@ -18,6 +18,10 @@
     <?php
     $drivers = [
         [
+            "year" => "2022",
+            "name" => "Evalyn Edwards"
+        ],
+        [
             "year" => "2021",
             "name" => "Ethan Rosman"
         ],
