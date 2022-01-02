@@ -168,8 +168,16 @@ a:hover, .btn-link:hover, #submit-request-button:disabled {
     background-color: #D0D0D0;
 }
 
+@media (min-width: 1000px) {
+    #img-carousel {
+        width: 80%;
+        left: 10%;
+        overflow: hidden;
+    }
+}
+
 .carousel-item > img {
-    min-width: 100%;
+    max-width: 100%;
 }
 .gradient {
     position:absolute;
