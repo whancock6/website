@@ -9,7 +9,7 @@
 <div class="container">
     <h2 class="mb-3">The Reck</h2>
 
-    <img class="img-responsive mb-3" width="100%" src="/img/promo/2010-reck-freshman-hill.jpg">
+    <img class="img-responsive mb-3" width="100%" src="/img/promo/ReckSkyline.png">
 
     <p class="text-muted">For a deeper dive into the Reck's history, head over to our <a href="/reckhistory">history site</a>!</p>
     <p class="text-muted">To learn more about the Reck's drivers, click <a href="/reck/drivers.php">here</a>!</p>
