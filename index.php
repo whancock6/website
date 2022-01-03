@@ -107,7 +107,7 @@
         </div>
         <div class="col-md-6">
             <div class="card flex-md-row mb-4 box-shadow h-md-250">
-                <img class="card-img-left img-fluid flex-auto d-none d-md-block" src="/img/promo/2017-gameday-rideout.jpg" style="width: 200px !important; height: 250px;" data-holder-rendered="true">
+                <img class="card-img-left img-fluid flex-auto d-none d-md-block" src="/img/promo/ReckRunningBoard.png" style="width: 200px !important; height: 250px;" data-holder-rendered="true">
                 <div class="card-body d-flex flex-column align-items-start">
                     <strong class="d-inline-block mb-2 text-primary">RECKruitment</strong>
                     <h3 class="mb-1 text-dark">Want to join the tradition?</h3>
