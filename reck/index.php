@@ -9,7 +9,7 @@
 <div class="container">
     <h2 class="mb-3">The Reck</h2>
 
-    <img class="img-responsive mb-3" width="100%" src="/img/promo/2010-reck-freshman-hill.jpg">
+    <img class="img-responsive mb-3" width="100%" src="/img/promo/ReckSkyline.png">
 
     <p class="text-muted">For a deeper dive into the Reck's history, head over to our <a href="/reckhistory">history site</a>!</p>
     <p class="text-muted">To learn more about the Reck's drivers, click <a href="/reck/drivers.php">here</a>!</p>
@@ -79,7 +79,7 @@
                     <p class="card-text mb-auto">Each year, one student is chosen from the ranks of the club to be the sole driver and primary caretaker of the Ramblin’ Reck.</p>
                     <a href="/reck/drivers.php">Read more</a>
                 </div>
-                <img class="card-img-right img-fluid flex-auto d-none d-md-block" src="/img/promo/2014-raj.jpg" style="width: 200px; height: 250px;">
+                <img class="card-img-right img-fluid flex-auto d-none d-md-block" src="/img/promo/EvalynDriver.png" style="width: 200px; height: 250px;">
             </div>
         </div>
         <div class="col-md-6">

@@ -18,7 +18,7 @@
 <div class="container mb-3">
     <div class="row">
         <div class="col-12">
-            <img class="img-fluid img-responsive" src="/homecoming/images/CakeRaceBanner2020.PNG">
+            <img class="img-fluid img-responsive" src="/homecoming/images/CakeRaceBanner2021.png">
         </div>
     </div>
 </div>

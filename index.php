@@ -17,7 +17,10 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="img-responsive d-block w-100" src="img/2021/club_before_game.jpg" alt="2021 T-night picture">
+                <picture>
+                    <source class="img-responsive d-block w-100" srcset="img/2021/club_before_game_v3.jpg" media="(min-width: 900px)" alt="Reck Club pic before Football game">
+                    <img class="img-responsive d-block w-100" src="img/2021/club_before_game.jpg" alt="Reck Club pic before Football game">
+                </picture>
                 <div class="gradient">
                 </div>
                 <div class="carousel-caption d-none d-md-block">
@@ -26,7 +29,10 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="img-responsive d-block w-100" src="/img/2021/merc_ride_out.jpg" alt="2021 Mercedes-Benz game ride-out">
+                <picture>
+                    <source class="img-responsive d-block w-100" srcset="/img/2021/merc_ride_out_v2.jpg" media="(min-width: 900px)" alt="2021 Mercedes-Benz game ride-out">
+                    <img class="img-responsive d-block w-100" src="/img/2021/merc_ride_out.jpg" alt="2021 Mercedes-Benz game ride-out">
+                </picture>
                 <div class="gradient">
                 </div>
                 <div class="carousel-caption d-none d-md-block">
@@ -35,7 +41,10 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="img-responsive d-block w-100" src="/img/promo/ReckEcoCommons.png" alt="2021 Reck at Eco Commons building for a Reck Event">
+                <picture>
+                    <source class="img-responsive d-block w-100" srcset="/img/promo/ReckEcoCommons_v2.png" media="(min-width: 900px)" alt="2021 Reck at Eco Commons building for a Reck Event">
+                    <img class="img-responsive d-block w-100" src="/img/promo/ReckEcoCommons.png" alt="2021 Reck at Eco Commons building for a Reck Event">
+                </picture>
                 <div class="gradient">
                 </div>
                 <div class="carousel-caption d-none d-md-block">
@@ -44,7 +53,10 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="img-responsive d-block w-100" src="/img/2021/merc_alma_mater.jpg" alt="2021 Alma mater on the Mercedes Benz field">
+                <picture>
+                    <source class="img-responsive d-block w-100" srcset="/img/2021/merc_alma_mater_v2.jpg" media="(min-width: 900px)" alt="2021 Alma mater on the Mercedes Benz field">
+                    <img class="img-responsive d-block w-100" src="/img/2021/merc_alma_mater.jpg" alt="2021 Alma mater on the Mercedes Benz field">
+                </picture>
                 <div class="gradient">
                 </div>
                 <div class="carousel-caption d-none d-md-block">
@@ -66,7 +78,7 @@
                     <p class="card-text mb-auto">Each year, one student is chosen from the ranks of the club to be the sole driver and primary caretaker of the Ramblin’ Reck.</p>
                     <a href="/reck/drivers.php">Read more</a>
                 </div>
-                <img class="card-img-right img-fluid flex-auto d-none d-md-block" data-src="/img/2021/rosman.jpg" style="width: 200px; height: 250px;" src="/img/2021/rosman.jpg" data-holder-rendered="true">
+                <img class="card-img-right img-fluid flex-auto d-none d-md-block" data-src="/img/promo/EvalynDriver.png" style="width: 200px; height: 250px;" src="/img/promo/EvalynDriver.png" data-holder-rendered="true">
             </div>
         </div>
         <div class="col-md-6">
@@ -95,7 +107,7 @@
         </div>
         <div class="col-md-6">
             <div class="card flex-md-row mb-4 box-shadow h-md-250">
-                <img class="card-img-left img-fluid flex-auto d-none d-md-block" src="/img/promo/2017-gameday-rideout.jpg" style="width: 200px !important; height: 250px;" data-holder-rendered="true">
+                <img class="card-img-left img-fluid flex-auto d-none d-md-block" src="/img/promo/ReckRunningBoard.png" style="width: 200px !important; height: 250px;" data-holder-rendered="true">
                 <div class="card-body d-flex flex-column align-items-start">
                     <strong class="d-inline-block mb-2 text-primary">RECKruitment</strong>
                     <h3 class="mb-1 text-dark">Want to join the tradition?</h3>
