@@ -9,7 +9,7 @@
 <?php require "../partials/public-header.php" ?>
 <div class="container">
 <h2 class="mb-3">Drivers</h2>
-<img class="img-responsive mb-3" width="100%" src="/img/promo/ReckFreshmanHill.png">
+<img class="img-responsive mb-3" width="100%" src="/img/promo/ReckFreshmanHill.PNG">
 <p>Each year, one student is chosen from the ranks of the club to be the sole driver and primary caretaker of the Ramblin’ Reck. He or she is the only person with keys to the car, and the only person allowed to drive or transport the Reck. He or she knows the ins and outs of the car better than the back of his hand and spends countless hours every week not only making sure that the car is running in tip-top shape, but also scheduling appearances, meeting with alumni and administration, and working on other projects in the best interest of the Reck. Despite the hard work, the job is perhaps the most meaningful and fulfilling on campus, and an unforgettable experience for every driver.</p>
 
 <h4 class="mb-3">The History of Drivers</h4>
