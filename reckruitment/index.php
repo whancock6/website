@@ -19,7 +19,7 @@
         <li>A <a href="#written-application">written application</a> submitted by <strong>Friday, February 4th</strong></li>
         <li>Attendance at one of the three selected <a href="#gtky-events">“Get to Know You” (GTKY)</a> Events</li>
         <li>Attendance at the <a href="#first-social">first social</a> on <strong>Monday, February 14th</strong></li>
-        <li><a href="#interviews">Interviews</a> (individual and group), <strong>February 15th - February 17th</strong></li>
+        <li><a href="#interviews">Interviews</a>, <strong>February 15th - February 17th</strong></li>
         <li>Attendance at the <a href="#second-social">second social</a> on <strong>Sunday, February 20th</strong> (by invitation only)</li>
         <li>Attendance at the all-club Spring Retreat (Date TBD if selected to be a 2022 probate)</li>
     </ul>
@@ -92,7 +92,7 @@
 
 <h4 class="mb-2" id="interviews">Interviews (Mandatory)</h4>
 
-    <p>The interview portion of RECKruitment is designed to allow for Reck Clubbers to get to know applicants on a more personal basis. We just want to give each applicant the time to express their ideas, commitment, and personality. The interview portion will include an individual interview followed by a short group interview activity. The encouraged attire is business semi-formal, but wear what is comfortable. Interviewees will sign up for an interview time slot during check-in at the first social. All interviews will be at the <strong>Bill Moore Student Success Center.</strong></p>
+    <p>The interview portion of RECKruitment is designed to allow for Reck Clubbers to get to know applicants on a more personal basis. We just want to give each applicant the time to express their ideas, commitment, and personality. The interview portion consists of an individual interview. The encouraged attire is business semi-formal, but wear what is comfortable. Interviewees will sign up for an interview time slot during check-in at the first social. All interviews will be at the <strong>Bill Moore Student Success Center.</strong></p>
     <ul>
         <li><strong>Tuesday, February 15th from 7:00pm-10:30pm</strong></li>
         <li><strong>Wednesday, February 16th from 7:00pm-10:30pm</strong></li>

@@ -8,7 +8,7 @@
 <body>
 <?php require "../partials/public-header.php" ?>
 <div class="container">
-    <h2 class="mb-3">2021 Roster</h2>
+    <h2 class="mb-3">2022 Roster</h2>
     <h4 class="mb-4">Executive Board</h4>
     <div class="row">
         <div class="col-md-6">
@@ -31,27 +31,31 @@
         <?php $chairs = array(
             [
                 "chair" => 'Alumni Relations',
-                "name" => 'Annie Robinson'
+                "name" => 'Austin Reitano'
             ],
             [
                 "chair" => 'Baseball',
-                "name" => 'Kassie Lee'
+                "name" => 'Melissa Braunstein'
             ],
             [
                 "chair" => 'Basketball',
                 "name" => 'Brendon Thaler'
             ],
             [
-                "chair" => 'Fundraising and Big Buzz',
-                "name" => 'Paul Weiland'
+                "chair" => 'Big Buzz',
+                "name" => 'Shawn McKelvey'
             ],
             [
                 "chair" => 'Campus Outreach',
-                "name" => 'Abi Ivemeyer'
+                "name" => 'Sam Derry'
+            ],
+            [
+                "chair" => 'Fundraising',
+                "name" => 'Andrew Norlin'
             ],
             [
                 "chair" => 'Football',
-                "name" => 'Keshav Ramanathan'
+                "name" => 'Jonathan Brooks'
             ],
             [
                 "chair" => 'CSON',
@@ -59,11 +63,11 @@
             ],
             [
                 "chair" => 'Homecoming',
-                "name" => 'Anilyn Benge and Jack Crawford'
+                "name" => 'Andreea Juravschi'
             ],
             [
                 "chair" => 'Non-Revenue Sports',
-                "name" => 'Charlie Hammer'
+                "name" => 'Madison Meyers'
             ],
             [
                 "chair" => 'Public Relations',
@@ -87,11 +91,11 @@
             ],
             [
                 "chair" => 'Technology',
-                "name" => 'Dean Plaskon'
+                "name" => 'Will Hancock'
             ],
             [
                 "chair" => 'Traditions',
-                "name" => 'Cade Lawson'
+                "name" => 'Eleanor Froula'
             ],
             [   "chair" => 'Diversity and Inclusion',
                 "name" => 'Bethany McMorris and Matt Warrington'
